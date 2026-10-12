@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rice Recipes | Medad-X Kitchen</title>
+<meta name="description" content="30 classic rice recipes — biryani, pulao and Saudi kabsa &amp; mandi — from the Medad-X Kitchen. Made for premium aged basmati.">
+<link rel="canonical" href="https://medadx.com/recipes">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<meta name="theme-color" content="#1F3D2A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Medad-X">
+<meta property="og:title" content="Rice Recipes | Medad-X Kitchen">
+<meta property="og:description" content="30 classic rice recipes — biryani, pulao and Saudi kabsa &amp; mandi — from the Medad-X Kitchen. Made for premium aged basmati.">
+<meta property="og:url" content="https://medadx.com/recipes">
+<meta property="og:image" content="https://medadx.com/assets/og-recipes.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://medadx.com/recipes">
+<link rel="alternate" hreflang="ar" href="https://medadx.com/recipes">
+<script src="config.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Rice Recipes | Medad-X Kitchen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="30 classic rice recipes — biryani, pulao and Saudi kabsa & mandi — from the Medad-X Kitchen. Made for premium aged basmati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="recipes-data.js"></script>
+<script src="assets/image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background:#F1E7CF; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { max-width: 100%; }
+  ::selection { background: #C29A45; color: #201B12; }
+  /* Every recipe slot ships with a photo (src), so never show the empty-state dashed ring */
+  image-slot::part(ring){ display:none !important; }
+  :focus-visible { outline: 3px solid #C29A45; outline-offset: 2px; border-radius: 4px; }
+  input, select, textarea, button { font: inherit; }
+  @keyframes recRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes recFade { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation-duration:.01ms !important; transition-duration:.01ms !important; } html{scroll-behavior:auto;} }
+  @media print {
+    .rec-noprint { display: none !important; }
+    html, body { background:#fff !important; }
+    .rec-detail { padding-top: 0 !important; }
+    .rec-avoid { break-inside: avoid; }
+    a { color: inherit !important; text-decoration: none !important; }
+  }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" id="rec-top" style="font-family:'Archivo','IBM Plex Sans Arabic',system-ui,sans-serif; color:#23201A; min-height:100vh; overflow-x:clip; background:radial-gradient(1200px 760px at 12% -6%, rgba(255,255,255,.55), transparent 60%), radial-gradient(1000px 720px at 100% 2%, rgba(201,162,75,.12), transparent 55%), linear-gradient(#F4ECD8, #EEE2C7)">
+
+  <header class="rec-noprint" style="position:sticky; top:0; z-index:60; border-bottom:1px solid rgba(35,32,26,.12); background:rgba(244,236,216,.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px)">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(18px,4vw,44px); height:56px; display:flex; align-items:center; justify-content:space-between; gap:18px">
+      <a href="#/" aria-label="Medad-X Kitchen — all recipes" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#1F3D2A; min-width:max-content">
+        <img src="assets/logo-mark.png" alt="" style="height:34px; width:auto; display:block">
+        <span style="display:flex; flex-direction:column; gap:2px">
+          <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:17px; letter-spacing:.05em; line-height:1; color:#1F3D2A">MEDADX</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:9px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(35,32,26,.55)">The Kitchen</span>
+        </span>
+      </a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <nav aria-label="Primary" style="display:flex; align-items:center; gap:2px">
+          <a href="./#/" style="position:relative; padding:9px 11px; text-decoration:none; font-size:14px; font-weight:500; color:rgba(35,32,26,.66); transition:color .2s" style-hover="color:#1F3D2A">Home</a>
+          <a href="./#/about" style="position:relative; padding:9px 11px; text-decoration:none; font-size:14px; font-weight:500; color:rgba(35,32,26,.66); transition:color .2s" style-hover="color:#1F3D2A">About Us</a>
+          <a href="./#/supply-chain" style="position:relative; padding:9px 11px; text-decoration:none; font-size:14px; font-weight:500; color:rgba(35,32,26,.66); transition:color .2s" style-hover="color:#1F3D2A">Supply Chain</a>
+          <a href="history-of-rice.html" style="position:relative; padding:9px 11px; text-decoration:none; font-size:14px; font-weight:500; color:rgba(35,32,26,.66); transition:color .2s" style-hover="color:#1F3D2A">History of Rice</a>
+          <a href="#/" style="position:relative; padding:9px 11px; text-decoration:none; font-size:14px; font-weight:700; color:#1F3D2A">Recipes<span aria-hidden="true" style="position:absolute; bottom:1px; inset-inline-start:11px; inset-inline-end:11px; height:2px; background:#C29A45"></span></a>
+        </nav>
+      </sc-if>
+      <div style="display:flex; align-items:center; gap:9px">
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <a href="./#/contact" style="text-decoration:none; white-space:nowrap; border:1.5px solid rgba(35,32,26,.2); color:#1F3D2A; border-radius:10px; padding:8px 15px; font-size:13.5px; font-weight:650; transition:border-color .2s, color .2s" style-hover="border-color:#A67F2E; color:#A67F2E">Request Quote</a>
+        </sc-if>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <a href="./#/trading-account" style="text-decoration:none; white-space:nowrap; background:#1F3D2A; color:#F5F0E4; border-radius:10px; padding:9px 16px; font-size:13.5px; font-weight:650; transition:background .2s" style-hover="background:#142A1D">Open Trading Account</a>
+        </sc-if>
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="width:42px; height:42px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:transparent; border:1.5px solid rgba(35,32,26,.2); border-radius:10px; cursor:pointer; color:#1F3D2A">
+            <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+              <span aria-hidden="true" style="width:17px; height:2px; background:#1F3D2A; border-radius:2px"></span>
+              <span aria-hidden="true" style="width:17px; height:2px; background:#1F3D2A; border-radius:2px"></span>
+              <span aria-hidden="true" style="width:17px; height:2px; background:#1F3D2A; border-radius:2px"></span>
+            </sc-if>
+            <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="#1F3D2A" stroke-width="2" stroke-linecap="round"/></svg>
+            </sc-if>
+          </button>
+        </sc-if>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid rgba(35,32,26,.1); background:#F4ECD8; box-shadow:0 24px 48px rgba(31,45,29,.16); animation:recFade .25s ease both">
+        <div style="max-width:1200px; margin:0 auto; padding:6px clamp(18px,4vw,44px) 20px; display:flex; flex-direction:column">
+          <a href="./#/" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:14px 2px; text-decoration:none; color:#2E2A20; font-size:16px; font-weight:600; border-bottom:1px solid rgba(35,32,26,.08)">Home</a>
+          <a href="./#/about" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:14px 2px; text-decoration:none; color:#2E2A20; font-size:16px; font-weight:600; border-bottom:1px solid rgba(35,32,26,.08)">About Us</a>
+          <a href="./#/supply-chain" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:14px 2px; text-decoration:none; color:#2E2A20; font-size:16px; font-weight:600; border-bottom:1px solid rgba(35,32,26,.08)">Supply Chain</a>
+          <a href="history-of-rice.html" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:14px 2px; text-decoration:none; color:#2E2A20; font-size:16px; font-weight:600; border-bottom:1px solid rgba(35,32,26,.08)">History of Rice</a>
+          <a href="#/" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:14px 2px; text-decoration:none; color:#1F3D2A; font-size:16px; font-weight:700; border-bottom:1px solid rgba(35,32,26,.08)">Recipes<span aria-hidden="true" style="width:7px; height:7px; background:#C29A45; transform:rotate(45deg)"></span></a>
+          <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
+            <a href="./#/contact" onClick="{{ closeMenu }}" style="flex:1 1 180px; text-align:center; text-decoration:none; border:1.5px solid rgba(35,32,26,.2); color:#1F3D2A; border-radius:11px; padding:13px 18px; font-size:15px; font-weight:650">Request Quote</a>
+            <a href="./#/trading-account" onClick="{{ closeMenu }}" style="flex:1 1 180px; text-align:center; text-decoration:none; background:#1F3D2A; color:#F5F0E4; border-radius:11px; padding:13px 18px; font-size:15px; font-weight:650">Open Trading Account</a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <main>
+    <!-- ================= INDEX ================= -->
+    <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Recipe Index" style="animation:recFade .5s ease both">
+
+      <section style="max-width:1200px; margin:0 auto; padding:clamp(40px,6vw,78px) clamp(18px,4vw,44px) clamp(20px,3vw,34px)">
+        <div style="display:flex; align-items:center; gap:11px; animation:recRise .7s cubic-bezier(.22,.6,.24,1) both">
+          <span aria-hidden="true" style="width:9px; height:9px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#A67F2E">Medad-X Kitchen</span>
+        </div>
+        <h1 style="margin:20px 0 0; font-size:clamp(38px,7vw,74px); line-height:1; font-weight:800; letter-spacing:-.02em; color:#1F3D2A; text-wrap:balance; max-width:16ch; animation:recRise .8s cubic-bezier(.22,.6,.24,1) .05s both">The Rice Recipe Collection</h1>
+        <p style="margin:24px 0 0; max-width:60ch; font-size:clamp(17px,2vw,21px); line-height:1.55; font-weight:500; color:#3A3427; text-wrap:pretty; animation:recRise .8s cubic-bezier(.22,.6,.24,1) .12s both">Thirty classic dishes for premium aged basmati — from festive biryani and fragrant pulao to the great rice platters of the Saudi table. Every recipe, kitchen-tested and built to serve.</p>
+        <div style="display:flex; align-items:center; gap:22px; margin-top:28px; flex-wrap:wrap; animation:recRise .8s cubic-bezier(.22,.6,.24,1) .18s both">
+          <div style="display:flex; align-items:baseline; gap:9px"><span style="font-size:30px; font-weight:800; color:#1F3D2A; letter-spacing:-.01em">30</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.6)">Recipes</span></div>
+          <span aria-hidden="true" style="width:1px; height:26px; background:rgba(35,32,26,.16)"></span>
+          <div style="display:flex; align-items:baseline; gap:9px"><span style="font-size:30px; font-weight:800; color:#1F3D2A; letter-spacing:-.01em">20</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.6)">Indian &amp; Pakistani</span></div>
+          <span aria-hidden="true" style="width:1px; height:26px; background:rgba(35,32,26,.16)"></span>
+          <div style="display:flex; align-items:baseline; gap:9px"><span style="font-size:30px; font-weight:800; color:#1F3D2A; letter-spacing:-.01em">10</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.6)">Saudi</span></div>
+        </div>
+      </section>
+
+      <!-- Toolbar -->
+      <div class="rec-noprint" style="position:sticky; top:57px; z-index:40; background:rgba(244,236,216,.9); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-top:1px solid rgba(35,32,26,.1); border-bottom:1px solid rgba(35,32,26,.1)">
+        <div style="max-width:1200px; margin:0 auto; padding:12px clamp(18px,4vw,44px); display:flex; flex-wrap:wrap; align-items:center; gap:12px">
+          <label style="position:relative; flex:1 1 260px; min-width:200px; display:flex; align-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="position:absolute; inset-inline-start:14px; pointer-events:none"><circle cx="11" cy="11" r="6.5" stroke="rgba(35,32,26,.5)" stroke-width="1.8"/><path d="M16 16 L21 21" stroke="rgba(35,32,26,.5)" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input type="search" value="{{ query }}" onInput="{{ onQuery }}" placeholder="Search 30 recipes…" aria-label="Search recipes" style="width:100%; padding:12px 16px 12px 40px; border:1.5px solid rgba(35,32,26,.18); border-radius:12px; background:#FCFAF3; color:#23201A; font-size:15px; outline:none; transition:border-color .2s" style-focus="border-color:#A67F2E">
+          </label>
+          <button onClick="{{ toggleFilters }}" class="rec-filtbtn" style="display:inline-flex; align-items:center; gap:9px; padding:11px 16px; border:1.5px solid rgba(35,32,26,.18); border-radius:12px; background:#FCFAF3; color:#23201A; font-size:14px; font-weight:600; cursor:pointer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18 M6 12h12 M10 18h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Filters<sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}"><span style="width:7px; height:7px; background:#A67F2E; border-radius:50%"></span></sc-if>
+          </button>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em; color:rgba(35,32,26,.6); margin-inline-start:auto; white-space:nowrap">{{ countLabel }}</span>
+        </div>
+        <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="max-width:1200px; margin:0 auto; padding:2px clamp(18px,4vw,44px) 16px; display:flex; flex-direction:column; gap:12px; animation:recFade .25s ease both">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.5); min-width:74px">Region</span>
+              <sc-for list="{{ regionChips }}" as="c" hint-placeholder-count="2">
+                <button onClick="{{ c.onClick }}" style="padding:7px 14px; border-radius:999px; border:1.5px solid {{ c.bd }}; background:{{ c.bg }}; color:{{ c.fg }}; font-size:13px; font-weight:600; cursor:pointer; transition:all .18s">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.5); min-width:74px">Course</span>
+              <sc-for list="{{ courseChips }}" as="c" hint-placeholder-count="3">
+                <button onClick="{{ c.onClick }}" style="padding:7px 14px; border-radius:999px; border:1.5px solid {{ c.bd }}; background:{{ c.bg }}; color:{{ c.fg }}; font-size:13px; font-weight:600; cursor:pointer; transition:all .18s">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(35,32,26,.5); min-width:74px">Difficulty</span>
+              <sc-for list="{{ diffChips }}" as="c" hint-placeholder-count="3">
+                <button onClick="{{ c.onClick }}" style="padding:7px 14px; border-radius:999px; border:1.5px solid {{ c.bd }}; background:{{ c.bg }}; color:{{ c.fg }}; font-size:13px; font-weight:600; cursor:pointer; transition:all .18s">{{ c.label }}</button>
+              </sc-for>
+              <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ clearFilters }}" style="margin-inline-start:8px; padding:7px 12px; border:none; background:transparent; color:#A67F2E; font-size:13px; font-weight:650; cursor:pointer; text-decoration:underline">Clear all</button>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- Grid -->
+      <section style="max-width:1200px; margin:0 auto; padding:clamp(26px,4vw,42px) clamp(18px,4vw,44px) 40px">
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:clamp(18px,2.4vw,30px)">
+            <sc-for list="{{ list }}" as="r" hint-placeholder-count="9">
+              <a href="{{ r.href }}" class="rec-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; background:#FCFAF3; border:1px solid rgba(35,32,26,.13); border-radius:18px; overflow:hidden; box-shadow:0 12px 30px -18px rgba(31,45,29,.5); transition:transform .25s cubic-bezier(.22,.6,.24,1), box-shadow .25s" style-hover="transform:translateY(-5px); box-shadow:0 26px 46px -22px rgba(31,45,29,.55)">
+                <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:rgba(35,32,26,.06)">
+                  <image-slot id="{{ r.cardId }}" style="position:absolute; inset:0; width:100%; height:100%" src="{{ r.image }}" shape="rect" placeholder="{{ r.alt }}"></image-slot>
+                  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,31,20,0) 55%, rgba(13,31,20,.5)); pointer-events:none"></div>
+                  <span style="position:absolute; top:12px; inset-inline-start:12px; display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:{{ r.tagBg }}; color:{{ r.tagFg }}; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; backdrop-filter:blur(4px)">{{ r.region }}</span>
+                  <span style="position:absolute; bottom:11px; inset-inline-end:12px; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.06em; color:#F5F0E4">{{ r.totalShort }}</span>
+                </div>
+                <div style="padding:18px 18px 20px; display:flex; flex-direction:column; gap:8px; flex:1">
+                  <h3 style="margin:0; font-size:20px; line-height:1.15; font-weight:800; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ r.title }}</h3>
+                  <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(35,32,26,.68); text-wrap:pretty; flex:1">{{ r.tagline }}</p>
+                  <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center">
+                    <span title="{{ r.rice }}" style="display:inline-flex; align-items:center; gap:6px; padding:4px 11px 4px 9px; border-radius:999px; background:rgba(166,127,46,.1); border:1px solid rgba(166,127,46,.24); font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:#8A6A22">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="flex:none"><ellipse cx="12" cy="12" rx="3.4" ry="8" transform="rotate(38 12 12)" stroke="currentColor" stroke-width="2"/></svg>{{ r.riceShort }}
+                    </span>
+                  </div>
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:6px; padding-top:12px; border-top:1px solid rgba(35,32,26,.1)">
+                    <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; min-width:0">
+                      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.05em; color:{{ r.diffColor }}; font-weight:600">{{ r.difficulty }}</span>
+                      <span aria-hidden="true" style="width:4px; height:4px; background:rgba(35,32,26,.3); border-radius:50%"></span>
+                      <span style="display:inline-flex; align-items:center; gap:5px; font-size:12.5px; color:rgba(35,32,26,.6)" title="Cook time">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M4 11h16 M5 11a7 7 0 0 0 14 0 M9 6c0-1.5 1-2 1.5-3 M13 6c0-1.5 1-2 1.5-3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>{{ r.cookShort }}</span>
+                      <span aria-hidden="true" style="width:4px; height:4px; background:rgba(35,32,26,.3); border-radius:50%"></span>
+                      <span style="font-size:12.5px; color:rgba(35,32,26,.6)">Serves {{ r.servings }}</span>
+                    </div>
+                    <span style="color:#A67F2E; font-weight:700; font-size:18px; line-height:1; flex:none">→</span>
+                  </div>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center; padding:70px 20px">
+            <div style="font-size:34px; color:#A67F2E">✳</div>
+            <p style="margin:14px 0 0; font-size:19px; font-weight:700; color:#1F3D2A">No recipes match that</p>
+            <p style="margin:8px 0 20px; color:rgba(35,32,26,.6)">Try a different search or clear the filters.</p>
+            <button onClick="{{ clearFilters }}" style="padding:11px 22px; border:1.5px solid #1F3D2A; background:transparent; color:#1F3D2A; border-radius:999px; font-size:14px; font-weight:650; cursor:pointer">Reset filters</button>
+          </div>
+        </sc-if>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ================= DETAIL ================= -->
+    <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+    <article class="rec-detail" data-screen-label="Recipe Detail" style="animation:recFade .4s ease both">
+
+      <!-- Hero -->
+      <section style="max-width:1200px; margin:0 auto; padding:clamp(18px,3vw,30px) clamp(18px,4vw,44px) 0">
+        <nav class="rec-noprint" aria-label="Breadcrumb" style="display:flex; align-items:center; gap:9px; font-size:13px; margin-bottom:16px">
+          <a href="#/" style="color:#A67F2E; text-decoration:none; font-weight:650" style-hover="text-decoration:underline">All Recipes</a>
+          <span aria-hidden="true" style="color:rgba(35,32,26,.35)">/</span>
+          <span style="color:rgba(35,32,26,.6)">{{ r.region }}</span>
+        </nav>
+        <div style="position:relative; border-radius:22px; overflow:hidden; border:1px solid rgba(35,32,26,.14); box-shadow:0 34px 70px -40px rgba(31,45,29,.6); aspect-ratio:16/7; min-height:280px; background:rgba(35,32,26,.06)">
+          <image-slot id="{{ heroId }}" style="position:absolute; inset:0; width:100%; height:100%" src="{{ r.image }}" shape="rect" placeholder="{{ r.imageAlt }}"></image-slot>
+          <sc-if value="{{ heroOverlay }}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,31,20,.05) 30%, rgba(13,31,20,.72)); pointer-events:none"></div>
+            <div style="position:absolute; inset-inline:0; bottom:0; padding:clamp(20px,4vw,44px)">
+              <span style="display:inline-flex; align-items:center; gap:7px; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#E8CE84"><span aria-hidden="true" style="width:8px;height:8px;background:#C29A45;transform:rotate(45deg)"></span>{{ r.cuisine }}</span>
+              <h1 style="margin:12px 0 0; font-size:clamp(30px,5.5vw,58px); line-height:1.02; font-weight:800; letter-spacing:-.02em; color:#FCFAF3; text-wrap:balance; max-width:20ch; text-shadow:0 2px 30px rgba(0,0,0,.35)">{{ r.title }}</h1>
+              <p style="margin:12px 0 0; max-width:52ch; font-size:clamp(15px,1.6vw,19px); line-height:1.5; color:rgba(252,250,243,.9); text-wrap:pretty">{{ r.tagline }}</p>
+            </div>
+          </sc-if>
+        </div>
+        <sc-if value="{{ heroBeneath }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:26px 4px 0">
+            <span style="display:inline-flex; align-items:center; gap:7px; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#A67F2E"><span aria-hidden="true" style="width:8px;height:8px;background:#C29A45;transform:rotate(45deg)"></span>{{ r.cuisine }}</span>
+            <h1 style="margin:12px 0 0; font-size:clamp(30px,5.5vw,58px); line-height:1.02; font-weight:800; letter-spacing:-.02em; color:#1F3D2A; text-wrap:balance; max-width:20ch">{{ r.title }}</h1>
+            <p style="margin:14px 0 0; max-width:56ch; font-size:clamp(16px,1.7vw,20px); line-height:1.5; font-weight:500; color:#3A3427; text-wrap:pretty">{{ r.tagline }}</p>
+          </div>
+        </sc-if>
+      </section>
+
+      <!-- Intro + at a glance -->
+      <section style="max-width:1200px; margin:0 auto; padding:clamp(26px,4vw,42px) clamp(18px,4vw,44px) 0">
+        <p style="margin:0; max-width:70ch; font-size:clamp(17px,1.8vw,20px); line-height:1.72; color:#2E2A20; text-wrap:pretty">{{ r.intro }}</p>
+        <div class="rec-avoid" style="margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:1px; background:rgba(35,32,26,.12); border:1px solid rgba(35,32,26,.12); border-radius:16px; overflow:hidden">
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="9" cy="8" r="3.2" stroke="#1F3D2A" stroke-width="1.7"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="#1F3D2A" stroke-width="1.7" stroke-linecap="round"/><path d="M16 7.5a2.7 2.7 0 0 1 0 5 M17 14.5c2.4.3 4 2.3 4 4.5" stroke="#A67F2E" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Servings</div><div style="font-size:16px; font-weight:700; color:#1F3D2A; margin-top:3px">{{ servingsVal }}</div></div>
+          </div>
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M4 20 L14 10 M12 8l4-4c2 0 4 2 4 4l-4 4z" stroke="#1F3D2A" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Prep</div><div style="font-size:16px; font-weight:700; color:#1F3D2A; margin-top:3px">{{ r.prepTime }}</div></div>
+          </div>
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M4 11h16 M5 11a7 7 0 0 0 14 0 M3 11h1 M20 11h1 M9 6c0-1.5 1-2 1.5-3 M13 6c0-1.5 1-2 1.5-3" stroke="#1F3D2A" stroke-width="1.7" stroke-linecap="round"/><path d="M9 6c0-1.5 1-2 1.5-3 M13 6c0-1.5 1-2 1.5-3" stroke="#A67F2E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Cook</div><div style="font-size:16px; font-weight:700; color:#1F3D2A; margin-top:3px">{{ r.cookTime }}</div></div>
+          </div>
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><circle cx="12" cy="13" r="7.5" stroke="#1F3D2A" stroke-width="1.7"/><path d="M12 9v4l2.5 2 M9.5 3.5h5" stroke="#1F3D2A" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Total</div><div style="font-size:16px; font-weight:700; color:#1F3D2A; margin-top:3px">{{ r.totalTime }}</div></div>
+          </div>
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><path d="M5 20V12 M12 20V7 M19 20v-5" stroke="#1F3D2A" stroke-width="2.1" stroke-linecap="round"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Difficulty</div><div style="font-size:16px; font-weight:700; color:#1F3D2A; margin-top:3px">{{ r.difficulty }}</div></div>
+          </div>
+          <div style="background:#FCFAF3; padding:16px 18px; display:flex; align-items:center; gap:13px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none"><ellipse cx="12" cy="12" rx="4" ry="8.5" transform="rotate(38 12 12)" stroke="#A67F2E" stroke-width="1.7"/></svg>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.5)">Rice</div><div style="font-size:14px; font-weight:700; color:#1F3D2A; margin-top:3px; line-height:1.25">{{ r.rice }}</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jump nav -->
+      <div class="rec-noprint" style="position:sticky; top:57px; z-index:30; max-width:1200px; margin:22px auto 0; padding:0 clamp(18px,4vw,44px)">
+        <div style="display:flex; gap:8px; padding:9px; background:rgba(252,250,243,.92); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(35,32,26,.12); border-radius:14px; box-shadow:0 10px 26px -18px rgba(31,45,29,.5); overflow-x:auto">
+          <button onClick="{{ jumpIng }}" style="flex:none; padding:9px 16px; border:none; background:transparent; color:#1F3D2A; font-size:13.5px; font-weight:650; cursor:pointer; border-radius:9px; transition:background .18s" style-hover="background:rgba(31,61,42,.08)">Ingredients</button>
+          <button onClick="{{ jumpMethod }}" style="flex:none; padding:9px 16px; border:none; background:transparent; color:#1F3D2A; font-size:13.5px; font-weight:650; cursor:pointer; border-radius:9px; transition:background .18s" style-hover="background:rgba(31,61,42,.08)">Method</button>
+          <div style="margin-inline-start:auto; display:flex; gap:6px; align-items:center">
+            <button onClick="{{ doPrint }}" title="Print recipe" aria-label="Print recipe" style="display:inline-flex; align-items:center; gap:7px; padding:9px 13px; border:1.5px solid rgba(35,32,26,.16); background:#FCFAF3; color:#1F3D2A; font-size:13px; font-weight:600; cursor:pointer; border-radius:9px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 9V4h10v5 M7 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2 M7 15h10v5H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span class="rec-btnlbl">Print</span>
+            </button>
+            <button onClick="{{ doCopy }}" title="Copy link" aria-label="Copy link" style="display:inline-flex; align-items:center; gap:7px; padding:9px 13px; border:1.5px solid rgba(35,32,26,.16); background:#FCFAF3; color:#1F3D2A; font-size:13px; font-weight:600; cursor:pointer; border-radius:9px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1 M15 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="rec-btnlbl">Copy link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body: rail + method -->
+      <section style="max-width:1200px; margin:0 auto; padding:clamp(24px,3vw,38px) clamp(18px,4vw,44px) 0; display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px); align-items:flex-start">
+
+        <!-- Rail: scaler + ingredients -->
+        <div ref="{{ ingRef }}" class="rec-avoid" style="flex:1 1 320px; min-width:min(100%,300px); max-width:390px; position:sticky; top:118px">
+          <div style="background:#FCFAF3; border:1px solid rgba(35,32,26,.13); border-radius:18px; overflow:hidden; box-shadow:0 16px 36px -26px rgba(31,45,29,.5)">
+            <div style="padding:20px 22px; border-bottom:1px solid rgba(35,32,26,.1)">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px">
+                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-.01em; color:#1F3D2A">Ingredients</h2>
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; color:rgba(35,32,26,.5)">{{ ingCountLabel }}</span>
+              </div>
+              <div style="margin-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:6px; background:rgba(31,61,42,.05); border-radius:12px">
+                <button onClick="{{ decServe }}" aria-label="Fewer servings" style="width:38px; height:38px; flex:none; border:1.5px solid rgba(35,32,26,.16); background:#FCFAF3; color:#1F3D2A; border-radius:10px; font-size:20px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center">−</button>
+                <div style="text-align:center; line-height:1.1"><div style="font-size:19px; font-weight:800; color:#1F3D2A">{{ servingsVal }}</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.55); margin-top:2px">Servings</div></div>
+                <button onClick="{{ incServe }}" aria-label="More servings" style="width:38px; height:38px; flex:none; border:1.5px solid rgba(35,32,26,.16); background:#FCFAF3; color:#1F3D2A; border-radius:10px; font-size:20px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center">+</button>
+              </div>
+              <sc-if value="{{ scaled }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:10px 2px 0; font-size:11.5px; line-height:1.4; color:rgba(35,32,26,.55)">Scaled from {{ r.servings }} servings. Quantities are approximate — adjust spices to taste.</p>
+              </sc-if>
+            </div>
+            <div style="padding:8px 12px 14px">
+              <sc-for list="{{ ingGroups }}" as="g" hint-placeholder-count="3">
+                <div style="margin-top:10px">
+                  <sc-if value="{{ g.hasLabel }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:6px 10px 4px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; font-weight:600">{{ g.group }}</div>
+                  </sc-if>
+                  <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="5">
+                    <button onClick="{{ it.onToggle }}" style="width:100%; text-align:start; display:flex; align-items:flex-start; gap:11px; padding:9px 10px; border:none; background:transparent; cursor:pointer; border-radius:9px; transition:background .15s" style-hover="background:rgba(31,61,42,.05)">
+                      <span aria-hidden="true" style="flex:none; width:19px; height:19px; margin-top:1px; border-radius:6px; border:1.7px solid {{ it.boxBd }}; background:{{ it.boxBg }}; display:flex; align-items:center; justify-content:center; transition:all .15s">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" style="opacity:{{ it.tickOp }}"><path d="M5 12.5 L10 17.5 L19 6.5" stroke="#FCFAF3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span style="font-size:14.5px; line-height:1.45; color:{{ it.textColor }}; text-decoration:{{ it.strike }}">{{ it.text }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <!-- Method -->
+        <div ref="{{ methodRef }}" style="flex:3 1 460px; min-width:min(100%,320px)">
+          <h2 style="margin:0 0 6px; font-size:26px; font-weight:800; letter-spacing:-.01em; color:#1F3D2A">Method</h2>
+          <p class="rec-noprint" style="margin:0 0 22px; font-size:13.5px; color:rgba(35,32,26,.55)">Tap a step to mark it done.</p>
+          <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; counter-reset:none">
+            <sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+              <li class="rec-avoid" onClick="{{ s.onToggle }}" style="display:flex; gap:16px; padding:18px 20px; background:{{ s.bg }}; border:1px solid {{ s.bd }}; border-radius:16px; cursor:pointer; transition:background .18s, border-color .18s">
+                <div style="flex:none; width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:15px; background:{{ s.numBg }}; color:{{ s.numFg }}; transition:all .18s">
+                  <sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 L10 17.5 L19 6.5" stroke="#FCFAF3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></sc-if>
+                  <sc-if value="{{ s.notDone }}" hint-placeholder-val="{{ true }}">{{ s.n }}</sc-if>
+                </div>
+                <p style="margin:0; padding-top:7px; font-size:16px; line-height:1.62; color:{{ s.textColor }}; text-decoration:{{ s.strike }}; text-wrap:pretty; transition:color .18s">{{ s.text }}</p>
+              </li>
+            </sc-for>
+          </ol>
+
+          <!-- Chef's tips -->
+          <div class="rec-avoid" style="margin-top:30px; background:linear-gradient(180deg, rgba(194,154,69,.13), rgba(194,154,69,.07)); border:1px solid rgba(166,127,46,.32); border-radius:18px; padding:24px 26px">
+            <div style="display:flex; align-items:center; gap:10px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z" stroke="#A67F2E" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 19h5 M10.5 21.5h3" stroke="#A67F2E" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <h3 style="margin:0; font-size:18px; font-weight:800; color:#8A6A22; letter-spacing:-.01em">Chef's tips</h3>
+            </div>
+            <ul style="margin:16px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:11px">
+              <sc-for list="{{ tips }}" as="tp" hint-placeholder-count="3">
+                <li style="display:flex; gap:11px; align-items:flex-start"><span aria-hidden="true" style="flex:none; width:7px; height:7px; margin-top:8px; background:#C29A45; transform:rotate(45deg)"></span><span style="font-size:15.5px; line-height:1.55; color:#4A4128; text-wrap:pretty">{{ tp }}</span></li>
+              </sc-for>
+            </ul>
+          </div>
+
+          <!-- To serve -->
+          <div class="rec-avoid" style="margin-top:26px; padding:22px 0 0; border-top:1px solid rgba(35,32,26,.12)">
+            <div style="display:flex; align-items:center; gap:9px; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E"><span aria-hidden="true" style="width:8px;height:8px;background:#C29A45;transform:rotate(45deg)"></span>To serve</div>
+            <p style="margin:12px 0 0; font-size:17px; line-height:1.65; color:#2E2A20; text-wrap:pretty">{{ r.toServe }}</p>
+          </div>
+
+          <!-- Utility bar -->
+          <div class="rec-noprint" style="margin-top:26px; display:flex; flex-wrap:wrap; gap:10px">
+            <button onClick="{{ doPrint }}" style="display:inline-flex; align-items:center; gap:9px; padding:12px 18px; border:1.5px solid rgba(35,32,26,.18); background:#FCFAF3; color:#1F3D2A; font-size:14px; font-weight:650; cursor:pointer; border-radius:11px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 9V4h10v5 M7 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2 M7 15h10v5H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Print recipe</button>
+            <button onClick="{{ doCopy }}" style="display:inline-flex; align-items:center; gap:9px; padding:12px 18px; border:1.5px solid rgba(35,32,26,.18); background:#FCFAF3; color:#1F3D2A; font-size:14px; font-weight:650; cursor:pointer; border-radius:11px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1 M15 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Copy link</button>
+            <button onClick="{{ doShare }}" style="display:inline-flex; align-items:center; gap:9px; padding:12px 18px; border:1.5px solid rgba(35,32,26,.18); background:#FCFAF3; color:#1F3D2A; font-size:14px; font-weight:650; cursor:pointer; border-radius:11px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="18" cy="5" r="2.6" stroke="currentColor" stroke-width="1.7"/><circle cx="6" cy="12" r="2.6" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="19" r="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 10.7 15.7 6.3 M8.3 13.3 15.7 17.7" stroke="currentColor" stroke-width="1.7"/></svg>Share</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related -->
+      <sc-if value="{{ showRelated }}" hint-placeholder-val="{{ true }}">
+      <section class="rec-noprint" style="max-width:1200px; margin:0 auto; padding:clamp(46px,6vw,72px) clamp(18px,4vw,44px) 0">
+        <div style="display:flex; align-items:center; gap:11px; margin-bottom:22px">
+          <span aria-hidden="true" style="width:9px; height:9px; background:#C29A45; transform:rotate(45deg)"></span>
+          <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-.01em; color:#1F3D2A">More {{ r.region }} recipes</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:clamp(16px,2vw,26px)">
+          <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+            <a href="{{ r.href }}" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; background:#FCFAF3; border:1px solid rgba(35,32,26,.13); border-radius:16px; overflow:hidden; box-shadow:0 12px 30px -20px rgba(31,45,29,.5); transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-4px); box-shadow:0 24px 42px -22px rgba(31,45,29,.55)">
+              <div style="position:relative; aspect-ratio:16/10; overflow:hidden; background:rgba(35,32,26,.06)">
+                <image-slot id="{{ r.cardId }}" style="position:absolute; inset:0; width:100%; height:100%" src="{{ r.image }}" shape="rect" placeholder="{{ r.alt }}"></image-slot>
+                <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,31,20,0) 55%, rgba(13,31,20,.45)); pointer-events:none"></div>
+              </div>
+              <div style="padding:16px 17px 18px">
+                <h3 style="margin:0; font-size:17px; line-height:1.2; font-weight:800; color:#1F3D2A; text-wrap:balance">{{ r.title }}</h3>
+                <p style="margin:7px 0 0; font-size:13px; line-height:1.45; color:rgba(35,32,26,.65)">{{ r.tagline }}</p>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+      </sc-if>
+    </article>
+    </sc-if>
+  </main>
+
+  <!-- Corporate footer (consistent with main site) -->
+  <footer class="rec-noprint" style="margin-top:clamp(56px,8vw,96px); background:#122619; color:#EFE9D8; border-top:3px solid #C29A45">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(38px,5vw,58px) clamp(18px,4vw,44px) 30px; display:flex; flex-wrap:wrap; gap:clamp(30px,4vw,60px); align-items:flex-start">
+      <div style="flex:1 1 240px; min-width:0; max-width:330px">
+        <img src="assets/logo-full.png" alt="Medad-X General Trading logo" style="height:72px; width:auto; display:block; margin-bottom:13px">
+        <p style="margin:0; font-size:13.5px; line-height:1.6; color:rgba(239,233,216,.72); max-width:300px">Your trusted partner for premium basmati rice supply to HORECA and trade sectors across the Middle East and North Africa.</p>
+        <div style="display:inline-flex; align-items:center; gap:9px; margin-top:14px; white-space:nowrap; border:1px solid rgba(194,154,69,.45); border-radius:999px; padding:6px 13px">
+          <span aria-hidden="true" style="flex:none; width:6px; height:6px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; white-space:nowrap; color:#D9BC72">Part of Arsan Global Group</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; margin-top:22px">
+          <a href="https://www.linkedin.com/company/medad-x" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid rgba(239,233,216,.16); color:rgba(239,233,216,.72); text-decoration:none; transition:border-color .2s, color .2s, background .2s" style-hover="border-color:rgba(194,154,69,.6); color:#F1E9D2; background:rgba(194,154,69,.12)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/medadx" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid rgba(239,233,216,.16); color:rgba(239,233,216,.72); text-decoration:none; transition:border-color .2s, color .2s, background .2s" style-hover="border-color:rgba(194,154,69,.6); color:#F1E9D2; background:rgba(194,154,69,.12)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://x.com/medadx" target="_blank" rel="noopener" aria-label="X" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid rgba(239,233,216,.16); color:rgba(239,233,216,.72); text-decoration:none; transition:border-color .2s, color .2s, background .2s" style-hover="border-color:rgba(194,154,69,.6); color:#F1E9D2; background:rgba(194,154,69,.12)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://wa.me/966591278526" target="_blank" rel="noopener" aria-label="WhatsApp" style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; border:1px solid rgba(239,233,216,.16); color:rgba(239,233,216,.72); text-decoration:none; transition:border-color .2s, color .2s, background .2s" style-hover="border-color:rgba(194,154,69,.6); color:#F1E9D2; background:rgba(194,154,69,.12)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.71 1.454h.006c6.585 0 11.946-5.335 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+          </a>
+        </div>
+      </div>
+      <div style="flex:2 1 560px; min-width:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:clamp(16px,2vw,28px)">
+        <div>
+          <h3 style="margin:0 0 12px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#C29A45">Sitemap</h3>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <a href="./#/" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">Home</a>
+            <a href="./#/about" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">About Us</a>
+            <a href="./#/supply-chain" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">Supply Chain</a>
+            <a href="history-of-rice.html" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">History of Rice</a>
+            <a href="#/" style="color:#D9BC72; text-decoration:none; font-size:14px; font-weight:600; width:max-content; transition:color .2s" style-hover="color:#EBD7A4">Recipes</a>
+            <a href="./#/trading-account" style="color:#D9BC72; text-decoration:none; font-size:14px; font-weight:600; width:max-content; transition:color .2s" style-hover="color:#EBD7A4">Open Trading Account</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 12px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#C29A45">Products</h3>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <a href="./#/products" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; line-height:1.4; transition:color .2s" style-hover="color:#FFFFFF">Farah – Golden Sella Basmati</a>
+            <a href="./#/products" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; line-height:1.4; transition:color .2s" style-hover="color:#FFFFFF">Khayber Gate – Creamy Sella Basmati</a>
+            <a href="./#/products" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; line-height:1.4; transition:color .2s" style-hover="color:#FFFFFF">Dhoqan – White Steam Basmati</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 12px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#C29A45">Legal</h3>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <a href="./#/terms" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">Terms of Use</a>
+            <a href="./#/privacy" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; width:max-content; transition:color .2s" style-hover="color:#FFFFFF">Privacy Policy</a>
+            <a href="./#/rice-terms" style="color:rgba(239,233,216,.8); text-decoration:none; font-size:14px; line-height:1.4; transition:color .2s" style-hover="color:#FFFFFF">Rice Trading Terms</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 12px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#C29A45">Contact Us</h3>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <a href="tel:+966920009050" dir="ltr" style="color:rgba(239,233,216,.85); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:13px; width:max-content" style-hover="color:#FFFFFF">+966 920009050</a>
+            <a href="https://wa.me/966591278526" target="_blank" rel="noopener" dir="ltr" style="color:rgba(239,233,216,.85); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:13px; width:max-content" style-hover="color:#FFFFFF">+966 59 127 8526</a>
+            <a href="mailto:info@medadx.com" dir="ltr" style="color:rgba(239,233,216,.85); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:13px; width:max-content" style-hover="color:#FFFFFF">info@medadx.com</a>
+            <p style="margin:6px 0 0; font-size:13px; line-height:1.65; color:rgba(239,233,216,.72); max-width:230px">Port Gate Building, Khalidiya Junubiya, Eastern Province, Dammam, Saudi Arabia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(239,233,216,.14)">
+      <div style="max-width:1200px; margin:0 auto; padding:20px clamp(18px,4vw,44px); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <span style="font-size:13px; color:rgba(239,233,216,.6)">© 2026 Medad-X. All rights reserved.</span>
+        <div style="display:flex; align-items:center; gap:clamp(14px,2vw,22px); flex-wrap:wrap">
+          <a href="./#/terms" style="font-size:12.5px; color:rgba(239,233,216,.62); text-decoration:none; transition:color .2s" style-hover="color:#FFFFFF">Terms of Use</a>
+          <a href="./#/privacy" style="font-size:12.5px; color:rgba(239,233,216,.62); text-decoration:none; transition:color .2s" style-hover="color:#FFFFFF">Privacy Policy</a>
+          <a href="./#/rice-terms" style="font-size:12.5px; color:rgba(239,233,216,.62); text-decoration:none; transition:color .2s" style-hover="color:#FFFFFF">Rice Trading Terms</a>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(239,233,216,.4)">medadx.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+    <div class="rec-noprint" style="position:fixed; bottom:26px; left:50%; transform:translateX(-50%); z-index:80; background:#1F3D2A; color:#F5F0E4; padding:13px 22px; border-radius:999px; font-size:14px; font-weight:600; box-shadow:0 18px 40px -14px rgba(0,0,0,.5); animation:recRise .3s ease both; display:flex; align-items:center; gap:9px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 L10 17.5 L19 6.5" stroke="#C29A45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ toast }}
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+ &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: 900 },
+ &quot;heroTitlePlacement&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;beneath&quot;, &quot;overlay&quot;], &quot;default&quot;: &quot;beneath&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Recipe detail&quot; },
+ &quot;showRelated&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Recipe detail&quot; },
+ &quot;listSort&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;curated&quot;, &quot;alphabetical&quot;, &quot;quickest&quot;], &quot;default&quot;: &quot;curated&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Recipe index&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    route: this.parseHash(),
+    query: '',
+    fRegion: '', fCourse: '', fDiff: '',
+    filtersOpen: false,
+    menuOpen: false,
+    vw: 1200,
+    servings: {}, checked: {}, done: {},
+    toast: ''
+  };
+
+  parseHash() {
+    var h = (typeof location !== 'undefined' ? location.hash : '') || '';
+    h = h.replace(/^#\/?/, '').trim();
+    return h ? decodeURIComponent(h) : '';
+  }
+
+  componentDidMount() {
+    this._onHash = () => {
+      this.setState({ route: this.parseHash(), filtersOpen: false, menuOpen: false }, () => {
+        window.scrollTo(0, 0);
+        this.applyDocument();
+      });
+    };
+    window.addEventListener('hashchange', this._onHash);
+    this._onResize = () => { var w = window.innerWidth; if (w !== this.state.vw) this.setState({ vw: w }); };
+    window.addEventListener('resize', this._onResize);
+    // Track the real viewport width with a ResizeObserver so the desktop/mobile
+    // breakpoint self-corrects once the iframe reaches its final width. A
+    // one-shot mount read (even inside rAF) can fire before layout settles and
+    // get stuck showing the mobile burger on a desktop first paint. Default vw
+    // is desktop (1200) so the first paint is desktop-first; the observer then
+    // corrects it (incl. down to the hamburger on phones). The window 'resize'
+    // listener stays as a fallback.
+    if (typeof ResizeObserver !== 'undefined') {
+      this._ro = new ResizeObserver(this._onResize);
+      this._ro.observe(document.documentElement);
+    } else {
+      this._onResize();
+      if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(this._onResize);
+    }
+    this.applyDocument();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this._onHash);
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._ro) { this._ro.disconnect(); this._ro = null; }
+    if (this._toastT) clearTimeout(this._toastT);
+  }
+  componentDidUpdate(pp, ps) {
+    if (ps && ps.route !== this.state.route) this.applyDocument();
+  }
+
+  recipes() { return (typeof window !== 'undefined' && window.MEDADX_RECIPES) || []; }
+  find(slug) { return this.recipes().find(function (r) { return r.slug === slug; }); }
+
+  applyDocument() {
+    if (typeof document === 'undefined') return;
+    var r = this.find(this.state.route);
+    var head = document.head;
+    var setMeta = function (sel, attr, key, val) {
+      var el = head.querySelector(sel);
+      if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); head.appendChild(el); }
+      el.setAttribute('content', val);
+    };
+    // remove old jsonld
+    var old = head.querySelector('#rec-jsonld');
+    if (old) old.remove();
+    if (r) {
+      document.title = r.title + ' Recipe | Medad-X Kitchen';
+      var desc = r.tagline;
+      setMeta('meta[name="description"]', 'name', 'description', desc);
+      setMeta('meta[property="og:title"]', 'property', 'og:title', r.title);
+      setMeta('meta[property="og:description"]', 'property', 'og:description', desc);
+      setMeta('meta[property="og:type"]', 'property', 'og:type', 'article');
+      setMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+      setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', r.title);
+      setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', desc);
+      var ing = [];
+      (r.ingredients || []).forEach(function (g) { (g.items || []).forEach(function (it) { ing.push(it); }); });
+      var jsonld = {
+        '@context': 'https://schema.org', '@type': 'Recipe',
+        name: r.title, description: r.tagline,
+        recipeCuisine: r.cuisine, recipeCategory: r.category,
+        keywords: r.cuisine + ', basmati rice, ' + r.title,
+        prepTime: r.prepISO || undefined, cookTime: r.cookISO || undefined, totalTime: r.totalISO || undefined,
+        recipeYield: r.servings + ' servings',
+        recipeIngredient: ing,
+        recipeInstructions: (r.method || []).map(function (m, i) { return { '@type': 'HowToStep', position: i + 1, text: m }; })
+      };
+      var s = document.createElement('script');
+      s.type = 'application/ld+json'; s.id = 'rec-jsonld';
+      s.textContent = JSON.stringify(jsonld);
+      head.appendChild(s);
+    } else {
+      document.title = 'Rice Recipes | Medad-X Kitchen';
+      setMeta('meta[name="description"]', 'name', 'description', '30 classic rice recipes — biryani, pulao and Saudi kabsa & mandi — from the Medad-X Kitchen.');
+    }
+  }
+
+  // ---- number scaling ----
+  parseVal(tok) {
+    tok = String(tok).trim();
+    var UF = { '½': .5, '⅓': 1 / 3, '⅔': 2 / 3, '¼': .25, '¾': .75, '⅕': .2, '⅖': .4, '⅗': .6, '⅘': .8, '⅙': 1 / 6, '⅚': 5 / 6, '⅐': 1 / 7, '⅛': .125, '⅜': .375, '⅝': .625, '⅞': .875, '⅑': 1 / 9, '⅒': .1 };
+    var last = tok.charAt(tok.length - 1);
+    if (UF[last] !== undefined) { var num = tok.slice(0, -1).replace(/\s+/g, ''); return (num ? parseFloat(num) : 0) + UF[last]; }
+    return parseFloat(tok);
+  }
+  fmtQty(x) {
+    if (!isFinite(x)) return '';
+    if (x >= 10) return String(Math.round(x));
+    var whole = Math.floor(x + 1e-9), frac = x - whole;
+    var table = [[0, ''], [.125, '⅛'], [.25, '¼'], [1 / 3, '⅓'], [.375, '⅜'], [.5, '½'], [.625, '⅝'], [2 / 3, '⅔'], [.75, '¾'], [.875, '⅞'], [1, '']];
+    var best = table[0], bd = Math.abs(frac - table[0][0]);
+    for (var i = 0; i < table.length; i++) { var d = Math.abs(frac - table[i][0]); if (d < bd) { bd = d; best = table[i]; } }
+    var w = whole, f = best[1];
+    if (best[0] === 1) { w += 1; f = ''; }
+    if (w === 0 && f === '') return (x < 0.05 ? '0' : String(Math.round(x * 100) / 100));
+    if (w === 0) return f;
+    return f ? (w + f) : String(w);
+  }
+  scaleLine(text, factor) {
+    if (factor === 1 || !text) return text;
+    var fchars = '½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞⅑⅒';
+    var numTok = '(?:\\d+(?:\\.\\d+)?(?:\\s*[' + fchars + '])?|[' + fchars + '])';
+    var re = new RegExp('^\\s*(' + numTok + ')(\\s*[\\u2013-]\\s*(' + numTok + '))?');
+    var m = text.match(re);
+    if (!m) return text;
+    var out = this.fmtQty(this.parseVal(m[1]) * factor);
+    if (m[3]) out += '\u2013' + this.fmtQty(this.parseVal(m[3]) * factor);
+    return out + text.slice(m[0].length);
+  }
+
+  regionTag(region) {
+    if (region === 'Saudi') return { bg: 'rgba(194,154,69,.9)', fg: '#2A1E06' };
+    return { bg: 'rgba(31,61,42,.88)', fg: '#EAF3EC' };
+  }
+  diffColor(d) {
+    if (d === 'Advanced') return '#B23A26';
+    if (d === 'Intermediate') return '#A67F2E';
+    return '#2A7048';
+  }
+  shortTime(t) { return String(t || '').split('(')[0].replace(/minutes?/i, 'min').replace(/hours?/i, 'hr').trim(); }
+  riceType(rice) {
+    var s = String(rice || '').toLowerCase();
+    if (s.indexOf('basmati') !== -1) return 'Basmati';
+    if (s.indexOf('short') !== -1 || s.indexOf('medium') !== -1) return 'Short-grain';
+    if (s.indexOf('sona masoori') !== -1) return 'Sona masoori';
+    if (s.indexOf('jeerakasala') !== -1 || s.indexOf('kaima') !== -1) return 'Jeerakasala';
+    if (s.indexOf('long') !== -1) return 'Long-grain';
+    return String(rice || '');
+  }
+
+  // ---- handlers ----
+  onQuery(e) { this.setState({ query: e.target.value }); }
+  toggleFilters() { this.setState(function (s) { return { filtersOpen: !s.filtersOpen }; }); }
+  toggleMenu() { this.setState(function (s) { return { menuOpen: !s.menuOpen }; }); }
+  closeMenu() { this.setState({ menuOpen: false }); }
+  clearFilters() { this.setState({ fRegion: '', fCourse: '', fDiff: '', query: '' }); }
+  setFilter(kind, val) {
+    this.setState(function (s) { var o = {}; o[kind] = s[kind] === val ? '' : val; return o; });
+  }
+  incServe(slug, base) { this.setState(function (s) { var c = Object.assign({}, s.servings); var cur = c[slug] || base; c[slug] = Math.min(40, cur + 1); return { servings: c }; }); }
+  decServe(slug, base) { this.setState(function (s) { var c = Object.assign({}, s.servings); var cur = c[slug] || base; c[slug] = Math.max(1, cur - 1); return { servings: c }; }); }
+  toggleCheck(slug, key) { this.setState(function (s) { var m = Object.assign({}, s.checked); var sub = Object.assign({}, m[slug] || {}); sub[key] = !sub[key]; m[slug] = sub; return { checked: m }; }); }
+  toggleDone(slug, key) { this.setState(function (s) { var m = Object.assign({}, s.done); var sub = Object.assign({}, m[slug] || {}); sub[key] = !sub[key]; m[slug] = sub; return { done: m }; }); }
+
+  reduced() { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+  scrollToEl(el) { if (!el) return; var y = el.getBoundingClientRect().top + window.pageYOffset - 116; window.scrollTo({ top: y, behavior: this.reduced() ? 'auto' : 'smooth' }); }
+  showToast(msg) { var self = this; this.setState({ toast: msg }); if (this._toastT) clearTimeout(this._toastT); this._toastT = setTimeout(function () { self.setState({ toast: '' }); }, 2200); }
+  doPrint() { window.print(); }
+  doCopy() { var self = this; try { navigator.clipboard.writeText(location.href).then(function () { self.showToast('Link copied'); }, function () { self.showToast('Link copied'); }); } catch (e) { self.showToast('Link copied'); } }
+  doShare() { var self = this, r = this.find(this.state.route); if (navigator.share) { navigator.share({ title: r ? r.title : 'Medad-X Recipe', url: location.href }).catch(function () { }); } else { this.doCopy(); } }
+
+  cardOf(r) {
+    var tag = this.regionTag(r.region);
+    return {
+      slug: r.slug, href: '#/' + r.slug, title: r.title, tagline: r.tagline,
+      region: r.region, cardId: 'rec-card-' + r.slug, alt: r.imageAlt, image: r.image,
+      tagBg: tag.bg, tagFg: tag.fg, totalShort: this.shortTime(r.totalTime), cookShort: this.shortTime(r.cookTime),
+      riceShort: this.riceType(r.rice), rice: r.rice,
+      difficulty: r.difficulty, diffColor: this.diffColor(r.difficulty), servings: r.servings
+    };
+  }
+
+  renderVals() {
+    var self = this, s = this.state;
+    var all = this.recipes();
+    var route = s.route;
+    var r = this.find(route);
+    var isDetail = !!r;
+    var isIndex = !isDetail;
+
+    var mobile = s.vw < 900;
+    var base = {
+      rootRef: function (el) { self._root = el; },
+      ingRef: function (el) { self._ing = el; },
+      methodRef: function (el) { self._method = el; },
+      isIndex: isIndex, isDetail: isDetail,
+      isDesktop: !mobile, isMobile: mobile,
+      menuOpen: s.menuOpen, menuClosed: !s.menuOpen,
+      toggleMenu: function () { self.toggleMenu(); },
+      closeMenu: function () { self.closeMenu(); },
+      toast: s.toast,
+      showRelated: this.props.showRelated !== false
+    };
+
+    if (isIndex) {
+      var q = s.query.trim().toLowerCase();
+      var list = all.filter(function (x) {
+        if (s.fRegion && x.region !== s.fRegion) return false;
+        if (s.fCourse && x.category !== s.fCourse) return false;
+        if (s.fDiff && x.difficulty !== s.fDiff) return false;
+        if (q) {
+          var hay = (x.title + ' ' + x.tagline + ' ' + x.cuisine + ' ' + x.intro).toLowerCase();
+          if (hay.indexOf(q) === -1) return false;
+        }
+        return true;
+      });
+      var sort = this.props.listSort || 'curated';
+      if (sort === 'alphabetical') list = list.slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
+      else if (sort === 'quickest') list = list.slice().sort(function (a, b) { return (self.mins(a.totalISO)) - (self.mins(b.totalISO)); });
+
+      var chip = function (kind, val) {
+        var active = s[kind] === val;
+        return {
+          label: val, active: active,
+          bg: active ? '#1F3D2A' : 'transparent',
+          fg: active ? '#F5F0E4' : '#23201A',
+          bd: active ? '#1F3D2A' : 'rgba(35,32,26,.2)',
+          onClick: function () { self.setFilter(kind, val); }
+        };
+      };
+      var anyFilter = !!(s.fRegion || s.fCourse || s.fDiff || s.query);
+      var count = list.length;
+
+      return Object.assign(base, {
+        query: s.query, onQuery: function (e) { self.onQuery(e); },
+        filtersOpen: s.filtersOpen, toggleFilters: function () { self.toggleFilters(); },
+        clearFilters: function () { self.clearFilters(); },
+        anyFilter: anyFilter,
+        countLabel: count === all.length ? (all.length + ' recipes') : (count + ' of ' + all.length),
+        regionChips: [chip('fRegion', 'Indian & Pakistani'), chip('fRegion', 'Saudi')],
+        courseChips: [chip('fCourse', 'Main course'), chip('fCourse', 'Side'), chip('fCourse', 'Dessert')],
+        diffChips: [chip('fDiff', 'Easy'), chip('fDiff', 'Intermediate'), chip('fDiff', 'Advanced')],
+        hasResults: count > 0, noResults: count === 0,
+        list: list.map(function (x) { return self.cardOf(x); })
+      });
+    }
+
+    // ---- detail ----
+    var base2 = r.servings || 4;
+    var cur = s.servings[r.slug] || base2;
+    var factor = cur / base2;
+    var chk = s.checked[r.slug] || {};
+    var dn = s.done[r.slug] || {};
+
+    var ingGroups = (r.ingredients || []).map(function (g, gi) {
+      return {
+        group: g.group, hasLabel: !!g.group,
+        items: (g.items || []).map(function (it, ii) {
+          var key = gi + ':' + ii;
+          var on = !!chk[key];
+          return {
+            text: self.scaleLine(it, factor), key: key,
+            onToggle: function () { self.toggleCheck(r.slug, key); },
+            boxBg: on ? '#1F3D2A' : 'transparent',
+            boxBd: on ? '#1F3D2A' : 'rgba(35,32,26,.3)',
+            tickOp: on ? '1' : '0',
+            textColor: on ? 'rgba(35,32,26,.42)' : '#2E2A20',
+            strike: on ? 'line-through' : 'none'
+          };
+        })
+      };
+    });
+    var ingCount = 0; (r.ingredients || []).forEach(function (g) { ingCount += (g.items || []).length; });
+
+    var steps = (r.method || []).map(function (m, i) {
+      var done = !!dn[i];
+      return {
+        n: i + 1, text: m, done: done, notDone: !done,
+        onToggle: function () { self.toggleDone(r.slug, i); },
+        bg: done ? 'rgba(31,61,42,.06)' : '#FCFAF3',
+        bd: done ? 'rgba(31,61,42,.2)' : 'rgba(35,32,26,.12)',
+        numBg: done ? '#1F3D2A' : 'rgba(31,61,42,.09)',
+        numFg: done ? '#FCFAF3' : '#1F3D2A',
+        textColor: done ? 'rgba(35,32,26,.5)' : '#2E2A20',
+        strike: done ? 'line-through' : 'none'
+      };
+    });
+
+    // related: same region first, then fill
+    var same = all.filter(function (x) { return x.slug !== r.slug && x.region === r.region; });
+    var sameCat = same.filter(function (x) { return x.category === r.category; });
+    var pool = sameCat.concat(same.filter(function (x) { return x.category !== r.category; }));
+    var others = all.filter(function (x) { return x.slug !== r.slug && x.region !== r.region; });
+    pool = pool.concat(others);
+    var related = pool.slice(0, 3).map(function (x) { return self.cardOf(x); });
+
+    var placement = this.props.heroTitlePlacement || 'beneath';
+    var clean = function (t) { return String(t || '').split('(')[0].trim(); };
+    var rd = Object.assign({}, r, { prepTime: clean(r.prepTime), cookTime: clean(r.cookTime), totalTime: clean(r.totalTime) });
+
+    return Object.assign(base, {
+      r: rd,
+      heroId: 'rec-hero-' + r.slug,
+      heroOverlay: placement === 'overlay',
+      heroBeneath: placement !== 'overlay',
+      servingsVal: cur,
+      scaled: factor !== 1,
+      incServe: function () { self.incServe(r.slug, base2); },
+      decServe: function () { self.decServe(r.slug, base2); },
+      ingGroups: ingGroups,
+      ingCountLabel: ingCount + ' items',
+      steps: steps,
+      tips: r.tips || [],
+      related: related,
+      jumpIng: function () { self.scrollToEl(self._ing); },
+      jumpMethod: function () { self.scrollToEl(self._method); },
+      doPrint: function () { self.doPrint(); },
+      doCopy: function () { self.doCopy(); },
+      doShare: function () { self.doShare(); }
+    });
+  }
+
+  mins(iso) {
+    if (!iso) return 9999;
+    var h = (iso.match(/(\d+)H/) || [])[1], m = (iso.match(/(\d+)M/) || [])[1];
+    return (h ? parseInt(h) * 60 : 0) + (m ? parseInt(m) : 0);
+  }
+}
+</script>
+</body>
+</html>

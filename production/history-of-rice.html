@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The History of Rice | Medad-X</title>
+<meta name="description" content="From ancient paddies to the modern basmati trade — the story of rice, from Medad-X.">
+<link rel="canonical" href="https://medadx.com/history-of-rice">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<meta name="theme-color" content="#1F3D2A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Medad-X">
+<meta property="og:title" content="The History of Rice | Medad-X">
+<meta property="og:description" content="From ancient paddies to the modern basmati trade — the story of rice, from Medad-X.">
+<meta property="og:url" content="https://medadx.com/history-of-rice">
+<meta property="og:image" content="https://medadx.com/assets/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://medadx.com/history-of-rice">
+<link rel="alternate" hreflang="ar" href="https://medadx.com/history-of-rice">
+<script src="config.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  ::selection { background: #C29A45; color: #201B12; }
+  @keyframes horRise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .hor-nav { display: flex; }
+  @media (max-width: 780px) { .hor-nav { display: none !important; } }
+  @media (max-width: 1120px) { .hor-kicker { display: none !important; } }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" id="top" dir="{{ dir }}" style="font-family:'Archivo','IBM Plex Sans Arabic',system-ui,sans-serif; color:#23201A; min-height:100vh; overflow-x:clip; background:radial-gradient(1200px 760px at 12% -6%, rgba(255,255,255,.55), transparent 60%), radial-gradient(1000px 720px at 100% 2%, rgba(201,162,75,.12), transparent 55%), linear-gradient(#F4ECD8, #EEE2C7)">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px clamp(18px,4vw,44px); border-bottom:1px solid rgba(35,32,26,.12); background:rgba(244,236,216,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px)">
+    <a href="#top" style="display:flex; align-items:center; gap:12px; text-decoration:none">
+      <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:16px; letter-spacing:.05em; color:#1F3D2A">MEDADX</span>
+      <span class="hor-kicker" aria-hidden="true" style="width:1px; height:16px; background:rgba(35,32,26,.22)"></span>
+      <span class="hor-kicker" style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(35,32,26,.6)">{{ t.colophon.kicker }}</span>
+    </a>
+    <nav class="hor-nav" style="align-items:center; gap:clamp(14px,2vw,28px)">
+      <sc-for list="{{ navItems }}" as="nv" hint-placeholder-count="5">
+        <a href="{{ nv.url }}" style="display:inline-flex; align-items:center; gap:7px; white-space:nowrap; text-decoration:none; font-family:'Archivo',sans-serif; font-size:14.5px; font-weight:600; letter-spacing:.005em; color:{{ nv.color }}; transition:color .2s" style-hover="color:#A67F2E">
+          <sc-if value="{{ nv.active }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="width:6px; height:6px; background:#C29A45; transform:rotate(45deg)"></span></sc-if>{{ nv.label }}
+        </a>
+      </sc-for>
+    </nav>
+    <div style="display:flex; align-items:center; gap:10px">
+      <a href="./#/" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:transparent; border:1.5px solid rgba(35,32,26,.22); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#1F3D2A" style-hover="border-color:#A67F2E; color:#A67F2E">
+        <span aria-hidden="true" style="width:6px; height:6px; background:#C29A45; transform:rotate(45deg)"></span>{{ t.backToSite }}
+      </a>
+      <button onClick="{{ toggleLang }}" style="cursor:pointer; display:inline-flex; align-items:center; gap:8px; background:transparent; border:1.5px solid rgba(35,32,26,.22); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#1F3D2A" style-hover="border-color:#A67F2E; color:#A67F2E">
+        <span aria-hidden="true" style="width:6px; height:6px; background:#C29A45; transform:rotate(45deg)"></span>{{ langLabel }}
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(40px,7vw,88px) clamp(18px,4vw,44px) clamp(28px,4vw,52px)">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:clamp(28px,5vw,64px)">
+      <div style="flex:1 1 440px; min-width:300px">
+        <div style="display:flex; align-items:center; gap:11px; animation:horRise .7s cubic-bezier(.22,.6,.24,1) both">
+          <span aria-hidden="true" style="width:9px; height:9px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#A67F2E">{{ t.hero.kicker }}</span>
+        </div>
+        <h1 style="margin:22px 0 0; font-size:clamp(42px,8vw,84px); line-height:.98; font-weight:800; letter-spacing:-.02em; color:#1F3D2A; text-wrap:balance; animation:horRise .8s cubic-bezier(.22,.6,.24,1) .05s both">{{ t.hero.title }}</h1>
+        <p style="margin:26px 0 0; max-width:36em; font-size:clamp(18px,2.2vw,23px); line-height:1.55; font-weight:500; color:#3A3427; text-wrap:pretty; animation:horRise .8s cubic-bezier(.22,.6,.24,1) .12s both">{{ t.hero.standfirst }}</p>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:30px; animation:horRise .8s cubic-bezier(.22,.6,.24,1) .2s both">
+          <span aria-hidden="true" style="width:36px; height:1.5px; background:rgba(166,127,46,.7)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(35,32,26,.55)">{{ t.hero.source }}</span>
+        </div>
+      </div>
+      <figure style="flex:0 1 320px; min-width:240px; margin:0; animation:horRise .9s cubic-bezier(.22,.6,.24,1) .18s both">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:12px; box-shadow:0 34px 70px -34px rgba(31,45,29,.6)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Koeh-232.jpg?width=640" alt="Botanical plate of Oryza sativa" loading="lazy" style="display:block; width:100%; height:auto; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:12px; display:flex; flex-direction:column; gap:5px">
+          <span style="font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.hero.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E">{{ t.hero.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,64px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px)">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s1.n }}</span>
+      <div style="max-width:760px">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s1.kicker }}</span>
+        </div>
+        <h2 style="margin:0 0 20px; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s1.title }}</h2>
+        <p style="margin:0 0 16px; max-width:34em; font-size:clamp(19px,2.1vw,22px); line-height:1.62; color:#2C281F; text-wrap:pretty">{{ t.s1.lede }}</p>
+        <p style="margin:0; max-width:38em; font-size:18px; line-height:1.72; color:#3A3427; text-wrap:pretty">{{ t.s1.body }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ORIGINS -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s2.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s2.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s2.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <div style="flex:1 1 400px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s2.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s2.body2 }}</p>
+      </div>
+      <figure style="flex:1 1 380px; min-width:300px; margin:0">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Terrace_field_yunnan_china_denoised.jpg?width=1100" alt="Terraced rice fields in Yunnan" loading="lazy" style="display:block; width:100%; height:340px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 240px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s2.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s2.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- DOMESTICATION TREE -->
+    <div style="margin-top:clamp(30px,4vw,48px); background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:18px; padding:clamp(20px,3vw,34px)">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px">
+        <span aria-hidden="true" style="width:8px; height:8px; background:#1F3D2A; transform:rotate(45deg)"></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#1F3D2A">{{ t.tree.kicker }}</span>
+        <span style="font-size:15px; font-weight:650; color:#3A3427">— {{ t.tree.title }}</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:26px">
+        <div style="flex:1 1 300px; min-width:260px">
+          <div style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#A67F2E; margin-bottom:10px">{{ t.tree.tagAsia }}</div>
+          <div style="display:inline-flex; flex-direction:column; align-items:flex-start; gap:3px; background:#1F3D2A; color:#EFE7CE; border-radius:11px; padding:11px 16px">
+            <span style="font-size:16px; font-weight:700; font-style:italic">{{ t.tree.wild }}</span>
+            <span style="font-size:11.5px; opacity:.75">{{ t.tree.wildSub }}</span>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:14px">
+            <span aria-hidden="true" style="flex:none; width:16px; border-top:2px solid rgba(166,127,46,.6); margin-top:22px"></span>
+            <div style="display:flex; flex-wrap:wrap; gap:12px">
+              <div style="background:#F4ECD8; border:1px solid rgba(35,32,26,.16); border-radius:10px; padding:10px 15px"><div style="font-size:15px; font-weight:700; font-style:italic; color:#1F3D2A">{{ t.tree.jap }}</div><div style="font-size:11.5px; color:rgba(35,32,26,.6)">{{ t.tree.japSub }}</div></div>
+              <div style="background:#F4ECD8; border:1px solid rgba(35,32,26,.16); border-radius:10px; padding:10px 15px"><div style="font-size:15px; font-weight:700; font-style:italic; color:#1F3D2A">{{ t.tree.ind }}</div><div style="font-size:11.5px; color:rgba(35,32,26,.6)">{{ t.tree.indSub }}</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:0 0 auto; align-self:stretch; width:1px; background:rgba(35,32,26,.14)"></div>
+        <div style="flex:1 1 240px; min-width:220px">
+          <div style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#A67F2E; margin-bottom:10px">{{ t.tree.tagAfrica }}</div>
+          <div style="display:inline-flex; flex-direction:column; align-items:flex-start; gap:3px; background:#7A5A24; color:#F4ECD8; border-radius:11px; padding:11px 16px">
+            <span style="font-size:15px; font-weight:650">{{ t.tree.wildAfr }}</span>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:14px">
+            <span aria-hidden="true" style="flex:none; width:16px; border-top:2px solid rgba(166,127,46,.6); margin-top:20px"></span>
+            <div style="background:#F4ECD8; border:1px solid rgba(35,32,26,.16); border-radius:10px; padding:10px 15px"><div style="font-size:15px; font-weight:700; font-style:italic; color:#1F3D2A">{{ t.tree.glab }}</div><div style="font-size:11.5px; color:rgba(35,32,26,.6)">{{ t.tree.glabSub }}</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SPREAD ASIA -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s3.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s3.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s3.title }}</h2>
+      </div>
+    </div>
+    <figure style="margin:0 0 clamp(24px,3vw,36px)">
+      <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+        <img src="https://en.wikipedia.org/wiki/Special:FilePath/Banaue-terrace.JPG?width=1400" alt="Banaue rice terraces" loading="lazy" style="display:block; width:100%; height:clamp(240px,38vw,420px); object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+      </div>
+      <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+        <span style="flex:1 1 260px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s3.figCap }}</span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s3.figCredit }}</span>
+      </figcaption>
+    </figure>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,48px)">
+      <p style="flex:1 1 320px; margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s3.body1 }}</p>
+      <p style="flex:1 1 320px; margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s3.body2 }}</p>
+    </div>
+  </section>
+
+  <!-- MIGRATION MAP (dark band) -->
+  <section style="background:{{ accent }}; color:#EDE4CB; margin-top:8px">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(18px,4vw,44px)">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:10px">
+        <span aria-hidden="true" style="width:9px; height:9px; background:#C9A24B; transform:rotate(45deg)"></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#D6AB4F">{{ t.map.kicker }}</span>
+      </div>
+      <h2 style="margin:0 0 34px; font-size:clamp(26px,4vw,42px); line-height:1.06; font-weight:750; letter-spacing:-.01em; color:#F1E8CE; text-wrap:balance">{{ t.map.title }}</h2>
+
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(20px,4vw,44px)">
+        <div style="flex:0 0 auto">
+          <div style="display:inline-flex; flex-direction:column; gap:4px; background:#C9A24B; color:#20301F; border-radius:13px; padding:16px 22px; box-shadow:0 18px 40px -22px rgba(0,0,0,.7)">
+            <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; opacity:.7">Origin · المنشأ</span>
+            <span style="font-size:22px; font-weight:800; letter-spacing:-.01em">{{ t.map.origin }}</span>
+            <span style="font-size:12.5px; font-weight:600; opacity:.82">{{ t.map.originSub }}</span>
+          </div>
+        </div>
+        <div style="flex:1 1 460px; min-width:280px; display:flex; flex-direction:column; gap:9px">
+          <sc-for list="{{ t.map.nodes }}" as="nd" hint-placeholder-count="7">
+            <div style="display:flex; align-items:center; gap:13px; background:rgba(255,255,255,.05); border:1px solid rgba(214,171,79,.28); border-radius:11px; padding:12px 16px">
+              <span aria-hidden="true" style="flex:none; width:22px; height:1.5px; background:linear-gradient(90deg, rgba(214,171,79,.15), #D6AB4F)"></span>
+              <span aria-hidden="true" style="flex:none; width:8px; height:8px; background:#D6AB4F; transform:rotate(45deg)"></span>
+              <span style="font-size:15px; font-weight:550; color:#EFE7CE; line-height:1.4">{{ nd }}</span>
+            </div>
+          </sc-for>
+          <div style="display:flex; align-items:center; gap:13px; background:rgba(122,90,36,.28); border:1px dashed rgba(214,171,79,.5); border-radius:11px; padding:12px 16px; margin-top:6px">
+            <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:9.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#D6AB4F; flex:none">{{ t.map.africaLabel }}</span>
+            <span style="font-size:15px; font-weight:600; color:#EFE7CE">{{ t.map.africa }}</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(237,228,203,.5)">{{ t.map.note }}</div>
+    </div>
+  </section>
+
+  <!-- 04 WEST -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(34px,5vw,64px) clamp(18px,4vw,44px)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s4.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s4.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s4.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <figure style="flex:1 1 320px; min-width:260px; margin:0; order:2">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Reis.jpg?width=900" alt="Rice grains" loading="lazy" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s4.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s4.figCredit }}</span>
+        </figcaption>
+      </figure>
+      <div style="flex:1 1 380px; min-width:300px; order:1">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s4.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s4.body2 }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 AMERICAS -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s5.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s5.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s5.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <div style="flex:1 1 380px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s5.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s5.body2 }}</p>
+      </div>
+      <figure style="flex:1 1 300px; min-width:260px; margin:0">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Brown_rice.jpg?width=900" alt="Brown rice" loading="lazy" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s5.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s5.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 MODERN + PRODUCTION CHART -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s6.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s6.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s6.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px); margin-bottom:clamp(30px,4vw,46px)">
+      <div style="flex:1 1 380px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s6.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s6.body2 }}</p>
+      </div>
+      <figure style="flex:1 1 300px; min-width:260px; margin:0">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/White%2C_Brown%2C_Red_%26_Wild_rice.jpg?width=900" alt="Four kinds of rice" loading="lazy" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s6.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s6.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- PRODUCTION CHART -->
+    <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:18px; padding:clamp(20px,3vw,32px)">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:22px">
+        <div style="display:flex; align-items:center; gap:10px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#1F3D2A; transform:rotate(45deg)"></span>
+          <span style="font-size:15px; font-weight:700; color:#1F3D2A">{{ t.prod.title }}</span>
+        </div>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:rgba(35,32,26,.55)">{{ t.prod.unit }}</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.india }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:100%; background:linear-gradient(90deg,#C9A24B,#A67F2E); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">207</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.china }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:100%; background:linear-gradient(90deg,#C9A24B,#A67F2E); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">207</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.bangladesh }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:28.5%; background:linear-gradient(90deg,#3E7A4E,#1F5B3C); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">59</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.indonesia }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:26.1%; background:linear-gradient(90deg,#3E7A4E,#1F5B3C); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">54</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.vietnam }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:20.8%; background:linear-gradient(90deg,#3E7A4E,#1F5B3C); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">43</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px">
+        <span style="flex:0 0 96px; font-size:14px; font-weight:650; color:#2C281F">{{ t.prod.thailand }}</span>
+        <span style="flex:1; height:16px; background:rgba(35,32,26,.08); border-radius:999px; overflow:hidden"><span style="display:block; height:100%; width:15.9%; background:linear-gradient(90deg,#3E7A4E,#1F5B3C); border-radius:999px"></span></span>
+        <span style="flex:0 0 44px; text-align:end; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1F3D2A">33</span>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px; margin-top:20px; padding-top:16px; border-top:1px solid rgba(35,32,26,.14)">
+        <span style="font-size:14px; font-weight:700; color:#1F3D2A">{{ t.prod.world }} — <span style="color:#A67F2E">{{ t.prod.worldVal }}</span></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(35,32,26,.5)">{{ t.prod.source }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px">
+      <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+      <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.time.kicker }}</span>
+    </div>
+    <h2 style="margin:0 0 6px; font-size:clamp(26px,4vw,42px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.time.title }}</h2>
+    <div style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(35,32,26,.5); margin-bottom:30px">{{ t.time.eraNote }}</div>
+
+    <div style="border-inline-start:2px solid rgba(166,127,46,.35); padding-inline-start:clamp(18px,3vw,30px); display:flex; flex-direction:column; gap:18px">
+      <sc-for list="{{ t.time.items }}" as="it" hint-placeholder-count="11">
+        <div style="position:relative; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px">
+          <span aria-hidden="true" style="position:absolute; inset-inline-start:calc(clamp(18px,3vw,30px) * -1 - 6px); top:6px; width:11px; height:11px; background:#C29A45; border:2px solid #F4ECD8; transform:rotate(45deg)"></span>
+          <span style="flex:0 0 132px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:12.5px; font-weight:600; letter-spacing:.04em; color:#1F3D2A">{{ it.y }}</span>
+          <span style="flex:1 1 260px; font-size:16.5px; line-height:1.5; color:#2C281F">{{ it.l }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- PART II DIVIDER -->
+  <section style="background:{{ accent }}; color:#EDE4CB; margin-top:8px">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(46px,7vw,92px) clamp(18px,4vw,44px)">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:16px">
+        <span aria-hidden="true" style="width:9px; height:9px; background:#C9A24B; transform:rotate(45deg)"></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#D6AB4F">{{ t.partII.kicker }}</span>
+      </div>
+      <h2 style="margin:0 0 16px; font-size:clamp(36px,6.4vw,68px); line-height:.98; font-weight:800; letter-spacing:-.02em; color:#F1E8CE; text-wrap:balance">{{ t.partII.title }}</h2>
+      <p style="margin:0; max-width:40em; font-size:clamp(17px,2vw,21px); line-height:1.55; color:rgba(237,228,203,.82); text-wrap:pretty">{{ t.partII.sub }}</p>
+    </div>
+  </section>
+
+  <!-- 07 THE PLANT -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(34px,5vw,64px) clamp(18px,4vw,44px)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s7.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s7.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s7.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <div style="flex:1 1 380px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s7.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s7.body2 }}</p>
+      </div>
+      <figure style="flex:1 1 320px; min-width:260px; margin:0">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Rice_plants.jpg?width=900" alt="A field of rice plants in grain" loading="lazy" style="display:block; width:100%; height:340px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s7.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s7.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div style="margin-top:clamp(26px,3vw,40px); display:flex; flex-wrap:wrap; gap:14px">
+      <sc-for list="{{ t.s7.specs }}" as="sp" hint-placeholder-count="3">
+        <div style="flex:1 1 200px; min-width:180px; background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:14px; padding:16px 18px">
+          <div style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#A67F2E; margin-bottom:8px">{{ sp.k }}</div>
+          <div style="font-size:26px; font-weight:800; letter-spacing:-.01em; color:#1F3D2A; line-height:1">{{ sp.v }}</div>
+          <div style="font-size:13px; color:rgba(35,32,26,.6); margin-top:6px">{{ sp.s }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 08 CULTIVATION -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s8.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s8.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s8.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <figure style="flex:1 1 340px; min-width:260px; margin:0; order:1">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Paddy_field.jpg?width=1000" alt="A flooded lowland rice paddy" loading="lazy" style="display:block; width:100%; height:340px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s8.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s8.figCredit }}</span>
+        </figcaption>
+      </figure>
+      <div style="flex:1 1 380px; min-width:300px; order:2">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s8.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s8.body2 }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 HARVEST & MILLING -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s9.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s9.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s9.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px)">
+      <div style="flex:1 1 380px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s9.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s9.body2 }}</p>
+      </div>
+      <figure style="flex:1 1 300px; min-width:260px; margin:0">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Rice_drying.jpg?width=900" alt="Rice drying in the sun" loading="lazy" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s9.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s9.figCredit }}</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div style="margin-top:clamp(28px,4vw,44px); background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:18px; padding:clamp(20px,3vw,32px)">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px">
+        <span aria-hidden="true" style="width:8px; height:8px; background:#1F3D2A; transform:rotate(45deg)"></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#1F3D2A">{{ t.s9.flowTitle }}</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:stretch; gap:12px">
+        <div style="flex:1 1 180px; min-width:150px; background:#F4ECD8; border:1px solid rgba(35,32,26,.16); border-radius:12px; padding:16px 18px">
+          <div style="font-size:17px; font-weight:750; color:#1F3D2A">{{ t.s9.mill1.t }}</div>
+          <div style="font-size:12.5px; color:rgba(35,32,26,.62); margin-top:5px">{{ t.s9.mill1.s }}</div>
+        </div>
+        <span aria-hidden="true" style="align-self:center; width:10px; height:10px; background:#A67F2E; transform:rotate(45deg); flex:none"></span>
+        <div style="flex:1 1 180px; min-width:150px; background:#F4ECD8; border:1px solid rgba(35,32,26,.16); border-radius:12px; padding:16px 18px">
+          <div style="font-size:17px; font-weight:750; color:#1F3D2A">{{ t.s9.mill2.t }}</div>
+          <div style="font-size:12.5px; color:rgba(35,32,26,.62); margin-top:5px">{{ t.s9.mill2.s }}</div>
+        </div>
+        <span aria-hidden="true" style="align-self:center; width:10px; height:10px; background:#A67F2E; transform:rotate(45deg); flex:none"></span>
+        <div style="flex:1 1 180px; min-width:150px; background:#1F3D2A; border:1px solid #1F3D2A; border-radius:12px; padding:16px 18px">
+          <div style="font-size:17px; font-weight:750; color:#EFE7CE">{{ t.s9.mill3.t }}</div>
+          <div style="font-size:12.5px; color:rgba(239,231,206,.7); margin-top:5px">{{ t.s9.mill3.s }}</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; margin-top:14px; background:rgba(122,90,36,.1); border:1px dashed rgba(166,127,46,.5); border-radius:12px; padding:13px 16px">
+        <span aria-hidden="true" style="flex:none; width:8px; height:8px; background:#A67F2E; transform:rotate(45deg)"></span>
+        <span style="font-size:14.5px; font-weight:550; color:#3A3427; line-height:1.45">{{ t.s9.branch }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 VARIETIES -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:26px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s10.n }}</span>
+      <div style="max-width:760px">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s10.kicker }}</span>
+        </div>
+        <h2 style="margin:0 0 18px; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s10.title }}</h2>
+        <p style="margin:0; font-size:18px; line-height:1.7; color:#2C281F; text-wrap:pretty">{{ t.s10.intro }}</p>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(14px,2vw,22px)">
+      <sc-for list="{{ t.s10.cards }}" as="vc" hint-placeholder-count="4">
+        <figure style="margin:0; background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; overflow:hidden; box-shadow:0 24px 50px -34px rgba(31,45,29,.5)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/{{ vc.img }}?width=520" alt="{{ vc.name }}" loading="lazy" style="display:block; width:100%; height:150px; object-fit:cover; filter:{{ imgFilter }}">
+          <figcaption style="padding:15px 17px 18px">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; flex-wrap:wrap">
+              <span style="font-size:18px; font-weight:750; color:#1F3D2A">{{ vc.name }}</span>
+              <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:9.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#A67F2E">{{ vc.tag }}</span>
+            </div>
+            <p style="margin:8px 0 0; font-size:13.5px; line-height:1.55; color:rgba(35,32,26,.72); text-wrap:pretty">{{ vc.desc }}</p>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px">
+      <sc-for list="{{ t.s10.chips }}" as="cp" hint-placeholder-count="5">
+        <span style="display:inline-flex; align-items:center; gap:8px; background:transparent; border:1.5px solid rgba(35,32,26,.2); border-radius:999px; padding:8px 15px; font-size:13.5px; font-weight:550; color:#3A3427">
+          <span aria-hidden="true" style="width:6px; height:6px; background:#C29A45; transform:rotate(45deg)"></span>{{ cp }}
+        </span>
+      </sc-for>
+    </div>
+    <p style="margin:22px 0 0; max-width:44em; font-size:15px; line-height:1.65; color:rgba(35,32,26,.66); text-wrap:pretty">{{ t.s10.note }}</p>
+  </section>
+
+  <!-- 11 NUTRITION -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s11.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s11.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s11.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px); align-items:flex-start">
+      <div style="flex:1 1 360px; min-width:300px">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s11.body1 }}</p>
+        <p style="margin:0 0 24px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s11.body2 }}</p>
+        <figure style="margin:0">
+          <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+            <img src="https://en.wikipedia.org/wiki/Special:FilePath/Cooked_rice.jpg?width=900" alt="A bowl of steamed white rice" loading="lazy" style="display:block; width:100%; height:260px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+          </div>
+          <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+            <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s11.figCap }}</span>
+            <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s11.figCredit }}</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div style="flex:1 1 300px; min-width:270px; max-width:420px; background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:18px; padding:clamp(20px,3vw,28px)">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding-bottom:14px; border-bottom:2px solid rgba(35,32,26,.7)">
+          <span style="font-size:17px; font-weight:800; color:#1F3D2A">{{ t.s11.factTitle }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(35,32,26,.6)">{{ t.s11.factUnit }}</span>
+        </div>
+        <sc-for list="{{ t.s11.facts }}" as="fa" hint-placeholder-count="5">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:11px 0; border-top:1px solid rgba(35,32,26,.12)">
+            <span style="font-size:15px; color:#2C281F">{{ fa.k }}</span>
+            <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:15px; font-weight:600; color:#1F3D2A">{{ fa.v }}</span>
+          </div>
+        </sc-for>
+        <div style="margin-top:14px; padding-top:14px; border-top:2px solid rgba(35,32,26,.7); font-size:12.5px; line-height:1.55; color:rgba(35,32,26,.66)">{{ t.s11.factNote }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ENVIRONMENT -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(18px,4vw,44px); border-top:1px solid rgba(35,32,26,.12)">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,30px); margin-bottom:30px">
+      <span aria-hidden="true" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(50px,8vw,88px); line-height:.78; color:transparent; -webkit-text-stroke:1.4px rgba(166,127,46,.5); flex:none">{{ t.s12.n }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+          <span aria-hidden="true" style="width:8px; height:8px; background:#C29A45; transform:rotate(45deg)"></span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#A67F2E">{{ t.s12.kicker }}</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(27px,4vw,44px); line-height:1.05; font-weight:750; letter-spacing:-.01em; color:#1F3D2A; text-wrap:balance">{{ t.s12.title }}</h2>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,52px); margin-bottom:clamp(28px,4vw,44px)">
+      <figure style="flex:1 1 320px; min-width:260px; margin:0; order:2">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.16); border-radius:16px; padding:11px; box-shadow:0 30px 60px -34px rgba(31,45,29,.55)">
+          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Golden_Rice.jpg?width=900" alt="Golden Rice beside white rice" loading="lazy" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:9px; filter:{{ imgFilter }}">
+        </div>
+        <figcaption style="margin-top:11px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px">
+          <span style="flex:1 1 200px; font-size:13.5px; line-height:1.5; color:rgba(35,32,26,.66)">{{ t.s12.figCap }}</span>
+          <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:#A67F2E; white-space:nowrap">{{ t.s12.figCredit }}</span>
+        </figcaption>
+      </figure>
+      <div style="flex:1 1 380px; min-width:300px; order:1">
+        <p style="margin:0 0 18px; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s12.body1 }}</p>
+        <p style="margin:0; font-size:18px; line-height:1.74; color:#2C281F; text-wrap:pretty">{{ t.s12.body2 }}</p>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(14px,2vw,20px)">
+      <sc-for list="{{ t.s12.innov }}" as="iv" hint-placeholder-count="3">
+        <div style="background:#EFE7CE; border:1px solid rgba(35,32,26,.14); border-radius:14px; padding:20px">
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:10px">
+            <span aria-hidden="true" style="width:8px; height:8px; background:#1F3D2A; transform:rotate(45deg)"></span>
+            <span style="font-size:16px; font-weight:750; color:#1F3D2A">{{ iv.t }}</span>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.6; color:rgba(35,32,26,.72); text-wrap:pretty">{{ iv.d }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- COLOPHON -->
+  <footer style="background:#122619; color:#E4DABE; border-top:3px solid #C29A45">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(40px,6vw,72px) clamp(18px,4vw,44px)">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:14px">
+        <span aria-hidden="true" style="width:9px; height:9px; background:#C9A24B; transform:rotate(45deg)"></span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#D6AB4F">{{ t.colophon.kicker }}</span>
+      </div>
+      <h2 style="margin:0 0 20px; font-size:clamp(24px,3.4vw,38px); line-height:1.08; font-weight:750; color:#F1E8CE">{{ t.colophon.title }}</h2>
+      <p style="margin:0 0 26px; max-width:56em; font-size:16px; line-height:1.7; color:rgba(228,218,190,.82); text-wrap:pretty">{{ t.colophon.cc }}</p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,56px); align-items:flex-start">
+        <div style="flex:1 1 420px; min-width:280px">
+          <div style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#D6AB4F; margin-bottom:14px">{{ t.colophon.imgTitle }}</div>
+          <div style="display:flex; flex-direction:column; gap:9px">
+            <sc-for list="{{ t.colophon.credits }}" as="cr" hint-placeholder-count="6">
+              <div style="display:flex; gap:10px; font-size:13px; line-height:1.55; color:rgba(228,218,190,.78)">
+                <span aria-hidden="true" style="flex:none; width:5px; height:5px; background:#C9A24B; transform:rotate(45deg); margin-top:8px"></span>
+                <span>{{ cr }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex:0 1 300px; min-width:240px">
+          <a href="https://en.wikipedia.org/wiki/Rice" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; text-decoration:none; border:1px solid rgba(214,171,79,.4); border-radius:999px; padding:11px 18px; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#EFE7CE" style-hover="border-color:#D6AB4F; background:rgba(214,171,79,.12)">
+            <span aria-hidden="true" style="width:6px; height:6px; background:#D6AB4F; transform:rotate(45deg)"></span>{{ t.colophon.link }}
+          </a>
+          <div style="margin-top:16px">
+            <a href="#top" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(228,218,190,.7)" style-hover="color:#D6AB4F">↑ {{ t.colophon.backTop }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(30px,4vw,48px); padding-top:20px; border-top:1px solid rgba(214,171,79,.22); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px">
+        <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:15px; letter-spacing:.05em; color:#EFE7CE">MEDADX</span>
+        <span style="font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:rgba(228,218,190,.5)">Content under CC BY-SA 4.0</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1240, &quot;height&quot;: 1600 },
+  &quot;defaultLang&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;en&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;ar&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Content&quot; },
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F3D2A&quot;, &quot;options&quot;: [&quot;#1F3D2A&quot;, &quot;#243039&quot;, &quot;#3A2A1E&quot;, &quot;#43402F&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Style&quot; },
+  &quot;duotone&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Style&quot; }
+}">
+class Component extends DCLogic {
+  state = { lang: null };
+
+  renderVals() {
+    const en = {
+      dir: "ltr", langLabel: "العربية", masthead: "The Reader", backToSite: "Back to site",
+      nav: [
+        { label: "Home", url: "./#/", active: false },
+        { label: "About Us", url: "./#/about", active: false },
+        { label: "Supply Chain", url: "./#/supply-chain", active: false },
+        { label: "History of Rice", url: "#top", active: true },
+        { label: "Request Quote", url: "./#/contact", active: false }
+      ],
+      hero: {
+        kicker: "An illustrated history",
+        title: "The History of Rice",
+        standfirst: "From a wild grass on the banks of the Yangtze to the staple that feeds half the world — the ten-thousand-year journey of a single grain.",
+        source: "Adapted from the Wikipedia article “Rice”",
+        figCap: "Oryza sativa, engraved for Köhler’s Medizinal-Pflanzen (1887).",
+        figCredit: "Franz Eugen Köhler · Public domain"
+      },
+      s1: {
+        n: "01", kicker: "In brief", title: "A grain that fed civilisations",
+        lede: "Rice is the edible seed of two grass species: Oryza sativa, or Asian rice, and the less common Oryza glaberrima, or African rice. In its domesticated form it is the staple food of more than half the world’s people — above all across Asia and Africa.",
+        body: "In 2023 farmers harvested some 800 million tonnes of it, making rice the third most-produced crop on Earth after sugarcane and maize. Yet the plant we know today began as a wild grass, gathered long before it was ever sown."
+      },
+      s2: {
+        n: "02", kicker: "Origins & domestication", title: "From wild grass to crop",
+        body1: "Asian rice was first domesticated in China, by Neolithic communities living along the Upper and Lower Yangtze between roughly 13,500 and 8,200 years ago — a process usually dated to around nine thousand years back. Both of its great subspecies — the fluffy, long-grained indica and the sticky, short-grained japonica — descend from a single domestication of the wild rice Oryza rufipogon.",
+        body2: "The decisive change was genetic: a mutation that stopped ripe grains from shattering off the stalk, so they could be harvested whole. Indica as we know it emerged later, when japonica reached India about 4,500 years ago and crossed with local wild and proto-indica rices. African rice, Oryza glaberrima, was domesticated entirely separately, in the inland delta of the Niger in West Africa around three thousand years ago.",
+        figCap: "Terraced rice fields in Yunnan, southern China — near the plant’s ancient homeland.",
+        figCredit: "Jialiang Gao · CC BY-SA 3.0"
+      },
+      tree: {
+        kicker: "Two domestications", title: "One grain, two family lines",
+        wild: "Oryza rufipogon", wildSub: "Asian wild rice",
+        jap: "japonica", japSub: "short-grain, sticky",
+        ind: "indica", indSub: "long-grain, fluffy",
+        wildAfr: "African wild rice", glab: "O. glaberrima", glabSub: "African rice",
+        tagAsia: "Asia · ~9,000 yrs ago", tagAfrica: "West Africa · ~3,000 yrs ago"
+      },
+      s3: {
+        n: "03", kicker: "The spread across Asia", title: "With farmers, migrants and languages",
+        body1: "From its Yangtze homeland, rice travelled outward. It reached the Sino-Tibetan cultures of northern China by about 6,000 years ago, and the Korean peninsula and Japan between roughly 5,500 and 3,200 years ago. Carried to Taiwan by the Dapenkeng culture, it then moved south with the great Austronesian migrations into Island Southeast Asia and on to Madagascar and Guam — though it did not survive the longer voyages into the wider Pacific.",
+        body2: "By about 5,000 years ago it had reached Austroasiatic and Kra-Dai–speaking peoples across mainland Southeast Asia and southern China. Wherever it went, rice reshaped the land: the flooded paddy and the mountainside terrace became some of the most enduring works of human agriculture.",
+        figCap: "The Banaue rice terraces of Luzon, the Philippines — rice carried by Austronesian farmers.",
+        figCredit: "Wikimedia Commons · CC BY-SA"
+      },
+      map: {
+        kicker: "Routes of dispersal", title: "How rice travelled the world",
+        origin: "Yangtze, China", originSub: "≈ 9,000 years ago",
+        nodes: [
+          "Northern China — Sino-Tibetan cultures",
+          "Korea & Japan",
+          "Taiwan → Island SE Asia → Madagascar & Guam",
+          "Mainland Southeast Asia & southern China",
+          "India — indica emerges",
+          "Middle East, Mediterranean & Europe",
+          "The Americas — after 1492"
+        ],
+        africaLabel: "Independent line", africa: "West Africa → Oryza glaberrima",
+        note: "Schematic — simplified for clarity."
+      },
+      s4: {
+        n: "04", kicker: "West to the Middle East & Europe", title: "Along the old trade routes",
+        body1: "Trade and conquest carried rice westward out of Asia. It was known in Mesopotamia and Persia in antiquity, and spread through the Mediterranean world. In the medieval period Arab agriculture carried it across North Africa and into al-Andalus, and by the fifteenth century it had reached the Po Valley of Italy.",
+        body2: "In West Africa, meanwhile, communities had long grown their own native Oryza glaberrima. A hardy, water-loving crop able to feed dense populations, rice wove itself into the cuisine and economy of every region it entered.",
+        figCap: "Milled and unmilled grain — rice as it moved along the trade routes.",
+        figCredit: "Wikimedia Commons"
+      },
+      s5: {
+        n: "05", kicker: "The Columbian Exchange", title: "Across the Atlantic",
+        body1: "Rice crossed the Atlantic as part of the Columbian Exchange — the vast transfer of crops, animals and people that followed 1492. Asian rice arrived with European colonists, while African rice was carried to the Americas by the Spanish, together with the knowledge of enslaved West Africans who understood how to grow it.",
+        body2: "In the tidal lowlands of the Carolinas rice became a plantation crop of enormous value. By the eve of the American War of Independence it ranked as the fourth most valuable export of British North America, behind only tobacco, wheat and fish.",
+        figCap: "Brown rice — the lightly milled grain that crossed the ocean.",
+        figCredit: "Wikimedia Commons"
+      },
+      s6: {
+        n: "06", kicker: "Trade & the modern grain", title: "A revolution in the harvest",
+        body1: "For all its importance, rice is mostly eaten close to where it is grown: even today, less than a tenth of the harvest — under 8% — is traded across borders. The twentieth century transformed how much could be grown.",
+        body2: "During the Green Revolution, researchers at the International Rice Research Institute in the Philippines released IR8 in 1966 — a high-yielding variety bred from a Chinese and an Indonesian parent, with short, strong stems that could carry heavy grain without toppling. In 2005 rice became the first crop plant to have its full genome sequenced. Today China and India together grow more than half the world’s rice, and around 90% of it is still produced in Asia — where the whole story began nine thousand years before.",
+        figCap: "White, brown, red and wild rice — a fraction of the crop’s diversity.",
+        figCredit: "Wikimedia Commons · CC BY-SA"
+      },
+      partII: { kicker: "Part Two", title: "The Grain Itself", sub: "Botany, cultivation and the modern table — how a wild grass became the food on the plate." },
+      s7: {
+        n: "07", kicker: "Botany · the plant", title: "What rice actually is",
+        body1: "Rice is an annual grass of the genus Oryza. The plant throws up hollow, jointed stems that stand between one and 1.8 metres tall — though deepwater varieties, racing a rising flood, can reach five. Its long, slender leaves give way at the top to a branching flower-head, the panicle, and it is largely self-pollinating.",
+        body2: "Each tiny flower can set a single grain — the caryopsis — five to twelve millimetres long, sealed in a tough husk. From sowing to harvest takes roughly three to six months. Alone among the world’s great cereals, rice is semi-aquatic: it thrives with its roots in standing water, where wheat or maize would simply drown.",
+        figCap: "A field of rice in grain, the panicles bowing under ripening seed.",
+        figCredit: "Wikimedia Commons",
+        specs: [
+          { k: "Height", v: "1–1.8 m", s: "to 5 m in deepwater" },
+          { k: "Panicle", v: "30–50 cm", s: "branching flower-head" },
+          { k: "Season", v: "3–6 months", s: "sowing to harvest" }
+        ]
+      },
+      s8: {
+        n: "08", kicker: "Cultivation", title: "Grown in water",
+        body1: "Most rice is grown in flooded fields called paddies. The standing water is not just drink for a thirsty plant; it is a tool. A sheet of water smothers weeds and denies many pests a foothold, letting rice outcompete almost everything around it.",
+        body2: "Farmers work it two ways. Lowland or “wetland” rice, by far the greater share, sits in bunded fields kept deliberately flooded; upland rice grows dry on rain alone. Seedlings are often raised in a nursery and transplanted into the mud by hand, one clump at a time — and on steep ground the paddies climb the hillside in terraces that are among the oldest engineered landscapes on Earth.",
+        figCap: "A flooded lowland paddy; the sheet of water feeds the crop and holds back the weeds.",
+        figCredit: "Wikimedia Commons"
+      },
+      s9: {
+        n: "09", kicker: "Harvest & milling", title: "From husk to grain",
+        body1: "Rice is cut when the grain hardens and the plant turns gold. It is threshed to shake the grain loose, then dried. Still sealed in its inedible husk, it is now “paddy”, or rough rice — and what happens next decides what reaches the plate.",
+        body2: "Strip away the husk and you have brown rice, which keeps its bran and germ. Polish those away too and you have white rice: longer-lasting and quick to cook, but stripped of much of its goodness. Parboiling — soaking and steaming the paddy before milling — drives its vitamins inward and yields the golden “sella” grain so prized across South Asia and the Gulf.",
+        figCap: "Freshly cut rice spread to dry in the sun before it is milled.",
+        figCredit: "Wikimedia Commons",
+        flowTitle: "How milling works",
+        mill1: { t: "Paddy", s: "grain in the husk" },
+        mill2: { t: "Brown rice", s: "husk off · bran kept" },
+        mill3: { t: "White rice", s: "bran & germ polished away" },
+        branch: "Parboiled “sella” — steamed in the husk first, then milled"
+      },
+      s10: {
+        n: "10", kicker: "Types & varieties", title: "One species, thousands of grains",
+        intro: "Rice is sorted first by the length of its grain and by how it behaves in the pot. Within a single species sit more than forty thousand named cultivars, and the world’s gene banks guard well over a hundred thousand more.",
+        cards: [
+          { img: "Basmati_Rice.jpg", name: "Basmati", tag: "Long-grain · aromatic", desc: "The slender, perfumed long-grain of India and Pakistan — the heart of biryani, mandi and kabsa." },
+          { img: "White_rice.jpg", name: "Polished white", tag: "Short–medium", desc: "Milled and polished smooth; the everyday grain on most of the world’s tables." },
+          { img: "Brown_rice.jpg", name: "Whole-grain brown", tag: "Bran retained", desc: "Husked but never polished, keeping bran and germ for a nutty bite and more fibre." },
+          { img: "Black_rice.jpg", name: "Black & red", tag: "Pigmented", desc: "Coloured deep by anthocyanins in the bran — black “forbidden” rice and red rice among them." }
+        ],
+        chips: ["Jasmine · Thai fragrant", "Glutinous · sticky", "Arborio · risotto", "Japonica · sushi", "Indica · long-grain"],
+        note: "The scent of an aromatic rice comes from a single compound — 2-acetyl-1-pyrroline — the same molecule in basmati and jasmine alike."
+      },
+      s11: {
+        n: "11", kicker: "Nutrition", title: "What a bowl of rice gives you",
+        body1: "Rice is, above all, starch — a clean, digestible source of energy, and naturally free of gluten. Across the planet it supplies close to a fifth of all the calories people eat.",
+        body2: "Milling comes at a cost: white rice sheds much of the grain’s fibre, B-vitamins and minerals along with its bran, which is why many countries fortify it or favour parboiled rice. Brown rice keeps the bran and germ, and with them more fibre, magnesium and B-vitamins.",
+        figCap: "Steamed white rice — the form in which most of the world eats it.",
+        figCredit: "Wikimedia Commons",
+        factTitle: "Cooked white rice", factUnit: "per 100 g",
+        facts: [
+          { k: "Energy", v: "130 kcal" },
+          { k: "Carbohydrate", v: "28 g" },
+          { k: "Protein", v: "2.7 g" },
+          { k: "Fat", v: "0.3 g" },
+          { k: "Fibre", v: "0.4 g" }
+        ],
+        factNote: "Naturally gluten-free · about a fifth of the world’s dietary energy"
+      },
+      s12: {
+        n: "12", kicker: "Environment & the future", title: "The grain and the greenhouse",
+        body1: "The very flood that makes a paddy so productive also makes it breathe methane — a greenhouse gas far stronger than carbon dioxide. Rice growing is among the largest human sources of it, and a hotter, saltier, less predictable climate now threatens the very deltas where rice grows best.",
+        body2: "So breeders keep remaking the plant — for higher yield, for less water, for grains that can survive flood, drought and salt. A crop ten thousand years in the making is still being redrawn.",
+        figCap: "Golden Rice (right), engineered to carry beta-carotene, beside ordinary white rice.",
+        figCredit: "International Rice Research Institute · CC BY",
+        innov: [
+          { t: "Golden Rice", d: "Engineered to make beta-carotene — a source of vitamin A — to fight childhood blindness." },
+          { t: "“Scuba” rice", d: "Carrying the SUB1A gene, it can survive two full weeks underwater." },
+          { t: "Sequenced, 2005", d: "Rice was the first crop plant to have its whole genome read." }
+        ]
+      },
+      prod: {
+        kicker: "Production today", title: "The largest rice producers, 2023", unit: "Million tonnes",
+        india: "India", china: "China", bangladesh: "Bangladesh", indonesia: "Indonesia", vietnam: "Vietnam", thailand: "Thailand",
+        world: "World total", worldVal: "800 million tonnes",
+        source: "Source: FAO, 2023"
+      },
+      time: {
+        kicker: "Timeline", title: "Milestones in the story of rice", eraNote: "BP = years before present",
+        items: [
+          { y: "≈ 9000 BP", l: "Asian rice domesticated along the Yangtze, China" },
+          { y: "≈ 6000 BP", l: "Rice reaches northern China" },
+          { y: "5500–3200 BP", l: "Spreads to Korea and Japan" },
+          { y: "5500–4000 BP", l: "Carried to Taiwan; Austronesian expansion begins" },
+          { y: "≈ 5000 BP", l: "Established across mainland Southeast Asia" },
+          { y: "≈ 4500 BP", l: "Japonica reaches India; indica emerges" },
+          { y: "≈ 3000 BP", l: "African rice domesticated on the Niger" },
+          { y: "after 1492", l: "Rice enters the Americas via the Columbian Exchange" },
+          { y: "1966", l: "IR8, the first Green Revolution rice, released by IRRI" },
+          { y: "2005", l: "Rice is the first crop with a fully sequenced genome" },
+          { y: "2023", l: "World harvest reaches 800 million tonnes" }
+        ]
+      },
+      colophon: {
+        kicker: "About this page", title: "Sources & credits",
+        cc: "This text was written for Medad-X drawing on the Wikipedia article “Rice,” available under the Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0). Facts are summarised in our own words; the article is linked below. Photographs are from Wikimedia Commons under their respective licences.",
+        imgTitle: "Image credits",
+        credits: [
+          "Botanical plate — Franz Eugen Köhler, Köhler’s Medizinal-Pflanzen (1887). Public domain.",
+          "Yunnan rice terraces — Jialiang Gao (peace-on-earth.org). CC BY-SA 3.0.",
+          "Banaue rice terraces — Wikimedia Commons. CC BY-SA.",
+          "Milled & unmilled rice — Wikimedia Commons.",
+          "Brown rice — Wikimedia Commons.",
+          "White, brown, red & wild rice — Wikimedia Commons. CC BY-SA.",
+          "Rice plants in grain — Wikimedia Commons.",
+          "Flooded paddy field — Wikimedia Commons.",
+          "Rice drying in the sun — Wikimedia Commons.",
+          "Basmati, white, brown & black rice — Wikimedia Commons.",
+          "Cooked white rice — Wikimedia Commons.",
+          "Golden Rice — International Rice Research Institute. CC BY."
+        ],
+        link: "en.wikipedia.org/wiki/Rice", backTop: "Back to top"
+      }
+    };
+
+    const ar = {
+      dir: "rtl", langLabel: "EN", masthead: "القارئ", backToSite: "العودة إلى الموقع",
+      nav: [
+        { label: "الرئيسية", url: "./#/", active: false },
+        { label: "من نحن", url: "./#/about", active: false },
+        { label: "سلسلة التوريد", url: "./#/supply-chain", active: false },
+        { label: "تاريخ الأرز", url: "#top", active: true },
+        { label: "طلب عرض سعر", url: "./#/contact", active: false }
+      ],
+      hero: {
+        kicker: "تاريخ مُصوَّر",
+        title: "تاريخ الأرز",
+        standfirst: "من عشبٍ بريّ على ضفاف نهر اليانغتسي إلى الغذاء الأساسي الذي يُطعِم نصف سكان الأرض — رحلة حبةٍ واحدة عبر عشرة آلاف عام.",
+        source: "مُقتبَس من مقالة ويكيبيديا «الأرز»",
+        figCap: "الأرز (Oryza sativa) مرسوماً في «نباتات كوهلر الطبية» (1887).",
+        figCredit: "فرانتس أويغن كوهلر · ملكية عامة"
+      },
+      s1: {
+        n: "٠١", kicker: "لمحة", title: "حبةٌ أطعمت الحضارات",
+        lede: "الأرز هو البذرة الصالحة للأكل لنوعين من الأعشاب: الأرز الآسيوي (Oryza sativa)، والأرز الأفريقي الأقل شيوعاً (Oryza glaberrima). وهو في صورته المستأنسة الغذاء الأساسي لأكثر من نصف سكان العالم، وخاصةً في آسيا وأفريقيا.",
+        body: "وفي عام 2023 بلغ محصوله نحو 800 مليون طن، ليكون ثالث أكثر المحاصيل إنتاجاً على الأرض بعد قصب السكر والذرة. غير أن هذا النبات بدأ عشباً برياً يُجمَع قبل أن يُزرَع بآلاف السنين."
+      },
+      s2: {
+        n: "٠٢", kicker: "الأصل والاستئناس", title: "من عشبٍ برّي إلى محصول",
+        body1: "استُؤنِس الأرز الآسيوي أول ما استُؤنِس في الصين، على يد مجتمعات العصر الحجري الحديث التي سكنت ضفاف اليانغتسي الأعلى والأدنى، في مدى يمتد بين نحو 13,500 و8,200 سنة مضت — ويُؤرَّخ عادةً إلى قرابة تسعة آلاف عام. وكلا صنفيه الكبيرين — الإنديكا الطويلة الحبة، واليابونيكا القصيرة الحبة اللزجة — ينحدر من استئناسٍ واحد للأرز البري (Oryza rufipogon).",
+        body2: "وكان التغيّر الحاسم وراثياً: طفرةٌ منعت الحبوب الناضجة من التساقط عن العود، فأمكن حصادها كاملة. أما الإنديكا بصورتها المعروفة فظهرت لاحقاً، حين بلغت اليابونيكا الهند قبل نحو 4,500 عام وتهجّنت مع أرزٍ بريٍّ ومحلي. وقد استُؤنِس الأرز الأفريقي (Oryza glaberrima) على نحوٍ مستقلٍّ تماماً، في دلتا نهر النيجر بغرب أفريقيا قبل نحو ثلاثة آلاف عام.",
+        figCap: "حقول أرز مدرَّجة في يوننان بجنوب الصين — قرب الموطن القديم للنبات.",
+        figCredit: "جياليانغ غاو · CC BY-SA 3.0"
+      },
+      tree: {
+        kicker: "استئناسان", title: "حبةٌ واحدة وسلالتان",
+        wild: "Oryza rufipogon", wildSub: "أرز بري آسيوي",
+        jap: "يابونيكا", japSub: "قصيرة الحبة، لزجة",
+        ind: "إنديكا", indSub: "طويلة الحبة",
+        wildAfr: "أرز بري أفريقي", glab: "O. glaberrima", glabSub: "أرز أفريقي",
+        tagAsia: "آسيا · ~9,000 سنة", tagAfrica: "غرب أفريقيا · ~3,000 سنة"
+      },
+      s3: {
+        n: "٠٣", kicker: "الانتشار في آسيا", title: "مع المزارعين والمهاجرين واللغات",
+        body1: "من موطنه على اليانغتسي، انتقل الأرز إلى الخارج. فبلغ ثقافات التبت-الصينية في شمال الصين قبل نحو 6,000 عام، ووصل شبه الجزيرة الكورية واليابان بين نحو 5,500 و3,200 سنة مضت. وحُمِل إلى تايوان مع ثقافة داپنكنغ، ثم اتجه جنوباً مع هجرات الأوسترونيزيين الكبرى إلى جزر جنوب شرق آسيا فمدغشقر وغوام — وإن لم يصمد في الرحلات الأبعد إلى عمق المحيط الهادئ.",
+        body2: "وقبل نحو 5,000 عام كان قد بلغ شعوباً ناطقة بالأوسترو-آسيوية والكرا-داي عبر البرّ الرئيس لجنوب شرق آسيا وجنوب الصين. وحيثما حلّ، أعاد الأرز تشكيل الأرض: فصار الحقل المغمور والمدرَّج الجبلي من أبقى ما شيّدته الزراعة البشرية.",
+        figCap: "مدرَّجات أرز باناوي في لوزون بالفلبين — أرزٌ حمله مزارعو الأوسترونيزيين.",
+        figCredit: "ويكيميديا كومنز · CC BY-SA"
+      },
+      map: {
+        kicker: "طرق الانتشار", title: "كيف جاب الأرز العالم",
+        origin: "اليانغتسي، الصين", originSub: "≈ 9,000 سنة مضت",
+        nodes: [
+          "شمال الصين — ثقافات التبت-الصينية",
+          "كوريا واليابان",
+          "تايوان ← جزر جنوب شرق آسيا ← مدغشقر وغوام",
+          "البرّ الرئيس لجنوب شرق آسيا وجنوب الصين",
+          "الهند — ظهور الإنديكا",
+          "الشرق الأوسط والمتوسط وأوروبا",
+          "الأمريكتان — بعد 1492"
+        ],
+        africaLabel: "سلالة مستقلة", africa: "غرب أفريقيا ← Oryza glaberrima",
+        note: "رسم تخطيطي — مبسّط للتوضيح."
+      },
+      s4: {
+        n: "٠٤", kicker: "غرباً إلى الشرق الأوسط وأوروبا", title: "على طرق التجارة القديمة",
+        body1: "حملت التجارة والفتوح الأرز غرباً خارج آسيا. فعُرِف في بلاد الرافدين وبلاد فارس في العصور القديمة، وانتشر في العالم المتوسطي. وفي العصر الوسيط نقلته الزراعة العربية عبر شمال أفريقيا إلى الأندلس، وبلغ سهل نهر البو في إيطاليا في القرن الخامس عشر.",
+        body2: "وفي غرب أفريقيا كانت المجتمعات تزرع منذ أمدٍ بعيد نوعها المحلي (Oryza glaberrima). ولأنه محصولٌ صلبٌ مُحبٌّ للماء يقدر على إطعام أعدادٍ كثيفة، تغلغل الأرز في مطبخ كل إقليمٍ دخله واقتصاده.",
+        figCap: "أرزٌ مقشورٌ وغير مقشور — الحبة كما انتقلت على طرق التجارة.",
+        figCredit: "ويكيميديا كومنز"
+      },
+      s5: {
+        n: "٠٥", kicker: "التبادل الكولومبي", title: "عبور الأطلسي",
+        body1: "عبَر الأرز المحيط الأطلسي ضمن «التبادل الكولومبي» — ذلك النقل الواسع للمحاصيل والحيوانات والبشر الذي أعقب عام 1492. فوصل الأرز الآسيوي مع المستعمرين الأوروبيين، بينما حمل الإسبان الأرز الأفريقي إلى الأمريكتين، ومعه معرفة الأفارقة المستعبَدين من غرب أفريقيا الذين أتقنوا زراعته.",
+        body2: "وفي الأراضي المنخفضة المدّية بكارولينا صار الأرز محصول مزارع عظيم القيمة: فمع اقتراب حرب الاستقلال الأمريكية كان رابع أثمن صادرات أمريكا الشمالية البريطانية، بعد التبغ والقمح والسمك وحدها.",
+        figCap: "الأرز البنّي — الحبة قليلة القشر التي عبرت المحيط.",
+        figCredit: "ويكيميديا كومنز"
+      },
+      s6: {
+        n: "٠٦", kicker: "التجارة والحبة الحديثة", title: "ثورةٌ في المحصول",
+        body1: "على أهميته البالغة، يُؤكَل الأرز في معظمه قرب حيث يُزرَع: فحتى اليوم لا يتجاوز ما يُتاجَر به عبر الحدود عُشر المحصول — أقل من 8%. لكن القرن العشرين غيّر مقدار ما يمكن إنتاجه.",
+        body2: "ففي «الثورة الخضراء» أطلق باحثو المعهد الدولي لبحوث الأرز في الفلبين صنف IR8 عام 1966 — صنفاً وفير الغلّة هُجِّن من أبٍ صيني وآخر إندونيسي، بسيقانٍ قصيرة متينة تحمل الحبّ الثقيل دون أن تنكسر. وفي عام 2005 صار الأرز أول نباتٍ محصولي يُفكُّ تسلسل جينومه كاملاً. واليوم تُنتج الصين والهند معاً أكثر من نصف أرز العالم، ولا يزال نحو 90% منه يُزرَع في آسيا — حيث بدأت القصة كلها قبل تسعة آلاف عام.",
+        figCap: "أرزٌ أبيض وبنّي وأحمر وبري — غيضٌ من تنوّع المحصول.",
+        figCredit: "ويكيميديا كومنز · CC BY-SA"
+      },
+      partII: { kicker: "الجزء الثاني", title: "الحبة نفسها", sub: "النبات وزراعته والمائدة الحديثة — كيف صار العشب البري طعاماً على الطبق." },
+      s7: {
+        n: "٠٧", kicker: "علم النبات · النبتة", title: "ما هو الأرز حقاً",
+        body1: "الأرز عشبٌ حوليٌّ من جنس Oryza. ترفع النبتة سيقاناً مجوّفةً معقّدة تقف بين مترٍ ومترٍ وثمانية أعشار — وإن كانت أصناف المياه العميقة، وهي تسابق فيضاناً صاعداً، قد تبلغ خمسة أمتار. وتنتهي أوراقه الطويلة الرفيعة من الأعلى إلى نورةٍ متفرّعة هي السُّنبلة، وهو ذاتيُّ التلقيح في الغالب.",
+        body2: "وقد تعقد كل زهرةٍ صغيرة حبةً واحدة — الحبة (caryopsis) — طولها بين خمسة واثني عشر مليمتراً، مختومةً في قشرةٍ صلبة. ويستغرق الأمر من البذر إلى الحصاد نحو ثلاثة إلى ستة أشهر. والأرز وحده بين حبوب العالم الكبرى شبه مائي: يزدهر وجذوره في الماء الراكد حيث يغرق القمح أو الذرة.",
+        figCap: "حقل أرزٍ في طور الحبّ، تنحني سنابله تحت البذور الناضجة.",
+        figCredit: "ويكيميديا كومنز",
+        specs: [
+          { k: "الارتفاع", v: "1–1.8 م", s: "حتى 5 م في المياه العميقة" },
+          { k: "السُّنبلة", v: "30–50 سم", s: "نورة متفرّعة" },
+          { k: "الموسم", v: "3–6 أشهر", s: "من البذر إلى الحصاد" }
+        ]
+      },
+      s8: {
+        n: "٠٨", kicker: "الزراعة", title: "يُزرَع في الماء",
+        body1: "يُزرَع معظم الأرز في حقولٍ مغمورة تُسمّى الأحواض المائية. والماء الراكد ليس شراباً لنبتةٍ عطشى فحسب، بل أداة: فطبقة الماء تخنق الأعشاب الضارة وتحرم كثيراً من الآفات موطئ قدم، فيتفوّق الأرز على كل ما حوله تقريباً.",
+        body2: "ويزرعه المزارعون على نحوين. فأرز الأراضي المنخفضة — وهو الحصة الكبرى — يقبع في حقولٍ محاطة بالسدود تُبقى مغمورةً عمداً؛ أما أرز المرتفعات فينمو جافاً على المطر وحده. وكثيراً ما تُربَّى الشتلات في مشتلٍ ثم تُنقل باليد إلى الطين، حزمةً حزمة — وعلى المنحدرات تتسلّق الحقول التلال في مدرّجاتٍ من أقدم ما هندسته يد الإنسان.",
+        figCap: "حقلٌ منخفض مغمور؛ صفحة الماء تُغذّي المحصول وتكبح الأعشاب.",
+        figCredit: "ويكيميديا كومنز"
+      },
+      s9: {
+        n: "٠٩", kicker: "الحصاد والتبييض", title: "من القشرة إلى الحبة",
+        body1: "يُحصد الأرز حين تشتدّ الحبة ويصفرّ النبات. ثم يُدرَس ليتحرّر الحبّ، ويُجفَّف. وهو لا يزال محبوساً في قشرته غير الصالحة للأكل، فيُسمّى الآن «الأرز الخام» — وما يجري بعد ذلك هو ما يحدّد ما يصل إلى الطبق.",
+        body2: "انزع القشرة تحصل على الأرز البنّي، الذي يحتفظ بنخالته وجنينه. لمّع النخالة والجنين أيضاً تحصل على الأرز الأبيض: أطول عمراً وأسرع طهواً، لكنه مجرَّدٌ من كثيرٍ من فائدته. أما السلق قبل الطحن — نقع الأرز الخام وتبخيره — فيدفع فيتاميناته إلى الداخل ويعطي حبّ «السيلا» الذهبي المرغوب في جنوب آسيا والخليج.",
+        figCap: "أرزٌ حديث الحصاد يُفرَش ليجفّ في الشمس قبل طحنه.",
+        figCredit: "ويكيميديا كومنز",
+        flowTitle: "كيف يجري التبييض",
+        mill1: { t: "الأرز الخام", s: "الحبة في القشرة" },
+        mill2: { t: "الأرز البنّي", s: "بلا قشرة · بنخالته" },
+        mill3: { t: "الأرز الأبيض", s: "نخالة وجنين مُلمَّعان" },
+        branch: "«السيلا» المسلوق — يُبخَّر في قشرته أولاً ثم يُطحَن"
+      },
+      s10: {
+        n: "١٠", kicker: "الأنواع والأصناف", title: "نوعٌ واحد، آلاف الحبوب",
+        intro: "يُصنَّف الأرز أولاً بطول حبته وبسلوكه في القدر. وضمن نوعٍ واحد يقبع أكثر من أربعين ألف صنفٍ مُسمّى، وتحرس بنوك الجينات في العالم أكثر من مئة ألفٍ سواها.",
+        cards: [
+          { img: "Basmati_Rice.jpg", name: "بسمتي", tag: "طويل الحبة · عطري", desc: "الحبة الطويلة النحيلة العطرة من الهند وباكستان — قلب البرياني والمندي والكبسة." },
+          { img: "White_rice.jpg", name: "أبيض مُلمَّع", tag: "قصير–متوسط", desc: "مطحونٌ ومُلمَّع؛ الحبة اليومية على معظم موائد العالم." },
+          { img: "Brown_rice.jpg", name: "بنّي كامل", tag: "بالنخالة", desc: "منزوع القشرة لا المُلمَّع، يبقي النخالة والجنين لقرمشةٍ وطعمٍ أغنى بالألياف." },
+          { img: "Black_rice.jpg", name: "أسود وأحمر", tag: "مُصطبِغ", desc: "تصبغه الأنثوسيانينات في النخالة — منه الأسود «المحرّم» والأحمر." }
+        ],
+        chips: ["ياسمين · عطري تايلندي", "دبق · لزج", "أربوريو · ريزوتو", "يابونيكا · سوشي", "إنديكا · طويل الحبة"],
+        note: "رائحة الأرز العطري تأتي من مركّبٍ واحد — 2-أسيتيل-1-بيرولين — وهو ذاته في البسمتي والياسمين سواء."
+      },
+      s11: {
+        n: "١١", kicker: "التغذية", title: "ماذا يمنحك طبق الأرز",
+        body1: "الأرز قبل كل شيء نشاً — مصدر طاقةٍ نظيفٌ سهل الهضم، وخالٍ طبيعياً من الغلوتين. وهو يوفّر عبر الكوكب قرابة خُمس ما يأكله الناس من سعرات.",
+        body2: "لكن للطحن ثمناً: فالأرز الأبيض يفقد مع نخالته كثيراً من ألياف الحبة وفيتاميناتها ومعادنها، ولذلك تدعّمه دولٌ كثيرة أو تفضّل الأرز المسلوق. أما الأرز البنّي فيبقي النخالة والجنين، ومعهما مزيدٌ من الألياف والمغنيسيوم وفيتامينات ب.",
+        figCap: "أرزٌ أبيض مطهو على البخار — الصورة التي يأكله بها معظم العالم.",
+        figCredit: "ويكيميديا كومنز",
+        factTitle: "أرز أبيض مطهو", factUnit: "لكل 100 غ",
+        facts: [
+          { k: "الطاقة", v: "130 سعرة" },
+          { k: "الكربوهيدرات", v: "28 غ" },
+          { k: "البروتين", v: "2.7 غ" },
+          { k: "الدهون", v: "0.3 غ" },
+          { k: "الألياف", v: "0.4 غ" }
+        ],
+        factNote: "خالٍ طبيعياً من الغلوتين · نحو خُمس طاقة العالم الغذائية"
+      },
+      s12: {
+        n: "١٢", kicker: "البيئة والمستقبل", title: "الحبة والاحتباس الحراري",
+        body1: "الفيضان ذاته الذي يجعل الحقل المغمور بهذه الوفرة يجعله أيضاً يتنفّس الميثان — وهو غازٌ دفيئيٌّ أشدّ بكثير من ثاني أكسيد الكربون. وزراعة الأرز من أكبر مصادره البشرية، ومناخٌ أشدّ حرارةً وملوحةً وأقلّ استقراراً يهدّد اليوم الدلتاوات نفسها التي يزدهر فيها الأرز.",
+        body2: "لذا يواصل المربّون إعادة تشكيل النبتة — لغلّةٍ أعلى، ولماءٍ أقل، ولحبوبٍ تصمد أمام الفيضان والجفاف والملح. فمحصولٌ استغرق صنعه عشرة آلاف عام لا يزال يُعاد رسمه.",
+        figCap: "الأرز الذهبي (يميناً)، المهندَس ليحمل البيتا-كاروتين، إلى جوار الأرز الأبيض المعتاد.",
+        figCredit: "المعهد الدولي لبحوث الأرز · CC BY",
+        innov: [
+          { t: "الأرز الذهبي", d: "هُندِس لينتج البيتا-كاروتين — مصدراً لفيتامين أ — لمكافحة عمى الأطفال." },
+          { t: "أرز «الغطس»", d: "بحمله الجين SUB1A، يصمد أسبوعين كاملين تحت الماء." },
+          { t: "مفكوك الجينوم، 2005", d: "الأرز أول نباتٍ محصولي يُقرأ جينومه كاملاً." }
+        ]
+      },
+      prod: {
+        kicker: "الإنتاج اليوم", title: "أكبر منتجي الأرز، 2023", unit: "بملايين الأطنان",
+        india: "الهند", china: "الصين", bangladesh: "بنغلاديش", indonesia: "إندونيسيا", vietnam: "فيتنام", thailand: "تايلاند",
+        world: "الإجمالي العالمي", worldVal: "800 مليون طن",
+        source: "المصدر: منظمة الأغذية والزراعة، 2023"
+      },
+      time: {
+        kicker: "خط زمني", title: "محطات في تاريخ الأرز", eraNote: "المدد بالسنوات قبل الحاضر",
+        items: [
+          { y: "≈ 9000 سنة", l: "استئناس الأرز الآسيوي على اليانغتسي بالصين" },
+          { y: "≈ 6000 سنة", l: "وصوله إلى شمال الصين" },
+          { y: "5500–3200 سنة", l: "انتشاره إلى كوريا واليابان" },
+          { y: "5500–4000 سنة", l: "حمله إلى تايوان وبدء التوسّع الأوسترونيزي" },
+          { y: "≈ 5000 سنة", l: "رسوخه عبر البرّ الرئيس لجنوب شرق آسيا" },
+          { y: "≈ 4500 سنة", l: "بلوغ اليابونيكا الهند وظهور الإنديكا" },
+          { y: "≈ 3000 سنة", l: "استئناس الأرز الأفريقي على النيجر" },
+          { y: "بعد 1492", l: "دخول الأرز الأمريكتين عبر التبادل الكولومبي" },
+          { y: "1966", l: "إطلاق IR8 أول أرزٍ للثورة الخضراء" },
+          { y: "2005", l: "الأرز أول محصولٍ يُفكُّ جينومه كاملاً" },
+          { y: "2023", l: "محصول العالم يبلغ 800 مليون طن" }
+        ]
+      },
+      colophon: {
+        kicker: "عن هذه الصفحة", title: "المصادر والاعتمادات",
+        cc: "كُتِب هذا النص لصالح ميداد-إكس استناداً إلى مقالة ويكيبيديا «الأرز»، المتاحة برخصة المشاع الإبداعي: النسب-الترخيص بالمثل 4.0 (CC BY-SA 4.0). لُخِّصت الحقائق بأسلوبنا الخاص، والمقالة مرتبطة أدناه. والصور من ويكيميديا كومنز بموجب رخصها الخاصة.",
+        imgTitle: "اعتمادات الصور",
+        credits: [
+          "اللوحة النباتية — فرانتس أويغن كوهلر، «نباتات كوهلر الطبية» (1887). ملكية عامة.",
+          "مدرَّجات يوننان — جياليانغ غاو (peace-on-earth.org). CC BY-SA 3.0.",
+          "مدرَّجات باناوي — ويكيميديا كومنز. CC BY-SA.",
+          "أرز مقشور وغير مقشور — ويكيميديا كومنز.",
+          "الأرز البني — ويكيميديا كومنز.",
+          "أرز أبيض وبني وأحمر وبري — ويكيميديا كومنز. CC BY-SA.",
+          "نبات الأرز محمّلاً بالسنابل — ويكيميديا كومنز.",
+          "حقل أرز مغمور — ويكيميديا كومنز.",
+          "تجفيف الأرز في الشمس — ويكيميديا كومنز.",
+          "أرز بسمتي وأبيض وبني وأسود — ويكيميديا كومنز.",
+          "أرز أبيض مطهو — ويكيميديا كومنز.",
+          "الأرز الذهبي — المعهد الدولي لبحوث الأرز. CC BY."
+        ],
+        link: "en.wikipedia.org/wiki/Rice", backTop: "العودة إلى الأعلى"
+      }
+    };
+
+    const dict = { en, ar };
+    const lang = this.state.lang || (this.props.defaultLang === "ar" ? "ar" : "en");
+    const t = dict[lang];
+    const accent = this.props.accent || "#1F3D2A";
+    const duotone = this.props.duotone ?? false;
+
+    return {
+      t, lang, dir: t.dir, langLabel: t.langLabel, accent,
+      navItems: (t.nav || []).map((n) => Object.assign({}, n, { color: n.active ? '#1F3D2A' : 'rgba(35,32,26,.72)' })),
+      imgFilter: duotone ? "sepia(.32) saturate(.8) contrast(1.04) brightness(1.02)" : "saturate(1.02)",
+      toggleLang: () => this.setState(s => ({ lang: (s.lang || (this.props.defaultLang === "ar" ? "ar" : "en")) === "en" ? "ar" : "en" }))
+    };
+  }
+}
+</script>
+</body>
+</html>
