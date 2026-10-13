@@ -12,7 +12,7 @@
         "http://localhost:4323/contact"
       ],
       "numberOfRuns": 1,
-      "settings": { "preset": "perf", "formFactor": "mobile", "screenEmulation": { "mobile": true } }
+      "settings": { "formFactor": "mobile", "screenEmulation": { "mobile": true } }
     },
     "assert": {
       "assertions": {

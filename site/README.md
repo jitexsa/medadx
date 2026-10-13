@@ -10,7 +10,7 @@ npm run dev          # http://localhost:4321
 npm run build        # astro check + static build to dist/ (pages, WebP images, share thumbnails)
 npm run lint         # ESLint + Prettier
 npm test             # unit (vitest) + end-to-end/SEO/axe (Playwright)
-npm run test:links   # internal link check on dist/
+npm run test:links   # internal link check on dist/ (Vercel cleanUrls rules)
 npm run lhci         # Lighthouse budgets
 ```
 
