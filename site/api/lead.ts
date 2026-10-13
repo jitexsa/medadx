@@ -10,7 +10,7 @@
  *   multipart/form-data     meta (JSON), payload (JSON), one part per file
  *   2xx → { ref: "MX-…" }   shown to the visitor as their reference number
  */
-import { checkFiles, isEmail, isPhone, looksLikeBot } from '../src/lib/lead/validate';
+import { checkFiles, isEmail, isPhone, looksLikeBot } from '../src/lib/lead/validate.js';
 
 const ALLOWED_ORIGINS = new Set(['https://medadx.com', 'https://www.medadx.com']);
 const MAX_BYTES = 4 * 1024 * 1024;

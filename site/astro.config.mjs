@@ -9,6 +9,8 @@ export default defineConfig({
   site: SITE,
   output: 'static',
   trailingSlash: 'never',
+  // No Markdown code blocks on the site; Shiki's inline styles would also conflict with the CSP.
+  markdown: { syntaxHighlight: false },
   // /about → about.html; Vercel `cleanUrls` serves it at /about.
   // Inline CSS: removes render-blocking requests (the biggest mobile LCP cost); CSP hashes cover it.
   build: { format: 'file', inlineStylesheets: 'always' },
