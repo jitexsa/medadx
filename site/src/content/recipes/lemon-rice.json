@@ -1,0 +1,59 @@
+{
+  "num": 15,
+  "slug": "lemon-rice",
+  "region": "Indian & Pakistani",
+  "title": "Lemon Rice (Chitranna)",
+  "tagline": "Bright, tangy South Indian rice with a mustard-and-curry-leaf tempering.",
+  "intro": "Lemon rice, or chitranna, is a zesty South Indian classic built on a fragrant tempering of mustard seeds, curry leaves, lentils and turmeric, finished with fresh lemon juice. Quick, tangy and refreshing, it's a beloved lunchbox and travel food — and a brilliant way to use leftover rice.",
+  "cuisine": "Indian (South Indian)",
+  "course": "Main or side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "10 minutes",
+  "cookTime": "15 minutes",
+  "totalTime": "25 minutes",
+  "prepISO": "PT10M",
+  "cookISO": "PT15M",
+  "totalISO": "PT25M",
+  "difficulty": "Easy",
+  "rice": "Cooked, cooled basmati or short-grain rice",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "3 cups cooked, cooled rice",
+        "3 tbsp oil",
+        "1 tsp mustard seeds",
+        "1 tsp chana dal (split chickpeas)",
+        "1 tsp urad dal (split black gram)",
+        "2 tbsp peanuts",
+        "2 dried red chillies",
+        "10–12 curry leaves",
+        "2 green chillies, slit",
+        "1 tsp grated ginger",
+        "½ tsp turmeric",
+        "Juice of 1½–2 lemons",
+        "Salt to taste",
+        "Coriander to garnish"
+      ]
+    }
+  ],
+  "method": [
+    "Heat oil and add mustard seeds; when they pop, add the chana dal, urad dal and peanuts and fry until golden.",
+    "Add the dried red chillies, curry leaves, green chillies and ginger; sauté briefly.",
+    "Stir in the turmeric and take the pan off the heat for a moment so it doesn't burn.",
+    "Add the cooked rice and salt, and toss gently to coat evenly.",
+    "Turn off the heat and stir through the lemon juice (adding it off the heat keeps it bright).",
+    "Garnish with coriander."
+  ],
+  "tips": [
+    "Always add lemon juice off the heat to keep the flavour fresh, not bitter.",
+    "Cold, day-old rice tosses without turning mushy."
+  ],
+  "toServe": "Great on its own with pickle, or alongside a coconut chutney.",
+  "imageAlt": "Lemon rice with peanuts, curry leaves and turmeric",
+  "image": "../../assets/recipes/lemon-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Lemon%20rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

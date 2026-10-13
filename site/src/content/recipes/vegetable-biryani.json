@@ -1,0 +1,76 @@
+{
+  "num": 5,
+  "slug": "vegetable-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Vegetable Biryani",
+  "tagline": "A colourful, aromatic biryani of mixed vegetables layered with saffron basmati.",
+  "intro": "Vegetable biryani proves that no meat is needed for a showstopping rice dish. Seasonal vegetables are cooked in a fragrant yoghurt masala and layered with saffron-scented basmati, then steamed. Wholesome, vibrant and endlessly adaptable, it's a favourite for vegetarian tables and buffets.",
+  "cuisine": "Indian",
+  "course": "Main course (vegetarian)",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "25 minutes",
+  "cookTime": "45 minutes",
+  "totalTime": "1 hour 10 minutes",
+  "prepISO": "PT25M",
+  "cookISO": "PT45M",
+  "totalISO": "PT1H10M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the vegetables & masala",
+      "items": [
+        "500 g mixed vegetables (carrot, potato, beans, cauliflower, peas, capsicum)",
+        "3 onions, sliced",
+        "2 tomatoes, chopped",
+        "250 g (1 cup) yoghurt, whisked",
+        "2 tbsp ginger–garlic paste",
+        "3 green chillies",
+        "120 ml (½ cup) oil",
+        "1 tbsp red chilli powder",
+        "½ tsp turmeric",
+        "1 tsp coriander powder",
+        "1 tbsp biryani masala",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice",
+        "2.5 litres water, 2 tbsp salt",
+        "Whole spices: cinnamon, cloves, cardamom, bay leaf"
+      ]
+    },
+    {
+      "group": "For layering",
+      "items": [
+        "½ tsp saffron in 3 tbsp milk",
+        "3 tbsp fried onions",
+        "Mint and coriander",
+        "2 tbsp ghee"
+      ]
+    }
+  ],
+  "method": [
+    "Rinse and soak the rice; drain.",
+    "Fry the onions golden; add ginger–garlic paste and chillies.",
+    "Add the vegetables and all the spices; sauté for a few minutes.",
+    "Add the tomatoes and yoghurt and cook until the vegetables are just tender and the masala is thick. Do not overcook — they finish during dum.",
+    "Parboil the rice to 70% in salted, spiced water; drain.",
+    "Layer rice over the vegetables with saffron milk, fried onions, herbs and ghee.",
+    "Seal and dum on the lowest heat for 20 minutes.",
+    "Rest and fold gently."
+  ],
+  "tips": [
+    "Cut vegetables to a similar size so they cook evenly.",
+    "Add paneer cubes or cashews for a richer version."
+  ],
+  "toServe": "Delicious with raita and papad.",
+  "imageAlt": "Colourful vegetable biryani with mixed vegetables and saffron rice",
+  "image": "../../assets/recipes/vegetable-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Veg%20Biryani.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

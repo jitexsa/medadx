@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import { getCredits } from '@/lib/catalog';
+import { HISTORY_IMG } from '@/lib/history-images';
+
+export interface Props {
+  id: string;
+  alt: string;
+  caption: string;
+  fallbackCredit?: string;
+  height?: 'sm' | 'md' | 'lg' | 'auto';
+  class?: string;
+}
+const { id, alt, caption, fallbackCredit = '', height = 'md', class: cls } = Astro.props;
+const credit = (await getCredits()).get(`history/${id}`);
+const img = HISTORY_IMG[id]!;
+const creditText = credit ? `${credit.artist} · ${credit.license}` : fallbackCredit;
+---
+
+<figure class:list={['hf', cls]}>
+  <div class="hf__frame">
+    <Image
+      src={img}
+      alt={alt}
+      format="webp"
+      widths={[480, 800, 1200]}
+      sizes="(min-width: 1180px) 560px, 92vw"
+      class:list={['hf__img', `hf__img--${height}`]}
+    />
+  </div>
+  <figcaption class="hf__cap">
+    <span class="hf__text">{caption}</span>
+    {credit ? (
+      <a class="hf__credit" href={credit.sourceUrl} target="_blank" rel="noopener" lang="en" dir="ltr">
+        {creditText}
+      </a>
+    ) : (
+      <span class="hf__credit">{creditText}</span>
+    )}
+  </figcaption>
+</figure>
+
+<style>
+  .hf {
+    margin: 0;
+  }
+  .hf__frame {
+    background: var(--paper);
+    border: 1px solid rgba(var(--ink), 0.16);
+    border-radius: 16px;
+    padding: 11px;
+    box-shadow: 0 30px 60px -34px rgba(31, 45, 29, 0.55);
+  }
+  .hf__img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+  }
+  .hf__img--sm {
+    height: 260px;
+  }
+  .hf__img--md {
+    height: 300px;
+  }
+  .hf__img--lg {
+    height: 340px;
+  }
+  .hf__img--auto {
+    height: auto;
+  }
+  .hf__cap {
+    margin-top: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 16px;
+  }
+  .hf__text {
+    flex: 1 1 200px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hf__credit {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+    text-decoration: none;
+    max-width: 100%;
+  }
+  a.hf__credit:hover {
+    text-decoration: underline;
+  }
+</style>

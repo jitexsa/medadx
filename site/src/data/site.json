@@ -1,0 +1,129 @@
+{
+  "phone": "+966 920009050",
+  "phoneHref": "tel:+966920009050",
+  "wa": "+966 59 127 8526",
+  "waHref": "https://wa.me/966591278526",
+  "email": "info@medadx.com",
+  "emailHref": "mailto:info@medadx.com",
+  "web": "medadx.com",
+  "webHref": "https://medadx.com",
+  "mapsHref": "https://maps.google.com/?q=Port+Gate+Building,+Dammam+Meena+Road,+Al+Dammam,+Saudi+Arabia",
+  "countries": [
+    {
+      "en": "Saudi Arabia",
+      "ar": "المملكة العربية السعودية",
+      "dial": "+966"
+    },
+    {
+      "en": "United Arab Emirates",
+      "ar": "الإمارات العربية المتحدة",
+      "dial": "+971"
+    },
+    {
+      "en": "Kuwait",
+      "ar": "الكويت",
+      "dial": "+965"
+    },
+    {
+      "en": "Qatar",
+      "ar": "قطر",
+      "dial": "+974"
+    },
+    {
+      "en": "Bahrain",
+      "ar": "البحرين",
+      "dial": "+973"
+    },
+    {
+      "en": "Oman",
+      "ar": "عُمان",
+      "dial": "+968"
+    },
+    {
+      "en": "Jordan",
+      "ar": "الأردن",
+      "dial": "+962"
+    },
+    {
+      "en": "Egypt",
+      "ar": "مصر",
+      "dial": "+20"
+    },
+    {
+      "en": "Iraq",
+      "ar": "العراق",
+      "dial": "+964"
+    },
+    {
+      "en": "Lebanon",
+      "ar": "لبنان",
+      "dial": "+961"
+    },
+    {
+      "en": "Morocco",
+      "ar": "المغرب",
+      "dial": "+212"
+    },
+    {
+      "en": "Algeria",
+      "ar": "الجزائر",
+      "dial": "+213"
+    },
+    {
+      "en": "Tunisia",
+      "ar": "تونس",
+      "dial": "+216"
+    },
+    {
+      "en": "Libya",
+      "ar": "ليبيا",
+      "dial": "+218"
+    },
+    {
+      "en": "Sudan",
+      "ar": "السودان",
+      "dial": "+249"
+    },
+    {
+      "en": "Yemen",
+      "ar": "اليمن",
+      "dial": "+967"
+    },
+    {
+      "en": "Türkiye",
+      "ar": "تركيا",
+      "dial": "+90"
+    },
+    {
+      "en": "India",
+      "ar": "الهند",
+      "dial": "+91"
+    },
+    {
+      "en": "Pakistan",
+      "ar": "باكستان",
+      "dial": "+92"
+    }
+  ],
+  "dials": [
+    "+966",
+    "+971",
+    "+965",
+    "+974",
+    "+973",
+    "+968",
+    "+962",
+    "+20",
+    "+964",
+    "+961",
+    "+212",
+    "+213",
+    "+216",
+    "+218",
+    "+249",
+    "+967",
+    "+90",
+    "+91",
+    "+92"
+  ]
+}

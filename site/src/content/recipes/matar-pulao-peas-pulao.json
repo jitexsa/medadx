@@ -1,0 +1,55 @@
+{
+  "num": 10,
+  "slug": "matar-pulao-peas-pulao",
+  "region": "Indian & Pakistani",
+  "title": "Matar Pulao (Peas Pulao)",
+  "tagline": "A quick, everyday one-pot of basmati and sweet green peas with whole spices.",
+  "intro": "Matar pulao is the weeknight hero of South Asian kitchens — basmati and green peas tempered with cumin and whole spices, cooked in a single pot. It's light, fragrant and ready in half an hour, pairing beautifully with almost any curry or simply a bowl of yoghurt.",
+  "cuisine": "Indian & Pakistani",
+  "course": "Side or light main (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "10 minutes",
+  "cookTime": "25 minutes",
+  "totalTime": "35 minutes",
+  "prepISO": "PT10M",
+  "cookISO": "PT25M",
+  "totalISO": "PT35M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 20 min",
+        "200 g (1½ cups) green peas (fresh or frozen)",
+        "1 onion, thinly sliced",
+        "1 tbsp ginger–garlic paste",
+        "2 green chillies, slit",
+        "3 tbsp oil or ghee",
+        "1 tsp cumin seeds",
+        "1 cinnamon stick, 3 cloves, 3 cardamom, 1 bay leaf",
+        "700 ml water",
+        "Salt to taste"
+      ]
+    }
+  ],
+  "method": [
+    "Heat the oil and add cumin seeds and whole spices until fragrant.",
+    "Add the onion and fry until light golden. Add ginger–garlic paste and green chillies.",
+    "Add the peas and sauté for 2 minutes.",
+    "Add the drained rice and stir gently to coat. Add the water and salt.",
+    "Bring to a boil, then cover and cook on low until the water is absorbed and the rice is fluffy, about 12–15 minutes.",
+    "Rest 5 minutes, then fluff with a fork."
+  ],
+  "tips": [
+    "A 1:1.75 rice-to-water ratio (by volume) gives perfectly separate grains.",
+    "Frozen peas can go in straight from the freezer."
+  ],
+  "toServe": "Great with any dal, korma or raita.",
+  "imageAlt": "Matar pulao with green peas and whole spices in basmati rice",
+  "image": "../../assets/recipes/matar-pulao-peas-pulao.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Matar%20Pulav.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

@@ -1,0 +1,373 @@
+{
+  "dir": "ltr",
+  "langLabel": "العربية",
+  "masthead": "The Reader",
+  "backToSite": "Back to site",
+  "nav": [
+    {
+      "label": "Home",
+      "url": "./#/",
+      "active": false
+    },
+    {
+      "label": "About Us",
+      "url": "./#/about",
+      "active": false
+    },
+    {
+      "label": "Supply Chain",
+      "url": "./#/supply-chain",
+      "active": false
+    },
+    {
+      "label": "History of Rice",
+      "url": "#top",
+      "active": true
+    },
+    {
+      "label": "Request Quote",
+      "url": "./#/contact",
+      "active": false
+    }
+  ],
+  "hero": {
+    "kicker": "An illustrated history",
+    "title": "The History of Rice",
+    "standfirst": "From a wild grass on the banks of the Yangtze to the staple that feeds half the world — the ten-thousand-year journey of a single grain.",
+    "source": "Adapted from the Wikipedia article “Rice”",
+    "figCap": "Oryza sativa, engraved for Köhler’s Medizinal-Pflanzen (1887).",
+    "figCredit": "Franz Eugen Köhler · Public domain"
+  },
+  "s1": {
+    "n": "01",
+    "kicker": "In brief",
+    "title": "A grain that fed civilisations",
+    "lede": "Rice is the edible seed of two grass species: Oryza sativa, or Asian rice, and the less common Oryza glaberrima, or African rice. In its domesticated form it is the staple food of more than half the world’s people — above all across Asia and Africa.",
+    "body": "In 2023 farmers harvested some 800 million tonnes of it, making rice the third most-produced crop on Earth after sugarcane and maize. Yet the plant we know today began as a wild grass, gathered long before it was ever sown."
+  },
+  "s2": {
+    "n": "02",
+    "kicker": "Origins & domestication",
+    "title": "From wild grass to crop",
+    "body1": "Asian rice was first domesticated in China, by Neolithic communities living along the Upper and Lower Yangtze between roughly 13,500 and 8,200 years ago — a process usually dated to around nine thousand years back. Both of its great subspecies — the fluffy, long-grained indica and the sticky, short-grained japonica — descend from a single domestication of the wild rice Oryza rufipogon.",
+    "body2": "The decisive change was genetic: a mutation that stopped ripe grains from shattering off the stalk, so they could be harvested whole. Indica as we know it emerged later, when japonica reached India about 4,500 years ago and crossed with local wild and proto-indica rices. African rice, Oryza glaberrima, was domesticated entirely separately, in the inland delta of the Niger in West Africa around three thousand years ago.",
+    "figCap": "Terraced rice fields in Yunnan, southern China — near the plant’s ancient homeland.",
+    "figCredit": "Jialiang Gao · CC BY-SA 3.0"
+  },
+  "tree": {
+    "kicker": "Two domestications",
+    "title": "One grain, two family lines",
+    "wild": "Oryza rufipogon",
+    "wildSub": "Asian wild rice",
+    "jap": "japonica",
+    "japSub": "short-grain, sticky",
+    "ind": "indica",
+    "indSub": "long-grain, fluffy",
+    "wildAfr": "African wild rice",
+    "glab": "O. glaberrima",
+    "glabSub": "African rice",
+    "tagAsia": "Asia · ~9,000 yrs ago",
+    "tagAfrica": "West Africa · ~3,000 yrs ago"
+  },
+  "s3": {
+    "n": "03",
+    "kicker": "The spread across Asia",
+    "title": "With farmers, migrants and languages",
+    "body1": "From its Yangtze homeland, rice travelled outward. It reached the Sino-Tibetan cultures of northern China by about 6,000 years ago, and the Korean peninsula and Japan between roughly 5,500 and 3,200 years ago. Carried to Taiwan by the Dapenkeng culture, it then moved south with the great Austronesian migrations into Island Southeast Asia and on to Madagascar and Guam — though it did not survive the longer voyages into the wider Pacific.",
+    "body2": "By about 5,000 years ago it had reached Austroasiatic and Kra-Dai–speaking peoples across mainland Southeast Asia and southern China. Wherever it went, rice reshaped the land: the flooded paddy and the mountainside terrace became some of the most enduring works of human agriculture.",
+    "figCap": "The Banaue rice terraces of Luzon, the Philippines — rice carried by Austronesian farmers.",
+    "figCredit": "Wikimedia Commons · CC BY-SA"
+  },
+  "map": {
+    "kicker": "Routes of dispersal",
+    "title": "How rice travelled the world",
+    "origin": "Yangtze, China",
+    "originSub": "≈ 9,000 years ago",
+    "nodes": [
+      "Northern China — Sino-Tibetan cultures",
+      "Korea & Japan",
+      "Taiwan → Island SE Asia → Madagascar & Guam",
+      "Mainland Southeast Asia & southern China",
+      "India — indica emerges",
+      "Middle East, Mediterranean & Europe",
+      "The Americas — after 1492"
+    ],
+    "africaLabel": "Independent line",
+    "africa": "West Africa → Oryza glaberrima",
+    "note": "Schematic — simplified for clarity."
+  },
+  "s4": {
+    "n": "04",
+    "kicker": "West to the Middle East & Europe",
+    "title": "Along the old trade routes",
+    "body1": "Trade and conquest carried rice westward out of Asia. It was known in Mesopotamia and Persia in antiquity, and spread through the Mediterranean world. In the medieval period Arab agriculture carried it across North Africa and into al-Andalus, and by the fifteenth century it had reached the Po Valley of Italy.",
+    "body2": "In West Africa, meanwhile, communities had long grown their own native Oryza glaberrima. A hardy, water-loving crop able to feed dense populations, rice wove itself into the cuisine and economy of every region it entered.",
+    "figCap": "Milled and unmilled grain — rice as it moved along the trade routes.",
+    "figCredit": "Wikimedia Commons"
+  },
+  "s5": {
+    "n": "05",
+    "kicker": "The Columbian Exchange",
+    "title": "Across the Atlantic",
+    "body1": "Rice crossed the Atlantic as part of the Columbian Exchange — the vast transfer of crops, animals and people that followed 1492. Asian rice arrived with European colonists, while African rice was carried to the Americas by the Spanish, together with the knowledge of enslaved West Africans who understood how to grow it.",
+    "body2": "In the tidal lowlands of the Carolinas rice became a plantation crop of enormous value. By the eve of the American War of Independence it ranked as the fourth most valuable export of British North America, behind only tobacco, wheat and fish.",
+    "figCap": "Brown rice — the lightly milled grain that crossed the ocean.",
+    "figCredit": "Wikimedia Commons"
+  },
+  "s6": {
+    "n": "06",
+    "kicker": "Trade & the modern grain",
+    "title": "A revolution in the harvest",
+    "body1": "For all its importance, rice is mostly eaten close to where it is grown: even today, less than a tenth of the harvest — under 8% — is traded across borders. The twentieth century transformed how much could be grown.",
+    "body2": "During the Green Revolution, researchers at the International Rice Research Institute in the Philippines released IR8 in 1966 — a high-yielding variety bred from a Chinese and an Indonesian parent, with short, strong stems that could carry heavy grain without toppling. In 2005 rice became the first crop plant to have its full genome sequenced. Today China and India together grow more than half the world’s rice, and around 90% of it is still produced in Asia — where the whole story began nine thousand years before.",
+    "figCap": "White, brown, red and wild rice — a fraction of the crop’s diversity.",
+    "figCredit": "Wikimedia Commons · CC BY-SA"
+  },
+  "partII": {
+    "kicker": "Part Two",
+    "title": "The Grain Itself",
+    "sub": "Botany, cultivation and the modern table — how a wild grass became the food on the plate."
+  },
+  "s7": {
+    "n": "07",
+    "kicker": "Botany · the plant",
+    "title": "What rice actually is",
+    "body1": "Rice is an annual grass of the genus Oryza. The plant throws up hollow, jointed stems that stand between one and 1.8 metres tall — though deepwater varieties, racing a rising flood, can reach five. Its long, slender leaves give way at the top to a branching flower-head, the panicle, and it is largely self-pollinating.",
+    "body2": "Each tiny flower can set a single grain — the caryopsis — five to twelve millimetres long, sealed in a tough husk. From sowing to harvest takes roughly three to six months. Alone among the world’s great cereals, rice is semi-aquatic: it thrives with its roots in standing water, where wheat or maize would simply drown.",
+    "figCap": "A field of rice in grain, the panicles bowing under ripening seed.",
+    "figCredit": "Wikimedia Commons",
+    "specs": [
+      {
+        "k": "Height",
+        "v": "1–1.8 m",
+        "s": "to 5 m in deepwater"
+      },
+      {
+        "k": "Panicle",
+        "v": "30–50 cm",
+        "s": "branching flower-head"
+      },
+      {
+        "k": "Season",
+        "v": "3–6 months",
+        "s": "sowing to harvest"
+      }
+    ]
+  },
+  "s8": {
+    "n": "08",
+    "kicker": "Cultivation",
+    "title": "Grown in water",
+    "body1": "Most rice is grown in flooded fields called paddies. The standing water is not just drink for a thirsty plant; it is a tool. A sheet of water smothers weeds and denies many pests a foothold, letting rice outcompete almost everything around it.",
+    "body2": "Farmers work it two ways. Lowland or “wetland” rice, by far the greater share, sits in bunded fields kept deliberately flooded; upland rice grows dry on rain alone. Seedlings are often raised in a nursery and transplanted into the mud by hand, one clump at a time — and on steep ground the paddies climb the hillside in terraces that are among the oldest engineered landscapes on Earth.",
+    "figCap": "A flooded lowland paddy; the sheet of water feeds the crop and holds back the weeds.",
+    "figCredit": "Wikimedia Commons"
+  },
+  "s9": {
+    "n": "09",
+    "kicker": "Harvest & milling",
+    "title": "From husk to grain",
+    "body1": "Rice is cut when the grain hardens and the plant turns gold. It is threshed to shake the grain loose, then dried. Still sealed in its inedible husk, it is now “paddy”, or rough rice — and what happens next decides what reaches the plate.",
+    "body2": "Strip away the husk and you have brown rice, which keeps its bran and germ. Polish those away too and you have white rice: longer-lasting and quick to cook, but stripped of much of its goodness. Parboiling — soaking and steaming the paddy before milling — drives its vitamins inward and yields the golden “sella” grain so prized across South Asia and the Gulf.",
+    "figCap": "Freshly cut rice spread to dry in the sun before it is milled.",
+    "figCredit": "Wikimedia Commons",
+    "flowTitle": "How milling works",
+    "mill1": {
+      "t": "Paddy",
+      "s": "grain in the husk"
+    },
+    "mill2": {
+      "t": "Brown rice",
+      "s": "husk off · bran kept"
+    },
+    "mill3": {
+      "t": "White rice",
+      "s": "bran & germ polished away"
+    },
+    "branch": "Parboiled “sella” — steamed in the husk first, then milled"
+  },
+  "s10": {
+    "n": "10",
+    "kicker": "Types & varieties",
+    "title": "One species, thousands of grains",
+    "intro": "Rice is sorted first by the length of its grain and by how it behaves in the pot. Within a single species sit more than forty thousand named cultivars, and the world’s gene banks guard well over a hundred thousand more.",
+    "cards": [
+      {
+        "img": "Basmati_Rice.jpg",
+        "name": "Basmati",
+        "tag": "Long-grain · aromatic",
+        "desc": "The slender, perfumed long-grain of India and Pakistan — the heart of biryani, mandi and kabsa."
+      },
+      {
+        "img": "White_rice.jpg",
+        "name": "Polished white",
+        "tag": "Short–medium",
+        "desc": "Milled and polished smooth; the everyday grain on most of the world’s tables."
+      },
+      {
+        "img": "Brown_rice.jpg",
+        "name": "Whole-grain brown",
+        "tag": "Bran retained",
+        "desc": "Husked but never polished, keeping bran and germ for a nutty bite and more fibre."
+      },
+      {
+        "img": "Black_rice.jpg",
+        "name": "Black & red",
+        "tag": "Pigmented",
+        "desc": "Coloured deep by anthocyanins in the bran — black “forbidden” rice and red rice among them."
+      }
+    ],
+    "chips": [
+      "Jasmine · Thai fragrant",
+      "Glutinous · sticky",
+      "Arborio · risotto",
+      "Japonica · sushi",
+      "Indica · long-grain"
+    ],
+    "note": "The scent of an aromatic rice comes from a single compound — 2-acetyl-1-pyrroline — the same molecule in basmati and jasmine alike."
+  },
+  "s11": {
+    "n": "11",
+    "kicker": "Nutrition",
+    "title": "What a bowl of rice gives you",
+    "body1": "Rice is, above all, starch — a clean, digestible source of energy, and naturally free of gluten. Across the planet it supplies close to a fifth of all the calories people eat.",
+    "body2": "Milling comes at a cost: white rice sheds much of the grain’s fibre, B-vitamins and minerals along with its bran, which is why many countries fortify it or favour parboiled rice. Brown rice keeps the bran and germ, and with them more fibre, magnesium and B-vitamins.",
+    "figCap": "Steamed white rice — the form in which most of the world eats it.",
+    "figCredit": "Wikimedia Commons",
+    "factTitle": "Cooked white rice",
+    "factUnit": "per 100 g",
+    "facts": [
+      {
+        "k": "Energy",
+        "v": "130 kcal"
+      },
+      {
+        "k": "Carbohydrate",
+        "v": "28 g"
+      },
+      {
+        "k": "Protein",
+        "v": "2.7 g"
+      },
+      {
+        "k": "Fat",
+        "v": "0.3 g"
+      },
+      {
+        "k": "Fibre",
+        "v": "0.4 g"
+      }
+    ],
+    "factNote": "Naturally gluten-free · about a fifth of the world’s dietary energy"
+  },
+  "s12": {
+    "n": "12",
+    "kicker": "Environment & the future",
+    "title": "The grain and the greenhouse",
+    "body1": "The very flood that makes a paddy so productive also makes it breathe methane — a greenhouse gas far stronger than carbon dioxide. Rice growing is among the largest human sources of it, and a hotter, saltier, less predictable climate now threatens the very deltas where rice grows best.",
+    "body2": "So breeders keep remaking the plant — for higher yield, for less water, for grains that can survive flood, drought and salt. A crop ten thousand years in the making is still being redrawn.",
+    "figCap": "Golden Rice (right), engineered to carry beta-carotene, beside ordinary white rice.",
+    "figCredit": "International Rice Research Institute · CC BY",
+    "innov": [
+      {
+        "t": "Golden Rice",
+        "d": "Engineered to make beta-carotene — a source of vitamin A — to fight childhood blindness."
+      },
+      {
+        "t": "“Scuba” rice",
+        "d": "Carrying the SUB1A gene, it can survive two full weeks underwater."
+      },
+      {
+        "t": "Sequenced, 2005",
+        "d": "Rice was the first crop plant to have its whole genome read."
+      }
+    ]
+  },
+  "prod": {
+    "kicker": "Production today",
+    "title": "The largest rice producers, 2023",
+    "unit": "Million tonnes",
+    "india": "India",
+    "china": "China",
+    "bangladesh": "Bangladesh",
+    "indonesia": "Indonesia",
+    "vietnam": "Vietnam",
+    "thailand": "Thailand",
+    "world": "World total",
+    "worldVal": "800 million tonnes",
+    "source": "Source: FAO, 2023"
+  },
+  "time": {
+    "kicker": "Timeline",
+    "title": "Milestones in the story of rice",
+    "eraNote": "BP = years before present",
+    "items": [
+      {
+        "y": "≈ 9000 BP",
+        "l": "Asian rice domesticated along the Yangtze, China"
+      },
+      {
+        "y": "≈ 6000 BP",
+        "l": "Rice reaches northern China"
+      },
+      {
+        "y": "5500–3200 BP",
+        "l": "Spreads to Korea and Japan"
+      },
+      {
+        "y": "5500–4000 BP",
+        "l": "Carried to Taiwan; Austronesian expansion begins"
+      },
+      {
+        "y": "≈ 5000 BP",
+        "l": "Established across mainland Southeast Asia"
+      },
+      {
+        "y": "≈ 4500 BP",
+        "l": "Japonica reaches India; indica emerges"
+      },
+      {
+        "y": "≈ 3000 BP",
+        "l": "African rice domesticated on the Niger"
+      },
+      {
+        "y": "after 1492",
+        "l": "Rice enters the Americas via the Columbian Exchange"
+      },
+      {
+        "y": "1966",
+        "l": "IR8, the first Green Revolution rice, released by IRRI"
+      },
+      {
+        "y": "2005",
+        "l": "Rice is the first crop with a fully sequenced genome"
+      },
+      {
+        "y": "2023",
+        "l": "World harvest reaches 800 million tonnes"
+      }
+    ]
+  },
+  "colophon": {
+    "kicker": "About this page",
+    "title": "Sources & credits",
+    "cc": "This text was written for Medad-X drawing on the Wikipedia article “Rice,” available under the Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0). Facts are summarised in our own words; the article is linked below. Photographs are from Wikimedia Commons under their respective licences.",
+    "imgTitle": "Image credits",
+    "credits": [
+      "Botanical plate — Franz Eugen Köhler, Köhler’s Medizinal-Pflanzen (1887). Public domain.",
+      "Yunnan rice terraces — Jialiang Gao (peace-on-earth.org). CC BY-SA 3.0.",
+      "Banaue rice terraces — Wikimedia Commons. CC BY-SA.",
+      "Milled & unmilled rice — Wikimedia Commons.",
+      "Brown rice — Wikimedia Commons.",
+      "White, brown, red & wild rice — Wikimedia Commons. CC BY-SA.",
+      "Rice plants in grain — Wikimedia Commons.",
+      "Flooded paddy field — Wikimedia Commons.",
+      "Rice drying in the sun — Wikimedia Commons.",
+      "Basmati, white, brown & black rice — Wikimedia Commons.",
+      "Cooked white rice — Wikimedia Commons.",
+      "Golden Rice — International Rice Research Institute. CC BY."
+    ],
+    "link": "en.wikipedia.org/wiki/Rice",
+    "backTop": "Back to top"
+  }
+}

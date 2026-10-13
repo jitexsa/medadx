@@ -1,0 +1,268 @@
+---
+import { Image } from 'astro:assets';
+import delivery from '@/assets/stock/cta-delivery.jpg';
+import manager from '@/assets/stock/cta-manager.jpg';
+import pricing from '@/assets/stock/cta-pricing.jpg';
+import supply from '@/assets/stock/cta-supply.jpg';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const imgs = [pricing, supply, manager, delivery];
+---
+
+<section class="fcta cv-auto">
+  <div class="wrap fcta__box" data-reveal="0">
+    <div class="fcta__dots" aria-hidden="true"></div>
+    <div class="fcta__glow1" aria-hidden="true"></div>
+    <div class="fcta__glow2" aria-hidden="true"></div>
+    <div class="fcta__spin" aria-hidden="true"></div>
+    <div class="fcta__ring" aria-hidden="true"></div>
+    <span class="fcta__d d1" aria-hidden="true"></span>
+    <span class="fcta__d d2" aria-hidden="true"></span>
+    <span class="fcta__d d3" aria-hidden="true"></span>
+    <div class="fcta__in">
+      <div class="fcta__eyebrow">
+        <span class="dia dia--light" aria-hidden="true"></span>
+        {t.cta.eyebrow}
+      </div>
+      <h2 class="fcta__h">{t.cta.title}</h2>
+      <p class="fcta__sub">{t.cta.sub}</p>
+      <ul class="fcta__benefits">
+        {t.cta.benefits.map((b, i) => (
+          <li class="fcta__benefit">
+            <Image
+              src={imgs[i % 4]!}
+              alt=""
+              format="webp"
+              widths={[320, 560]}
+              sizes="(min-width: 1000px) 230px, 46vw"
+              class="fcta__img"
+              loading="lazy"
+            />
+            <div class="fcta__bcopy">
+              <h3>{b.t}</h3>
+              <p>{b.d}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div class="fcta__btns">
+        <a href={localizedPath('/contact', locale)} class="btn btn--gold btn--lg">
+          {t.cta.btn}{' '}
+          <span class="flip-x" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <a href={localizedPath('/trading-account', locale)} class="btn btn--outline-light btn--lg">
+          <span class="dia dia--light" aria-hidden="true"></span>
+          {t.cta.btn2}
+        </a>
+      </div>
+      <div class="fcta__note">
+        <span class="fcta__pulse" aria-hidden="true"></span>
+        {t.cta.note}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .fcta {
+    background: var(--bg);
+    padding: clamp(20px, 3vw, 40px) var(--gutter) clamp(76px, 10vw, 132px);
+  }
+  .fcta__box {
+    background: linear-gradient(135deg, #16301f, #1f3d2a);
+    border-radius: 30px;
+    padding: clamp(52px, 7vw, 100px) clamp(24px, 5vw, 80px);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .fcta__dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(238, 230, 205, 0.07) 1px, transparent 1.3px);
+    background-size: 22px 22px;
+  }
+  .fcta__glow1 {
+    position: absolute;
+    top: -100px;
+    inset-inline-end: -70px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 162, 75, 0.24), transparent 64%);
+  }
+  .fcta__glow2 {
+    position: absolute;
+    bottom: -120px;
+    inset-inline-start: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 162, 75, 0.14), transparent 66%);
+  }
+  .fcta__spin {
+    position: absolute;
+    top: 50%;
+    inset-inline-end: 6%;
+    width: 220px;
+    height: 220px;
+    margin-top: -110px;
+    border: 1px dashed rgba(201, 162, 75, 0.28);
+    border-radius: 50%;
+    animation: mxSpin 34s linear infinite;
+  }
+  .fcta__ring {
+    position: absolute;
+    top: 50%;
+    inset-inline-end: calc(6% + 40px);
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+    border: 1px solid rgba(201, 162, 75, 0.2);
+    border-radius: 50%;
+  }
+  .fcta__d {
+    position: absolute;
+    transform: rotate(45deg);
+    animation: mxFloat 6s ease-in-out infinite;
+  }
+  .d1 {
+    top: 12%;
+    inset-inline-start: 3%;
+    width: 12px;
+    height: 12px;
+    background: rgba(201, 162, 75, 0.6);
+  }
+  .d2 {
+    bottom: 8%;
+    inset-inline-start: 5%;
+    width: 8px;
+    height: 8px;
+    background: rgba(201, 162, 75, 0.4);
+    animation-duration: 7.5s;
+    animation-delay: 1s;
+  }
+  .d3 {
+    top: 10%;
+    inset-inline-end: 4%;
+    width: 9px;
+    height: 9px;
+    background: rgba(201, 162, 75, 0.45);
+    animation-duration: 6.8s;
+    animation-delay: 0.5s;
+  }
+  .fcta__in {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .fcta__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(201, 162, 75, 0.5);
+    border-radius: 999px;
+    padding: 8px 16px 8px 12px;
+    background: rgba(201, 162, 75, 0.08);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--tr-wide);
+    text-transform: uppercase;
+    color: #d9bc72;
+  }
+  .fcta__h {
+    margin: 22px 0 0;
+    font-size: clamp(30px, 4.6vw, 56px);
+    line-height: 1.05;
+    font-weight: 750;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+    color: var(--cream-2);
+    text-wrap: balance;
+  }
+  .fcta__sub {
+    margin: 20px auto 0;
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.65;
+    color: rgba(238, 230, 205, 0.76);
+    max-width: 640px;
+  }
+  .fcta__benefits {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 14px;
+    margin: 36px 0 0;
+    text-align: start;
+  }
+  .fcta__benefit {
+    display: flex;
+    flex-direction: column;
+    background: rgba(238, 230, 205, 0.05);
+    border: 1px solid rgba(201, 162, 75, 0.22);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .fcta__img {
+    width: 100%;
+    height: 158px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.28);
+  }
+  .fcta__bcopy {
+    padding: 16px 18px;
+  }
+  .fcta__bcopy h3 {
+    margin: 0;
+    font-family: var(--f-body);
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--cream-2);
+    line-height: 1.3;
+  }
+  .fcta__bcopy p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(238, 230, 205, 0.62);
+  }
+  .fcta__btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 36px;
+  }
+  .fcta__btns .btn {
+    border-radius: 13px;
+    padding: 17px 32px;
+    font-size: 15.5px;
+    white-space: normal;
+  }
+  .fcta__note {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 22px;
+    font-size: 13px;
+    font-weight: 550;
+    color: rgba(238, 230, 205, 0.68);
+  }
+  .fcta__pulse {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ok);
+    animation: mxPulse 2s ease-in-out infinite;
+  }
+</style>

@@ -1,0 +1,299 @@
+---
+import { Image } from 'astro:assets';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { productCopy, type Product } from '@/lib/catalog';
+
+export interface Props {
+  product: Product;
+  locale: Locale;
+  reveal?: number;
+  headingLevel?: 'h2' | 'h3';
+}
+const { product: p, locale, reveal = 0, headingLevel = 'h3' } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const c = productCopy(p, locale);
+const L = t.productsPage.labels;
+const specs = [
+  { k: L.type, v: c.type },
+  { k: L.grain, v: c.grain },
+  { k: L.aroma, v: c.aroma },
+  { k: L.origin, v: c.origin },
+  { k: L.use, v: c.use },
+];
+const certBadges = t.supplyPage.certs.map((x) =>
+  x
+    .replace(/\s*(Certified|Compliant)\s*/i, '')
+    .replace('شهادة ', '')
+    .replace('متوافق مع ', '')
+    .trim(),
+);
+// Pack images are keyed by EN pack label; match the AR label by position.
+const enPacks = p.i18n.en.packs;
+const packImg = (i: number) => p.packImages[enPacks[i] ?? '']?.[0];
+const href = localizedPath(`/products/${p.id}`, locale);
+const H = headingLevel;
+---
+
+<div class="pcard-wrap" data-reveal={reveal}>
+  <article class="pcard" data-product={p.id} data-pcard data-keep-life>
+    <div class="pcard__media">
+      <span class="pcard__bar" aria-hidden="true"></span>
+      <div class="pcard__life" data-pack-media="life">
+        <Image
+          src={p.life}
+          alt={u.productPage.lifeAlt.replace('{0}', c.name)}
+          format="webp"
+          widths={[420, 640, 900]}
+          sizes="(min-width: 1240px) 400px, (min-width: 700px) 46vw, 92vw"
+          class="pcard__life-img"
+          data-zoom
+        />
+      </div>
+      {c.packs.map((_, i) =>
+        packImg(i) ? (
+          <div class="pcard__packs" data-pack-media={i} hidden>
+            <Image src={packImg(i)!} alt={`${c.name} — ${c.packs[i]}`} format="webp" height={360} class="pcard__pack-img" />
+          </div>
+        ) : null,
+      )}
+    </div>
+    <div class="pcard__body">
+      <div class="pcard__type">
+        <span class="dot" aria-hidden="true"></span>
+        <span>{c.type}</span>
+      </div>
+      <H class="pcard__name">
+        <a href={href}>{c.name}</a>
+      </H>
+      <p class="pcard__desc">{c.desc}</p>
+      <dl class="pcard__specs">
+        {specs.map((s) => (
+          <div>
+            <dt>{s.k}</dt>
+            <dd>{s.v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="pcard__packrow">
+        <span class="label" id={`packs-${p.id}-${locale}`}>
+          {t.productsPage.pricing.packsL}
+        </span>
+        <div class="pill-row" role="group" aria-labelledby={`packs-${p.id}-${locale}`}>
+          {c.packs.map((w, i) => (
+            <button type="button" class="chip chip--sm" dir="ltr" aria-pressed={i === 0 ? 'true' : 'false'} data-pack={i}>
+              {w}
+            </button>
+          ))}
+        </div>
+      </div>
+      <ul class="pcard__certs">
+        {certBadges.map((b) => (
+          <li class="cert-pill cert-pill--sm">
+            <span class="dia" aria-hidden="true" />
+            {b}
+          </li>
+        ))}
+      </ul>
+      <div class="pcard__actions">
+        <a href={localizedPath('/contact', locale)} class="link-mono" data-quote-add={p.id} data-pack-idx="0">
+          {t.productsPage.ctaBtn} →
+        </a>
+        <a href={href} class="link-mono pcard__more">
+          {u.productPage.viewProduct} →
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+  import '@/scripts/product-cards';
+</script>
+
+<style>
+  .pcard-wrap {
+    display: flex;
+    width: 100%;
+  }
+  .pcard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 22px;
+    overflow: hidden;
+    transition:
+      transform 0.4s cubic-bezier(0.34, 1.2, 0.44, 1),
+      box-shadow 0.4s ease,
+      border-color 0.4s ease;
+  }
+  .pcard:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 10px 20px rgba(var(--ink), 0.05),
+      0 34px 64px rgba(31, 61, 42, 0.17),
+      0 0 26px rgba(201, 162, 75, 0.3);
+    border-color: rgba(166, 127, 46, 0.5);
+  }
+  .pcard__media {
+    position: relative;
+    aspect-ratio: 1 / 0.92;
+    overflow: hidden;
+    background: #ede6d6;
+    isolation: isolate;
+  }
+  .pcard__bar {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+    z-index: 3;
+  }
+  .pcard__life {
+    position: absolute;
+    inset: 0;
+  }
+  .pcard__life::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(237, 230, 214, 0.38), rgba(237, 230, 214, 0.08) 45%, rgba(237, 230, 214, 0.3));
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+  .pcard__life-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.72);
+    cursor: zoom-in;
+    transition: transform 0.45s var(--ease);
+  }
+  .pcard__life-img:hover {
+    transform: scale(1.75);
+  }
+  .pcard__packs {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #ede6d6;
+    z-index: 2;
+  }
+  .pcard__pack-img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .pcard__body {
+    padding: 24px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  .pcard__type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .pcard__name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 1.28;
+    letter-spacing: var(--tr-tight);
+    color: var(--ink-solid);
+  }
+  .pcard__name a {
+    text-decoration: none;
+  }
+  .pcard__name a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--gold-500);
+    text-underline-offset: 4px;
+  }
+  .pcard__desc {
+    margin: 0;
+    min-height: 3.24em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.62;
+    color: rgba(var(--ink), 0.68);
+  }
+  .pcard__specs {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0 0;
+  }
+  .pcard__specs div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-top: 1px solid rgba(var(--ink), 0.09);
+  }
+  .pcard__specs dt {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+    white-space: nowrap;
+  }
+  .pcard__specs dd {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 650;
+    color: var(--ink-solid);
+    text-align: end;
+  }
+  .pcard__packrow {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(var(--ink), 0.09);
+  }
+  .pcard__certs {
+    list-style: none;
+    margin: 0;
+    padding: 14px 0 0;
+    border-top: 1px solid rgba(var(--ink), 0.09);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pcard__actions {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+  }
+  .pcard__more {
+    color: var(--green-text);
+  }
+</style>

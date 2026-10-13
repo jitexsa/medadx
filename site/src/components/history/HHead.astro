@@ -1,0 +1,59 @@
+---
+export interface Props {
+  n: string;
+  kicker: string;
+  title: string;
+}
+const { n, kicker, title } = Astro.props;
+---
+
+<div class="hh">
+  <span class="hh__n" aria-hidden="true">
+    {n}
+  </span>
+  <div class="hh__copy">
+    <div class="kicker hh__kicker">
+      <span class="dia" aria-hidden="true"></span>
+      <span class="kicker__text">{kicker}</span>
+    </div>
+    <h2 class="hh__t">{title}</h2>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .hh {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(16px, 3vw, 30px);
+    margin-bottom: 30px;
+  }
+  .hh__n {
+    flex: none;
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(50px, 8vw, 88px);
+    line-height: 0.78;
+    color: transparent;
+    -webkit-text-stroke: 1.4px rgba(166, 127, 46, 0.5);
+  }
+  .hh__copy {
+    max-width: 760px;
+  }
+  .hh__kicker {
+    margin-bottom: 14px;
+  }
+  .hh__kicker .kicker__text {
+    font-size: 11px;
+  }
+  .hh__t {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: clamp(27px, 4vw, 44px);
+    line-height: 1.05;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    color: var(--brand-text);
+    text-wrap: balance;
+  }
+</style>

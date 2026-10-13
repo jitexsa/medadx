@@ -1,0 +1,1281 @@
+---
+import HFigure from '@/components/history/HFigure.astro';
+import HHead from '@/components/history/HHead.astro';
+import histAr from '@/content/history/ar.json';
+import histEn from '@/content/history/en.json';
+import { getImage } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getCredits } from '@/lib/catalog';
+import { fileSlug, HISTORY_IMG } from '@/lib/history-images';
+import { article, breadcrumbs } from '@/lib/schema';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = (locale === 'ar' ? histAr : histEn) as typeof histEn;
+const u = ui(locale);
+const m = u.meta.history;
+const path = localizedPath('/history-of-rice', locale);
+const credits = await getCredits();
+const histCredits = [...credits.values()].filter((c) => c.id.startsWith('history/'));
+const hero = await getImage({ src: HISTORY_IMG['koeh-232']!, width: 1200, format: 'jpeg' });
+const P = t.prod;
+const bars = [
+  { k: P.india, v: 207, gold: true },
+  { k: P.china, v: 207, gold: true },
+  { k: P.bangladesh, v: 59 },
+  { k: P.indonesia, v: 54 },
+  { k: P.vietnam, v: 43 },
+  { k: P.thailand, v: 33 },
+];
+const jsonLd = [
+  article({ headline: t.hero.title, description: m.description, path, image: hero.src, locale }),
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: localizedPath('/', locale) },
+    { name: t.hero.title, path },
+  ]),
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path="/history-of-rice"
+  title={m.title}
+  description={m.description}
+  active="history"
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <article class="hx">
+    <section class="hx-sec hx-hero">
+      <div class="hx-hero__copy">
+        <div class="kicker">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.hero.kicker}</span>
+        </div>
+        <h1 class="hx-h1">{t.hero.title}</h1>
+        <p class="hx-stand">{t.hero.standfirst}</p>
+        <div class="hx-source">
+          <span aria-hidden="true"></span>
+          {t.hero.source}
+        </div>
+      </div>
+      <HFigure
+        id="koeh-232"
+        alt="Botanical plate of Oryza sativa"
+        caption={t.hero.figCap}
+        fallbackCredit={t.hero.figCredit}
+        height="auto"
+        class="hx-hero__fig"
+      />
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s1.n} kicker={t.s1.kicker} title={t.s1.title}>
+        <p class="hx-lede">{t.s1.lede}</p>
+        <p class="hx-p">{t.s1.body}</p>
+      </HHead>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s2.n} kicker={t.s2.kicker} title={t.s2.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s2.body1}</p>
+          <p class="hx-p">{t.s2.body2}</p>
+        </div>
+        <HFigure
+          id="terrace-field-yunnan-china-denoised"
+          alt="Terraced rice fields in Yunnan"
+          caption={t.s2.figCap}
+          fallbackCredit={t.s2.figCredit}
+          height="lg"
+          class="hx-col"
+        />
+      </div>
+      <div class="hx-panel hx-tree">
+        <div class="hx-panel__h">
+          <span class="dia hx-dia-green" aria-hidden="true"></span>
+          <span class="hx-panel__k">{t.tree.kicker}</span>
+          <span class="hx-panel__t">— {t.tree.title}</span>
+        </div>
+        <div class="hx-tree__row">
+          <div class="hx-tree__col">
+            <div class="hx-tag">{t.tree.tagAsia}</div>
+            <div class="hx-node hx-node--root">
+              <i>{t.tree.wild}</i>
+              <small>{t.tree.wildSub}</small>
+            </div>
+            <div class="hx-branch">
+              <span class="hx-branch__line" aria-hidden="true"></span>
+              <div class="hx-branch__kids">
+                <div class="hx-node">
+                  <i>{t.tree.jap}</i>
+                  <small>{t.tree.japSub}</small>
+                </div>
+                <div class="hx-node">
+                  <i>{t.tree.ind}</i>
+                  <small>{t.tree.indSub}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hx-tree__vr" aria-hidden="true"></div>
+          <div class="hx-tree__col">
+            <div class="hx-tag">{t.tree.tagAfrica}</div>
+            <div class="hx-node hx-node--root hx-node--brown">
+              <span>{t.tree.wildAfr}</span>
+            </div>
+            <div class="hx-branch">
+              <span class="hx-branch__line" aria-hidden="true"></span>
+              <div class="hx-node">
+                <i>{t.tree.glab}</i>
+                <small>{t.tree.glabSub}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s3.n} kicker={t.s3.kicker} title={t.s3.title} />
+      <HFigure
+        id="banaue-terrace"
+        alt="Banaue rice terraces"
+        caption={t.s3.figCap}
+        fallbackCredit={t.s3.figCredit}
+        height="lg"
+        class="hx-wide"
+      />
+      <div class="hx-row">
+        <p class="hx-p hx-col">{t.s3.body1}</p>
+        <p class="hx-p hx-col">{t.s3.body2}</p>
+      </div>
+    </section>
+
+    <section class="hx-band">
+      <div class="hx-band__in">
+        <div class="kicker kicker--light">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.map.kicker}</span>
+        </div>
+        <h2 class="hx-band__h">{t.map.title}</h2>
+        <div class="hx-map">
+          <div class="hx-origin">
+            <span class="hx-origin__k">Origin · المنشأ</span>
+            <span class="hx-origin__v">{t.map.origin}</span>
+            <span class="hx-origin__s">{t.map.originSub}</span>
+          </div>
+          <ol class="hx-route">
+            {t.map.nodes.map((nd) => (
+              <li>
+                <span class="hx-route__line" aria-hidden="true" />
+                <span class="dia" aria-hidden="true" />
+                {nd}
+              </li>
+            ))}
+            <li class="hx-route__africa">
+              <span class="hx-route__ak">{t.map.africaLabel}</span>
+              {t.map.africa}
+            </li>
+          </ol>
+        </div>
+        <p class="hx-band__note">{t.map.note}</p>
+      </div>
+    </section>
+
+    <section class="hx-sec">
+      <HHead n={t.s4.n} kicker={t.s4.kicker} title={t.s4.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s4.body1}</p>
+          <p class="hx-p">{t.s4.body2}</p>
+        </div>
+        <HFigure id="reis" alt="Rice grains" caption={t.s4.figCap} fallbackCredit={t.s4.figCredit} class="hx-col" />
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s5.n} kicker={t.s5.kicker} title={t.s5.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s5.body1}</p>
+          <p class="hx-p">{t.s5.body2}</p>
+        </div>
+        <HFigure id="brown-rice" alt="Brown rice" caption={t.s5.figCap} fallbackCredit={t.s5.figCredit} class="hx-col" />
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s6.n} kicker={t.s6.kicker} title={t.s6.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s6.body1}</p>
+          <p class="hx-p">{t.s6.body2}</p>
+        </div>
+        <HFigure
+          id="white-brown-red-wild-rice"
+          alt="Four kinds of rice"
+          caption={t.s6.figCap}
+          fallbackCredit={t.s6.figCredit}
+          class="hx-col"
+        />
+      </div>
+      <figure class="hx-panel hx-chart">
+        <figcaption class="hx-chart__head">
+          <span class="hx-panel__h">
+            <span class="dia hx-dia-green" aria-hidden="true"></span>
+            <span class="hx-chart__t">{P.title}</span>
+          </span>
+          <span class="hx-unit">{P.unit}</span>
+        </figcaption>
+        <table class="hx-bars">
+          <tbody>
+            {bars.map((b) => (
+              <tr>
+                <th scope="row">{b.k}</th>
+                <td class="hx-bars__bar">
+                  <svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true">
+                    <rect width="100" height="16" rx="8" class="hx-bars__track" />
+                    <rect width={((b.v / 207) * 100).toFixed(1)} height="16" rx="8" class={b.gold ? 'hx-bars__gold' : 'hx-bars__green'} />
+                  </svg>
+                </td>
+                <td class="hx-bars__v">{b.v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div class="hx-chart__foot">
+          <span class="hx-chart__w">
+            {P.world} — <b>{P.worldVal}</b>
+          </span>
+          <span class="hx-unit">{P.source}</span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.time.kicker}</span>
+      </div>
+      <h2 class="hx-h2">{t.time.title}</h2>
+      <div class="hx-unit hx-era">{t.time.eraNote}</div>
+      <ol class="hx-time">
+        {t.time.items.map((it) => (
+          <li>
+            <span class="hx-time__y">{it.y}</span>
+            <span class="hx-time__l">{it.l}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="hx-band">
+      <div class="hx-band__in hx-band__in--lg">
+        <div class="kicker kicker--light">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.partII.kicker}</span>
+        </div>
+        <h2 class="hx-band__h hx-band__h--xl">{t.partII.title}</h2>
+        <p class="hx-band__sub">{t.partII.sub}</p>
+      </div>
+    </section>
+
+    <section class="hx-sec">
+      <HHead n={t.s7.n} kicker={t.s7.kicker} title={t.s7.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s7.body1}</p>
+          <p class="hx-p">{t.s7.body2}</p>
+        </div>
+        <HFigure
+          id="rice-plants"
+          alt="A field of rice plants in grain"
+          caption={t.s7.figCap}
+          fallbackCredit={t.s7.figCredit}
+          height="lg"
+          class="hx-col"
+        />
+      </div>
+      <dl class="hx-specs">
+        {t.s7.specs.map((sp) => (
+          <div class="hx-panel hx-spec">
+            <dt>{sp.k}</dt>
+            <dd>{sp.v}</dd>
+            <dd class="hx-spec__s">{sp.s}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s8.n} kicker={t.s8.kicker} title={t.s8.title} />
+      <div class="hx-row">
+        <HFigure
+          id="paddy-field"
+          alt="A flooded lowland rice paddy"
+          caption={t.s8.figCap}
+          fallbackCredit={t.s8.figCredit}
+          height="lg"
+          class="hx-col"
+        />
+        <div class="hx-col">
+          <p class="hx-p">{t.s8.body1}</p>
+          <p class="hx-p">{t.s8.body2}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s9.n} kicker={t.s9.kicker} title={t.s9.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s9.body1}</p>
+          <p class="hx-p">{t.s9.body2}</p>
+        </div>
+        <HFigure id="rice-drying" alt="Rice drying in the sun" caption={t.s9.figCap} fallbackCredit={t.s9.figCredit} class="hx-col" />
+      </div>
+      <div class="hx-panel hx-flow">
+        <div class="hx-panel__h">
+          <span class="dia hx-dia-green" aria-hidden="true"></span>
+          <span class="hx-panel__k">{t.s9.flowTitle}</span>
+        </div>
+        <ol class="hx-flow__steps">
+          <li class="hx-flow__s">
+            <b>{t.s9.mill1.t}</b>
+            <span>{t.s9.mill1.s}</span>
+          </li>
+          <li class="hx-flow__s">
+            <b>{t.s9.mill2.t}</b>
+            <span>{t.s9.mill2.s}</span>
+          </li>
+          <li class="hx-flow__s hx-flow__s--end">
+            <b>{t.s9.mill3.t}</b>
+            <span>{t.s9.mill3.s}</span>
+          </li>
+        </ol>
+        <div class="hx-flow__branch">
+          <span class="dia dia--sm" aria-hidden="true"></span>
+          {t.s9.branch}
+        </div>
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s10.n} kicker={t.s10.kicker} title={t.s10.title}>
+        <p class="hx-p">{t.s10.intro}</p>
+      </HHead>
+      <ul class="hx-varieties">
+        {t.s10.cards.map((vc) => (
+          <li class="hx-variety">
+            <HFigure id={fileSlug(vc.img)} alt={vc.name} caption={vc.desc} height="sm" class="hx-variety__fig" />
+            <div class="hx-variety__h">
+              <span class="hx-variety__n">{vc.name}</span>
+              <span class="hx-variety__t">{vc.tag}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <ul class="hx-chips">
+        {t.s10.chips.map((cp) => (
+          <li>
+            <span class="dia dia--sm" aria-hidden="true" />
+            {cp}
+          </li>
+        ))}
+      </ul>
+      <p class="hx-note">{t.s10.note}</p>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s11.n} kicker={t.s11.kicker} title={t.s11.title} />
+      <div class="hx-row hx-row--top">
+        <div class="hx-col">
+          <p class="hx-p">{t.s11.body1}</p>
+          <p class="hx-p">{t.s11.body2}</p>
+          <HFigure
+            id="cooked-rice"
+            alt="A bowl of steamed white rice"
+            caption={t.s11.figCap}
+            fallbackCredit={t.s11.figCredit}
+            height="sm"
+          />
+        </div>
+        <div class="hx-panel hx-facts">
+          <div class="hx-facts__h">
+            <span>{t.s11.factTitle}</span>
+            <span class="hx-unit">{t.s11.factUnit}</span>
+          </div>
+          <dl>
+            {t.s11.facts.map((fa) => (
+              <div>
+                <dt>{fa.k}</dt>
+                <dd>{fa.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="hx-facts__note">{t.s11.factNote}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hx-sec hx-rule">
+      <HHead n={t.s12.n} kicker={t.s12.kicker} title={t.s12.title} />
+      <div class="hx-row">
+        <div class="hx-col">
+          <p class="hx-p">{t.s12.body1}</p>
+          <p class="hx-p">{t.s12.body2}</p>
+        </div>
+        <HFigure
+          id="golden-rice"
+          alt="Golden Rice beside white rice"
+          caption={t.s12.figCap}
+          fallbackCredit={t.s12.figCredit}
+          class="hx-col"
+        />
+      </div>
+      <ul class="hx-innov">
+        {t.s12.innov.map((iv) => (
+          <li class="hx-panel">
+            <h3>
+              <span class="dia hx-dia-green" aria-hidden="true" />
+              {iv.t}
+            </h3>
+            <p>{iv.d}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <footer class="hx-colophon">
+      <div class="hx-band__in">
+        <div class="kicker kicker--light">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.colophon.kicker}</span>
+        </div>
+        <h2 class="hx-band__h">{t.colophon.title}</h2>
+        <p class="hx-colophon__cc">{t.colophon.cc}</p>
+        <div class="hx-colophon__row">
+          <div class="hx-colophon__credits">
+            <h3 class="hx-colophon__k">{t.colophon.imgTitle}</h3>
+            <ul>
+              {histCredits.map((c) => (
+                <li lang="en" dir="ltr">
+                  <a href={c.sourceUrl} target="_blank" rel="noopener">
+                    {c.file.replace(/_/g, ' ')}
+                  </a>{' '}
+                  — {c.artist} ·{' '}
+                  {c.licenseUrl ? (
+                    <a href={c.licenseUrl} target="_blank" rel="noopener license">
+                      {c.license}
+                    </a>
+                  ) : (
+                    c.license
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="hx-colophon__side">
+            <a href="https://en.wikipedia.org/wiki/Rice" target="_blank" rel="noopener" class="hx-colophon__link">
+              <span class="dia dia--sm" aria-hidden="true"></span>
+              {t.colophon.link}
+            </a>
+            <a href="#main" class="hx-colophon__top">
+              ↑ {t.colophon.backTop}
+            </a>
+          </div>
+        </div>
+        <div class="hx-colophon__foot">
+          <span>MEDADX</span>
+          <span>Content under CC BY-SA 4.0</span>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .hx {
+    --paper: #efe7ce;
+    --paper2: #f4ecd8;
+    background:
+      radial-gradient(1200px 760px at 12% -6%, rgba(255, 255, 255, 0.55), transparent 60%),
+      radial-gradient(1000px 720px at 100% 2%, rgba(201, 162, 75, 0.12), transparent 55%), linear-gradient(#f4ecd8, #eee2c7);
+  }
+  :global(:root[data-theme='dark']) .hx {
+    --paper: #252118;
+    --paper2: #1c1a14;
+    background: var(--bg);
+  }
+  .hx-sec {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(30px, 5vw, 60px) var(--gutter);
+  }
+  .hx-rule {
+    border-top: 1px solid rgba(var(--ink), 0.12);
+  }
+  .hx-hero {
+    padding-top: calc(var(--header-h) + clamp(30px, 6vw, 72px));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(28px, 5vw, 64px);
+  }
+  .hx-hero__copy {
+    flex: 1 1 440px;
+    min-width: min(100%, 300px);
+  }
+  .hx-hero__fig {
+    flex: 0 1 320px;
+    min-width: 240px;
+  }
+  .hx-h1 {
+    margin: 22px 0 0;
+    font-family: var(--f-display);
+    font-size: clamp(42px, 8vw, 84px);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--brand-text);
+    text-wrap: balance;
+  }
+  .hx-stand {
+    margin: 26px 0 0;
+    max-width: 36em;
+    font-size: clamp(18px, 2.2vw, 23px);
+    line-height: 1.55;
+    font-weight: 500;
+    color: rgba(var(--ink), 0.85);
+  }
+  .hx-source {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-source span {
+    width: 36px;
+    height: 1.5px;
+    background: rgba(166, 127, 46, 0.7);
+  }
+  .hx-lede {
+    margin: 20px 0 16px;
+    max-width: 34em;
+    font-size: clamp(19px, 2.1vw, 22px);
+    line-height: 1.62;
+    color: rgba(var(--ink), 0.9);
+  }
+  .hx-p {
+    margin: 0 0 18px;
+    font-size: 18px;
+    line-height: 1.74;
+    color: rgba(var(--ink), 0.88);
+  }
+  .hx-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(28px, 4vw, 52px);
+  }
+  .hx-row--top {
+    align-items: flex-start;
+  }
+  .hx-col {
+    flex: 1 1 360px;
+    min-width: min(100%, 280px);
+  }
+  .hx-wide {
+    margin-bottom: clamp(24px, 3vw, 36px);
+  }
+  .hx-panel {
+    background: var(--paper);
+    border: 1px solid rgba(var(--ink), 0.14);
+    border-radius: 18px;
+    padding: clamp(20px, 3vw, 32px);
+  }
+  .hx-panel__h {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hx-dia-green {
+    background: var(--brand-text);
+  }
+  .hx-panel__k {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-text);
+  }
+  .hx-panel__t {
+    font-size: 15px;
+    font-weight: 650;
+    color: rgba(var(--ink), 0.8);
+  }
+  .hx-tree {
+    margin-top: clamp(30px, 4vw, 48px);
+  }
+  .hx-tree__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+  }
+  .hx-tree__col {
+    flex: 1 1 260px;
+    min-width: min(100%, 240px);
+  }
+  .hx-tree__vr {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(var(--ink), 0.14);
+  }
+  .hx-tag {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+    margin-bottom: 10px;
+  }
+  .hx-node {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    background: var(--paper2);
+    border: 1px solid rgba(var(--ink), 0.16);
+    border-radius: 10px;
+    padding: 10px 15px;
+  }
+  .hx-node i {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand-text);
+  }
+  .hx-node small {
+    font-size: 11.5px;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-node--root {
+    background: #1f3d2a;
+    border: 0;
+    border-radius: 11px;
+    padding: 11px 16px;
+  }
+  .hx-node--root i,
+  .hx-node--root span {
+    color: var(--cream);
+    font-size: 16px;
+  }
+  .hx-node--root small {
+    color: rgba(239, 231, 206, 0.75);
+  }
+  .hx-node--brown {
+    background: #7a5a24;
+  }
+  .hx-branch {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .hx-branch__line {
+    flex: none;
+    width: 16px;
+    border-top: 2px solid rgba(166, 127, 46, 0.6);
+    margin-top: 22px;
+  }
+  .hx-branch__kids {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hx-band {
+    background: #1f3d2a;
+    color: #ede4cb;
+    margin-top: 8px;
+  }
+  .hx-band__in {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) var(--gutter);
+  }
+  .hx-band__in--lg {
+    padding-block: clamp(46px, 7vw, 92px);
+  }
+  .hx-band__h {
+    margin: 10px 0 34px;
+    font-family: var(--f-display);
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.06;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    color: #f1e8ce;
+    text-wrap: balance;
+  }
+  .hx-band__h--xl {
+    font-size: clamp(36px, 6.4vw, 68px);
+    line-height: 0.98;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .hx-band__sub {
+    margin: 0;
+    max-width: 40em;
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.55;
+    color: rgba(237, 228, 203, 0.82);
+  }
+  .hx-map {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: clamp(20px, 4vw, 44px);
+  }
+  .hx-origin {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--gold-400);
+    color: #20301f;
+    border-radius: 13px;
+    padding: 16px 22px;
+    box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+  }
+  .hx-origin__k {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .hx-origin__v {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .hx-origin__s {
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+  .hx-route {
+    flex: 1 1 460px;
+    min-width: min(100%, 280px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .hx-route li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(214, 171, 79, 0.28);
+    border-radius: 11px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+  .hx-route .dia {
+    background: #d6ab4f;
+  }
+  .hx-route__line {
+    flex: none;
+    width: 22px;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(214, 171, 79, 0.15), #d6ab4f);
+  }
+  .hx-route .hx-route__africa {
+    background: rgba(122, 90, 36, 0.28);
+    border-style: dashed;
+    border-color: rgba(214, 171, 79, 0.5);
+    margin-top: 6px;
+  }
+  .hx-route__ak {
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #d6ab4f;
+    flex: none;
+  }
+  .hx-band__note {
+    margin: 22px 0 0;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(237, 228, 203, 0.74);
+  }
+  .hx-chart {
+    margin: clamp(30px, 4vw, 46px) 0 0;
+  }
+  .hx-chart__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .hx-chart__t {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand-text);
+  }
+  .hx-unit {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-bars {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+  }
+  .hx-bars th {
+    width: 110px;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 650;
+    padding-inline-end: 14px;
+  }
+  .hx-bars__bar svg {
+    display: block;
+    width: 100%;
+    height: 16px;
+  }
+  [dir='rtl'] .hx-bars__bar svg {
+    transform: scaleX(-1);
+  }
+  .hx-bars__track {
+    fill: rgba(var(--ink), 0.08);
+  }
+  .hx-bars__gold {
+    fill: #b88f3a;
+  }
+  .hx-bars__green {
+    fill: #2f6a45;
+  }
+  .hx-bars__v {
+    width: 54px;
+    text-align: end;
+    font-family: var(--f-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-text);
+  }
+  .hx-chart__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(var(--ink), 0.14);
+  }
+  .hx-chart__w {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brand-text);
+  }
+  .hx-chart__w b {
+    color: var(--gold-text);
+  }
+  .hx-h2 {
+    margin: 12px 0 6px;
+    font-family: var(--f-display);
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.05;
+    font-weight: 750;
+    color: var(--brand-text);
+  }
+  .hx-era {
+    margin-bottom: 30px;
+  }
+  .hx-time {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: clamp(18px, 3vw, 30px);
+    border-inline-start: 2px solid rgba(166, 127, 46, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .hx-time li {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 18px;
+  }
+  .hx-time li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: calc(clamp(18px, 3vw, 30px) * -1 - 6px);
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    background: var(--gold-500);
+    border: 2px solid var(--paper2);
+    transform: rotate(45deg);
+  }
+  .hx-time__y {
+    flex: 0 0 132px;
+    font-family: var(--f-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--brand-text);
+  }
+  .hx-time__l {
+    flex: 1 1 260px;
+    font-size: 16.5px;
+    line-height: 1.5;
+  }
+  .hx-specs {
+    margin: clamp(26px, 3vw, 40px) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .hx-spec {
+    flex: 1 1 200px;
+    min-width: 180px;
+    padding: 16px 18px;
+    border-radius: 14px;
+  }
+  .hx-spec dt {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+    margin-bottom: 8px;
+  }
+  .hx-spec dd {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--brand-text);
+    line-height: 1;
+  }
+  .hx-spec .hx-spec__s {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(var(--ink), 0.68);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .hx-flow {
+    margin-top: clamp(28px, 4vw, 44px);
+  }
+  .hx-flow__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hx-flow__s {
+    flex: 1 1 180px;
+    min-width: 150px;
+    background: var(--paper2);
+    border: 1px solid rgba(var(--ink), 0.16);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hx-flow__s b {
+    font-size: 17px;
+    font-weight: 750;
+    color: var(--brand-text);
+  }
+  .hx-flow__s span {
+    font-size: 12.5px;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-flow__s--end {
+    background: #1f3d2a;
+    border-color: #1f3d2a;
+  }
+  .hx-flow__s--end b {
+    color: var(--cream);
+  }
+  .hx-flow__s--end span {
+    color: rgba(239, 231, 206, 0.7);
+  }
+  .hx-flow__branch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    background: rgba(122, 90, 36, 0.1);
+    border: 1px dashed rgba(166, 127, 46, 0.5);
+    border-radius: 12px;
+    padding: 13px 16px;
+    font-size: 14.5px;
+    font-weight: 550;
+    line-height: 1.45;
+  }
+  .hx-varieties {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: clamp(14px, 2vw, 22px);
+  }
+  .hx-variety {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .hx-variety__h {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hx-variety__n {
+    font-size: 18px;
+    font-weight: 750;
+    color: var(--brand-text);
+  }
+  .hx-variety__t {
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .hx-chips {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0 0;
+  }
+  .hx-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid rgba(var(--ink), 0.2);
+    border-radius: 999px;
+    padding: 8px 15px;
+    font-size: 13.5px;
+    font-weight: 550;
+  }
+  .hx-note {
+    margin: 22px 0 0;
+    max-width: 44em;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-facts {
+    flex: 1 1 300px;
+    min-width: min(100%, 270px);
+    max-width: 420px;
+  }
+  .hx-facts__h {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(var(--ink), 0.7);
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--brand-text);
+  }
+  .hx-facts dl {
+    margin: 0;
+  }
+  .hx-facts dl div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(var(--ink), 0.12);
+  }
+  .hx-facts dt {
+    font-size: 15px;
+  }
+  .hx-facts dd {
+    margin: 0;
+    font-family: var(--f-mono);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brand-text);
+  }
+  .hx-facts__note {
+    margin: 14px 0 0;
+    padding-top: 14px;
+    border-top: 2px solid rgba(var(--ink), 0.7);
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hx-innov {
+    list-style: none;
+    padding: 0;
+    margin: clamp(28px, 4vw, 44px) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .hx-innov li {
+    padding: 20px;
+    border-radius: 14px;
+  }
+  .hx-innov h3 {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--f-body);
+    font-size: 16px;
+    font-weight: 750;
+    color: var(--brand-text);
+  }
+  .hx-innov p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(var(--ink), 0.72);
+  }
+  .hx-colophon {
+    background: #122619;
+    color: #e4dabe;
+    border-top: 3px solid var(--gold-500);
+  }
+  .hx-colophon__cc {
+    margin: 0 0 26px;
+    max-width: 56em;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(228, 218, 190, 0.82);
+  }
+  .hx-colophon__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: flex-start;
+  }
+  .hx-colophon__credits {
+    flex: 1 1 420px;
+    min-width: min(100%, 280px);
+  }
+  .hx-colophon__k {
+    margin: 0 0 14px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #d6ab4f;
+  }
+  .hx-colophon__credits ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .hx-colophon__credits li {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(228, 218, 190, 0.78);
+  }
+  .hx-colophon__credits a {
+    color: #efe7ce;
+  }
+  .hx-colophon__side {
+    flex: 0 1 300px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .hx-colophon__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    border: 1px solid rgba(214, 171, 79, 0.4);
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #efe7ce;
+  }
+  .hx-colophon__top {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(228, 218, 190, 0.7);
+    text-decoration: none;
+  }
+  .hx-colophon__foot {
+    margin-top: clamp(30px, 4vw, 48px);
+    padding-top: 20px;
+    border-top: 1px solid rgba(214, 171, 79, 0.22);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(228, 218, 190, 0.74);
+  }
+  .hx-colophon__foot span:first-child {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: #efe7ce;
+  }
+</style>

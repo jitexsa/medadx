@@ -1,0 +1,414 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { localizedPath, type Locale } from '@/i18n';
+import { getLegal, type LegalKey } from '@/i18n/legal';
+import { ui } from '@/i18n/ui';
+import { breadcrumbs, webPage } from '@/lib/schema';
+
+export interface Props {
+  locale: Locale;
+  doc: LegalKey;
+  path: '/terms' | '/privacy' | '/rice-terms';
+}
+const { locale, doc, path } = Astro.props;
+const lg = getLegal(locale);
+const d = lg[doc];
+const u = ui(locale);
+const href = (p: string) => localizedPath(p, locale);
+const title = `${d.title} | ${u.brand}`;
+const description = d.intro.length > 160 ? d.intro.slice(0, 157).replace(/\s+\S*$/, '') + '…' : d.intro;
+const jsonLd = [
+  webPage('WebPage', d.title, href(path), locale),
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: href('/') },
+    { name: d.navLabel, path: href(path) },
+  ]),
+];
+---
+
+<BaseLayout locale={locale} path={path} title={title} description={description} jsonLd={jsonLd}>
+  <section class="lg-hero">
+    <div class="lg-hero__dots" aria-hidden="true"></div>
+    <div class="lg-wrap">
+      <div class="kicker">
+        <span class="dia dia--md" aria-hidden="true"></span>
+        <span class="kicker__text">{lg.metaLabel}</span>
+      </div>
+      <h1 class="lg-h1">{d.title}</h1>
+      <div class="lg-badges">
+        <span class="lg-badge">
+          <span class="lg-dot" aria-hidden="true"></span>
+          {lg.updatedLabel}: {lg.updated}
+        </span>
+        <span class="lg-badge lg-badge--gold">
+          <span class="dia dia--sm" aria-hidden="true"></span>
+          {lg.jurisdictionBadge}
+        </span>
+      </div>
+      <p class="lg-intro">{d.intro}</p>
+    </div>
+  </section>
+
+  <section class="lg-body">
+    <div class="lg-wrap lg-cols">
+      <aside class="lg-toc">
+        <h2 class="lg-toc__h">{lg.tocTitle}</h2>
+        <nav aria-label={lg.tocTitle}>
+          <ol>
+            {d.sections.map((s, i) => (
+              <li>
+                <a href={`#sec-${i + 1}`} data-toc={i}>
+                  {s.h}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </aside>
+      <div class="lg-main">
+        <div class="lg-disc">
+          <span class="lg-disc__ic" aria-hidden="true">
+            <span class="dia"></span>
+          </span>
+          <div>
+            <div class="lg-disc__t">{lg.disclaimerTitle}</div>
+            <p>{lg.disclaimer}</p>
+          </div>
+        </div>
+        <div class="lg-secs">
+          {d.sections.map((s, i) => (
+            <section id={`sec-${i + 1}`} class="lg-sec" data-sec={i}>
+              <h2>
+                <span class="dia" aria-hidden="true" />
+                <span>{s.h}</span>
+              </h2>
+              <div class="lg-sec__b">
+                {s.paras.map((p) => (
+                  <p>{p}</p>
+                ))}
+                {s.items.length > 0 && (
+                  <ul>
+                    {s.items.map((it) => (
+                      <li>{it}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
+        </div>
+        <div class="lg-contact">
+          <div class="lg-contact__glow" aria-hidden="true"></div>
+          <div class="lg-contact__in">
+            <div>
+              <h2>{lg.contactTitle}</h2>
+              <p>{lg.contactBody}</p>
+            </div>
+            <a href={href('/contact')} class="btn btn--gold">
+              <span class="dia lg-contact__dia" aria-hidden="true"></span>
+              {lg.contactBtn}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const secs = Array.from(document.querySelectorAll<HTMLElement>('[data-sec]'));
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc]'));
+  let raf = 0;
+  const update = () => {
+    raf = 0;
+    let a = 0;
+    for (let i = 0; i < secs.length; i++) {
+      if (secs[i]!.getBoundingClientRect().top - 140 <= 0) a = i;
+      else break;
+    }
+    links.forEach((l, i) => (i === a ? l.setAttribute('aria-current', 'location') : l.removeAttribute('aria-current')));
+  };
+  window.addEventListener('scroll', () => (raf ||= requestAnimationFrame(update)), { passive: true });
+  update();
+</script>
+
+<style>
+  .lg-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .lg-hero {
+    position: relative;
+    border-bottom: 1px solid rgba(var(--ink), 0.1);
+    padding: 124px var(--gutter) clamp(26px, 3vw, 36px);
+    overflow: hidden;
+  }
+  .lg-hero__dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(31, 61, 42, 0.05) 1px, transparent 1.3px);
+    background-size: 23px 23px;
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+    mask-image: linear-gradient(180deg, #000, transparent);
+  }
+  .lg-h1 {
+    margin: 14px 0 0;
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.08;
+    font-weight: 750;
+    font-stretch: 110%;
+    letter-spacing: var(--tr-tight);
+    text-wrap: balance;
+  }
+  .lg-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 15px;
+  }
+  .lg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(var(--ink), 0.16);
+    border-radius: 999px;
+    padding: 6px 13px;
+    font-size: 12px;
+    color: rgba(var(--ink), 0.68);
+  }
+  .lg-badge--gold {
+    border-color: rgba(166, 127, 46, 0.4);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .lg-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ok);
+  }
+  .lg-intro {
+    margin: 16px 0 0;
+    font-size: clamp(14.5px, 1.3vw, 16.5px);
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.72);
+    max-width: 760px;
+  }
+  .lg-body {
+    padding: clamp(28px, 3.5vw, 44px) var(--gutter) clamp(56px, 7vw, 88px);
+  }
+  .lg-cols {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(26px, 4vw, 54px);
+  }
+  .lg-toc {
+    flex: 0 0 224px;
+    position: sticky;
+    top: 90px;
+    display: none;
+  }
+  @media (min-width: 900px) {
+    .lg-toc {
+      display: block;
+    }
+  }
+  .lg-toc__h {
+    margin: 0 0 11px;
+    padding-inline-start: 15px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: var(--tr-wide);
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .lg-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    border-inline-start: 1px solid rgba(var(--ink), 0.14);
+  }
+  .lg-toc a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: rgba(var(--ink), 0.68);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .lg-toc a:hover,
+  .lg-toc a[aria-current] {
+    color: var(--ink-solid);
+  }
+  .lg-toc a[aria-current] {
+    font-weight: 650;
+  }
+  .lg-toc a::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: -1px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--gold-500);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .lg-toc a[aria-current]::before {
+    opacity: 1;
+  }
+  .lg-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 800px;
+  }
+  .lg-disc {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    border: 1px solid rgba(166, 127, 46, 0.4);
+    border-radius: 14px;
+    background: rgba(var(--surf), 0.7);
+    padding: clamp(14px, 1.8vw, 18px);
+    margin-bottom: clamp(24px, 3vw, 34px);
+  }
+  .lg-disc__ic {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: rgba(166, 127, 46, 0.13);
+    border: 1px solid rgba(166, 127, 46, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lg-disc__t {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .lg-disc p {
+    margin: 7px 0 0;
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.68);
+  }
+  .lg-secs {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.4vw, 30px);
+  }
+  .lg-sec {
+    scroll-margin-top: 92px;
+    border-top: 1px solid rgba(var(--ink), 0.12);
+    padding-top: clamp(16px, 1.9vw, 22px);
+  }
+  .lg-sec h2 {
+    margin: 0;
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    font-size: clamp(16.5px, 1.7vw, 20px);
+    font-weight: 740;
+    font-stretch: 108%;
+    letter-spacing: var(--tr-tight);
+    line-height: 1.3;
+  }
+  .lg-sec h2 .dia {
+    margin-top: 0.36em;
+  }
+  .lg-sec__b {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-inline-start: 19px;
+  }
+  .lg-sec__b p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(var(--ink), 0.74);
+  }
+  .lg-sec__b ul {
+    list-style: none;
+    margin: 1px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .lg-sec__b li {
+    position: relative;
+    padding-inline-start: 16px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.74);
+  }
+  .lg-sec__b li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--gold-600);
+    transform: rotate(45deg);
+  }
+  .lg-contact {
+    margin-top: clamp(32px, 4vw, 46px);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #16301f, #1f3d2a);
+    padding: clamp(24px, 3.2vw, 36px);
+    position: relative;
+    overflow: hidden;
+  }
+  .lg-contact__glow {
+    position: absolute;
+    top: -90px;
+    inset-inline-end: -60px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 162, 75, 0.22), transparent 68%);
+  }
+  .lg-contact__in {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .lg-contact h2 {
+    margin: 0;
+    font-size: clamp(18px, 2vw, 23px);
+    font-weight: 740;
+    color: var(--cream);
+    line-height: 1.22;
+    max-width: 460px;
+  }
+  .lg-contact p {
+    margin: 9px 0 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(238, 230, 205, 0.8);
+    max-width: 460px;
+  }
+  .lg-contact__dia {
+    background: var(--green-deep);
+  }
+</style>

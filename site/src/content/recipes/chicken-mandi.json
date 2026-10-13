@@ -1,0 +1,67 @@
+{
+  "num": 23,
+  "slug": "chicken-mandi",
+  "region": "Saudi",
+  "title": "Chicken Mandi",
+  "tagline": "Fragrant saffron rice and chicken finished with a signature charcoal smoke (dukhan).",
+  "intro": "Mandi — of Hadhrami-Yemeni origin and now one of the most beloved dishes across Saudi Arabia — is defined by its gentle spicing and its unmistakable smokiness. Traditionally the meat is slow-cooked in an underground taboon oven; at home the magic comes from the dukhan technique, where a piece of glowing charcoal is drizzled with ghee inside the sealed pot to perfume the rice. The result is subtle, aromatic and deeply comforting.",
+  "cuisine": "Saudi (Hadhrami origin)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "20 minutes",
+  "cookTime": "1 hour 10 minutes",
+  "totalTime": "1 hour 30 minutes",
+  "prepISO": "PT20M",
+  "cookISO": "PT1H10M",
+  "totalISO": "PT1H30M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the chicken",
+      "items": [
+        "1 whole chicken, halved or quartered",
+        "2 tbsp mandi spice mix (black pepper, cumin, coriander, cardamom, cinnamon, cloves, turmeric)",
+        "3 tbsp oil",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "About 1 litre chicken broth",
+        "Pinch of saffron soaked in 3 tbsp warm water",
+        "1 cinnamon stick, 4 cardamom, 4 cloves, 1 bay leaf"
+      ]
+    },
+    {
+      "group": "For the smoke (dukhan) & garnish",
+      "items": [
+        "1 piece of natural lump charcoal",
+        "1 tbsp ghee",
+        "3 tbsp fried almonds and raisins"
+      ]
+    }
+  ],
+  "method": [
+    "Rub the chicken with the mandi spices, salt and oil.",
+    "Make a broth: simmer the chicken in water with a little salt until just cooked, about 25 minutes. Reserve about 1 litre of broth; keep the chicken.",
+    "Roast or grill the spiced chicken at high heat until browned and tender.",
+    "Cook the drained rice in the measured broth with saffron and whole spices: boil, then cover and cook low 15 minutes.",
+    "Make a well in the cooked rice and sit the chicken on top (or a small heatproof bowl in the centre).",
+    "Dukhan: heat the charcoal until red-hot, place it in the bowl, drizzle the ghee over it so it smokes, and immediately cover the pot tightly. Leave sealed for 5–10 minutes.",
+    "Remove the charcoal, garnish with fried nuts and raisins and serve."
+  ],
+  "tips": [
+    "The dukhan smoke is what makes mandi taste like mandi — don't skip it, and keep the lid tightly sealed.",
+    "Mandi spicing is milder than kabsa; let the saffron and smoke lead."
+  ],
+  "toServe": "Serve with sahawiq (Yemeni green chilli sauce) or daqoos.",
+  "imageAlt": "Chicken mandi with smoky saffron rice and roasted chicken",
+  "image": "../../assets/recipes/chicken-mandi.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Mandi.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

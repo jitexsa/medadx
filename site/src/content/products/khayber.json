@@ -1,0 +1,54 @@
+{
+  "id": "khayber",
+  "order": 1,
+  "accent": "#B23A26",
+  "accent2": "#1F5B3C",
+  "image": "../../assets/brand/bag-khayber.png",
+  "life": "../../assets/brand/khayber-life.png",
+  "journeyBag": "../../assets/brand/journey-bag-khayber.png",
+  "banners": [
+    "../../assets/brand/khyber-gate-sella-banner.png",
+    "../../assets/brand/khyber-gate-banner.png"
+  ],
+  "packImages": {
+    "1 kg": [
+      "../../assets/brand/journey-bag-khayber1kg.png"
+    ]
+  },
+  "i18n": {
+    "en": {
+      "name": "Khayber Gate – Creamy Sella Basmati",
+      "desc": "Creamy sella basmati rice with bright white color and smooth texture",
+      "type": "Creamy Sella",
+      "grain": "Extra Long (8.3+ mm)",
+      "aroma": "Medium Aromatic",
+      "origin": "India / Pakistan",
+      "sizes": "40kg",
+      "use": "White Rice, Maklouba, Mixed Rice",
+      "packs": [
+        "40 kg",
+        "25 kg",
+        "10 kg",
+        "5 kg",
+        "1 kg"
+      ]
+    },
+    "ar": {
+      "name": "باب الخيبر - أرز بسمتي سيلا كريمي",
+      "desc": "أرز بسمتي سيلا كريمي ذو لون أبيض ناصع وملمس ناعم",
+      "type": "سيلا كريمي",
+      "grain": "طويل جداً (8.3+ مم)",
+      "aroma": "عطري متوسط",
+      "origin": "الهند / باكستان",
+      "sizes": "40 كجم",
+      "use": "الأرز الأبيض، المقلوبة، الرز بالخلطة",
+      "packs": [
+        "40 كجم",
+        "25 كجم",
+        "10 كجم",
+        "5 كجم",
+        "1 كجم"
+      ]
+    }
+  }
+}

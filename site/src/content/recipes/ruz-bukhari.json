@@ -1,0 +1,64 @@
+{
+  "num": 29,
+  "slug": "ruz-bukhari",
+  "region": "Saudi",
+  "title": "Ruz Bukhari (Bukhari Rice)",
+  "tagline": "Warmly spiced Hejazi rice with chicken, sweet carrots and raisins.",
+  "intro": "Ruz Bukhari travelled to Makkah with Central Asian pilgrims and settlers from Bukhara, and became a treasured part of Hejazi cuisine. Basmati is cooked with chicken, a warm spice blend, sweet grated carrots and raisins, giving a gently sweet-savoury pilaf with a signature amber colour. It is a staple of Makkah's homes and restaurants alike.",
+  "cuisine": "Saudi (Hejazi, Bukhara origin)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "20 minutes",
+  "cookTime": "1 hour",
+  "totalTime": "1 hour 20 minutes",
+  "prepISO": "PT20M",
+  "cookISO": "PT1H",
+  "totalISO": "PT1H20M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the chicken & broth",
+      "items": [
+        "1 whole chicken, cut into pieces",
+        "2 onions, chopped",
+        "4 garlic cloves, minced",
+        "3 tomatoes, grated",
+        "2 tbsp tomato paste",
+        "60 ml (¼ cup) oil",
+        "1 tbsp Bukhari spice mix (cumin, coriander, cardamom, cinnamon, cloves, black lime, black pepper)",
+        "1.2 litres water",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "2 large carrots, coarsely grated or julienned",
+        "3 tbsp raisins",
+        "About 1 litre reserved broth"
+      ]
+    }
+  ],
+  "method": [
+    "Brown the onions in oil, add the garlic and chicken and sear.",
+    "Add the tomatoes, tomato paste, Bukhari spices and salt; cook until the oil separates.",
+    "Add the water, cover and simmer until the chicken is tender, about 30 minutes. Reserve the chicken; strain and measure about 1 litre of broth.",
+    "In the same pot, briefly sauté the grated carrots until softened, then add the raisins.",
+    "Add the drained rice and the measured broth; check salt.",
+    "Boil, then cover and cook on low until absorbed, 15–18 minutes. Rest 5 minutes.",
+    "Broil the chicken for colour if you like, then serve it over the fluffed rice."
+  ],
+  "tips": [
+    "The carrots and raisins give Bukhari rice its gentle sweetness — don't leave them out.",
+    "Cook the carrots in the spiced broth's oil so they carry the flavour into the rice."
+  ],
+  "toServe": "Serve with daqoos and a fresh salad.",
+  "imageAlt": "Ruz Bukhari rice with chicken, carrots and raisins",
+  "image": "../../assets/recipes/ruz-bukhari.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Rice%20and%20meat.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

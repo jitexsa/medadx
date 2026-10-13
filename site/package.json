@@ -1,0 +1,68 @@
+{
+  "name": "medadx-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:links": "linkinator dist --recurse --server-root dist --skip \"^https?://(?!localhost)\"",
+    "lhci": "lhci autorun",
+    "content:extract": "tsx scripts/extract-content.ts",
+    "content:recipes": "tsx scripts/convert-recipes.ts",
+    "content:images": "tsx scripts/fetch-wikimedia.ts",
+    "icons": "tsx scripts/icons.ts",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": {
+    "@astrojs/preact": "6.0.6",
+    "@astrojs/sitemap": "3.7.4",
+    "@fontsource-variable/archivo": "5.3.0",
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/ibm-plex-sans": "5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "5.3.0",
+    "@nanostores/preact": "1.1.1",
+    "astro": "7.3.8",
+    "nanostores": "1.5.5",
+    "preact": "10.29.8",
+    "satori": "0.51.0",
+    "sharp": "0.35.5"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "sharp@0.35.5": true,
+    "esbuild@0.27.7": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@eslint/js": "10.0.1",
+    "@fontsource/archivo": "5.3.0",
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.64.0",
+    "@types/node": "26.6.5",
+    "eslint": "10.12.0",
+    "eslint-plugin-astro": "3.2.1",
+    "happy-dom": "21.0.1",
+    "linkinator": "8.1.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "schema-dts": "2.1.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.2",
+    "vitest": "5.0.4"
+  }
+}

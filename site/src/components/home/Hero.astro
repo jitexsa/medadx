@@ -1,0 +1,631 @@
+---
+import { Image } from 'astro:assets';
+import bag1kg from '@/assets/brand/journey-bag-khayber1kg.png';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts, productCopy } from '@/lib/catalog';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const ar = locale === 'ar';
+const products = await getProducts();
+const khy = products.find((p) => p.id === 'khayber')!;
+const khyCopy = productCopy(khy, locale);
+
+// Slide order matches the design: Farah, Khayber Gate, Dhoqan, Khayber Gate 1 kg.
+const slides = [
+  ...products.map((p) => {
+    const c = productCopy(p, locale);
+    return {
+      id: p.id,
+      img: p.journeyBag,
+      name: c.name,
+      grain: c.grain,
+      aroma: c.aroma,
+      weight: c.sizes,
+      origin: c.origin,
+      alt: `${c.name}`,
+    };
+  }),
+  {
+    id: 'khayber',
+    img: bag1kg,
+    name: ar ? 'باب الخيبر — عبوة 1 كجم' : 'Khyber Gate — 1KG Pack',
+    grain: khyCopy.grain,
+    aroma: khyCopy.aroma,
+    weight: ar ? '1 كجم' : '1 kg',
+    origin: khyCopy.origin,
+    alt: ar ? 'عبوة باب الخيبر 1 كجم للتجزئة' : 'Khyber Gate 1KG retail pack',
+  },
+];
+const certBadges = t.supplyPage.certs.map((c) =>
+  c
+    .replace(/\s*(Certified|Compliant)\s*/i, '')
+    .replace('شهادة ', '')
+    .replace('متوافق مع ', '')
+    .trim(),
+);
+const ticker = [...t.hero.ticker, ...t.hero.ticker];
+const POS = ['front', 'left', 'back', 'right'] as const;
+---
+
+<section class="hero" data-hero>
+  <div class="hero__dots-bg" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <span class="grain g1" aria-hidden="true">
+    <span></span>
+  </span>
+  <span class="grain g2" aria-hidden="true">
+    <span></span>
+  </span>
+  <span class="grain g3" aria-hidden="true">
+    <span></span>
+  </span>
+  <span class="grain g4" aria-hidden="true">
+    <span></span>
+  </span>
+  <span class="grain g5" aria-hidden="true">
+    <span></span>
+  </span>
+
+  <div class="hero__in">
+    <div class="hero__copy">
+      <div class="kicker rise">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.footer.tagline}</span>
+      </div>
+      <h1 class="hero__h1 rise d1">{t.hero.h1}</h1>
+      <p class="hero__sub rise d2">{t.hero.sub}</p>
+      <div class="hero__ctas rise d3">
+        <a href="#products" class="btn btn--primary btn--lg">
+          {t.hero.browse}
+        </a>
+        <a href={localizedPath('/contact', locale)} class="btn btn--outline btn--lg hero__inq" data-quote-open>
+          {t.hero.inquire}
+        </a>
+      </div>
+      <ul class="pill-row hero__certs rise d4" aria-label={u.productPage.certs}>
+        {certBadges.map((c) => (
+          <li class="cert-pill">
+            <span class="dia" aria-hidden="true" />
+            {c}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="hero__stage" data-hero-stage aria-roledescription="carousel" aria-label={u.productPage.kicker} role="region">
+      <div class="hero__halo" aria-hidden="true" data-parallax="0.5"></div>
+      {slides.map((s, i) => (
+        <div class="slot" data-slot={i} data-pos={POS[i]}>
+          <button
+            type="button"
+            class="slot__btn"
+            data-bag={i}
+            aria-label={s.name}
+            aria-roledescription="slide"
+            data-parallax={i === 0 ? '1.6' : '0.8'}
+          >
+            <span class={`slot__float f${i}`}>
+              <Image
+                src={s.img}
+                alt={s.alt}
+                format="webp"
+                quality={82}
+                class="slot__img"
+                loading="eager"
+                fetchpriority={i === 0 ? 'high' : 'auto'}
+                draggable="false"
+              />
+            </span>
+          </button>
+        </div>
+      ))}
+      <div class="hero__caption">
+        <div class="hero__card" aria-live="polite">
+          {slides.map((s, i) => (
+            <div class="hero__feat" data-feat={i} hidden={i !== 0} data-product={s.id}>
+              <div class="hero__feat-top">
+                <span class="dot" aria-hidden="true" />
+                <span class="hero__grain">{s.grain}</span>
+              </div>
+              <div class="hero__feat-meta">
+                <span>{s.aroma}</span>
+                <span class="sep" aria-hidden="true" />
+                <span class="strong">{s.weight}</span>
+                <span class="sep" aria-hidden="true" />
+                <span>{s.origin}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="hero__controls">
+          <div class="hero__dots">
+            {slides.map((s, i) => (
+              <button type="button" class="hero__dot" data-dot={i} aria-label={s.name} aria-current={i === 0 ? 'true' : undefined} />
+            ))}
+          </div>
+          <button
+            type="button"
+            class="hero__pause"
+            data-hero-pause
+            data-label-pause={u.pause}
+            data-label-play={u.play}
+            aria-label={u.pause}
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" class="ic-pause">
+              <rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"></rect>
+              <rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"></rect>
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" class="ic-play">
+              <path d="M3 1.8 L10 6 L3 10.2 Z" fill="currentColor"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__hint" aria-hidden="true">
+    <span>{t.journey.hint}</span>
+    <span class="hero__line"></span>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      {ticker.map((tk) => (
+        <div class="ticker__item">
+          <span>{tk}</span>
+          <span class="dia dia--sm" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/hero';
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: min(100svh, 980px);
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .hero__dots-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(31, 61, 42, 0.055) 1px, transparent 1.3px);
+    background-size: 23px 23px;
+    pointer-events: none;
+  }
+  .hero__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(900px 520px at 78% 12%, rgba(194, 154, 69, 0.14), transparent 65%),
+      radial-gradient(700px 480px at 8% 88%, rgba(31, 61, 42, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+  .grain {
+    position: absolute;
+  }
+  .grain span {
+    display: block;
+    border-radius: 50%;
+    animation: mxFloat 7s ease-in-out infinite;
+  }
+  .g1 {
+    top: 20%;
+    inset-inline-start: 7%;
+    transform: rotate(28deg);
+  }
+  .g1 span {
+    width: 11px;
+    height: 28px;
+    background: linear-gradient(160deg, #c29a45, #a67f2e);
+    opacity: 0.5;
+  }
+  .g2 {
+    top: 14%;
+    inset-inline-end: 11%;
+    transform: rotate(-22deg);
+  }
+  .g2 span {
+    width: 13px;
+    height: 32px;
+    background: linear-gradient(160deg, #2a5138, #1f3d2a);
+    opacity: 0.32;
+    animation-duration: 9s;
+    animation-delay: -2s;
+  }
+  .g3 {
+    top: 58%;
+    inset-inline-end: 6%;
+    transform: rotate(14deg);
+  }
+  .g3 span {
+    width: 10px;
+    height: 25px;
+    background: linear-gradient(160deg, #c29a45, #8f6e28);
+    opacity: 0.42;
+    animation-duration: 8s;
+    animation-delay: -4s;
+  }
+  .g4 {
+    top: 66%;
+    inset-inline-start: 12%;
+    transform: rotate(-34deg);
+  }
+  .g4 span {
+    width: 9px;
+    height: 23px;
+    background: linear-gradient(160deg, #2a5138, #1f3d2a);
+    opacity: 0.26;
+    animation-duration: 10s;
+    animation-delay: -1.2s;
+  }
+  .g5 {
+    top: 34%;
+    inset-inline-end: 24%;
+    transform: rotate(40deg);
+  }
+  .g5 span {
+    width: 8px;
+    height: 20px;
+    background: linear-gradient(160deg, #d9bc72, #c29a45);
+    opacity: 0.38;
+    animation-duration: 6.5s;
+    animation-delay: -3s;
+  }
+
+  .hero__in {
+    position: relative;
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding: clamp(108px, 14vw, 150px) var(--gutter) 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+  }
+  .hero__copy {
+    flex: 1 1 420px;
+    min-width: min(100%, 340px);
+    max-width: 640px;
+  }
+  .rise {
+    animation: mxRise 0.8s var(--ease) both;
+  }
+  .d1 {
+    animation-delay: 0.08s;
+  }
+  .d2 {
+    animation-delay: 0.16s;
+  }
+  .d3 {
+    animation-delay: 0.24s;
+  }
+  .d4 {
+    animation-delay: 0.32s;
+  }
+  .hero__h1 {
+    margin: 26px 0 0;
+    font-size: clamp(30px, 7vw, 60px);
+    line-height: 1.02;
+    font-weight: 700;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+    text-wrap: balance;
+    color: var(--ink-solid);
+  }
+  .hero__sub {
+    margin: 28px 0 0;
+    max-width: 640px;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.72);
+  }
+  .hero__ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .hero__ctas .btn {
+    padding: 17px 30px;
+    white-space: normal;
+  }
+  .hero__inq {
+    border-color: rgba(var(--ink), 0.28);
+  }
+  .hero__inq:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: translateY(-2px);
+  }
+  :global(:root[data-theme='dark']) .hero__inq:hover {
+    background: rgba(var(--ink), 0.06);
+  }
+  .hero__certs {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+  }
+
+  .hero__stage {
+    flex: 1 1 360px;
+    min-width: min(100%, 300px);
+    position: relative;
+    align-self: stretch;
+    min-height: clamp(380px, 48vw, 590px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+  }
+  .hero__halo {
+    position: absolute;
+    width: min(98%, 540px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(194, 154, 69, 0.24), rgba(194, 154, 69, 0) 68%);
+    pointer-events: none;
+    transition: transform 0.5s var(--ease);
+  }
+  .slot {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition:
+      transform 0.6s var(--ease-out),
+      opacity 0.6s ease;
+  }
+  .slot[data-pos='front'] {
+    transform: none;
+    z-index: 3;
+  }
+  .slot[data-pos='left'] {
+    transform: translate(-34%, 5%) scale(0.7) rotate(-6deg);
+    z-index: 1;
+  }
+  .slot[data-pos='right'] {
+    transform: translate(34%, 5%) scale(0.7) rotate(6deg);
+    z-index: 1;
+  }
+  .slot[data-pos='back'] {
+    transform: translate(0, -9%) scale(0.5);
+    z-index: 0;
+    opacity: 0.7;
+  }
+  [dir='rtl'] .slot[data-pos='left'] {
+    transform: translate(34%, 5%) scale(0.7) rotate(6deg);
+  }
+  [dir='rtl'] .slot[data-pos='right'] {
+    transform: translate(-34%, 5%) scale(0.7) rotate(-6deg);
+  }
+  .slot__btn {
+    pointer-events: auto;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+    border-radius: 18px;
+    transition: transform 0.3s var(--ease);
+  }
+  /* The float animation runs on this wrapper (its own compositor layer) so the
+     drop-shadow on the image is rasterised once instead of repainted every frame. */
+  .slot__float {
+    display: block;
+    will-change: transform;
+    animation:
+      mxRise 0.9s var(--ease) 0.32s both,
+      mxFloat 8.5s ease-in-out 1.4s infinite;
+  }
+  .slot__img {
+    display: block;
+    height: clamp(320px, 40vw, 520px);
+    width: auto;
+    filter: drop-shadow(0 22px 30px rgba(var(--ink), 0.22));
+  }
+  .slot[data-pos='front'] .slot__img {
+    filter: drop-shadow(0 34px 46px rgba(var(--ink), 0.32));
+  }
+  .f0 {
+    animation-delay: 0.2s, 0.7s;
+    animation-duration: 0.9s, 7.5s;
+  }
+  .f2 {
+    animation-delay: 0.44s, 2.1s;
+    animation-duration: 0.9s, 9.5s;
+  }
+  .f3 {
+    animation-delay: 0.5s, 1.7s;
+    animation-duration: 0.9s, 8s;
+  }
+  .hero__caption {
+    position: absolute;
+    bottom: clamp(2px, 1vw, 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 5;
+    max-width: min(96%, 400px);
+  }
+  .hero__card {
+    text-align: center;
+    background: rgba(var(--surf), 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(var(--ink), 0.1);
+    border-radius: 16px;
+    padding: 10px 18px;
+    box-shadow: 0 12px 28px rgba(var(--ink), 0.12);
+  }
+  .hero__feat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero__feat-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .hero__grain {
+    font-size: 14.5px;
+    font-weight: 750;
+    letter-spacing: var(--tr-tight);
+  }
+  .hero__feat-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px 8px;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hero__feat-meta .strong {
+    font-weight: 600;
+    color: var(--ink-solid);
+  }
+  .sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(var(--ink), 0.28);
+  }
+  .hero__controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero__dots {
+    display: flex;
+    gap: 9px;
+  }
+  .hero__dots {
+    gap: 0;
+  }
+  /* 24×24 tap target; the visible pill is the ::before. */
+  .hero__dot {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    transition: width 0.35s ease;
+  }
+  .hero__dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    background: rgba(var(--ink), 0.28);
+    transition:
+      width 0.35s ease,
+      background 0.35s ease;
+  }
+  .hero__dot[aria-current='true'] {
+    width: 36px;
+  }
+  .hero__dot[aria-current='true']::before {
+    width: 26px;
+    background: var(--brand-text);
+  }
+  .hero__pause {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(var(--ink), 0.25);
+    background: transparent;
+    color: rgba(var(--ink), 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .hero__pause .ic-play,
+  .hero__pause.is-paused .ic-pause {
+    display: none;
+  }
+  .hero__pause.is-paused .ic-play {
+    display: block;
+  }
+  .hero__hint {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 18px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: var(--tr-wide);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hero__line {
+    width: 1.5px;
+    height: 34px;
+    background: linear-gradient(#c29a45, rgba(194, 154, 69, 0));
+    animation: mxPulse 2.2s ease-in-out infinite;
+  }
+  .ticker {
+    position: relative;
+    border-top: 1px solid rgba(var(--ink), 0.14);
+    overflow: hidden;
+    padding: 15px 0;
+    background: rgba(var(--surf), 0.5);
+  }
+  .ticker__track {
+    will-change: transform;
+    display: flex;
+    width: max-content;
+    gap: 48px;
+    animation: mxTicker 34s linear infinite;
+  }
+  [dir='rtl'] .ticker__track {
+    animation-direction: reverse;
+  }
+  .ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: var(--tr-wide);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.75);
+    white-space: nowrap;
+  }
+</style>

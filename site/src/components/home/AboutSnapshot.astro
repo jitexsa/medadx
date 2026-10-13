@@ -1,0 +1,140 @@
+---
+import { Image } from 'astro:assets';
+import kitchen from '@/assets/brand/about-kitchen.png';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+---
+
+<section class="section snap cv-auto">
+  <div class="wrap snap__grid">
+    <div data-reveal="0">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.aboutSnap.label}</span>
+      </div>
+      <h2 class="h2">{t.aboutSnap.title}</h2>
+      <p class="lede lede--lg">{t.aboutSnap.body}</p>
+      <ul class="snap__checks">
+        {t.aboutSnap.checks.map((ck) => (
+          <li>
+            <span class="snap__tick" aria-hidden="true">
+              <span class="dia dia--md" />
+            </span>
+            {ck}
+          </li>
+        ))}
+      </ul>
+      <a href={localizedPath('/about', locale)} class="btn btn--primary snap__btn">
+        {t.aboutSnap.btn}
+      </a>
+    </div>
+    <div data-reveal="1" class="snap__media">
+      <div class="snap__frame">
+        <Image
+          src={kitchen}
+          alt="Steaming chicken biryani plated in a bright modern kitchen"
+          format="webp"
+          widths={[480, 720, 1024]}
+          sizes="(min-width: 1240px) 580px, (min-width: 700px) 46vw, 92vw"
+          class="snap__img"
+        />
+      </div>
+      <div class="snap__stat">
+        <span class="snap__num" data-count="15" data-count-suf="+">
+          15+
+        </span>
+        <span class="snap__statl">{t.aboutSnap.statLabel}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .snap {
+    background: var(--bg);
+  }
+  .snap__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(40px, 6vw, 88px);
+    align-items: center;
+  }
+  .snap__checks {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 28px 0 0;
+  }
+  .snap__checks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15.5px;
+    font-weight: 600;
+  }
+  .snap__tick {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    background: var(--brand-tint-2);
+    border: 1px solid var(--brand-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .snap__btn {
+    margin-top: 34px;
+  }
+  .snap__media {
+    position: relative;
+  }
+  .snap__frame {
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--ink), 0.14);
+    box-shadow: 0 30px 60px rgba(var(--ink), 0.14);
+  }
+  .snap__img {
+    width: 100%;
+    aspect-ratio: 1 / 1.02;
+    object-fit: cover;
+  }
+  .snap__stat {
+    position: absolute;
+    bottom: -22px;
+    inset-inline-start: clamp(-14px, -1vw, -8px);
+    background: var(--surface);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 18px;
+    padding: 18px 26px;
+    box-shadow: 0 22px 44px rgba(var(--ink), 0.16);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .snap__num {
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 1;
+    color: var(--brand-text);
+  }
+  .snap__statl {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: var(--gold-text);
+    max-width: 110px;
+    line-height: 1.5;
+  }
+</style>

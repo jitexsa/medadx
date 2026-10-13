@@ -1,0 +1,47 @@
+{
+  "id": "farah",
+  "order": 0,
+  "accent": "#1F5B3C",
+  "accent2": "#C29A45",
+  "image": "../../assets/brand/bag-farah.png",
+  "life": "../../assets/brand/farah-life.png",
+  "journeyBag": "../../assets/brand/journey-bag-farah.png",
+  "banners": [
+    "../../assets/brand/farah-banner.png"
+  ],
+  "packImages": {},
+  "i18n": {
+    "en": {
+      "name": "Farah – Golden Sella Basmati",
+      "desc": "Premium golden sella basmati rice with long grains and distinctive aroma",
+      "type": "Golden Sella",
+      "grain": "Extra Long (8.3+ mm)",
+      "aroma": "Strong Aromatic",
+      "origin": "India / Pakistan",
+      "sizes": "40kg",
+      "use": "Mandi, Kabsa, Biryani",
+      "packs": [
+        "40 kg",
+        "25 kg",
+        "10 kg",
+        "5 kg"
+      ]
+    },
+    "ar": {
+      "name": "أرز فرح – سيلا ذهبي بسمتي",
+      "desc": "أرز بسمتي سيلا ذهبي فاخر ذو حبات طويلة ورائحة مميزة",
+      "type": "سيلا ذهبي",
+      "grain": "طويل جداً (8.3+ مم)",
+      "aroma": "عطري قوي",
+      "origin": "الهند / باكستان",
+      "sizes": "40 كجم",
+      "use": "المندي، الكبسة، البرياني",
+      "packs": [
+        "40 كجم",
+        "25 كجم",
+        "10 كجم",
+        "5 كجم"
+      ]
+    }
+  }
+}

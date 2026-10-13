@@ -1,0 +1,59 @@
+---
+export interface Props {
+  items: { name: string; href?: string }[];
+  light?: boolean;
+}
+const { items, light = false } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class:list={['bc', { 'bc--light': light }]}>
+  <ol>
+    {items.map((it, i) => (
+      <li>
+        {it.href && i < items.length - 1 ? <a href={it.href}>{it.name}</a> : <span aria-current="page">{it.name}</span>}
+        {i < items.length - 1 && (
+          <span class="bc__sep flip-x" aria-hidden="true">
+            ›
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .bc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .bc li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bc a {
+    color: rgba(var(--ink), 0.68);
+    text-decoration: none;
+  }
+  .bc a:hover {
+    color: var(--gold-text);
+  }
+  .bc [aria-current] {
+    color: var(--ink-solid);
+  }
+  .bc__sep {
+    display: inline-block;
+    color: var(--gold-500);
+  }
+</style>

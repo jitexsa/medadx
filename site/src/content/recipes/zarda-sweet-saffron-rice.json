@@ -1,0 +1,62 @@
+{
+  "num": 19,
+  "slug": "zarda-sweet-saffron-rice",
+  "region": "Indian & Pakistani",
+  "title": "Zarda (Sweet Saffron Rice)",
+  "tagline": "A jewel-bright festive dessert of sweet rice with nuts, saffron and cardamom.",
+  "intro": "Zarda is the celebratory sweet rice of Pakistan and North India, served at weddings and Eid. Basmati is cooked with sugar, saffron and cardamom until glossy and golden, then studded with nuts, raisins and sometimes candied fruit. As beautiful as it is delicious, it's the classic sweet finish to a festive meal.",
+  "cuisine": "Pakistani & North Indian (dessert)",
+  "course": "Dessert",
+  "category": "Dessert",
+  "servings": 6,
+  "prepTime": "15 minutes (plus 30 min soaking)",
+  "cookTime": "35 minutes",
+  "totalTime": "50 minutes",
+  "prepISO": "PT15M",
+  "cookISO": "PT35M",
+  "totalISO": "PT50M",
+  "difficulty": "Intermediate",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 30 min",
+        "300 g (1½ cups) sugar",
+        "½ tsp saffron soaked in 3 tbsp warm milk",
+        "A few drops of yellow/orange food colour (optional)",
+        "6 green cardamom pods",
+        "4 cloves",
+        "6 tbsp ghee",
+        "1.5 litres water (for parboiling)"
+      ]
+    },
+    {
+      "group": "For the topping",
+      "items": [
+        "3 tbsp almonds, slivered",
+        "3 tbsp pistachios",
+        "2 tbsp raisins",
+        "2 tbsp chopped candied fruit or khoya (optional)"
+      ]
+    }
+  ],
+  "method": [
+    "Boil plenty of water with the food colour (if using). Parboil the drained rice to about 70%, then drain. The colour tints the grains.",
+    "Heat the ghee in a heavy pot and gently fry the cardamom and cloves. Fry the nuts and raisins briefly and set some aside for garnish.",
+    "Add the parboiled rice and the saffron milk; fold gently.",
+    "Sprinkle over the sugar and mix carefully — the sugar will melt and release moisture.",
+    "Cover and steam (dum) on the lowest heat for 15–20 minutes until the rice is soft and glazed and the syrup is absorbed.",
+    "Fold through most of the nuts, then garnish with the reserved nuts and candied fruit."
+  ],
+  "tips": [
+    "Add the sugar only after the rice is parboiled, or the grains won't soften properly.",
+    "Keep the dum gentle so the sweet rice doesn't catch on the base."
+  ],
+  "toServe": "Serve warm or at room temperature as a festive dessert.",
+  "imageAlt": "Zarda sweet saffron rice topped with nuts and raisins",
+  "image": "../../assets/recipes/zarda-sweet-saffron-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Coloured%20Zarda%20Chawal.JPG",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

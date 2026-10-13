@@ -1,0 +1,211 @@
+---
+import { Image } from 'astro:assets';
+import { getDict, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getRecipes } from '@/lib/catalog';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const ar = locale === 'ar';
+const recipes = (await getRecipes()).slice(0, 10);
+---
+
+<section class="rt cv-auto">
+  <div class="wrap rt__head-wrap">
+    <div class="rt__head" data-reveal="0">
+      <div class="rt__title">
+        <div class="kicker">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.ux.rec.label}</span>
+        </div>
+        <h2 class="h2 h2--md">{t.ux.rec.title}</h2>
+      </div>
+      <div class="rt__ctrl">
+        <a href="/recipes" class="link-mono" hreflang={ar ? 'en' : undefined}>
+          {t.ux.rec.all}{' '}
+          <span class="flip-x" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <button type="button" class="rt__btn" data-rt-prev aria-label={u.prev}>
+          <span class="flip-x" aria-hidden="true">
+            ←
+          </span>
+        </button>
+        <button type="button" class="rt__btn rt__btn--solid" data-rt-next aria-label={u.next}>
+          <span class="flip-x" aria-hidden="true">
+            →
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul class="rt__track no-scrollbar" data-rt-track>
+    {recipes.map((r) => (
+      <li class="rt__item">
+        <a href={`/recipes/${r.slug}`} class="rt__card" hreflang={ar ? 'en' : undefined}>
+          <div class="rt__media">
+            <Image src={r.image} alt={r.imageAlt} format="webp" widths={[320, 600]} sizes="300px" class="rt__img" loading="lazy" />
+          </div>
+          <div class="rt__body">
+            <span class="rt__region">
+              {r.region}
+              {ar && <span class="rt__en"> · {u.englishOnly}</span>}
+            </span>
+            <span dir="ltr" lang="en" class="rt__name">
+              {r.title}
+            </span>
+            <span dir="ltr" lang="en" class="rt__rice">
+              <span class="dia dia--sm" aria-hidden="true" />
+              {r.rice}
+            </span>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<script>
+  const track = document.querySelector<HTMLElement>('[data-rt-track]');
+  const rtl = document.documentElement.dir === 'rtl';
+  const scroll = (d: number) =>
+    track?.scrollBy({
+      left: d * (rtl ? -1 : 1) * Math.min(640, track.clientWidth * 0.8),
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
+  document.querySelector('[data-rt-prev]')?.addEventListener('click', () => scroll(-1));
+  document.querySelector('[data-rt-next]')?.addEventListener('click', () => scroll(1));
+</script>
+
+<style>
+  .rt {
+    background: var(--surface);
+    border-block: 1px solid rgba(var(--ink), 0.1);
+    padding: clamp(64px, 8vw, 108px) 0;
+  }
+  .rt__head-wrap {
+    padding: 0 var(--gutter);
+  }
+  .rt__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .rt__title {
+    max-width: 620px;
+  }
+  .rt__ctrl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .rt__btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(var(--ink), 0.22);
+    background: var(--card);
+    color: var(--ink-solid);
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .rt__btn:hover {
+    border-color: var(--ink-solid);
+  }
+  .rt__btn--solid {
+    border: none;
+    background: var(--green-900);
+    color: #f5f0e4;
+  }
+  .rt__btn--solid:hover {
+    background: var(--green-950);
+  }
+  .rt__btn span {
+    display: inline-block;
+  }
+  .rt__track {
+    --pad: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter)));
+    list-style: none;
+    margin: 36px 0 0;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 6px var(--pad) 20px;
+    scroll-padding-inline: var(--pad);
+  }
+  .rt__item {
+    flex: 0 0 clamp(240px, 26vw, 300px);
+    scroll-snap-align: start;
+    display: flex;
+  }
+  .rt__card {
+    flex: 1;
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.35s var(--ease),
+      box-shadow 0.35s,
+      border-color 0.35s;
+  }
+  .rt__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 44px rgba(var(--ink), 0.13);
+    border-color: rgba(166, 127, 46, 0.5);
+  }
+  .rt__media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #ede6d6;
+  }
+  .rt__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .rt__body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .rt__region {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .rt__name {
+    font-size: 16.5px;
+    font-weight: 740;
+    line-height: 1.3;
+    color: var(--ink-solid);
+    text-align: start;
+  }
+  .rt__rice {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    color: rgba(var(--ink), 0.68);
+  }
+</style>

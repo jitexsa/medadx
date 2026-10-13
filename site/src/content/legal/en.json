@@ -1,0 +1,383 @@
+{
+  "metaLabel": "Legal & Compliance",
+  "updatedLabel": "Last updated",
+  "updated": "13 October 2026",
+  "jurisdictionBadge": "Kingdom of Saudi Arabia · GCC",
+  "tocTitle": "On this page",
+  "disclaimerTitle": "General notice",
+  "disclaimer": "This document is provided for general information and does not constitute legal advice. Individual supply transactions are governed by the separately signed contract between the parties. Where an Arabic and an English version differ, the Arabic version prevails before the competent courts of the Kingdom of Saudi Arabia.",
+  "contactTitle": "Questions about this document?",
+  "contactBody": "Our compliance team is happy to help. We respond to written enquiries within two business days.",
+  "contactBtn": "Contact Medad-X",
+  "terms": {
+    "navLabel": "Terms of Use",
+    "title": "Terms of Use",
+    "intro": "These Terms of Use govern your access to the Medad-X website and any commercial dealings arising from it. By using this website you agree to be bound by them.",
+    "sections": [
+      {
+        "h": "1. Who we are",
+        "paras": [
+          "This website is operated by Medad-X General Trading, part of the Arsan Global Group, a company registered in the Kingdom of Saudi Arabia specialising in the supply and trade of premium Basmati rice to the HORECA and wholesale sectors. References to “Medad-X”, “we”, “us” or “our” are to this company."
+        ],
+        "items": []
+      },
+      {
+        "h": "2. Acceptance & eligibility",
+        "paras": [
+          "By accessing this website you confirm that you are at least 18 years old and, where acting for a business, that you are authorised to bind that business. If you do not accept these terms you must stop using the website."
+        ],
+        "items": []
+      },
+      {
+        "h": "3. Permitted use",
+        "paras": [
+          "You may use this website for lawful business purposes only. You agree not to:"
+        ],
+        "items": [
+          "Copy, reproduce or republish content without our prior written permission;",
+          "Use the site to transmit malware or attempt to gain unauthorised access;",
+          "Misrepresent your identity or affiliation;",
+          "Use automated tools to scrape, harvest or overload our systems;",
+          "Use our brand, logos or product names in a misleading manner."
+        ]
+      },
+      {
+        "h": "4. Product information",
+        "paras": [
+          "Product descriptions, specifications, images and prices shown on this website are provided for general guidance and do not constitute a binding offer. Grain length, aroma, colour and origin may vary within customary tolerances for a natural product. Confirmed specifications and pricing are set out in the quotation and contract issued for each order."
+        ],
+        "items": []
+      },
+      {
+        "h": "5. Quotations & orders",
+        "paras": [
+          "Any quotation is an invitation to treat and is valid only for the period stated on it. A binding contract is formed only when Medad-X issues a written order confirmation or pro-forma invoice. All supply contracts are additionally subject to our Rice Trading & Freight Terms."
+        ],
+        "items": []
+      },
+      {
+        "h": "6. Intellectual property",
+        "paras": [
+          "All content on this website — including text, graphics, logos, the “Medad-X” name, product brand names (Farah, Khayber Gate, Dhoqan) and page layout — is owned by or licensed to Medad-X and protected under the laws of the Kingdom of Saudi Arabia and applicable international treaties. You may not reproduce or exploit it without our prior written consent."
+        ],
+        "items": []
+      },
+      {
+        "h": "7. Third-party links",
+        "paras": [
+          "The website may link to third-party services (for example mapping or messaging platforms). We do not control and are not responsible for the content, availability or privacy practices of those services."
+        ],
+        "items": []
+      },
+      {
+        "h": "8. Disclaimers",
+        "paras": [
+          "The website is provided on an “as is” and “as available” basis. To the fullest extent permitted by law we disclaim all warranties as to accuracy, availability, or fitness for a particular purpose, and do not warrant that the website will be uninterrupted or error-free."
+        ],
+        "items": []
+      },
+      {
+        "h": "9. Limitation of liability",
+        "paras": [
+          "To the maximum extent permitted by Saudi law, Medad-X shall not be liable for any indirect, incidental or consequential loss arising from use of this website. Nothing in these terms excludes liability that cannot be excluded under applicable law."
+        ],
+        "items": []
+      },
+      {
+        "h": "10. Indemnity",
+        "paras": [
+          "You agree to indemnify Medad-X against claims, losses and reasonable expenses arising from your breach of these terms or your misuse of the website."
+        ],
+        "items": []
+      },
+      {
+        "h": "11. Changes to these terms",
+        "paras": [
+          "We may update these terms at any time. The current version, together with its “last updated” date, is published on this page and applies from the date of posting. Continued use of the website constitutes acceptance of the updated terms."
+        ],
+        "items": []
+      },
+      {
+        "h": "12. Governing law & jurisdiction",
+        "paras": [
+          "These terms are governed by the laws and regulations of the Kingdom of Saudi Arabia. The competent courts of Saudi Arabia have jurisdiction, without prejudice to any arbitration clause agreed within a supply contract."
+        ],
+        "items": []
+      },
+      {
+        "h": "13. Contact",
+        "paras": [
+          "For any question about these terms, contact us at info@medadx.com or +966 920009050."
+        ],
+        "items": []
+      }
+    ]
+  },
+  "privacy": {
+    "navLabel": "Privacy Policy",
+    "title": "Privacy Policy",
+    "intro": "Medad-X respects your privacy and is committed to protecting personal data in accordance with the Personal Data Protection Law (PDPL) of the Kingdom of Saudi Arabia and applicable data-protection regulations across the GCC.",
+    "sections": [
+      {
+        "h": "1. Introduction & scope",
+        "paras": [
+          "This policy explains how Medad-X General Trading collects, uses, discloses and protects personal data when you visit our website, request a quotation, open a trading account or otherwise deal with us. It applies to processing carried out in the Kingdom of Saudi Arabia and to data subjects located across the GCC and wider MENA region."
+        ],
+        "items": []
+      },
+      {
+        "h": "2. Data controller",
+        "paras": [
+          "Medad-X General Trading, part of the Arsan Global Group, is the data controller responsible for your personal data. Our address and contact details appear at the end of this policy."
+        ],
+        "items": []
+      },
+      {
+        "h": "3. Personal data we collect",
+        "paras": [
+          "Depending on how you interact with us, we may collect:"
+        ],
+        "items": [
+          "Identity & contact data — name, job title, company, email, phone and WhatsApp number;",
+          "Commercial data — quotation requests, order history, delivery addresses, trade licence and VAT details;",
+          "Correspondence — messages you send us and records of our communications;",
+          "Technical data — IP address, browser type and pages requested, recorded in our hosting provider's server logs for security and reliability;",
+          "Any additional information you choose to provide to us."
+        ]
+      },
+      {
+        "h": "4. How and why we use your data",
+        "paras": [
+          "We process personal data to:"
+        ],
+        "items": [
+          "Respond to enquiries and prepare quotations;",
+          "Perform supply contracts and arrange freight and delivery;",
+          "Manage trading accounts, invoicing and payments;",
+          "Comply with legal, tax, customs and food-safety obligations;",
+          "Improve and secure our website and services;",
+          "Send commercial updates where you have consented or where otherwise permitted by law."
+        ]
+      },
+      {
+        "h": "5. Legal basis for processing",
+        "paras": [
+          "We rely on one or more of the legal bases recognised under the Saudi PDPL: your consent; the performance of a contract with you; compliance with a legal obligation; the protection of vital interests; and our legitimate interests, provided these do not override your rights and freedoms."
+        ],
+        "items": []
+      },
+      {
+        "h": "6. Consent & withdrawal",
+        "paras": [
+          "Where we rely on consent — for example to send marketing communications — you may withdraw it at any time by contacting us or using the unsubscribe link. Withdrawal does not affect the lawfulness of processing carried out before withdrawal."
+        ],
+        "items": []
+      },
+      {
+        "h": "7. Sharing & disclosure",
+        "paras": [
+          "We do not sell personal data. We may share it with:"
+        ],
+        "items": [
+          "Group companies within the Arsan Global Group;",
+          "Logistics, shipping, inspection and insurance providers to fulfil orders;",
+          "Banks and payment processors;",
+          "Government, customs and regulatory authorities where required by law;",
+          "Professional advisers under a duty of confidentiality. All processors are bound by appropriate contractual safeguards."
+        ]
+      },
+      {
+        "h": "8. Cross-border transfers",
+        "paras": [
+          "As a regional trader, we may transfer personal data to other GCC states and to countries of origin (such as India and Pakistan) to arrange supply and shipping. Where data leaves the Kingdom, we apply the transfer conditions of the PDPL and its implementing regulations — including an adequacy assessment, appropriate safeguards, or your explicit consent — and transfer only the minimum data necessary."
+        ],
+        "items": []
+      },
+      {
+        "h": "9. Data retention",
+        "paras": [
+          "We keep personal data only for as long as necessary to fulfil the purposes above and to meet legal, accounting, tax and customs retention requirements (generally up to ten years for commercial records under Saudi law), after which it is securely deleted or anonymised."
+        ],
+        "items": []
+      },
+      {
+        "h": "10. Data security",
+        "paras": [
+          "We apply appropriate technical and organisational measures — including access controls, encryption in transit and staff confidentiality obligations — to protect personal data against loss, misuse and unauthorised access. In the event of a personal-data breach, we will notify the competent authority and affected individuals as required by the PDPL."
+        ],
+        "items": []
+      },
+      {
+        "h": "11. Your rights",
+        "paras": [
+          "Subject to the PDPL, you have the right to:"
+        ],
+        "items": [
+          "Be informed of how your personal data is used;",
+          "Access the personal data we hold about you;",
+          "Request correction of inaccurate or incomplete data;",
+          "Request deletion of your data where legally permitted;",
+          "Withdraw consent at any time;",
+          "Object to or restrict certain processing;",
+          "Receive a copy of your data in a readable format. To exercise any right, contact us using the details below; we respond within the period required by law."
+        ]
+      },
+      {
+        "h": "12. Cookies & local storage",
+        "paras": [
+          "Our website does not use advertising or tracking cookies. Your theme preference is stored in your browser's local storage. While you fill in our quote or trading-account forms, your selection and draft are kept in your browser's session storage so they are not lost if you change pages; this data stays on your device, is never sent to us until you submit, and is deleted when you close the tab (drafts also expire after 24 hours). You can clear this data at any time in your browser settings."
+        ],
+        "items": []
+      },
+      {
+        "h": "13. Children’s privacy",
+        "paras": [
+          "Our website and services are directed at businesses and are not intended for children. We do not knowingly collect personal data relating to minors."
+        ],
+        "items": []
+      },
+      {
+        "h": "14. Complaints",
+        "paras": [
+          "If you have a concern about how we handle your data, please contact us first so we can address it. You also have the right to lodge a complaint with the Saudi Data & AI Authority (SDAIA), the competent supervisory authority for the PDPL."
+        ],
+        "items": []
+      },
+      {
+        "h": "15. Changes & contact",
+        "paras": [
+          "We may update this policy from time to time; the current version and its date appear on this page. For any privacy request, contact our compliance team at privacy@medadx.com or +966 920009050."
+        ],
+        "items": []
+      }
+    ]
+  },
+  "riceTerms": {
+    "navLabel": "Rice Trading Terms",
+    "title": "Rice Trading & Freight Terms",
+    "intro": "These terms apply to the sale, supply and shipment of Basmati rice and related goods by Medad-X. They form part of every quotation, order confirmation and supply contract unless expressly varied in writing.",
+    "sections": [
+      {
+        "h": "1. Scope & definitions",
+        "paras": [
+          "In these terms:"
+        ],
+        "items": [
+          "“Goods” — the Basmati rice and related products supplied by Medad-X;",
+          "“Buyer” — the party purchasing the Goods;",
+          "“Contract” — the signed order confirmation or pro-forma invoice together with these terms;",
+          "“Incoterms” — Incoterms® 2020 as published by the International Chamber of Commerce."
+        ]
+      },
+      {
+        "h": "2. Quotations & orders",
+        "paras": [
+          "Quotations are indicative and valid only for the period stated, subject to prior sale and stock availability. A binding contract arises only upon Medad-X’s written order confirmation. Origin-market price movements, currency fluctuations and freight rates may affect any unconfirmed quotation."
+        ],
+        "items": []
+      },
+      {
+        "h": "3. Prices & currency",
+        "paras": [
+          "Prices are stated in US Dollars or Saudi Riyals as specified and, unless otherwise agreed, are quoted on the applicable Incoterms basis exclusive of destination duties and taxes. Saudi VAT and any GCC import duties are payable by the Buyer."
+        ],
+        "items": []
+      },
+      {
+        "h": "4. Payment terms",
+        "paras": [
+          "Unless otherwise agreed in writing, payment is made by one of the following:"
+        ],
+        "items": [
+          "Irrevocable Letter of Credit (L/C) at sight, confirmed by a first-class bank;",
+          "Telegraphic Transfer (T/T) — advance deposit with balance against shipping documents;",
+          "Cash Against Documents (CAD) through nominated banks."
+        ]
+      },
+      {
+        "h": "5. Delivery & Incoterms",
+        "paras": [
+          "Delivery is made on the agreed Incoterms® 2020 basis — commonly FOB, CFR or CIF a named port. The applicable rule, load port and destination port are stated in the contract and determine the transfer of cost and risk between the parties. Title passes only upon receipt of full payment in cleared funds."
+        ],
+        "items": []
+      },
+      {
+        "h": "6. Shipping & freight",
+        "paras": [
+          "Where Medad-X arranges carriage, it will nominate a suitable vessel or container line and book freight to the agreed destination port. Estimated shipment and transit times are given in good faith but are not guaranteed. Partial shipments and transhipment are permitted unless the contract states otherwise. Demurrage and detention at destination are for the Buyer’s account."
+        ],
+        "items": []
+      },
+      {
+        "h": "7. Quality & specifications",
+        "paras": [
+          "Goods conform to the specification stated in the contract — including variety, grain length, moisture content, broken percentage and admixture — within customary commercial tolerances for a natural agricultural product. Colour, aroma and cooking behaviour may vary naturally between crops and seasons."
+        ],
+        "items": []
+      },
+      {
+        "h": "8. Inspection & certification at origin",
+        "paras": [
+          "Quality and weight may be certified at the load port by an independent surveyor (such as SGS or Intertek), whose certificate is final and binding as to condition and quantity on shipment. Buyers requiring additional pre-shipment inspection may arrange it at their own cost."
+        ],
+        "items": []
+      },
+      {
+        "h": "9. Weights & packaging",
+        "paras": [
+          "Goods are supplied in new packaging (typically 40 kg polypropylene bags, or as specified) marked in accordance with destination requirements. The shipped weight certified at origin governs the contract; natural weight variation in transit is not a valid ground for claim."
+        ],
+        "items": []
+      },
+      {
+        "h": "10. Documentation",
+        "paras": [
+          "Standard shipping documents include:"
+        ],
+        "items": [
+          "Commercial invoice and packing list;",
+          "Full set of clean “on-board” Bills of Lading;",
+          "Certificate of Origin;",
+          "Phytosanitary certificate;",
+          "Halal certificate where applicable;",
+          "Any certificates required for SFDA and destination customs clearance."
+        ]
+      },
+      {
+        "h": "11. Title & risk",
+        "paras": [
+          "Risk in the Goods passes to the Buyer in accordance with the agreed Incoterms rule. Notwithstanding the passing of risk, legal title remains with Medad-X until the full contract price has been received in cleared funds."
+        ],
+        "items": []
+      },
+      {
+        "h": "12. Arrival, inspection & claims",
+        "paras": [
+          "The Buyer must inspect the Goods on arrival. Any claim as to quality or condition must be notified in writing, supported by independent survey evidence, within 14 days of discharge at the destination port; shortage claims must be supported by the outturn report. No claim is accepted after the Goods have been processed, re-bagged or resold."
+        ],
+        "items": []
+      },
+      {
+        "h": "13. Insurance",
+        "paras": [
+          "Under CIF sales, Medad-X arranges marine cargo insurance for 110% of the CIF value. Under FOB and CFR sales, insurance is the Buyer’s responsibility from the point at which risk passes."
+        ],
+        "items": []
+      },
+      {
+        "h": "14. Force majeure",
+        "paras": [
+          "Neither party is liable for failure or delay caused by events beyond its reasonable control — including crop failure, export bans, port closures, war, epidemic or acts of government. The affected party will notify the other promptly, and obligations are suspended for the duration of the event."
+        ],
+        "items": []
+      },
+      {
+        "h": "15. Governing law & dispute resolution",
+        "paras": [
+          "These terms and each supply contract are governed by the laws of the Kingdom of Saudi Arabia. The parties will seek to resolve disputes amicably; failing which, disputes shall be settled by arbitration under the rules of the Saudi Center for Commercial Arbitration (SCCA) seated in Riyadh, or, where agreed, before the competent Saudi courts."
+        ],
+        "items": []
+      }
+    ]
+  }
+}

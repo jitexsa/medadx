@@ -1,0 +1,72 @@
+{
+  "num": 27,
+  "slug": "mathloutha",
+  "region": "Saudi",
+  "title": "Mathloutha",
+  "tagline": "The “three-in-one” platter combining kabsa, mandi and madghout in a single feast.",
+  "intro": "Mathloutha — literally “the mixed” — is a Saudi restaurant favourite that brings together the three great rice traditions on one platter: the tomato-rich kabsa, the smoky mandi and the pressure-cooked madghout. It is the ultimate sampler, a generous dish designed for sharing that lets everyone taste the breadth of the Kingdom's rice cookery in one sitting.",
+  "cuisine": "Saudi",
+  "course": "Main course (sharing platter)",
+  "category": "Main course",
+  "servings": 8,
+  "prepTime": "40 minutes",
+  "cookTime": "1 hour 30 minutes",
+  "totalTime": "2 hours 10 minutes",
+  "prepISO": "PT40M",
+  "cookISO": "PT1H30M",
+  "totalISO": "PT2H10M",
+  "difficulty": "Advanced",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Concept",
+      "items": [
+        "Mathloutha is an assembly of three separately prepared rices, plated together — not a single recipe. Prepare a portion of each of the three below (halve each recipe's quantities for a shared platter)."
+      ]
+    },
+    {
+      "group": "Component 1 — Kabsa rice",
+      "items": [
+        "Follow the Chicken or Lamb Kabsa method (tomato-based, dried lime, baharat)"
+      ]
+    },
+    {
+      "group": "Component 2 — Mandi rice",
+      "items": [
+        "Follow the Chicken or Lamb Mandi method (saffron rice, finished with dukhan smoke)"
+      ]
+    },
+    {
+      "group": "Component 3 — Madghout rice",
+      "items": [
+        "Follow the Madghout method (pressure-cooked meat and rice)"
+      ]
+    },
+    {
+      "group": "To assemble & garnish",
+      "items": [
+        "Mixed roasted/grilled meats (chicken and lamb pieces)",
+        "Fried almonds, pine nuts and raisins",
+        "Daqoos and sahawiq, to serve"
+      ]
+    }
+  ],
+  "method": [
+    "Prepare a half-batch of each of the three rices (kabsa, mandi, madghout), timing them to finish close together.",
+    "Grill or roast a mix of chicken and lamb pieces for the topping.",
+    "On a very large platter, arrange the three rices side by side in distinct sections.",
+    "Lay the mixed grilled meats over the top.",
+    "Scatter generously with fried nuts and raisins.",
+    "Serve immediately with bowls of daqoos and sahawiq."
+  ],
+  "tips": [
+    "This is a project dish — plan your timings so all three rices land together, or prepare components in stages and reheat.",
+    "For catering or HORECA service, each component can be batch-cooked and assembled to order."
+  ],
+  "toServe": "A grand sharing platter for a crowd — serve with multiple sauces and salads.",
+  "imageAlt": "Mathloutha platter combining kabsa, mandi and madghout rices with mixed meats",
+  "image": "../../assets/recipes/mathloutha.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mansaf.jpg",
+  "standInImage": true,
+  "recommendedProduct": "farah"
+}

@@ -1,0 +1,62 @@
+{
+  "num": 8,
+  "slug": "mutton-yakhni-pulao",
+  "region": "Indian & Pakistani",
+  "title": "Mutton Yakhni Pulao",
+  "tagline": "Fragrant basmati cooked in a rich mutton stock — a traditional feast-day pulao.",
+  "intro": "Mutton yakhni pulao is a celebrated dish for family gatherings and religious occasions. Lamb or goat is simmered into a deeply savoury spiced stock, which then cooks the rice to fragrant perfection. Less spicy than biryani but every bit as satisfying, it lets the quality of the meat and rice shine.",
+  "cuisine": "Pakistani & North Indian",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "25 minutes",
+  "cookTime": "1 hour 30 minutes",
+  "totalTime": "1 hour 55 minutes",
+  "prepISO": "PT25M",
+  "cookISO": "PT1H30M",
+  "totalISO": "PT1H55M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the yakhni (stock)",
+      "items": [
+        "1 kg mutton, on the bone",
+        "1.5 litres water",
+        "1 onion, quartered",
+        "1 tbsp ginger–garlic paste",
+        "Spice bag: 2 tbsp coriander seeds, 1 tbsp cumin, 8 peppercorns, 5 cloves, 5 cardamom, 1 cinnamon, 1 bay leaf, 1 black cardamom",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the pulao",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "3 onions, sliced",
+        "150 ml (¾ cup) oil or ghee",
+        "1 tbsp ginger–garlic paste",
+        "3 green chillies",
+        "1 tsp cumin seeds"
+      ]
+    }
+  ],
+  "method": [
+    "Simmer (or pressure-cook) the mutton with the water, onion, ginger–garlic paste and spice bag until very tender, about 1 hour on the stove or 25 minutes in a pressure cooker. Strain and reserve the yakhni; keep the meat. Aim for about 1 litre of stock.",
+    "Fry the sliced onions golden in the oil; reserve a little for garnish.",
+    "Add cumin, ginger–garlic paste, chillies and the cooked mutton; fry for 5 minutes.",
+    "Add the drained rice and stir gently. Pour in the measured yakhni (about 1:1.5 rice to liquid). Check salt.",
+    "Boil, then cover and cook on low until absorbed and fluffy, 15 minutes.",
+    "Rest 5–10 minutes and fluff gently."
+  ],
+  "tips": [
+    "Skim the stock for a clean, clear flavour.",
+    "Browning the meat in the onions adds welcome depth."
+  ],
+  "toServe": "Serve with raita, green chutney and sliced onions.",
+  "imageAlt": "Mutton yakhni pulao with tender lamb and fragrant rice",
+  "image": "../../assets/recipes/mutton-yakhni-pulao.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20pulao.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

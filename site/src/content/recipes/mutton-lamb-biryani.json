@@ -1,0 +1,79 @@
+{
+  "num": 4,
+  "slug": "mutton-lamb-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Mutton (Lamb) Biryani",
+  "tagline": "Rich, slow-cooked lamb layered with basmati for a truly special occasion.",
+  "intro": "Mutton biryani is the grand, unhurried cousin of chicken biryani. Lamb or goat is browned and simmered until spoon-tender in a robust masala, then layered with basmati and given a long dum. It rewards patience with deep flavour and melting meat — a true centrepiece dish.",
+  "cuisine": "Indian & Pakistani",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour 40 minutes",
+  "totalTime": "2 hours 10 minutes (plus 1 hour marination)",
+  "prepISO": "PT30M",
+  "cookISO": "PT1H40M",
+  "totalISO": "PT2H10M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the meat",
+      "items": [
+        "1 kg mutton or lamb, on the bone",
+        "300 g (1¼ cups) yoghurt",
+        "3 onions, sliced",
+        "3 tomatoes, chopped",
+        "2 tbsp ginger–garlic paste",
+        "150 ml (¾ cup) oil or ghee",
+        "2 tsp red chilli powder",
+        "1 tsp turmeric",
+        "2 tsp coriander powder",
+        "1 tsp cumin powder",
+        "1 tbsp biryani masala",
+        "4 green chillies",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice",
+        "2.5 litres water",
+        "2 tbsp salt",
+        "1 cinnamon stick, 5 cloves, 5 cardamom, 1 bay leaf"
+      ]
+    },
+    {
+      "group": "For layering",
+      "items": [
+        "½ tsp saffron in 3 tbsp milk",
+        "4 tbsp fried onions",
+        "Mint and coriander",
+        "3 tbsp ghee",
+        "2 tbsp kewra water"
+      ]
+    }
+  ],
+  "method": [
+    "Marinate the mutton in yoghurt, ginger–garlic paste and half the spices for 1 hour.",
+    "Rinse and soak the rice; drain.",
+    "Fry the onions golden in oil; set aside half. Add the marinated meat and sear well.",
+    "Add the remaining spices, tomatoes, chillies and salt. Add a little water, cover and simmer (or pressure-cook) until the meat is very tender, 1–1¼ hours. Reduce to a thick masala.",
+    "Parboil the rice to 70% in the salted, spiced water; drain.",
+    "Layer rice over the mutton with saffron milk, fried onions, herbs, ghee and kewra water.",
+    "Seal and dum on the lowest heat for 25–30 minutes.",
+    "Rest 5 minutes and fold gently."
+  ],
+  "tips": [
+    "Pressure-cooking the mutton first saves an hour and guarantees tenderness.",
+    "Keep enough masala moisture — lamb rice can dry out more than chicken."
+  ],
+  "toServe": "Serve with raita, salad and lemon.",
+  "imageAlt": "Mutton biryani with tender lamb pieces and basmati rice",
+  "image": "../../assets/recipes/mutton-lamb-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20Biryani.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

@@ -1,0 +1,70 @@
+{
+  "num": 9,
+  "slug": "kabuli-pulao-afghani",
+  "region": "Indian & Pakistani",
+  "title": "Kabuli Pulao (Afghani Pulao)",
+  "tagline": "Sweet-savoury rice crowned with caramelised carrots, raisins and tender lamb.",
+  "intro": "Kabuli pulao — the national dish of Afghanistan and hugely popular across Pakistan — is a stunning balance of savoury and sweet. Basmati is cooked over lamb and topped with candied carrot slivers, plump raisins and often nuts. The signature step is caramelising sugar to give the rice its warm amber colour and gentle sweetness.",
+  "cuisine": "Afghan (popular in Pakistan)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour 20 minutes",
+  "totalTime": "1 hour 50 minutes",
+  "prepISO": "PT30M",
+  "cookISO": "PT1H20M",
+  "totalISO": "PT1H50M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the lamb",
+      "items": [
+        "1 kg lamb, on the bone",
+        "2 onions, chopped",
+        "1 tbsp ginger–garlic paste",
+        "120 ml (½ cup) oil",
+        "1 tsp cumin powder, 1 tsp coriander powder",
+        "Salt and black pepper"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "1 tbsp sugar (for caramel)",
+        "1 tsp garam masala",
+        "About 1 litre reserved lamb stock"
+      ]
+    },
+    {
+      "group": "For the topping",
+      "items": [
+        "3 carrots, cut into fine matchsticks",
+        "100 g (¾ cup) raisins",
+        "2 tbsp sugar",
+        "2 tbsp oil or ghee",
+        "50 g (⅓ cup) slivered almonds or pistachios (optional)"
+      ]
+    }
+  ],
+  "method": [
+    "Brown the onions in oil, add ginger–garlic paste and the lamb, and sear. Add cumin, coriander, salt and pepper with a little water; cover and cook until tender. Strain and reserve about 1 litre of stock; keep the meat.",
+    "For the caramel, gently melt 1 tbsp sugar in a large pot until amber, then carefully add the reserved stock (it will splutter). Add garam masala and salt.",
+    "Add the drained rice; the liquid should sit about 2 cm above the rice. Boil, then cover and cook on low until absorbed, about 12 minutes.",
+    "Bury the cooked lamb in the rice, cover and steam (dum) on the lowest heat for 15 minutes.",
+    "Meanwhile, sauté the carrot matchsticks with 2 tbsp sugar and a splash of water until glazed. Add the raisins until they plump. Toast the nuts.",
+    "Plate the rice with the lamb, and crown generously with the candied carrots, raisins and nuts."
+  ],
+  "tips": [
+    "The caramel gives the classic colour and subtle sweetness — watch it closely so it doesn't burn.",
+    "Cut carrots thin so they candy quickly and stay glossy."
+  ],
+  "toServe": "Serve as a centrepiece; a light salad balances the sweetness.",
+  "imageAlt": "Kabuli pulao topped with candied carrots, raisins and lamb",
+  "image": "../../assets/recipes/kabuli-pulao-afghani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Qabuli.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

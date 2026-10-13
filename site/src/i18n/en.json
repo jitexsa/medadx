@@ -1,0 +1,708 @@
+{
+  "code": "en",
+  "dir": "ltr",
+  "langBtn": "العربية",
+  "nav": {
+    "brand": "MEDAD-X",
+    "brandSub": "Arsan Global Group",
+    "phone": "+966 920009050",
+    "items": [
+      {
+        "path": "home",
+        "label": "Home"
+      },
+      {
+        "path": "about",
+        "label": "About Us"
+      },
+      {
+        "path": "supply-chain",
+        "label": "Supply Chain"
+      },
+      {
+        "path": "history",
+        "label": "History of Rice",
+        "url": "history-of-rice.html"
+      },
+      {
+        "path": "contact",
+        "label": "Request Quote"
+      }
+    ],
+    "cta": "Open Trading Account"
+  },
+  "hero": {
+    "h1": "Premium Basmati Rice for the Restaurant and Food Trade Sector",
+    "sub": "Indian and Pakistani Basmati, supplied in bulk to HORECA and food trade across Saudi Arabia, the GCC and MENA.",
+    "browse": "Browse Products",
+    "inquire": "Send Your Inquiry",
+    "ticker": [
+      "Saudi Arabia",
+      "GCC Countries",
+      "Middle East",
+      "North Africa",
+      "HACCP Certified",
+      "ISO 22000 Certified",
+      "Halal Certified",
+      "SFDA Compliant"
+    ]
+  },
+  "journey": {
+    "label": "The Process",
+    "title": "Rice Journey from Farm to You",
+    "hint": "Scroll to continue",
+    "skip": "Skip the journey",
+    "stages": [
+      {
+        "t": "Direct Sourcing from Certified Mills",
+        "d": "We work directly with certified and licensed mills in India and Pakistan to ensure the best quality"
+      },
+      {
+        "t": "Multi-Stage Cleaning & Grading",
+        "d": "Rice undergoes precise cleaning and grading processes to remove impurities and ensure grain uniformity"
+      },
+      {
+        "t": "Regular Quality Checks",
+        "d": "We conduct continuous quality checks at every stage of the supply chain"
+      },
+      {
+        "t": "Hygienic, Compliant Packaging",
+        "d": "We use high-quality packaging materials that maintain rice freshness and meet food safety standards"
+      },
+      {
+        "t": "Efficient Logistics",
+        "d": "An integrated logistics network ensuring on-time delivery in the best condition"
+      }
+    ],
+    "stats": [
+      {
+        "k": "Grain Length",
+        "v": "8.3",
+        "suf": "+ mm",
+        "num": true
+      },
+      {
+        "k": "Aroma",
+        "v": "Strong Aromatic",
+        "num": false
+      },
+      {
+        "k": "Origin",
+        "v": "India / Pakistan",
+        "num": false
+      }
+    ],
+    "bags": [
+      {
+        "name": "Farah",
+        "sub": "Golden Sella"
+      },
+      {
+        "name": "Khayber Gate",
+        "sub": "Creamy Sella"
+      },
+      {
+        "name": "Dhoqan",
+        "sub": "White Steam"
+      }
+    ],
+    "markets": [
+      "Saudi Arabia",
+      "GCC Countries",
+      "Middle East",
+      "North Africa"
+    ],
+    "horeca": [
+      "Hotels",
+      "Restaurants",
+      "Catering"
+    ]
+  },
+  "aboutSnap": {
+    "label": "About Us",
+    "title": "Trusted Partner in Supplying Premium Rice",
+    "body": "Medad-X is one of the Arsan Global Group companies, specializing in supplying and trading premium Basmati rice to hotels, restaurants, catering companies, and trade partners through a strong and reliable regional distribution network.",
+    "checks": [
+      "Part of Arsan Global Group",
+      "Strong regional distribution network",
+      "Expertise in HORECA sector"
+    ],
+    "stat": "15",
+    "statSuf": "+",
+    "statLabel": "Years Experience",
+    "btn": "Learn More About Us"
+  },
+  "prodSec": {
+    "label": "Our Products",
+    "title": "Premium Basmati Rice Collection",
+    "intro": "Premium basmati rice varieties sourced from trusted origins to meet the needs of HORECA and large-scale food operations.",
+    "btn": "View Full Catalogue"
+  },
+  "why": {
+    "label": "Why Choose Us",
+    "title": "Why Choose Medad-X?",
+    "items": [
+      {
+        "t": "Premium quality basmati rice",
+        "d": "We select the finest basmati rice from the best farms"
+      },
+      {
+        "t": "Trusted global sourcing origins",
+        "d": "Direct relationships with certified mills in India and Pakistan"
+      },
+      {
+        "t": "Consistent supply for large volumes",
+        "d": "High capacity for continuous large volume supply"
+      },
+      {
+        "t": "Strong HORECA market focus",
+        "d": "We understand the needs of hotels, restaurants, and hospitality"
+      },
+      {
+        "t": "Flexible distribution network",
+        "d": "Fast and reliable delivery across the region"
+      }
+    ]
+  },
+  "marketsSec": {
+    "label": "Our Markets",
+    "title": "Serving the Entire Region",
+    "intro": "We serve multiple regional markets including Saudi Arabia, GCC countries, the Middle East, and North Africa through a reliable and flexible distribution network.",
+    "names": [
+      "Saudi Arabia",
+      "GCC Countries",
+      "Middle East",
+      "North Africa"
+    ],
+    "origin": "Dammam HQ",
+    "originT": "Rice Origin",
+    "origins": [
+      "India",
+      "Pakistan"
+    ],
+    "routeL": "Export route",
+    "supplyL": "Supply market",
+    "corridorL": "South Asia → MENA corridor",
+    "regionDescs": [
+      "Our home market and primary distribution hub, shipping out of Dammam.",
+      "UAE, Kuwait, Qatar, Bahrain and Oman, served on regular freight lanes.",
+      "Extended Gulf and Levant trade routes for hotels, caterers and distributors.",
+      "Growing partnerships across Egypt, Morocco and neighboring markets."
+    ],
+    "mapLegendActive": "Regions we supply",
+    "mapLegendOther": "Global trade network"
+  },
+  "horeca": {
+    "label": "HORECA Sector",
+    "title": "Serving the HORECA Sector",
+    "body": "We supply premium basmati rice to hotels, restaurants, catering companies, and food service operators, supporting authentic Arabic cuisine such as mandi, kabsa, and biryani.",
+    "tiles": [
+      "Hotels",
+      "Restaurants",
+      "Catering",
+      "Distributors",
+      "Home Consumers"
+    ]
+  },
+  "cta": {
+    "eyebrow": "Open a Trading Account",
+    "title": "Looking for a Reliable Rice Supply Partner?",
+    "sub": "Secure consistent, premium Basmati supply at contract pricing. Open a trading account and one dedicated team handles your quotes, logistics and documentation — from source to your door.",
+    "benefits": [
+      {
+        "t": "Locked contract pricing",
+        "d": "Volume rates and first allocation on new-crop shipments."
+      },
+      {
+        "t": "Consistent bulk supply",
+        "d": "Reliable container and pallet volumes, shipment after shipment."
+      },
+      {
+        "t": "One dedicated manager",
+        "d": "A single trade contact for quotes, logistics and documents."
+      },
+      {
+        "t": "Flexible regional delivery",
+        "d": "FOB and delivered options across the GCC, MENA and beyond."
+      }
+    ],
+    "note": "A dedicated account manager replies within 24 business hours.",
+    "btn": "Send Your Inquiry Today",
+    "btn2": "Open a Trading Account"
+  },
+  "aboutPage": {
+    "heroT": "About Us",
+    "heroSub": "Premium Basmati Rice for HORECA & Trade Markets",
+    "heroCta": "Request a Quote",
+    "ovLabel": "Company Overview",
+    "ovTitle": "Your trusted partner in rice trade",
+    "p1": "Medad-X is a leading company within Arsan Global Group, specializing in the supply and trade of premium basmati rice from the finest sources in India and Pakistan.",
+    "p2": "We serve the HORECA sector and trade partners through a strong regional distribution network covering Saudi Arabia, GCC countries, the Middle East, and North Africa.",
+    "p3": "With over 15 years of experience, we understand market needs and are committed to providing high-quality products at competitive prices.",
+    "badgeTop": "Part of",
+    "badgeName": "Arsan Global Group",
+    "visionT": "Our Vision",
+    "visionB": "To be the first and most trusted partner in supplying premium Basmati rice to the hospitality and trade sectors in the Middle East and North Africa region.",
+    "missionT": "Our Mission",
+    "missionB": "To deliver the finest Basmati rice from trusted sources, while adhering to the highest standards of quality and service, and building long-term relationships with our customers.",
+    "valLabel": "Our Values",
+    "valTitle": "The Values That Guide Us",
+    "values": [
+      {
+        "t": "Quality and consistency",
+        "d": "We commit to delivering the highest quality standards in every shipment"
+      },
+      {
+        "t": "Transparency and credibility",
+        "d": "We build relationships based on honesty and clarity in all our dealings"
+      },
+      {
+        "t": "Long-term partnerships",
+        "d": "We strive to build sustainable and fruitful business relationships"
+      },
+      {
+        "t": "Customer-focused approach",
+        "d": "Our customers are our focus and we work to meet their needs"
+      },
+      {
+        "t": "Food safety and compliance",
+        "d": "We adhere to the highest food safety standards and regulatory requirements"
+      }
+    ]
+  },
+  "productsPage": {
+    "heroT": "Our Products",
+    "heroSub": "A premium collection of the finest Indian and Pakistani basmati rice",
+    "intro": "We offer a diverse range of premium basmati rice carefully selected from the best farms in India and Pakistan. Our products are designed to meet the needs of professional kitchens and the hospitality sector.",
+    "catLabel": "Catalogue",
+    "catTitle": "Basmati Rice Collection",
+    "labels": {
+      "type": "Rice Type",
+      "grain": "Grain Length",
+      "aroma": "Aroma",
+      "origin": "Origin",
+      "sizes": "Available Sizes",
+      "use": "Best Use"
+    },
+    "pricing": {
+      "packsL": "Packaging Weight"
+    },
+    "cta": "Interested in our products? Contact us for a customized quote",
+    "ctaBtn": "Request Quote"
+  },
+  "supplyPage": {
+    "heroT": "Supply Chain & Quality",
+    "heroSub": "Our commitment to quality starts from source to delivery",
+    "intro": "At Medad-X, we believe that quality is not just a standard but the foundation of our work. Through a tight supply chain and strict oversight, we ensure the best basmati rice reaches our customers.",
+    "procLabel": "The Process",
+    "procTitle": "Rice Journey from Farm to You",
+    "steps": [
+      {
+        "t": "Direct Sourcing from Certified Mills",
+        "d": "We work directly with certified and licensed mills in India and Pakistan to ensure the best quality"
+      },
+      {
+        "t": "Multi-Stage Cleaning & Grading",
+        "d": "Rice undergoes precise cleaning and grading processes to remove impurities and ensure grain uniformity"
+      },
+      {
+        "t": "Hygienic, Compliant Packaging",
+        "d": "We use high-quality packaging materials that maintain rice freshness and meet food safety standards"
+      },
+      {
+        "t": "Regular Quality Checks",
+        "d": "We conduct continuous quality checks at every stage of the supply chain"
+      },
+      {
+        "t": "Efficient Logistics",
+        "d": "An integrated logistics network ensuring on-time delivery in the best condition"
+      },
+      {
+        "t": "Quality Assurance & Compliance",
+        "d": "We comply with all local and international standards and regulatory requirements"
+      }
+    ],
+    "certLabel": "Certifications",
+    "certTitle": "Accreditations & Certifications",
+    "certs": [
+      "HACCP Certified",
+      "ISO 22000 Certified",
+      "Halal Certified",
+      "SFDA Compliant"
+    ],
+    "note": "All our products comply with the highest internationally and locally approved quality and food safety standards"
+  },
+  "trading": {
+    "heroT": "Open a Trading Account",
+    "heroSub": "Partner with Medad-X for dependable bulk Basmati supply — tell us about your business and our trade team will take it from there.",
+    "replyNote": "A dedicated account manager replies within 24 business hours.",
+    "benefits": [
+      {
+        "t": "Priority contract pricing",
+        "d": "Locked volume rates and first allocation on new crop shipments."
+      },
+      {
+        "t": "Consistent bulk supply",
+        "d": "Reliable 40kg container and pallet volumes, shipment after shipment."
+      },
+      {
+        "t": "Dedicated account manager",
+        "d": "One trade contact for quotes, logistics and documentation."
+      },
+      {
+        "t": "Flexible regional delivery",
+        "d": "FOB and delivered options across the GCC, Middle East and North Africa."
+      }
+    ],
+    "stepOf": [
+      "Step",
+      "of"
+    ],
+    "steps": [
+      "Business details",
+      "Contact person",
+      "Trading requirements",
+      "Review & submit"
+    ],
+    "f": {
+      "company": "Company name",
+      "bizType": "Business type",
+      "bizTypes": [
+        "Distributor",
+        "Restaurant",
+        "Hotel",
+        "Catering",
+        "Wholesaler"
+      ],
+      "country": "Country",
+      "countryPh": "Search country…",
+      "city": "City",
+      "license": "Trade license number",
+      "upload": "Trade license (optional)",
+      "uploadsT": "Business documents (optional)",
+      "uploadList": [
+        {
+          "key": "license",
+          "label": "Trade license"
+        },
+        {
+          "key": "vat",
+          "label": "VAT certificate"
+        },
+        {
+          "key": "address",
+          "label": "National address"
+        }
+      ],
+      "drop": "Drag & drop your file here, or",
+      "browse": "browse",
+      "uploaded": "Attached",
+      "name": "Full name",
+      "role": "Role / position",
+      "email": "Work email",
+      "phone": "Phone number",
+      "prefLang": "Preferred language",
+      "prefLangs": [
+        "English",
+        "Arabic"
+      ],
+      "products": "Products of interest",
+      "volume": "Estimated monthly volume",
+      "volumes": [
+        "Under 25 tons",
+        "25 – 100 tons",
+        "100 – 500 tons",
+        "500+ tons"
+      ],
+      "markets": "Target markets",
+      "packaging": "Packaging size",
+      "packagingV": "40kg woven bag",
+      "notes": "Notes (optional)",
+      "notesPh": "Delivery ports, timelines, special requirements…"
+    },
+    "review": "Review your application",
+    "edit": "Edit",
+    "consent": "I confirm the information above is accurate and agree to be contacted by the Medad-X trade team.",
+    "next": "Continue",
+    "back": "Back",
+    "submit": "Submit application",
+    "submitting": "Submitting…",
+    "successT": "Application received",
+    "successB": "We respond to all inquiries within 24 business hours",
+    "refL": "Reference no.",
+    "home": "Back to Home",
+    "err": {
+      "required": "Required field",
+      "email": "Enter a valid email address",
+      "phone": "Enter a valid phone number"
+    }
+  },
+  "contact": {
+    "heroT": "Contact Us",
+    "heroSub": "We're here to answer all your questions",
+    "label": "Get in Touch",
+    "title": "Contact Information",
+    "formT": "Request a Quote",
+    "formSub": "Share a few details and our trade team will send a tailored quote within 24 business hours.",
+    "fName": "Full name",
+    "fCompany": "Company (optional)",
+    "fEmail": "Email",
+    "fPhone": "Phone",
+    "fProduct": "Product of interest",
+    "fProductAny": "Any / multiple",
+    "fQty": "Estimated quantity (optional)",
+    "fQtyPh": "e.g. 100 tons / month",
+    "fMsg": "Message (optional)",
+    "fMsgPh": "Tell us about your requirements…",
+    "send": "Send request",
+    "sending": "Sending…",
+    "qSuccessT": "Request received",
+    "qSuccessB": "Thank you — our trade team will respond within 24 business hours.",
+    "refL": "Reference no.",
+    "another": "Send another request",
+    "waBtn": "Chat on WhatsApp",
+    "qtProduct": "Product",
+    "qtSize": "Available sizes",
+    "qtQty": "Quantity",
+    "qtHint": "Select a product to choose sizes",
+    "qtQtyPh": "Qty",
+    "qtSelProd": "Select product",
+    "qtSelSize": "Select size",
+    "qtSelProdFirst": "Choose product first",
+    "qtAdd": "Add another product / size",
+    "qtRemove": "Remove row",
+    "qtTotalQty": "Total quantity",
+    "qtTotalKg": "Total weight",
+    "qtUnits": "units",
+    "qSummaryT": "Your request",
+    "qtQtyErr": "Enter a quantity greater than zero",
+    "phoneL": "Phone",
+    "waL": "WhatsApp",
+    "emailL": "Email",
+    "webL": "Website",
+    "hoursT": "Office Hours",
+    "hours1": "Sunday - Thursday: 8:00 AM - 5:00 PM",
+    "hours2": "Friday - Saturday: Closed",
+    "quoteT": "Want to request a quote?",
+    "quoteB": "Use our quote request form to get a customized offer for your needs",
+    "quoteBtn": "Request Quote",
+    "addrT": "Address",
+    "addr": "Port Gate Building, Khalidiya Junubiya, Eastern Province, Dammam, Saudi Arabia",
+    "mapT": "Medad-X Office Location",
+    "mapBtn": "Open in Google Maps"
+  },
+  "inquiry": {
+    "heroT": "Get in Touch",
+    "intro": "Reach out to us directly for quotes and inquiries",
+    "infoT": "Contact Information",
+    "phoneL": "Phone",
+    "waL": "WhatsApp",
+    "emailL": "Email",
+    "quickT": "Quick Response",
+    "quickB": "We respond to all inquiries within 24 business hours",
+    "howT": "How Can We Help You?",
+    "howSub": "Choose your preferred way to reach us",
+    "emailT": "Send an Email",
+    "emailBtn": "Send",
+    "emailSubject": "Quote Request - Medad-X",
+    "waT": "Chat on WhatsApp",
+    "waBtn": "Chat",
+    "waMsg": "Hello, I would like to request a quote",
+    "phoneT": "Call Us",
+    "phoneBtn": "Call"
+  },
+  "footer": {
+    "desc": "Your trusted partner for premium basmati rice supply to HORECA and trade sectors across the Middle East and North Africa.",
+    "tagline": "Part of Arsan Global Group",
+    "quickT": "Sitemap",
+    "productsT": "Products",
+    "contactT": "Contact Us",
+    "addrT": "Address",
+    "addr": "Port Gate Building, Khalidiya Junubiya, Eastern Province, Dammam, Saudi Arabia",
+    "rights": "All rights reserved",
+    "trading": "Open Trading Account",
+    "legalT": "Legal",
+    "recipes": "Recipes"
+  },
+  "ux": {
+    "tools": {
+      "label": "Buyer tools",
+      "title": "Plan your order in seconds",
+      "tabs": [
+        "Order estimator",
+        "Compare rice",
+        "Find your rice",
+        "Raw vs cooked"
+      ]
+    },
+    "est": {
+      "prodMulti": "Products — select one or more",
+      "empty": "Select at least one product above.",
+      "remove": "Remove",
+      "none": "No products selected",
+      "prod": "Product",
+      "pack": "Pack size",
+      "qty": "Number of bags",
+      "total": "Total weight",
+      "cont": "20ft container fill",
+      "note": "Indicative — based on ~25 MT per 20ft container.",
+      "cta": "Request quote with these details",
+      "one": "{0}% of one container",
+      "multi": "{0} × 20ft containers"
+    },
+    "cmp": {
+      "pick": "Compare",
+      "note": "Need a spec sheet? Request one with your quote.",
+      "packs": "Pack sizes"
+    },
+    "find": {
+      "qs": [
+        "Your business",
+        "Main dish",
+        "Monthly volume"
+      ],
+      "opts": [
+        [
+          "Restaurant",
+          "Hotel",
+          "Catering",
+          "Wholesale"
+        ],
+        [
+          "Mandi & Kabsa",
+          "Biryani",
+          "White rice & Maklouba",
+          "Everyday cooking"
+        ],
+        [
+          "Under 1 MT",
+          "1–10 MT",
+          "10+ MT"
+        ]
+      ],
+      "result": "Our recommendation",
+      "packL": "Suggested pack",
+      "quote": "Get a quote",
+      "tryEst": "Open in estimator",
+      "empty": "Answer the three questions to see your best match.",
+      "why": {
+        "farah": "Extra-long golden sella grains that stay separate through long, slow cooking — built for Mandi, Kabsa and Biryani.",
+        "khayber": "Bright, creamy sella with a soft texture that suits white rice, Maklouba and mixed-rice dishes.",
+        "dhoqan": "Clean white steam basmati with a light aroma for high-turnover, everyday kitchens."
+      }
+    },
+    "cook": {
+      "title": "Raw vs cooked grain",
+      "sub": "Drag the slider to compare raw and cooked grain.",
+      "raw": "Raw",
+      "cooked": "Cooked",
+      "phRaw": "Raw grain close-up",
+      "phCooked": "Cooked grain close-up"
+    },
+    "mkt": {
+      "countries": "Countries & cities served",
+      "talk": "Talk to this regional desk",
+      "wa": "Hello Medad-X, I would like to discuss supply to ",
+      "places": [
+        [
+          "Riyadh",
+          "Jeddah",
+          "Dammam",
+          "Makkah",
+          "Madinah"
+        ],
+        [
+          "UAE",
+          "Kuwait",
+          "Qatar",
+          "Bahrain",
+          "Oman"
+        ],
+        [
+          "Jordan",
+          "Iraq",
+          "Lebanon",
+          "Yemen"
+        ],
+        [
+          "Egypt",
+          "Morocco",
+          "Algeria",
+          "Libya"
+        ]
+      ]
+    },
+    "rec": {
+      "label": "From our kitchen",
+      "title": "Dishes built on our basmati",
+      "all": "All recipes"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Questions buyers ask us",
+      "sub": "Can’t find what you need? Our trade team will help.",
+      "items": [
+        {
+          "q": "What is the minimum order quantity?",
+          "a": "It depends on the product and pack size, and mixed-product orders are welcome. Share your monthly volume and we’ll propose the right option."
+        },
+        {
+          "q": "Which pack sizes are available?",
+          "a": "40, 25, 10 and 5 kg bags across the range. Khayber Gate is also available in 1 kg retail packs."
+        },
+        {
+          "q": "Do you offer private label?",
+          "a": "Talk to our team about private-label and custom packaging for recurring volume orders."
+        },
+        {
+          "q": "Which markets do you supply?",
+          "a": "Saudi Arabia, the GCC, the wider Middle East and North Africa."
+        },
+        {
+          "q": "Which certifications do you hold?",
+          "a": "HACCP, ISO 22000 and Halal certification, with products compliant with SFDA requirements."
+        },
+        {
+          "q": "How do I open a trading account?",
+          "a": "Complete the online form with your company details and trade license. Our team reviews it and gets back to you."
+        }
+      ]
+    },
+    "sticky": {
+      "sel": "Your selection",
+      "quote": "Get quote"
+    },
+    "dr": {
+      "products": "Products — select one or more",
+      "pickOne": "Select at least one product",
+      "total": "Total",
+      "eyebrow": "Quick inquiry",
+      "title": "Request a quote",
+      "sub": "Send the essentials and our trade team will get back to you.",
+      "name": "Your name",
+      "company": "Company",
+      "phone": "Phone / WhatsApp",
+      "product": "Product",
+      "pack": "Pack size",
+      "qty": "Bags",
+      "send": "Send inquiry",
+      "full": "Ordering several products? Use the full quote form",
+      "req": "Required",
+      "phoneErr": "Enter a valid phone number",
+      "okT": "Inquiry sent",
+      "okB": "Thank you — our trade team will contact you shortly.",
+      "ref": "Reference",
+      "close": "Close",
+      "bags": "bags",
+      "wa": "Hello Medad-X, I would like a quote: "
+    },
+    "top": "Back to top",
+    "copy": "Copy",
+    "copied": "Copied",
+    "form": {
+      "prog": "Application {0}% complete",
+      "draft": "Draft saved on this device",
+      "clear": "Clear"
+    }
+  }
+}

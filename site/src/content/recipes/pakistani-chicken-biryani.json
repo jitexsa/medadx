@@ -1,0 +1,86 @@
+{
+  "num": 1,
+  "slug": "pakistani-chicken-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Pakistani Chicken Biryani",
+  "tagline": "The classic layered chicken biryani — fragrant basmati, a rich masala, and slow steam (dum).",
+  "intro": "Pakistani chicken biryani is the country's most-loved festive dish: long-grain basmati layered over a spiced, tomato-and-yoghurt chicken masala, then sealed and steamed so every grain absorbs the aroma. Bold, warming and colourful, it is the centrepiece of weddings, Eid and Sunday lunches alike.",
+  "cuisine": "Pakistani",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour",
+  "totalTime": "1 hour 30 minutes (plus 30 min marination)",
+  "prepISO": "PT30M",
+  "cookISO": "PT1H",
+  "totalISO": "PT1H30M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) aged basmati rice",
+        "2.5 litres water",
+        "2 tbsp salt",
+        "4 green cardamom pods",
+        "1 black cardamom pod",
+        "1 small cinnamon stick",
+        "4 cloves",
+        "1 bay leaf",
+        "1 tsp cumin seeds"
+      ]
+    },
+    {
+      "group": "For the chicken masala",
+      "items": [
+        "1 kg chicken, cut into 8–10 pieces (bone-in)",
+        "3 medium onions, thinly sliced",
+        "200 g (¾ cup) plain yoghurt, whisked",
+        "3 medium tomatoes, chopped",
+        "2 tbsp ginger–garlic paste",
+        "2–3 green chillies, slit",
+        "150 ml (¾ cup) cooking oil or ghee",
+        "1½ tbsp red chilli powder",
+        "1 tsp turmeric",
+        "2 tsp coriander powder",
+        "1 tsp cumin powder",
+        "1 tbsp biryani masala",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For layering & finishing",
+      "items": [
+        "½ tsp saffron soaked in 3 tbsp warm milk (or a few drops yellow colour)",
+        "2 tbsp kewra or rose water",
+        "3 tbsp fried onions (birista)",
+        "Small handful chopped coriander and mint",
+        "2 tbsp ghee"
+      ]
+    }
+  ],
+  "method": [
+    "Rinse the basmati until the water runs clear, then soak for 30 minutes. Drain.",
+    "Heat oil in a heavy pot and fry the sliced onions until deep golden. Remove half for garnish; leave the rest in the pot.",
+    "Add ginger–garlic paste and green chillies to the onions and sauté for a minute. Add the chicken and sear for 5 minutes.",
+    "Add all the ground spices, biryani masala and salt. Add the tomatoes and cook until softened and the oil separates, about 8–10 minutes.",
+    "Lower the heat, stir in the whisked yoghurt, and cook until the masala is thick and glossy and the chicken is tender, 15–20 minutes. Keep it slightly saucy.",
+    "Meanwhile bring the rice water to a rolling boil with the salt and whole spices. Add the drained rice and boil until it is about 70% cooked (still firm at the core). Drain.",
+    "Layer half the parboiled rice over the chicken masala. Scatter fried onions, coriander, mint, saffron milk and kewra water. Add the remaining rice and repeat the toppings. Drizzle over the ghee.",
+    "Cover with a tight lid (seal with foil or dough if needed) and steam on the lowest heat for 20–25 minutes (dum).",
+    "Rest for 5 minutes, then gently fold from the bottom to mix the layers before serving."
+  ],
+  "tips": [
+    "Parboil the rice to 70% only — it finishes cooking during the dum and stays separate.",
+    "A heavy-based pot or a tawa (griddle) under the pot prevents the bottom from catching.",
+    "Aged basmati (12+ months) gives the longest, most separate grains."
+  ],
+  "toServe": "Serve hot with raita, a fresh kachumber salad and a wedge of lemon.",
+  "imageAlt": "Pakistani chicken biryani served in a large dish with fried onions and coriander",
+  "image": "../../assets/recipes/pakistani-chicken-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20biriyani.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

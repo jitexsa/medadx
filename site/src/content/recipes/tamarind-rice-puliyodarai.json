@@ -1,0 +1,72 @@
+{
+  "num": 16,
+  "slug": "tamarind-rice-puliyodarai",
+  "region": "Indian & Pakistani",
+  "title": "Tamarind Rice (Puliyodarai)",
+  "tagline": "Tangy, spicy temple-style rice coated in a rich roasted tamarind paste.",
+  "intro": "Puliyodarai, or tamarind rice, is a South Indian temple classic prized for its complex sweet-sour-spicy flavour. A special paste (pulikachal) of roasted spices, lentils and tamarind is cooked down, then folded through rice. It keeps well and travels beautifully, which is why it's a favourite prasadam and journey food.",
+  "cuisine": "Indian (South Indian)",
+  "course": "Main or side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "15 minutes",
+  "cookTime": "25 minutes",
+  "totalTime": "40 minutes",
+  "prepISO": "PT15M",
+  "cookISO": "PT25M",
+  "totalISO": "PT40M",
+  "difficulty": "Intermediate",
+  "rice": "Cooked, cooled short-grain or sona masoori rice",
+  "ingredients": [
+    {
+      "group": "For the rice base",
+      "items": [
+        "3 cups cooked, cooled rice",
+        "2 tbsp sesame oil"
+      ]
+    },
+    {
+      "group": "For the tamarind paste (pulikachal)",
+      "items": [
+        "Lime-sized ball of tamarind, soaked in 250 ml warm water",
+        "3 tbsp sesame oil",
+        "1 tsp mustard seeds",
+        "1 tbsp chana dal, 1 tbsp urad dal",
+        "3 tbsp peanuts",
+        "3–4 dried red chillies",
+        "12 curry leaves",
+        "½ tsp turmeric",
+        "1 tsp jaggery (optional)",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the spice powder",
+      "items": [
+        "1 tbsp coriander seeds",
+        "1 tsp cumin seeds",
+        "1 tsp black peppercorns",
+        "1 tsp chana dal",
+        "2 dried red chillies"
+      ]
+    }
+  ],
+  "method": [
+    "Dry-roast the spice-powder ingredients until fragrant, cool, and grind to a coarse powder.",
+    "Extract thick tamarind juice from the soaked pulp; discard the fibres.",
+    "Heat sesame oil, pop the mustard seeds, then fry the dals, peanuts, red chillies and curry leaves until golden.",
+    "Add the tamarind juice, turmeric, jaggery and salt. Simmer until thick and the oil separates, 10–12 minutes.",
+    "Stir in the ground spice powder and cook for another minute; this is your pulikachal.",
+    "Fold the paste through the cooked rice with the extra sesame oil until evenly coated. Rest 15 minutes for the flavours to meld."
+  ],
+  "tips": [
+    "Sesame oil is traditional and gives the authentic aroma.",
+    "The pulikachal paste keeps for weeks refrigerated — make extra."
+  ],
+  "toServe": "Serve with papad and a spoon of yoghurt to balance the tang.",
+  "imageAlt": "Tamarind rice coated in roasted spice and tamarind paste",
+  "image": "../../assets/recipes/tamarind-rice-puliyodarai.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Tamarind%20rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

@@ -1,0 +1,114 @@
+---
+import { getImage } from 'astro:assets';
+import ProductCard from '@/components/ProductCard.astro';
+import { SITE_DATA } from '@/data/site';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts, productCopy } from '@/lib/catalog';
+import BuyerTools, { type ToolProduct } from '@/islands/BuyerTools';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const products = await getProducts();
+
+const toolProducts: ToolProduct[] = await Promise.all(
+  products.map(async (p) => {
+    const c = productCopy(p, locale);
+    const bag = await getImage({ src: p.journeyBag, height: 320, format: 'webp' });
+    const packBags: Record<string, string> = {};
+    for (const [i, label] of p.i18n.en.packs.entries()) {
+      const src = p.packImages[label]?.[0];
+      if (src) packBags[String(i)] = (await getImage({ src, height: 320, format: 'webp' })).src;
+    }
+    return {
+      id: p.id,
+      name: c.name,
+      short: c.short,
+      type: c.type,
+      grain: c.grain,
+      aroma: c.aroma,
+      use: c.use,
+      packs: c.packs,
+      bag: bag.src,
+      packBags,
+      href: localizedPath(`/products/${p.id}`, locale),
+    };
+  }),
+);
+const toolCopy = {
+  tools: t.ux.tools,
+  est: t.ux.est,
+  cmp: t.ux.cmp,
+  find: t.ux.find,
+  cook: t.ux.cook,
+  sticky: t.ux.sticky,
+  bags: t.ux.dr.bags,
+  labels: t.productsPage.labels,
+  waHref: SITE_DATA.waHref,
+  viewProduct: u.productPage.viewProduct,
+};
+---
+
+<section id="products" class="section section--surface prods">
+  <div class="wrap">
+    <div class="prods__head" data-reveal="0">
+      <div class="kicker kicker--center">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.prodSec.label}</span>
+        <span class="dia" aria-hidden="true"></span>
+      </div>
+      <h2 class="h2">{t.prodSec.title}</h2>
+      <p class="lede">{t.prodSec.intro}</p>
+    </div>
+    <div class="prods__grid">
+      {products.map((p, i) => (
+        <ProductCard product={p} locale={locale} reveal={i} />
+      ))}
+    </div>
+
+    <div id="tools" class="prods__tools" data-reveal="0">
+      <BuyerTools client:visible products={toolProducts} copy={toolCopy} locale={locale} />
+    </div>
+
+    <div class="prods__cta" data-reveal="0">
+      <a href={localizedPath('/contact', locale)} class="btn btn--primary">
+        {t.productsPage.ctaBtn}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .prods {
+    scroll-margin-top: 90px;
+  }
+  .prods__head {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .prods__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(16px, 2.2vw, 26px);
+    margin-top: 52px;
+  }
+  .prods__tools {
+    scroll-margin-top: 96px;
+    margin-top: clamp(56px, 7vw, 88px);
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 26px;
+    padding: clamp(20px, 3vw, 36px);
+    box-shadow: 0 24px 56px rgba(var(--ink), 0.07);
+  }
+  .prods__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+  }
+</style>

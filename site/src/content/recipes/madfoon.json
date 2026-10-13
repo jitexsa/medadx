@@ -1,0 +1,68 @@
+{
+  "num": 25,
+  "slug": "madfoon",
+  "region": "Saudi",
+  "title": "Madfoon (Madfun)",
+  "tagline": "“Buried” meat slow-cooked within the rice for an intensely infused, smoky dish.",
+  "intro": "Madfoon means “buried” — a nod to its origins, where seasoned meat was wrapped and cooked buried in a pit of hot embers. In the Saudi kitchen it has become a close cousin of mandi: the spiced meat is nestled into the rice and slow-finished together, often with the dukhan smoke, so the grains drink up every drop of flavour. Rustic, smoky and satisfying.",
+  "cuisine": "Saudi",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "25 minutes",
+  "cookTime": "2 hours",
+  "totalTime": "2 hours 25 minutes",
+  "prepISO": "PT25M",
+  "cookISO": "PT2H",
+  "totalISO": "PT2H25M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the meat",
+      "items": [
+        "1.2 kg lamb or chicken, on the bone",
+        "2 tbsp madfoon/mandi spice mix",
+        "2 onions, chopped",
+        "1 tbsp ginger–garlic paste",
+        "3 tbsp oil or ghee",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "About 1 litre reserved broth",
+        "Pinch of saffron in warm water",
+        "1 cinnamon stick, 4 cardamom, 4 cloves, 1 bay leaf"
+      ]
+    },
+    {
+      "group": "For the smoke & garnish",
+      "items": [
+        "1 piece of natural lump charcoal",
+        "1 tbsp ghee",
+        "3 tbsp fried nuts and raisins"
+      ]
+    }
+  ],
+  "method": [
+    "Brown the onions in oil, add ginger–garlic paste, then the spiced meat and sear well.",
+    "Add water to cover, season, and simmer until tender (about 1½ hours for lamb, 35 minutes for chicken). Reserve about 1 litre of broth; keep the meat.",
+    "Cook the drained rice in the measured broth with saffron and whole spices until nearly done, about 12 minutes.",
+    "Bury the meat down into the rice, cover and steam on the lowest heat a further 15 minutes.",
+    "Add the dukhan smoke (hot charcoal drizzled with ghee, pot sealed) for 5–10 minutes.",
+    "Uncover, lift the meat to the top, garnish and serve."
+  ],
+  "tips": [
+    "Burying the meat in the rice is the point — it steams the grains with its juices.",
+    "A tight seal during the final steam keeps all the aroma in."
+  ],
+  "toServe": "Serve with daqoos and a crisp salad.",
+  "imageAlt": "Madfoon buried meat and rice with smoky aroma",
+  "image": "../../assets/recipes/madfoon.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Mandi%20Rice%20%D9%85%D9%86%D8%AF%D9%8A%20%D8%AF%D8%AC%D8%A7%D8%AC.JPG",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

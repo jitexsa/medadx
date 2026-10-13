@@ -1,0 +1,62 @@
+{
+  "num": 14,
+  "slug": "ghee-rice",
+  "region": "Indian & Pakistani",
+  "title": "Ghee Rice (Nei Choru)",
+  "tagline": "Rich, aromatic basmati cooked in ghee with whole spices and fried onions.",
+  "intro": "Ghee rice — nei choru in Kerala and ghee bath elsewhere — is understated luxury: basmati cooked in fragrant ghee with whole spices and crowned with fried onions and cashews. Mild, buttery and festive, it's a favourite for weddings in the South and a wonderful backdrop for rich curries.",
+  "cuisine": "Indian (South Indian)",
+  "course": "Main or side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "10 minutes",
+  "cookTime": "25 minutes",
+  "totalTime": "35 minutes",
+  "prepISO": "PT10M",
+  "cookISO": "PT25M",
+  "totalISO": "PT35M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati or jeerakasala (kaima) rice",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 20 min",
+        "4 tbsp ghee",
+        "2 onions, thinly sliced",
+        "1 tbsp ginger–garlic paste",
+        "1 tsp fennel seeds",
+        "1 cinnamon stick, 4 cloves, 4 cardamom, 1 bay leaf, 1 star anise",
+        "700 ml hot water or light stock",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For garnish",
+      "items": [
+        "2 tbsp ghee",
+        "3 tbsp cashews",
+        "2 tbsp raisins",
+        "Extra fried onions"
+      ]
+    }
+  ],
+  "method": [
+    "Fry the sliced onions in ghee until golden; set aside half for garnish.",
+    "To the remaining onions add fennel and the whole spices; let them sizzle.",
+    "Add ginger–garlic paste, then the drained rice, and stir gently in the ghee for a minute.",
+    "Add the hot water and salt. Boil, cover and cook on low until absorbed, 12–15 minutes.",
+    "Fry the cashews and raisins in the extra ghee until golden.",
+    "Fluff the rice and top with the fried onions, cashews and raisins."
+  ],
+  "tips": [
+    "Using hot water keeps the grains from breaking.",
+    "Don't skimp on the ghee — it's the point of the dish."
+  ],
+  "toServe": "Traditionally served with a rich meat or vegetable korma.",
+  "imageAlt": "Ghee rice topped with fried onions, cashews and raisins",
+  "image": "../../assets/recipes/ghee-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Ghee%20Rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

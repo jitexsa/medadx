@@ -1,0 +1,64 @@
+{
+  "num": 7,
+  "slug": "chicken-yakhni-pulao",
+  "region": "Indian & Pakistani",
+  "title": "Chicken Yakhni Pulao",
+  "tagline": "Rice cooked in an aromatic chicken stock (yakhni) — subtle, elegant and comforting.",
+  "intro": "Yakhni pulao is the refined, gently spiced sibling of biryani. The chicken is first simmered with whole spices to make a fragrant stock (yakhni), which is then strained and used to cook the basmati. The flavour is delicate and savoury rather than fiery — a beloved everyday and celebratory pulao across Pakistan.",
+  "cuisine": "Pakistani",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "20 minutes",
+  "cookTime": "55 minutes",
+  "totalTime": "1 hour 15 minutes",
+  "prepISO": "PT20M",
+  "cookISO": "PT55M",
+  "totalISO": "PT1H15M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the yakhni (stock)",
+      "items": [
+        "800 g chicken, on the bone",
+        "1.2 litres water",
+        "1 onion, quartered",
+        "1 tbsp ginger–garlic paste",
+        "2 tbsp coriander seeds, 1 tbsp cumin seeds, 6 black peppercorns, 4 cloves, 4 cardamom, 1 cinnamon stick, 1 bay leaf (tied in muslin)",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the pulao",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "3 onions, sliced",
+        "120 ml (½ cup) oil or ghee",
+        "1 tbsp ginger–garlic paste",
+        "3 green chillies",
+        "200 g (¾ cup) yoghurt, whisked",
+        "1 tsp cumin seeds"
+      ]
+    }
+  ],
+  "method": [
+    "Simmer the chicken with the water, onion, ginger–garlic paste and the muslin spice bag until the meat is tender, about 30 minutes. Strain and reserve the yakhni; keep the chicken. You should have about 1 litre of stock.",
+    "In a heavy pot, fry the sliced onions golden in the oil. Set aside a little for garnish.",
+    "Add cumin seeds, ginger–garlic paste and green chillies. Add the cooked chicken and fry for a few minutes.",
+    "Stir in the yoghurt and cook for 2–3 minutes.",
+    "Add the drained rice and stir gently for a minute. Pour in the measured yakhni (about 1:1.5 rice to liquid by volume). Adjust salt.",
+    "Bring to a boil, then cover and cook on low until the liquid is absorbed and the rice is fluffy, 12–15 minutes.",
+    "Rest, covered, for 5 minutes, then fluff with a fork."
+  ],
+  "tips": [
+    "The stock does the flavouring, so measure liquid carefully for perfect grains.",
+    "A spice bag keeps the yakhni clear and easy to strain."
+  ],
+  "toServe": "Lovely with a simple raita and salad.",
+  "imageAlt": "Chicken yakhni pulao with fried onion garnish",
+  "image": "../../assets/recipes/chicken-yakhni-pulao.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Pulao.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

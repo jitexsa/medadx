@@ -1,0 +1,71 @@
+{
+  "num": 30,
+  "slug": "zurbian",
+  "region": "Saudi",
+  "title": "Zurbian (Zurbiyan)",
+  "tagline": "A saffron-rich, biryani-style rice with yoghurt-marinated meat and potatoes.",
+  "intro": "Zurbian is the Hejazi and Hadhrami answer to biryani, and a Ramadan favourite across the western Kingdom. Meat is marinated in spiced yoghurt, cooked with potatoes, then layered with saffron rice and fried onions and given a gentle steam. Aromatic, colourful and generous, it sits proudly between the worlds of kabsa and biryani.",
+  "cuisine": "Saudi (Hejazi / Hadhrami)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "30 minutes",
+  "cookTime": "1 hour 20 minutes",
+  "totalTime": "1 hour 50 minutes (plus 1 hour marination)",
+  "prepISO": "PT30M",
+  "cookISO": "PT1H20M",
+  "totalISO": "PT1H50M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the meat",
+      "items": [
+        "1 kg lamb or chicken, on the bone",
+        "250 g (1 cup) yoghurt",
+        "2 tbsp ginger–garlic paste",
+        "1 tbsp zurbian or biryani spice mix",
+        "1 tsp turmeric, 1 tsp red chilli powder",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For cooking",
+      "items": [
+        "3 onions, sliced and fried golden",
+        "3 tomatoes, chopped",
+        "2 potatoes, peeled and halved",
+        "120 ml (½ cup) oil or ghee"
+      ]
+    },
+    {
+      "group": "For the rice & layering",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "2.5 litres water + 2 tbsp salt (for parboiling)",
+        "Whole spices: cinnamon, cardamom, cloves, bay leaf",
+        "Pinch of saffron in 4 tbsp warm milk",
+        "Extra fried onions, coriander and mint"
+      ]
+    }
+  ],
+  "method": [
+    "Marinate the meat in the yoghurt, ginger–garlic paste and ground spices for at least 1 hour.",
+    "In oil, add the tomatoes to the marinated meat with half the fried onions; add a little water, cover and cook until the meat is nearly tender.",
+    "Fry the potatoes until golden and add them to the meat for the last 10 minutes.",
+    "Parboil the drained rice to 70% in the salted, spiced water; drain.",
+    "Layer the rice over the meat and potatoes, scattering fried onions, herbs and saffron milk between the layers.",
+    "Cover and steam (dum) on the lowest heat for 20–25 minutes.",
+    "Rest 5 minutes and fold gently before serving."
+  ],
+  "tips": [
+    "The yoghurt marinade tenderises the meat and gives zurbian its tang — don't rush it.",
+    "Parboil the rice to only 70% so it finishes perfectly during the steam."
+  ],
+  "toServe": "Serve with raita or daqoos and a green salad.",
+  "imageAlt": "Zurbian saffron rice with yoghurt-marinated meat and potatoes",
+  "image": "../../assets/recipes/zurbian.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20Biryani.jpg",
+  "standInImage": true,
+  "recommendedProduct": "farah"
+}

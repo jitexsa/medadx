@@ -1,0 +1,462 @@
+---
+import { Image } from 'astro:assets';
+import CertSeals from '@/components/CertSeals.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts } from '@/lib/catalog';
+import { breadcrumbs, webPage } from '@/lib/schema';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const m = u.meta.about;
+const A = t.aboutPage;
+const href = (p: string) => localizedPath(p, locale);
+const products = await getProducts();
+const byId = Object.fromEntries(products.map((p) => [p.id, p]));
+// Order and alt text from the design's aboutHeroSlidesData.
+const slides = [
+  { img: byId.khayber!.banners[0]!, alt: 'Khyber Gate — Creamy Sella Basmati Rice 1KG' },
+  { img: byId.khayber!.banners[1]!, alt: 'Khyber Gate — Premium Indian Mazza Basmati Rice, all package sizes' },
+  { img: byId.farah!.banners[0]!, alt: 'Farah — Golden Sella Basmati Rice' },
+  { img: byId.dhoqan!.banners[0]!, alt: 'Dhoqan — White Steam Basmati Rice' },
+];
+const jsonLd = [
+  webPage('AboutPage', m.title, href('/about'), locale),
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: href('/') },
+    { name: A.heroT, path: href('/about') },
+  ]),
+];
+---
+
+<BaseLayout locale={locale} path="/about" title={m.title} description={m.description} active="about" jsonLd={jsonLd}>
+  <section class="ab-hero" data-slideshow aria-roledescription="carousel" aria-label={A.heroSub}>
+    {slides.map((s, i) => (
+      <div
+        class:list={['ab-slide', { 'is-active': i === 0 }]}
+        data-slide
+        aria-roledescription="slide"
+        aria-hidden={i !== 0 ? 'true' : 'false'}
+      >
+        <Image
+          src={s.img}
+          alt={s.alt}
+          format="webp"
+          widths={[640, 1024, 1536]}
+          sizes="100vw"
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
+          class="ab-slide__img"
+        />
+      </div>
+    ))}
+    <div class="ab-hero__shade" aria-hidden="true"></div>
+    <a href={href('/contact')} class="btn btn--gold ab-hero__cta">
+      {A.heroCta}{' '}
+      <span class="flip-x" aria-hidden="true">
+        →
+      </span>
+    </a>
+    <div class="ab-hero__ctrl">
+      {slides.map((s, i) => (
+        <button type="button" class="ab-dot" data-slide-dot aria-label={s.alt} aria-current={i === 0 ? 'true' : undefined} />
+      ))}
+      <button type="button" class="ab-pause" data-slide-pause data-label-pause={u.pause} data-label-play={u.play} aria-label={u.pause}>
+        <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true" class="ic-pause">
+          <rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"></rect>
+          <rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"></rect>
+        </svg>
+        <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true" class="ic-play">
+          <path d="M3 1.8 L10 6 L3 10.2 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="ab-hero__badge">
+      <div class="label ab-hero__badge-k">{A.badgeTop}</div>
+      <div class="ab-hero__badge-v">{A.badgeName}</div>
+    </div>
+  </section>
+
+  <section class="section--tight ab-ov">
+    <div class="wrap ab-ov__grid">
+      <div>
+        <div class="kicker">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">
+            {A.heroT} · {A.ovLabel}
+          </span>
+        </div>
+        <h1 class="h1 ab-ov__h1">{A.ovTitle}</h1>
+        <p class="ab-ov__sub">{A.heroSub}</p>
+      </div>
+      <div class="ab-ov__body" data-reveal="1">
+        <p>{A.p1}</p>
+        <p>{A.p2}</p>
+        <p>{A.p3}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight section--surface">
+    <div class="wrap ab-vm">
+      <div data-reveal="0" class="ab-vm__card ab-vm__card--dark">
+        <div class="ab-vm__glow" aria-hidden="true"></div>
+        <span class="ab-vm__ic" aria-hidden="true">
+          <span class="dia dia--light"></span>
+        </span>
+        <h2>{A.visionT}</h2>
+        <p>{A.visionB}</p>
+      </div>
+      <div data-reveal="1" class="ab-vm__card">
+        <div class="ab-vm__glow ab-vm__glow--green" aria-hidden="true"></div>
+        <span class="ab-vm__ic ab-vm__ic--green" aria-hidden="true">
+          <span class="dia ab-vm__dia"></span>
+        </span>
+        <h2>{A.missionT}</h2>
+        <p>{A.missionB}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight ab-certs">
+    <div class="wrap">
+      <div data-reveal="0">
+        <div class="kicker kicker--light">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{t.supplyPage.certLabel}</span>
+        </div>
+        <h2 class="h2 h2--md h2--light ab-certs__h">{t.supplyPage.certTitle}</h2>
+      </div>
+      <CertSeals locale={locale} />
+      <p class="ab-certs__note" data-reveal="0">
+        {t.supplyPage.note}
+      </p>
+    </div>
+  </section>
+
+  <section class="ab-values">
+    <div class="wrap">
+      <div data-reveal="0">
+        <div class="kicker">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{A.valLabel}</span>
+        </div>
+        <h2 class="h2 ab-values__h">{A.valTitle}</h2>
+      </div>
+      <ul class="ab-values__grid">
+        {A.values.map((v, i) => (
+          <li class="ab-value" data-reveal={Math.min(i, 4)}>
+            <span class="ab-value__n">0{i + 1}</span>
+            <h3>{v.t}</h3>
+            <p>{v.d}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import '@/scripts/slideshow';
+</script>
+
+<style>
+  .ab-hero {
+    position: relative;
+    margin-top: var(--header-h);
+    aspect-ratio: 1717 / 916;
+    max-height: 1024px;
+    width: 100%;
+    overflow: hidden;
+    background: #16301f;
+  }
+  .ab-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s var(--ease);
+  }
+  .ab-slide.is-active {
+    opacity: 1;
+    z-index: 1;
+  }
+  .ab-slide__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .ab-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(10, 22, 15, 0.6), transparent 38%);
+    pointer-events: none;
+  }
+  .ab-hero__cta {
+    position: absolute;
+    z-index: 3;
+    bottom: clamp(66px, 9vw, 104px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 13px;
+    padding: 15px 30px;
+    font-size: 15.5px;
+    font-weight: 700;
+    box-shadow: 0 16px 36px rgba(10, 22, 15, 0.34);
+  }
+  .ab-hero__cta:hover {
+    transform: translateX(-50%) translateY(-2px);
+    background: #d4af57;
+  }
+  .ab-hero__ctrl {
+    position: absolute;
+    z-index: 3;
+    bottom: clamp(20px, 3vw, 32px);
+    inset-inline-start: clamp(20px, 4vw, 44px);
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .ab-dot {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    transition: width 0.3s ease;
+  }
+  .ab-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    background: rgba(239, 231, 205, 0.35);
+    transition: all 0.3s ease;
+  }
+  .ab-dot[aria-current='true'] {
+    width: 36px;
+  }
+  .ab-dot[aria-current='true']::before {
+    width: 26px;
+    background: var(--cream);
+  }
+  .ab-pause {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(239, 231, 205, 0.5);
+    background: transparent;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .ab-pause .ic-play,
+  .ab-pause:global(.is-paused) .ic-pause {
+    display: none;
+  }
+  .ab-pause:global(.is-paused) .ic-play {
+    display: block;
+  }
+  .ab-hero__badge {
+    position: absolute;
+    z-index: 3;
+    bottom: clamp(20px, 3vw, 32px);
+    inset-inline-end: clamp(20px, 4vw, 44px);
+    background: linear-gradient(150deg, #1f3d2a, #132719);
+    border-radius: 18px;
+    padding: 18px 26px;
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.28);
+  }
+  .ab-hero__badge-k {
+    color: rgba(238, 230, 205, 0.6);
+  }
+  .ab-hero__badge-v {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 750;
+    font-stretch: 112%;
+    color: var(--cream);
+  }
+  @media (max-width: 700px) {
+    .ab-hero {
+      aspect-ratio: 4 / 3;
+    }
+    .ab-hero__badge {
+      display: none;
+    }
+    .ab-hero__cta {
+      bottom: 64px;
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+  .ab-ov__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: clamp(28px, 5vw, 72px);
+    align-items: start;
+  }
+  .ab-ov__h1 {
+    font-size: clamp(32px, 4.4vw, 54px);
+  }
+  .ab-ov__sub {
+    margin: 18px 0 0;
+    font-size: clamp(16px, 1.5vw, 18.5px);
+    line-height: 1.6;
+    color: var(--gold-text);
+    font-weight: 600;
+  }
+  .ab-ov__body p {
+    margin: 0 0 16px;
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: rgba(var(--ink), 0.74);
+  }
+  .ab-vm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(16px, 2.4vw, 28px);
+  }
+  .ab-vm__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    padding: clamp(30px, 4vw, 46px);
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.13);
+  }
+  .ab-vm__card--dark {
+    background: linear-gradient(150deg, #16301f, #1f3d2a);
+    border: none;
+  }
+  .ab-vm__glow {
+    position: absolute;
+    top: -70px;
+    inset-inline-end: -50px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 162, 75, 0.2), transparent 65%);
+  }
+  .ab-vm__glow--green {
+    background: radial-gradient(circle, rgba(31, 61, 42, 0.08), transparent 65%);
+  }
+  .ab-vm__ic {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(201, 162, 75, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  .ab-vm__ic--green {
+    border-color: rgba(31, 61, 42, 0.35);
+  }
+  .ab-vm__dia {
+    width: 10px;
+    height: 10px;
+    background: var(--brand-text);
+  }
+  .ab-vm__card h2 {
+    margin: 20px 0 0;
+    font-size: clamp(23px, 2.4vw, 30px);
+    font-weight: 750;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+    color: var(--ink-solid);
+  }
+  .ab-vm__card--dark h2 {
+    color: var(--cream);
+  }
+  .ab-vm__card p {
+    position: relative;
+    margin: 14px 0 0;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: rgba(var(--ink), 0.74);
+  }
+  .ab-vm__card--dark p {
+    color: rgba(238, 230, 205, 0.78);
+  }
+  .ab-certs {
+    background: #122619;
+  }
+  .ab-certs__h {
+    max-width: 640px;
+  }
+  .ab-certs__note {
+    margin: 40px auto 0;
+    max-width: 640px;
+    text-align: center;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(238, 230, 205, 0.62);
+  }
+  .ab-values {
+    background: var(--bg);
+    padding: clamp(64px, 8vw, 108px) var(--gutter) clamp(84px, 10vw, 132px);
+  }
+  .ab-values__h {
+    max-width: 640px;
+  }
+  .ab-values__grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 48px 0 0;
+  }
+  .ab-value {
+    border: 1px solid rgba(var(--ink), 0.14);
+    border-radius: 18px;
+    padding: 26px 22px;
+    background: rgba(var(--surf), 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s,
+      border-color 0.3s;
+  }
+  .ab-value:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 20px 40px rgba(var(--ink), 0.1),
+      0 0 26px rgba(201, 162, 75, 0.3);
+    border-color: rgba(166, 127, 46, 0.5);
+  }
+  .ab-value__n {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-text);
+  }
+  .ab-value h3 {
+    margin: 0;
+    font-size: 16.5px;
+    font-weight: 720;
+    line-height: 1.35;
+  }
+  .ab-value p {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(var(--ink), 0.68);
+  }
+</style>

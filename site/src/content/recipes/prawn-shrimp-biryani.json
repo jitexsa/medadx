@@ -1,0 +1,77 @@
+{
+  "num": 6,
+  "slug": "prawn-shrimp-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Prawn (Shrimp) Biryani",
+  "tagline": "A coastal favourite — juicy prawns in a quick spiced masala, layered with basmati.",
+  "intro": "Prawn biryani is a treasured dish along the coasts of India and Pakistan. Because prawns cook in minutes, the masala is built first and the seafood is added briefly, keeping it plump and sweet. Light yet full of flavour, it's a faster biryani that still delivers all the aroma.",
+  "cuisine": "Indian & Pakistani (coastal)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "20 minutes",
+  "cookTime": "40 minutes",
+  "totalTime": "1 hour",
+  "prepISO": "PT20M",
+  "cookISO": "PT40M",
+  "totalISO": "PT1H",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the prawns & masala",
+      "items": [
+        "600 g prawns, peeled and deveined",
+        "3 onions, sliced",
+        "2 tomatoes, chopped",
+        "200 g (¾ cup) yoghurt",
+        "2 tbsp ginger–garlic paste",
+        "3 green chillies",
+        "120 ml (½ cup) oil",
+        "1 tbsp red chilli powder",
+        "½ tsp turmeric",
+        "1 tsp coriander powder",
+        "1 tbsp biryani masala",
+        "Juice of ½ lemon",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "450 g (2¼ cups) basmati rice",
+        "2.25 litres water, 2 tbsp salt",
+        "Whole spices: cinnamon, cloves, cardamom, bay leaf"
+      ]
+    },
+    {
+      "group": "For layering",
+      "items": [
+        "½ tsp saffron in 3 tbsp milk",
+        "3 tbsp fried onions",
+        "Mint and coriander",
+        "2 tbsp ghee"
+      ]
+    }
+  ],
+  "method": [
+    "Rinse and soak the rice; drain. Season the prawns with a little salt, turmeric and lemon.",
+    "Fry the onions golden; add ginger–garlic paste, chillies and tomatoes.",
+    "Add the ground spices and yoghurt and cook to a thick masala.",
+    "Stir in the prawns and cook just 3–4 minutes until they turn pink. Do not overcook.",
+    "Parboil the rice to 70%; drain.",
+    "Layer rice over the prawn masala with saffron milk, fried onions, herbs and ghee.",
+    "Seal and dum on the lowest heat for 12–15 minutes only.",
+    "Rest briefly and fold gently."
+  ],
+  "tips": [
+    "Prawns turn rubbery if overcooked — keep the dum short.",
+    "A squeeze of lemon at the end lifts the whole dish."
+  ],
+  "toServe": "Serve with a light raita and lemon wedges.",
+  "imageAlt": "Prawn biryani with juicy shrimp and basmati rice",
+  "image": "../../assets/recipes/prawn-shrimp-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Prawn%20Biryani.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

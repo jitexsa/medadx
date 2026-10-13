@@ -1,0 +1,209 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE_DATA } from '@/data/site';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { formProducts } from '@/lib/form-products';
+import { breadcrumbs, webPage } from '@/lib/schema';
+import TradingWizard from '@/islands/TradingWizard';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const m = u.meta.trading;
+const T = t.trading;
+const href = (p: string) => localizedPath(p, locale);
+const products = await formProducts(locale);
+const icons = [
+  ['M4 12 L11 5 L20 5 L20 14 L13 21 L4 12 Z', 'M16 9 h.01'],
+  ['M4 8 L12 4 L20 8 L12 12 Z', 'M4 8 V16 L12 20 L20 16 V8', 'M12 12 V20'],
+  ['M12 11 a3.2 3.2 0 1 0 0-6.4 a3.2 3.2 0 0 0 0 6.4 Z', 'M5 20 c0-3.9 3.1-6.4 7-6.4 s7 2.5 7 6.4'],
+  [
+    'M3 7 h11 v9 H3 Z',
+    'M14 10 h4 l3 3 v3 h-7 Z',
+    'M7 19 a1.9 1.9 0 1 0 0-3.8 a1.9 1.9 0 0 0 0 3.8 Z',
+    'M17 19 a1.9 1.9 0 1 0 0-3.8 a1.9 1.9 0 0 0 0 3.8 Z',
+  ],
+];
+const uiCopy = {
+  prog: t.ux.form.prog,
+  draft: t.ux.form.draft,
+  clear: t.ux.form.clear,
+  browse: t.hero.browse,
+  leadFailed: u.leadFailed,
+  formErrors: u.formErrors,
+  notSent: u.notSentBanner,
+  file_type: u.fileErr.type,
+  file_size: u.fileErr.size,
+  file_count: u.fileErr.count,
+};
+const jsonLd = [
+  webPage('WebPage', m.title, href('/trading-account'), locale),
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: href('/') },
+    { name: T.heroT, path: href('/trading-account') },
+  ]),
+];
+---
+
+<BaseLayout locale={locale} path="/trading-account" title={m.title} description={m.description} active="trading" jsonLd={jsonLd}>
+  <section class="tr page-top">
+    <div class="wrap tr__grid">
+      <div class="tr__aside">
+        <div class="kicker">
+          <span class="dia dia--md" aria-hidden="true"></span>
+          <span class="kicker__text">MEDAD-X · B2B</span>
+        </div>
+        <h1 class="tr__h1">{T.heroT}</h1>
+        <p class="tr__sub">{T.heroSub}</p>
+        <hr class="tr__hr" />
+        <ul class="tr__benefits">
+          {T.benefits.map((b, i) => (
+            <li>
+              <span class="tr__ic" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                  {icons[i % 4]!.map((d) => (
+                    <path d={d} stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                  ))}
+                </svg>
+              </span>
+              <div>
+                <div class="tr__bt">{b.t}</div>
+                <div class="tr__bd">{b.d}</div>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div class="tr__note">
+          <span class="tr__pulse" aria-hidden="true"></span>
+          {T.replyNote}
+        </div>
+      </div>
+      <div class="panel tr__form">
+        <TradingWizard
+          client:load
+          locale={locale}
+          products={products}
+          copy={T}
+          ui={uiCopy}
+          markets={t.marketsSec.names}
+          countries={SITE_DATA.countries}
+          dials={SITE_DATA.dials}
+          homeHref={href('/')}
+          productsHref={href('/products')}
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tr {
+    background: var(--bg);
+    min-height: 100vh;
+    padding-inline: var(--gutter);
+    padding-bottom: clamp(72px, 9vw, 116px);
+  }
+  .tr__grid {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.6fr);
+    gap: clamp(28px, 3.5vw, 52px);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .tr__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .tr__aside {
+    position: sticky;
+    top: 104px;
+  }
+  @media (max-width: 900px) {
+    .tr__aside {
+      position: static;
+    }
+  }
+  .tr__h1 {
+    margin: 16px 0 0;
+    font-size: clamp(26px, 2.7vw, 36px);
+    line-height: 1.1;
+    font-weight: 750;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+    text-wrap: balance;
+  }
+  .tr__sub {
+    margin: 14px 0 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(var(--ink), 0.68);
+  }
+  .tr__hr {
+    border: 0;
+    height: 1px;
+    background: rgba(var(--ink), 0.12);
+    margin: 22px 0;
+  }
+  .tr__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .tr__benefits li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .tr__ic {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: var(--brand-tint-2);
+    border: 1px solid rgba(31, 61, 42, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-text);
+  }
+  .tr__bt {
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .tr__bd {
+    margin-top: 2px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(var(--ink), 0.68);
+  }
+  .tr__note {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(166, 127, 46, 0.4);
+    border-radius: 12px;
+    padding: 12px 15px;
+    background: rgba(var(--surf), 0.7);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: rgba(var(--ink), 0.72);
+  }
+  .tr__pulse {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ok);
+    animation: mxPulse 2s ease-in-out infinite;
+  }
+</style>

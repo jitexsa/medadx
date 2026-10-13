@@ -1,0 +1,68 @@
+{
+  "num": 17,
+  "slug": "curd-rice-thayir-sadam",
+  "region": "Indian & Pakistani",
+  "title": "Curd Rice (Thayir Sadam)",
+  "tagline": "Cooling, creamy yoghurt rice with a fragrant tempering — comfort in a bowl.",
+  "intro": "Curd rice, or thayir sadam, is the soothing finale to a South Indian meal — soft rice folded into fresh yoghurt with a fragrant tempering of mustard, curry leaves and ginger. Cooling, gentle on the stomach and quietly delicious, it's the ultimate comfort food, especially in hot weather.",
+  "cuisine": "Indian (South Indian)",
+  "course": "Main or side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "10 minutes",
+  "cookTime": "10 minutes",
+  "totalTime": "20 minutes",
+  "prepISO": "PT10M",
+  "cookISO": "PT10M",
+  "totalISO": "PT20M",
+  "difficulty": "Easy",
+  "rice": "Soft-cooked short-grain rice",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "2 cups cooked rice, slightly mashed while warm",
+        "400 g (1½ cups) plain yoghurt",
+        "120 ml (½ cup) milk",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the tempering",
+      "items": [
+        "2 tbsp oil",
+        "1 tsp mustard seeds",
+        "1 tsp urad dal",
+        "2 green chillies, chopped",
+        "1 tsp grated ginger",
+        "1 dried red chilli",
+        "10 curry leaves",
+        "A pinch of asafoetida (hing)"
+      ]
+    },
+    {
+      "group": "Optional add-ins",
+      "items": [
+        "2 tbsp pomegranate seeds or grated carrot",
+        "Coriander to garnish"
+      ]
+    }
+  ],
+  "method": [
+    "Mash the warm cooked rice lightly and let it cool a little.",
+    "Stir in the yoghurt, milk and salt to a soft, creamy consistency.",
+    "For the tempering, heat oil and pop the mustard seeds; add urad dal, green chillies, ginger, red chilli, curry leaves and asafoetida, and fry until fragrant.",
+    "Pour the tempering over the curd rice and mix.",
+    "Fold in any add-ins and garnish with coriander. Serve slightly chilled or at room temperature."
+  ],
+  "tips": [
+    "Add the yoghurt when the rice is warm (not hot) so it stays creamy, not split.",
+    "A splash of milk keeps it soft if it's made ahead and thickens."
+  ],
+  "toServe": "Delicious with mango or lime pickle.",
+  "imageAlt": "Curd rice with tempering of mustard seeds and curry leaves",
+  "image": "../../assets/recipes/curd-rice-thayir-sadam.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Curd%20Rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

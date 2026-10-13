@@ -1,0 +1,402 @@
+---
+import { Image } from 'astro:assets';
+import logoMark from '@/assets/brand/logo-mark.png';
+import { SITE_DATA } from '@/data/site';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { contactLabel, primaryNav, type NavKey } from '@/lib/nav';
+
+export interface Props {
+  locale: Locale;
+  active?: NavKey;
+  /** Where the language switch points. */
+  langHref: string;
+  /** True when the current page has no translation and the switch goes to the other locale's home. */
+  langHomeOnly?: boolean;
+}
+
+const { locale, active, langHref, langHomeOnly = false } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const nav = primaryNav(locale);
+const other = locale === 'en' ? 'ar' : 'en';
+const home = localizedPath('/', locale);
+---
+
+<header class="hdr" id="site-header" data-header>
+  <div class="hdr__bar wrap--wide">
+    <a href={home} class="hdr__brand" aria-label={`${u.brand} — ${u.breadcrumbHome}`}>
+      <Image src={logoMark} alt="" width={46} height={49} densities={[1, 2, 3]} format="webp" loading="eager" class="hdr__logo" />
+      <span class="hdr__word">
+        <span class="hdr__name">MEDADX</span>
+        <span class="hdr__sub">{t.nav.brandSub}</span>
+      </span>
+    </a>
+
+    <nav class="hdr__nav" aria-label="Primary">
+      {nav.map((n) => (
+        <a href={n.href} class="hdr__link" aria-current={n.key === active ? 'page' : undefined} hreflang={n.enOnly ? 'en' : undefined}>
+          {n.label}
+          <span class="hdr__bar-ind" aria-hidden="true" />
+        </a>
+      ))}
+    </nav>
+
+    <div class="hdr__actions">
+      <button
+        type="button"
+        class="hdr__icon-btn"
+        data-theme-toggle
+        data-label-dark={u.themeToDark}
+        data-label-light={u.themeToLight}
+        aria-label={u.themeToDark}
+        title={u.themeToDark}
+      >
+        <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.4" stroke="currentColor" stroke-width="1.7"></circle>
+          <path
+            d="M12 2.5 V5 M12 19 V21.5 M2.5 12 H5 M19 12 H21.5 M5.2 5.2 L6.9 6.9 M17.1 17.1 L18.8 18.8 M18.8 5.2 L17.1 6.9 M6.9 17.1 L5.2 18.8"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M20 13.5 A8 8 0 1 1 10.5 4 A6.2 6.2 0 0 0 20 13.5 Z"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
+      <a
+        href={langHref}
+        class="hdr__lang"
+        hreflang={other}
+        lang={other}
+        aria-label={langHomeOnly ? u.langSwitchHomeOnlyLabel : u.langSwitchLabel}
+        data-lang-switch={other}
+      >
+        {langHomeOnly ? u.langSwitchHomeOnly : t.langBtn}
+      </a>
+      <a href={localizedPath('/contact', locale)} class="hdr__quote" aria-current={active === 'contact' ? 'page' : undefined}>
+        {contactLabel(locale)}
+      </a>
+      <a href={localizedPath('/trading-account', locale)} class="hdr__cta">
+        {t.nav.cta}
+      </a>
+      <button
+        type="button"
+        class="hdr__burger"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-menu-toggle
+        data-label-open={u.menu}
+        data-label-close={u.closeMenu}
+        aria-label={u.menu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="hdr__menu" id="mobile-menu" hidden data-menu>
+    {nav.map((n) => (
+      <a href={n.href} class="hdr__mlink" aria-current={n.key === active ? 'page' : undefined}>
+        {n.label}
+        <span class="dia dia--md" aria-hidden="true" />
+      </a>
+    ))}
+    <a href={localizedPath('/contact', locale)} class="hdr__mlink">
+      {contactLabel(locale)}
+      <span class="dia dia--md" aria-hidden="true"></span>
+    </a>
+    <div class="hdr__mactions">
+      <a href={localizedPath('/trading-account', locale)} class="btn btn--primary hdr__mbtn">
+        {t.nav.cta}
+      </a>
+      <a href={SITE_DATA.phoneHref} dir="ltr" class="btn btn--outline hdr__mbtn hdr__mphone">
+        {SITE_DATA.phone}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  import '@/scripts/header';
+</script>
+
+<style>
+  .hdr {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    z-index: 90;
+    background: rgba(var(--surf), 0);
+    border-bottom: 1px solid rgba(var(--ink), 0);
+    transition:
+      background 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+  .hdr.is-scrolled,
+  .hdr.is-open {
+    background: rgba(var(--surf), 0.93);
+    backdrop-filter: saturate(1.15) blur(14px);
+    -webkit-backdrop-filter: saturate(1.15) blur(14px);
+    border-bottom-color: rgba(var(--ink), 0.12);
+  }
+  .hdr.is-scrolled {
+    box-shadow: 0 10px 30px rgba(var(--ink), 0.07);
+  }
+  .hdr__bar {
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .hdr__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: var(--ink-solid);
+    min-width: max-content;
+  }
+  .hdr__logo {
+    height: 46px;
+    width: auto;
+  }
+  .hdr__word {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .hdr__name {
+    font-weight: 800;
+    font-stretch: 120%;
+    font-size: 21px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .hdr__sub {
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    letter-spacing: var(--tr-wide);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+    font-weight: 500;
+  }
+  .hdr__nav {
+    display: none;
+    align-items: center;
+    gap: 2px;
+  }
+  .hdr__link {
+    position: relative;
+    padding: 10px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: rgba(var(--ink), 0.68);
+    transition: color 0.2s;
+  }
+  .hdr__link:hover,
+  .hdr__link[aria-current='page'] {
+    color: var(--ink-solid);
+  }
+  .hdr__link[aria-current='page'] {
+    font-weight: 650;
+  }
+  .hdr__bar-ind {
+    position: absolute;
+    bottom: 2px;
+    inset-inline: 12px;
+    height: 2px;
+    background: var(--gold-500);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .hdr__link[aria-current='page'] .hdr__bar-ind {
+    opacity: 1;
+  }
+  .hdr__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hdr__icon-btn,
+  .hdr__burger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(var(--ink), 0.22);
+    background: transparent;
+    color: var(--ink-solid);
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .hdr__icon-btn:hover,
+  .hdr__lang:hover,
+  .hdr__quote:hover {
+    border-color: var(--ink-solid);
+    background: rgba(var(--ink), 0.06);
+  }
+  .i-sun {
+    display: none;
+  }
+  :global(:root[data-theme='dark']) .i-sun {
+    display: block;
+  }
+  :global(:root[data-theme='dark']) .i-moon {
+    display: none;
+  }
+  .hdr__lang,
+  .hdr__quote {
+    border: 1.5px solid rgba(var(--ink), 0.22);
+    color: var(--ink-solid);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  /* On English pages, draw the one Arabic word with a system font so the 87 KB
+     Arabic web font is never downloaded. Arabic pages load it anyway for body text. */
+  :global(html:lang(en)) .hdr__lang:lang(ar) {
+    font-family: 'Geeza Pro', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  }
+  .hdr__quote {
+    display: none;
+    border-radius: 11px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .hdr__cta {
+    display: none;
+    background: var(--green-900);
+    color: #f5f0e4;
+    text-decoration: none;
+    border-radius: 11px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    transition:
+      background 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .hdr__cta:hover {
+    background: var(--green-950);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(31, 61, 42, 0.22);
+  }
+  .hdr__burger {
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    gap: 4.5px;
+  }
+  .hdr__burger span {
+    width: 18px;
+    height: 2px;
+    background: var(--ink-solid);
+    border-radius: 2px;
+    transition: transform 0.25s;
+  }
+  .hdr.is-open .hdr__burger span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .hdr.is-open .hdr__burger span:nth-child(2) {
+    transform: scaleX(0);
+  }
+  .hdr.is-open .hdr__burger span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+  .hdr__menu {
+    background: var(--bg);
+    border-bottom: 1px solid rgba(var(--ink), 0.12);
+    box-shadow: 0 24px 48px rgba(var(--ink), 0.12);
+    padding: 6px var(--gutter) 22px;
+    display: flex;
+    flex-direction: column;
+    animation: mxFade 0.25s ease both;
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+  }
+  .hdr__mlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 2px;
+    text-decoration: none;
+    color: rgba(var(--ink), 0.68);
+    font-size: 17px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(var(--ink), 0.08);
+  }
+  .hdr__mlink .dia {
+    opacity: 0;
+  }
+  .hdr__mlink[aria-current='page'] {
+    color: var(--ink-solid);
+    font-weight: 650;
+  }
+  .hdr__mlink[aria-current='page'] .dia {
+    opacity: 1;
+  }
+  .hdr__mactions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .hdr__mbtn {
+    flex: 1;
+    min-width: 160px;
+  }
+  .hdr__mphone {
+    font-family: var(--f-mono);
+    font-size: 13.5px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 1200px) {
+    .hdr__nav,
+    .hdr__quote,
+    .hdr__cta {
+      display: flex;
+    }
+    .hdr__burger,
+    .hdr__menu {
+      display: none !important;
+    }
+  }
+  @media (max-width: 420px) {
+    .hdr__sub {
+      display: none;
+    }
+    .hdr__actions {
+      gap: 7px;
+    }
+  }
+</style>

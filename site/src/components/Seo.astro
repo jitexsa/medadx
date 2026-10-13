@@ -1,0 +1,69 @@
+---
+import { OG_LOCALE, type Locale } from '@/i18n';
+import { absUrl, jsonLdString } from '@/lib/seo';
+
+export interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  /** Absolute paths, e.g. { en: '/about', ar: '/ar/about' } — the current page must be included. */
+  alternates: Partial<Record<Locale, string>>;
+  canonicalPath: string;
+  ogImage: string;
+  ogImageAlt: string;
+  ogType?: 'website' | 'article' | 'product';
+  jsonLd?: unknown[];
+  noindex?: boolean;
+}
+
+const {
+  locale,
+  title,
+  description,
+  alternates,
+  canonicalPath,
+  ogImage,
+  ogImageAlt,
+  ogType = 'website',
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = absUrl(canonicalPath);
+const image = absUrl(ogImage);
+const altLocales = (Object.keys(alternates) as Locale[]).filter((l) => l !== locale);
+const xDefault = alternates.en ?? canonicalPath;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+{!noindex && (Object.entries(alternates) as [Locale, string][]).map(([l, p]) => <link rel="alternate" hreflang={l} href={absUrl(p)} />)}
+{!noindex && <link rel="alternate" hreflang="x-default" href={absUrl(xDefault)} />}
+
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Medad-X" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={OG_LOCALE[locale]} />
+{altLocales.map((l) => (
+  <meta property="og:locale:alternate" content={OG_LOCALE[l]} />
+))}
+<meta property="og:image" content={image} />
+<meta property="og:image:secure_url" content={image} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@medadx" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+{jsonLd.map((item) => (
+  <script type="application/ld+json" set:html={jsonLdString(item)} />
+))}

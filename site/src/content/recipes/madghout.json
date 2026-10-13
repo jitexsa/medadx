@@ -1,0 +1,64 @@
+{
+  "num": 26,
+  "slug": "madghout",
+  "region": "Saudi",
+  "title": "Madghout (Madghut)",
+  "tagline": "Pressure-cooked meat and rice — everything cooked together until deeply tender.",
+  "intro": "Madghout — from the Arabic for “pressed” — is the pressure-cooker classic of Saudi home cooking. Meat, rice and a tomato-based spice base cook together under pressure, so the grains soak up the full flavour of the meat and the whole dish comes together quickly and richly. It is everyday comfort food beloved for its ease and depth.",
+  "cuisine": "Saudi",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "20 minutes",
+  "cookTime": "55 minutes",
+  "totalTime": "1 hour 15 minutes",
+  "prepISO": "PT20M",
+  "cookISO": "PT55M",
+  "totalISO": "PT1H15M",
+  "difficulty": "Easy",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "1 kg lamb or chicken, on the bone",
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "2 onions, chopped",
+        "4 garlic cloves, minced",
+        "3 tomatoes, grated",
+        "2 tbsp tomato paste",
+        "60 ml (¼ cup) oil",
+        "2 dried limes (loomi), pierced",
+        "1 tbsp kabsa spice mix (baharat)",
+        "1 cinnamon stick, 4 cardamom, 4 cloves, 2 bay leaves",
+        "Pinch of saffron",
+        "About 900 ml water",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For garnish",
+      "items": [
+        "3 tbsp fried nuts and raisins"
+      ]
+    }
+  ],
+  "method": [
+    "In the pressure cooker, brown the onions in oil, then add the garlic and meat and sear.",
+    "Add the tomatoes, tomato paste, spices, dried limes and salt; cook until the oil separates.",
+    "Add the water, seal the pressure cooker and cook the meat until tender (about 30 minutes for lamb, 15 for chicken). Release the pressure.",
+    "Check the liquid — you want roughly double the volume of the rice; adjust with hot water. Stir in the saffron and the drained rice.",
+    "Seal again and cook 6–8 minutes, then release and rest 5 minutes.",
+    "Fluff gently, garnish with fried nuts and raisins, and serve."
+  ],
+  "tips": [
+    "Getting the liquid-to-rice ratio right after cooking the meat is the key step — aim for about 2:1.",
+    "Let the pressure release naturally at the end for the fluffiest rice."
+  ],
+  "toServe": "Serve with daqoos or plain yoghurt.",
+  "imageAlt": "Madghout pressure-cooked meat and rice garnished with nuts",
+  "image": "../../assets/recipes/madghout.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Kuzhimandi.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

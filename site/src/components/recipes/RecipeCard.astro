@@ -1,0 +1,229 @@
+---
+import { Image } from 'astro:assets';
+import type { Recipe } from '@/lib/catalog';
+import { diffSlug, regionSlug, riceType, shortTime } from '@/lib/recipe-format';
+
+export interface Props {
+  recipe: Recipe;
+  headingLevel?: 'h2' | 'h3';
+  compact?: boolean;
+}
+const { recipe: r, headingLevel = 'h2', compact = false } = Astro.props;
+const H = headingLevel;
+const hay = `${r.title} ${r.tagline} ${r.cuisine} ${r.intro}`.toLowerCase();
+---
+
+<li
+  class:list={['rc', { 'rc--compact': compact }]}
+  data-recipe
+  data-region={r.region}
+  data-course={r.category}
+  data-diff={r.difficulty}
+  data-hay={compact ? undefined : hay}
+>
+  <a href={`/recipes/${r.slug}`} class="rc__a">
+    <div class="rc__media">
+      <Image
+        src={r.image}
+        alt={r.imageAlt}
+        format="webp"
+        widths={[360, 560, 760]}
+        sizes="(min-width: 1200px) 370px, (min-width: 700px) 46vw, 92vw"
+        class="rc__img"
+      />
+      <span class:list={['rc__tag', `rc__tag--${regionSlug(r.region)}`]}>{r.region}</span>
+      {!compact && <span class="rc__total">{shortTime(r.totalTime)}</span>}
+    </div>
+    <div class="rc__body">
+      <H class="rc__title">{r.title}</H>
+      <p class="rc__tagline">{r.tagline}</p>
+      {!compact && (
+        <>
+          <span class="rc__rice" title={r.rice}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <ellipse cx="12" cy="12" rx="3.4" ry="8" transform="rotate(38 12 12)" stroke="currentColor" stroke-width="2" />
+            </svg>
+            {riceType(r.rice)}
+          </span>
+          <div class="rc__meta">
+            <span class:list={['rc__diff', `rc__diff--${diffSlug(r.difficulty)}`]}>{r.difficulty}</span>
+            <span class="rc__sep" aria-hidden="true" />
+            <span>Cook {shortTime(r.cookTime)}</span>
+            <span class="rc__sep" aria-hidden="true" />
+            <span>Serves {r.servings}</span>
+            <span class="rc__go" aria-hidden="true">
+              →
+            </span>
+          </div>
+        </>
+      )}
+    </div>
+  </a>
+</li>
+
+<style>
+  .rc {
+    display: flex;
+  }
+  .rc__a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid rgba(var(--ink), 0.13);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px -18px rgba(31, 45, 29, 0.5);
+    transition:
+      transform 0.25s var(--ease),
+      box-shadow 0.25s;
+  }
+  .rc__a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 46px -22px rgba(31, 45, 29, 0.55);
+  }
+  .rc__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: rgba(var(--ink), 0.06);
+  }
+  .rc--compact .rc__media {
+    aspect-ratio: 16 / 10;
+  }
+  .rc__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13, 31, 20, 0) 55%, rgba(13, 31, 20, 0.5));
+    pointer-events: none;
+  }
+  .rc__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .rc__tag {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    inset-inline-start: 12px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+  .rc__tag--saudi {
+    background: rgba(194, 154, 69, 0.9);
+    color: #2a1e06;
+  }
+  .rc__tag--indian-pakistani {
+    background: rgba(31, 61, 42, 0.88);
+    color: #eaf3ec;
+  }
+  .rc__total {
+    position: absolute;
+    z-index: 1;
+    bottom: 11px;
+    inset-inline-end: 12px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #f5f0e4;
+  }
+  .rc__body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .rc__title {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--brand-text);
+    text-wrap: balance;
+  }
+  .rc--compact .rc__title {
+    font-size: 17px;
+  }
+  .rc__tagline {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(var(--ink), 0.68);
+    flex: 1;
+  }
+  .rc--compact .rc__tagline {
+    font-size: 13px;
+  }
+  .rc__rice {
+    align-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 11px 4px 9px;
+    border-radius: 999px;
+    background: rgba(166, 127, 46, 0.1);
+    border: 1px solid rgba(166, 127, 46, 0.24);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .rc__meta {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(var(--ink), 0.1);
+    font-size: 12.5px;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rc__diff {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .rc__diff--easy {
+    color: #2a7048;
+  }
+  .rc__diff--intermediate {
+    color: var(--gold-text);
+  }
+  .rc__diff--advanced {
+    color: var(--red);
+  }
+  :global(:root[data-theme='dark']) .rc__diff--easy {
+    color: #7fc79c;
+  }
+  .rc__sep {
+    width: 4px;
+    height: 4px;
+    background: rgba(var(--ink), 0.3);
+    border-radius: 50%;
+  }
+  .rc__go {
+    margin-inline-start: auto;
+    color: var(--gold-text);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+  }
+</style>

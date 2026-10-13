@@ -1,0 +1,58 @@
+{
+  "num": 11,
+  "slug": "chana-pulao-chickpea-pulao",
+  "region": "Indian & Pakistani",
+  "title": "Chana Pulao (Chickpea Pulao)",
+  "tagline": "A hearty, protein-rich pulao of chickpeas and basmati with warming spices.",
+  "intro": "Chana pulao is a satisfying vegetarian one-pot that's popular for lunchboxes and quick dinners. Tender chickpeas are simmered with onions and spices, then the basmati cooks right in the same pot, soaking up all the flavour. Filling, wholesome and budget-friendly.",
+  "cuisine": "Pakistani & North Indian",
+  "course": "Main course (vegetarian)",
+  "category": "Main course",
+  "servings": 4,
+  "prepTime": "15 minutes (plus soaking chickpeas)",
+  "cookTime": "30 minutes",
+  "totalTime": "45 minutes",
+  "prepISO": "PT15M",
+  "cookISO": "PT30M",
+  "totalISO": "PT45M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 20 min",
+        "250 g (1½ cups) cooked chickpeas (or 1 can, drained)",
+        "2 onions, sliced",
+        "2 tomatoes, chopped",
+        "1 tbsp ginger–garlic paste",
+        "2 green chillies",
+        "4 tbsp oil",
+        "1 tsp cumin seeds",
+        "1 tsp coriander powder, ½ tsp turmeric, 1 tsp red chilli powder",
+        "1 tsp garam masala",
+        "1 cinnamon stick, 3 cloves, 3 cardamom, 1 bay leaf",
+        "700 ml water",
+        "Salt to taste"
+      ]
+    }
+  ],
+  "method": [
+    "Heat oil, add cumin and whole spices, then the onions; fry until golden.",
+    "Add ginger–garlic paste, chillies and tomatoes; cook until softened.",
+    "Add the ground spices and the chickpeas; sauté for a few minutes.",
+    "Add the drained rice and stir gently. Add the water and salt.",
+    "Boil, then cover and cook on low until absorbed, 12–15 minutes.",
+    "Rest 5 minutes and fluff."
+  ],
+  "tips": [
+    "Canned chickpeas make this a genuinely 30-minute meal.",
+    "A squeeze of lemon and fresh coriander at the end brightens it."
+  ],
+  "toServe": "Serve with raita or a simple salad.",
+  "imageAlt": "Chana pulao with chickpeas and basmati rice",
+  "image": "../../assets/recipes/chana-pulao-chickpea-pulao.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/White%20Pulao.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

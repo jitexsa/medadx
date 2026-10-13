@@ -1,0 +1,57 @@
+{
+  "num": 20,
+  "slug": "kheer-rice-pudding",
+  "region": "Indian & Pakistani",
+  "title": "Kheer (Rice Pudding)",
+  "tagline": "Slow-simmered creamy rice pudding fragrant with cardamom and saffron.",
+  "intro": "Kheer is the best-loved rice pudding of the subcontinent — rice simmered slowly in milk until thick and creamy, sweetened and perfumed with cardamom, saffron and nuts. Made for every festival and celebration, it's pure comfort, served warm in winter or chilled in summer.",
+  "cuisine": "Indian & Pakistani (dessert)",
+  "course": "Dessert",
+  "category": "Dessert",
+  "servings": 6,
+  "prepTime": "10 minutes",
+  "cookTime": "50 minutes",
+  "totalTime": "1 hour",
+  "prepISO": "PT10M",
+  "cookISO": "PT50M",
+  "totalISO": "PT1H",
+  "difficulty": "Easy",
+  "rice": "Basmati or short-grain rice",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "100 g (½ cup) basmati rice, rinsed and soaked 20 min",
+        "1.5 litres full-fat milk",
+        "150 g (¾ cup) sugar, to taste",
+        "½ tsp ground cardamom",
+        "A pinch of saffron soaked in 2 tbsp warm milk",
+        "2 tbsp ghee (optional)"
+      ]
+    },
+    {
+      "group": "For garnish",
+      "items": [
+        "3 tbsp slivered almonds and pistachios",
+        "1 tbsp raisins"
+      ]
+    }
+  ],
+  "method": [
+    "Bring the milk to a boil in a heavy-based pot, then lower to a gentle simmer.",
+    "Add the drained rice and simmer, stirring often so it doesn't stick, until the rice is very soft and the milk has thickened, 35–40 minutes.",
+    "Stir in the sugar, cardamom and saffron milk; simmer a further 5–10 minutes until creamy. It thickens more as it cools.",
+    "Fry the nuts and raisins in ghee (optional) and stir most through, saving some to garnish.",
+    "Serve warm, or chill and serve cold, garnished with the reserved nuts."
+  ],
+  "tips": [
+    "Stir regularly and keep the heat low to avoid scorching and to build creaminess.",
+    "Slightly crushing the softened rice against the pot makes it extra creamy."
+  ],
+  "toServe": "Delicious warm in winter or chilled in summer.",
+  "imageAlt": "Kheer rice pudding garnished with almonds, pistachios and saffron",
+  "image": "../../assets/recipes/kheer-rice-pudding.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Kheer.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

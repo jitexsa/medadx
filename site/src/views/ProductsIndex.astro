@@ -1,0 +1,205 @@
+---
+import { Image } from 'astro:assets';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts, productCopy } from '@/lib/catalog';
+import { breadcrumbs, webPage } from '@/lib/schema';
+import { absUrl } from '@/lib/seo';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const m = u.meta.products;
+const L = t.productsPage.labels;
+const products = await getProducts();
+const href = (p: string) => localizedPath(p, locale);
+const rows = [
+  { k: L.type, f: 'type' },
+  { k: L.grain, f: 'grain' },
+  { k: L.aroma, f: 'aroma' },
+  { k: L.origin, f: 'origin' },
+  { k: L.use, f: 'use' },
+] as const;
+const crumbs = [{ name: u.breadcrumbHome, href: href('/') }, { name: u.productsNav }];
+const jsonLd = [
+  {
+    ...webPage('CollectionPage', m.title, href('/products'), locale),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: absUrl(href(`/products/${p.id}`)),
+        name: productCopy(p, locale).name,
+      })),
+    },
+  },
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: href('/') },
+    { name: u.productsNav, path: href('/products') },
+  ]),
+];
+---
+
+<BaseLayout locale={locale} path="/products" title={m.title} description={m.description} active="products" jsonLd={jsonLd}>
+  <section class="pi-hero">
+    <div class="wrap">
+      <Breadcrumbs items={crumbs} />
+      <div class="kicker pi-kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.prodSec.label}</span>
+      </div>
+      <h1 class="h1">{t.prodSec.title}</h1>
+      <p class="lede lede--lg pi-lede">{u.productPage.indexIntro}</p>
+    </div>
+  </section>
+
+  <section class="section--tight pi-list">
+    <div class="wrap pi-grid">
+      {products.map((p, i) => (
+        <ProductCard product={p} locale={locale} reveal={i} headingLevel="h2" />
+      ))}
+    </div>
+  </section>
+
+  <section class="section--tight section--surface">
+    <div class="wrap">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.ux.cmp.pick}</span>
+      </div>
+      <h2 class="h2 h2--md">{u.productPage.compareTitle}</h2>
+      <div class="pi-table-wrap no-scrollbar">
+        <table class="pi-table">
+          <thead>
+            <tr>
+              <td></td>
+              {products.map((p) => {
+                const c = productCopy(p, locale);
+                return (
+                  <th scope="col" data-product={p.id}>
+                    <Image src={p.journeyBag} alt="" format="webp" height={200} class="pi-bag" />
+                    <a href={href(`/products/${p.id}`)}>
+                      <span class="dot" aria-hidden="true" />
+                      {c.short}
+                    </a>
+                  </th>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <th scope="row">{r.k}</th>
+                {products.map((p) => (
+                  <td>{productCopy(p, locale)[r.f]}</td>
+                ))}
+              </tr>
+            ))}
+            <tr>
+              <th scope="row">{L.sizes}</th>
+              {products.map((p) => (
+                <td dir="ltr">{productCopy(p, locale).packs.join(' · ')}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pi-note">{t.ux.cmp.note}</p>
+      <a href={href('/contact')} class="btn btn--primary">
+        {t.productsPage.ctaBtn}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pi-hero {
+    padding: calc(var(--header-h) + clamp(40px, 6vw, 80px)) var(--gutter) clamp(20px, 3vw, 36px);
+  }
+  .pi-kicker {
+    margin-top: 26px;
+  }
+  .pi-lede {
+    max-width: 700px;
+  }
+  .pi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(16px, 2.2vw, 26px);
+  }
+  .pi-table-wrap {
+    overflow-x: auto;
+    margin-top: 32px;
+  }
+  .pi-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--card);
+    table-layout: fixed;
+  }
+  .pi-table thead th {
+    padding: 22px 12px 18px;
+    text-align: center;
+    vertical-align: bottom;
+    border-inline-start: 1px solid rgba(var(--ink), 0.08);
+    background: rgba(var(--ink), 0.035);
+  }
+  .pi-table thead td {
+    background: rgba(var(--ink), 0.035);
+    width: 22%;
+  }
+  .pi-bag {
+    height: 120px;
+    width: auto;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 12px 16px rgba(var(--ink), 0.2));
+  }
+  .pi-table thead a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 15px;
+    font-weight: 750;
+    text-decoration: none;
+  }
+  .pi-table thead a:hover {
+    text-decoration: underline;
+  }
+  .pi-table tbody th {
+    padding: 14px 16px;
+    text-align: start;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+    border-top: 1px solid rgba(var(--ink), 0.08);
+  }
+  .pi-table tbody td {
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-top: 1px solid rgba(var(--ink), 0.08);
+    border-inline-start: 1px solid rgba(var(--ink), 0.08);
+  }
+  .pi-note {
+    margin: 16px 0 24px;
+    font-size: 13px;
+    color: rgba(var(--ink), 0.68);
+  }
+</style>

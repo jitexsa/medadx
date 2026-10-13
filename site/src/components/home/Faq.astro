@@ -1,0 +1,134 @@
+---
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { contactLabel } from '@/lib/nav';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const items = t.ux.faq.items;
+---
+
+<section class="faq cv-auto">
+  <div class="wrap faq__grid">
+    <div data-reveal="0">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.ux.faq.label}</span>
+      </div>
+      <h2 class="h2 h2--md">{t.ux.faq.title}</h2>
+      <p class="faq__sub">{t.ux.faq.sub}</p>
+      <a href={localizedPath('/contact', locale)} class="btn btn--outline faq__btn">
+        {contactLabel(locale)}
+      </a>
+    </div>
+    <div data-reveal="1" class="faq__list">
+      {items.map((it, i) => (
+        <details class="faq__item" open={i === 0} name="faq">
+          <summary class="faq__q">
+            <span>{it.q}</span>
+            <span class="faq__icon" aria-hidden="true" />
+          </summary>
+          <div class="faq__a">
+            <p>{it.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: var(--bg);
+    padding: clamp(64px, 8vw, 108px) var(--gutter) clamp(40px, 5vw, 64px);
+  }
+  .faq__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(28px, 5vw, 72px);
+    align-items: start;
+  }
+  .faq__sub {
+    margin: 18px 0 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(var(--ink), 0.68);
+    max-width: 420px;
+  }
+  .faq__btn {
+    margin-top: 24px;
+    padding: 12px 20px;
+    font-size: 14.5px;
+  }
+  .faq__list {
+    border-top: 1px solid rgba(var(--ink), 0.14);
+  }
+  .faq__item {
+    border-bottom: 1px solid rgba(var(--ink), 0.14);
+  }
+  .faq__q {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 2px;
+    cursor: pointer;
+    font-size: 16.5px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .faq__q::-webkit-details-marker {
+    display: none;
+  }
+  .faq__icon {
+    position: relative;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(var(--ink), 0.22);
+    transition:
+      transform 0.35s var(--ease-out),
+      background 0.3s,
+      border-color 0.3s;
+  }
+  .faq__icon::before,
+  .faq__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 2px;
+    background: var(--ink-solid);
+  }
+  .faq__icon::before {
+    width: 12px;
+    height: 1.8px;
+    margin: -0.9px 0 0 -6px;
+  }
+  .faq__icon::after {
+    width: 1.8px;
+    height: 12px;
+    margin: -6px 0 0 -0.9px;
+  }
+  .faq__item[open] .faq__icon {
+    transform: rotate(45deg);
+    background: var(--green-900);
+    border-color: var(--green-900);
+  }
+  .faq__item[open] .faq__icon::before,
+  .faq__item[open] .faq__icon::after {
+    background: #f5f0e4;
+  }
+  .faq__a p {
+    margin: 0 0 22px;
+    padding-inline-end: 48px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(var(--ink), 0.7);
+    animation: mxFade 0.35s ease both;
+  }
+</style>

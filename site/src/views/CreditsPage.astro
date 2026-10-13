@@ -1,0 +1,125 @@
+---
+import stock from '@/content/stock-credits.json';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getCredits, getRecipes } from '@/lib/catalog';
+import { webPage } from '@/lib/schema';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const u = ui(locale);
+const m = u.meta.credits;
+const credits = [...(await getCredits()).values()];
+const titles = Object.fromEntries((await getRecipes()).map((r) => [`recipes/${r.slug}`, r.title]));
+const groups = [
+  { h: u.credits.recipesH, items: credits.filter((c) => c.id.startsWith('recipes/')) },
+  { h: u.credits.historyH, items: credits.filter((c) => c.id.startsWith('history/')) },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path="/image-credits"
+  title={m.title}
+  description={m.description}
+  jsonLd={[webPage('WebPage', m.title, localizedPath('/image-credits', locale), locale)]}
+>
+  <section class="cr page-top">
+    <div class="wrap cr__in">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{u.brand}</span>
+      </div>
+      <h1 class="h1">{u.credits.title}</h1>
+      <p class="lede">{u.credits.intro}</p>
+      {groups.map((g) => (
+        <section class="cr__group">
+          <h2>{g.h}</h2>
+          <ul lang="en" dir="ltr">
+            {g.items.map((c) => (
+              <li>
+                <span class="cr__what">{titles[c.id] ?? c.file.replace(/_/g, ' ').replace(/\.[a-z]+$/i, '')}</span>
+                <span class="cr__who">
+                  {c.artist} ·{' '}
+                  {c.licenseUrl ? (
+                    <a href={c.licenseUrl} target="_blank" rel="noopener license">
+                      {c.license}
+                    </a>
+                  ) : (
+                    c.license
+                  )}{' '}
+                  ·{' '}
+                  <a href={c.sourceUrl} target="_blank" rel="noopener">
+                    Wikimedia Commons
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <section class="cr__group">
+        <h2>{u.credits.stockH}</h2>
+        <ul lang="en" dir="ltr">
+          {stock.map((s) => (
+            <li>
+              <span class="cr__what">{s.id.replace('stock/', '').replace(/-/g, ' ')}</span>
+              <span class="cr__who">
+                {s.license} ·{' '}
+                <a href={s.sourceUrl} target="_blank" rel="noopener">
+                  Unsplash
+                </a>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cr {
+    padding-inline: var(--gutter);
+    padding-bottom: clamp(64px, 8vw, 108px);
+  }
+  .cr__in {
+    max-width: 900px;
+  }
+  .cr__group {
+    margin-top: 44px;
+  }
+  .cr__group h2 {
+    margin: 0 0 14px;
+    font-size: 24px;
+    font-weight: 750;
+  }
+  .cr__group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(var(--ink), 0.12);
+  }
+  .cr__group li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 20px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(var(--ink), 0.08);
+    font-size: 14px;
+  }
+  .cr__what {
+    font-weight: 650;
+    text-transform: capitalize;
+  }
+  .cr__who {
+    color: rgba(var(--ink), 0.68);
+  }
+  .cr__who a {
+    color: var(--gold-text);
+  }
+</style>

@@ -1,0 +1,52 @@
+{
+  "num": 13,
+  "slug": "jeera-rice-cumin-rice",
+  "region": "Indian & Pakistani",
+  "title": "Jeera Rice (Cumin Rice)",
+  "tagline": "Fluffy basmati tempered with toasted cumin — the perfect everyday side.",
+  "intro": "Jeera rice is one of the simplest and most useful dishes in the Indian kitchen: fluffy basmati fragrant with toasted cumin seeds and a little ghee. It takes minutes, uses a handful of ingredients, and turns any curry into a complete meal — which is exactly why it appears on menus everywhere.",
+  "cuisine": "Indian",
+  "course": "Side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "5 minutes (plus 20 min soaking)",
+  "cookTime": "20 minutes",
+  "totalTime": "25 minutes",
+  "prepISO": "PT5M",
+  "cookISO": "PT20M",
+  "totalISO": "PT25M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 20 min",
+        "2 tbsp ghee or oil",
+        "1½ tbsp cumin seeds",
+        "1 bay leaf",
+        "1 small cinnamon stick, 2 cloves (optional)",
+        "700 ml water",
+        "Salt to taste",
+        "Fresh coriander to garnish"
+      ]
+    }
+  ],
+  "method": [
+    "Heat the ghee and add the cumin seeds; let them sizzle and turn fragrant (don't burn).",
+    "Add the bay leaf and optional whole spices.",
+    "Add the drained rice and stir gently to coat in the ghee.",
+    "Add the water and salt. Bring to a boil, then cover and cook on low until absorbed, 12–15 minutes.",
+    "Rest 5 minutes, fluff with a fork and garnish with coriander."
+  ],
+  "tips": [
+    "Toasting the cumin properly is the whole flavour of the dish — give it a moment.",
+    "Soaking basmati first gives longer, separate grains."
+  ],
+  "toServe": "Pairs with dal, butter chicken or any curry.",
+  "imageAlt": "Jeera rice, fluffy basmati with toasted cumin seeds",
+  "image": "../../assets/recipes/jeera-rice-cumin-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeera%20Rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

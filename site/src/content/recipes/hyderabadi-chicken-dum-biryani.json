@@ -1,0 +1,79 @@
+{
+  "num": 3,
+  "slug": "hyderabadi-chicken-dum-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Hyderabadi Chicken Dum Biryani",
+  "tagline": "The famous kacchi-style biryani — raw marinated chicken cooked under a seal of parboiled rice.",
+  "intro": "Hyderabadi dum biryani is a royal dish from the kitchens of the Nizams. In the authentic kacchi method, raw marinated chicken is layered directly under partly cooked rice and everything finishes together under a sealed lid, so the meat's juices perfume the rice from below. The result is deeply aromatic and famously elegant.",
+  "cuisine": "Indian (Hyderabadi)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "25 minutes",
+  "cookTime": "55 minutes",
+  "totalTime": "1 hour 20 minutes (plus 1–3 hours marination)",
+  "prepISO": "PT25M",
+  "cookISO": "PT55M",
+  "totalISO": "PT1H20M",
+  "difficulty": "Advanced",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the marinade",
+      "items": [
+        "1 kg chicken, bone-in",
+        "300 g (1¼ cups) thick yoghurt",
+        "3 tbsp fried onions, crushed",
+        "2 tbsp ginger–garlic paste",
+        "2 tsp red chilli powder",
+        "½ tsp turmeric",
+        "1 tbsp biryani masala",
+        "4 green chillies, chopped",
+        "Handful of mint and coriander",
+        "Juice of 1 lemon",
+        "4 tbsp oil",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice",
+        "2.5 litres water",
+        "2 tbsp salt",
+        "1 cinnamon stick, 4 cloves, 4 cardamom, 1 bay leaf, 1 tsp caraway (shahi zeera)"
+      ]
+    },
+    {
+      "group": "For layering",
+      "items": [
+        "½ tsp saffron in 4 tbsp warm milk",
+        "4 tbsp fried onions",
+        "3 tbsp ghee",
+        "2 tbsp kewra or rose water",
+        "Extra mint and coriander"
+      ]
+    }
+  ],
+  "method": [
+    "Mix all marinade ingredients with the chicken and marinate for at least 1 hour (ideally 3).",
+    "Rinse and soak the rice 30 minutes; drain.",
+    "Spread the marinated chicken in a heavy pot in an even layer.",
+    "Boil the water with salt and whole spices, parboil the rice to just 50–60% (very firm), and drain.",
+    "Layer the parboiled rice directly over the raw chicken. Top with saffron milk, fried onions, ghee, kewra water, mint and coriander.",
+    "Seal the pot tightly (foil then lid, or a dough seal). Cook on high for 3–4 minutes to build steam, then on the lowest heat for 35–40 minutes.",
+    "Turn off the heat and rest, sealed, for 10 minutes.",
+    "Open and fold very gently, lifting from the bottom so the chicken comes up through the rice."
+  ],
+  "tips": [
+    "Because the chicken is raw at layering, the rice must be under-parboiled (50–60%) so both finish together.",
+    "Do not open the lid during dum — the trapped steam does the cooking.",
+    "A tawa under the pot protects against scorching during the long dum."
+  ],
+  "toServe": "Traditionally paired with mirchi ka salan and burhani raita.",
+  "imageAlt": "Hyderabadi chicken dum biryani with saffron-tinted rice",
+  "image": "../../assets/recipes/hyderabadi-chicken-dum-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Hyderabadi%20Biryani.JPG",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

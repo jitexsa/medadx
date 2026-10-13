@@ -1,0 +1,47 @@
+{
+  "id": "dhoqan",
+  "order": 2,
+  "accent": "#1D6DA1",
+  "accent2": "#20303F",
+  "image": "../../assets/brand/bag-dhoqan.png",
+  "life": "../../assets/brand/dhoqan-life.png",
+  "journeyBag": "../../assets/brand/journey-bag-dhoqan.png",
+  "banners": [
+    "../../assets/brand/dhoqan-banner.png"
+  ],
+  "packImages": {},
+  "i18n": {
+    "en": {
+      "name": "Dhoqan – White Steam Basmati",
+      "desc": "Pure white steam basmati rice with excellent quality for daily cooking",
+      "type": "White Steam",
+      "grain": "Extra Long (8.5+ mm)",
+      "aroma": "Light Aromatic",
+      "origin": "India / Pakistan",
+      "sizes": "40kg",
+      "use": "Daily Cooking, mandi and biryani",
+      "packs": [
+        "40 kg",
+        "25 kg",
+        "10 kg",
+        "5 kg"
+      ]
+    },
+    "ar": {
+      "name": "ذوقان - أرز بسمتي أبيض مطهو على البخار",
+      "desc": "أرز بسمتي أبيض نقي مطهو على البخار بجودة ممتازة للطهي اليومي",
+      "type": "بخاري أبيض",
+      "grain": "طويل (8.5+ مم)",
+      "aroma": "عطرية خفيفة",
+      "origin": "الهند / باكستان",
+      "sizes": "40 كجم",
+      "use": "الطبخ اليومي، المندي، والبرياني",
+      "packs": [
+        "40 كجم",
+        "25 كجم",
+        "10 كجم",
+        "5 كجم"
+      ]
+    }
+  }
+}

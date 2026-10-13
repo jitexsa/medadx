@@ -1,0 +1,55 @@
+{
+  "num": 18,
+  "slug": "coconut-rice",
+  "region": "Indian & Pakistani",
+  "title": "Coconut Rice (Thengai Sadam)",
+  "tagline": "Mild, nutty rice with fresh coconut and a crunchy lentil-and-cashew tempering.",
+  "intro": "Coconut rice is a fragrant South Indian favourite where fluffy rice is tossed with fresh grated coconut and a golden tempering of lentils, cashews and curry leaves. Subtly sweet and nutty, it's a festival dish and a fine way to transform plain rice into something special.",
+  "cuisine": "Indian (South Indian)",
+  "course": "Main or side (vegetarian)",
+  "category": "Side",
+  "servings": 4,
+  "prepTime": "10 minutes",
+  "cookTime": "15 minutes",
+  "totalTime": "25 minutes",
+  "prepISO": "PT10M",
+  "cookISO": "PT15M",
+  "totalISO": "PT25M",
+  "difficulty": "Easy",
+  "rice": "Cooked, cooled basmati or short-grain rice",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "3 cups cooked, cooled rice",
+        "1 cup fresh grated coconut (or ¾ cup desiccated, moistened)",
+        "3 tbsp coconut oil or oil",
+        "1 tsp mustard seeds",
+        "1 tbsp chana dal, 1 tbsp urad dal",
+        "3 tbsp cashews",
+        "2 dried red chillies",
+        "2 green chillies, slit",
+        "1 tsp grated ginger",
+        "12 curry leaves",
+        "A pinch of asafoetida",
+        "Salt to taste"
+      ]
+    }
+  ],
+  "method": [
+    "Heat oil and pop the mustard seeds; add the chana dal, urad dal and cashews and fry until golden.",
+    "Add the red chillies, green chillies, ginger, curry leaves and asafoetida; sauté briefly.",
+    "Add the grated coconut and fry gently for 2–3 minutes until fragrant and lightly toasted (don't brown too much).",
+    "Add the cooked rice and salt, and toss gently until evenly combined and heated through."
+  ],
+  "tips": [
+    "Fresh coconut gives the best flavour; if using desiccated, sprinkle with a little warm water first.",
+    "Coconut oil deepens the aroma authentically."
+  ],
+  "toServe": "Pairs well with a spicy pickle or a simple vegetable curry.",
+  "imageAlt": "Coconut rice with cashews, lentils and curry leaves",
+  "image": "../../assets/recipes/coconut-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Coconut%20rice.jpg",
+  "standInImage": false,
+  "recommendedProduct": "dhoqan"
+}

@@ -1,0 +1,78 @@
+{
+  "num": 21,
+  "slug": "chicken-kabsa",
+  "region": "Saudi",
+  "title": "Chicken Kabsa",
+  "tagline": "Saudi Arabia's national dish — spiced basmati and chicken built on smoky dried lime and warm baharat.",
+  "intro": "Kabsa is the beating heart of the Saudi table and the country's national dish. Basmati is cooked in a rich, tomato-based chicken broth perfumed with dried black lime (loomi), cardamom, cinnamon and cloves, then crowned with the chicken and a shower of fried nuts and raisins. Served with a fiery tomato daqoos on the side, it is the definitive dish of Saudi hospitality.",
+  "cuisine": "Saudi",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "25 minutes",
+  "cookTime": "1 hour",
+  "totalTime": "1 hour 25 minutes (plus 30 min soaking)",
+  "prepISO": "PT25M",
+  "cookISO": "PT1H",
+  "totalISO": "PT1H25M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the chicken & broth",
+      "items": [
+        "1 whole chicken (about 1.2 kg), cut into 4–6 pieces",
+        "2 onions, finely chopped",
+        "4 garlic cloves, minced",
+        "1 tbsp fresh ginger, grated",
+        "4 tomatoes, grated (or 400 g chopped canned)",
+        "2 tbsp tomato paste",
+        "60 ml (¼ cup) oil",
+        "2 dried limes (loomi), pierced a few times",
+        "1 cinnamon stick, 4 cardamom pods, 4 cloves, 2 bay leaves",
+        "1 tbsp kabsa spice mix (baharat)",
+        "1 tsp black pepper",
+        "¼ tsp turmeric or a pinch of saffron, for colour",
+        "1.2 litres water",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min and drained",
+        "About 1 litre reserved chicken broth"
+      ]
+    },
+    {
+      "group": "For garnish & sauce",
+      "items": [
+        "3 tbsp fried almonds and pine nuts",
+        "2 tbsp raisins",
+        "Chopped parsley or coriander",
+        "Daqoos: 3 tomatoes blitzed with 1 garlic clove, 1 green chilli, ½ tsp cumin, simmered 10 min"
+      ]
+    }
+  ],
+  "method": [
+    "Heat the oil and sauté the onions until soft and golden. Add the garlic and ginger.",
+    "Add the chicken pieces and brown lightly on all sides.",
+    "Stir in the tomatoes, tomato paste, all the spices, the pierced dried limes and salt. Cook until the tomatoes break down and the oil surfaces.",
+    "Pour in the water, cover and simmer until the chicken is cooked and tender, 30–40 minutes. Lift out the chicken and reserve. Strain and measure the broth (you want about 1 litre).",
+    "For colour and crispness, brush the chicken with a little oil and broil or fry until golden. Set aside.",
+    "Return the measured broth to the pot, check the salt, and stir in the saffron/turmeric. Add the drained rice.",
+    "Bring to a boil, then cover and cook on the lowest heat until the liquid is absorbed and the rice is fluffy, 15–18 minutes. Rest 5 minutes.",
+    "Mound the rice on a platter, arrange the chicken on top and scatter over the fried nuts, raisins and herbs. Serve with daqoos."
+  ],
+  "tips": [
+    "Dried lime (loomi) is the signature Saudi flavour — pierce it so it releases its citrus-sour aroma into the broth.",
+    "Always cook the rice in the reserved broth; that is where all the flavour lives.",
+    "Broiling the chicken after boiling gives that golden, restaurant-style finish."
+  ],
+  "toServe": "Serve family-style on one large platter with daqoos, salad and laban (buttermilk).",
+  "imageAlt": "Saudi chicken kabsa on a large platter topped with fried nuts and raisins",
+  "image": "../../assets/recipes/chicken-kabsa.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Kabsa.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

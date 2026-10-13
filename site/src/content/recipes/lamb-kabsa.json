@@ -1,0 +1,75 @@
+{
+  "num": 22,
+  "slug": "lamb-kabsa",
+  "region": "Saudi",
+  "title": "Lamb Kabsa",
+  "tagline": "The celebratory version of the national dish — tender lamb over spiced basmati.",
+  "intro": "Lamb kabsa is the version reserved for guests and gatherings, when a whole shoulder or leg is simmered until falling-apart tender in the aromatic kabsa broth. The lamb's richness deepens the rice, making this the grand centrepiece of feasts, weddings and Eid across the Kingdom.",
+  "cuisine": "Saudi",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "25 minutes",
+  "cookTime": "1 hour 45 minutes",
+  "totalTime": "2 hours 10 minutes (plus 30 min soaking)",
+  "prepISO": "PT25M",
+  "cookISO": "PT1H45M",
+  "totalISO": "PT2H10M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the lamb & broth",
+      "items": [
+        "1.2 kg lamb, on the bone (shoulder or leg pieces)",
+        "2 onions, chopped",
+        "4 garlic cloves, minced",
+        "1 tbsp ginger, grated",
+        "4 tomatoes, grated",
+        "2 tbsp tomato paste",
+        "60 ml (¼ cup) oil",
+        "3 dried limes (loomi), pierced",
+        "1 cinnamon stick, 5 cardamom, 5 cloves, 2 bay leaves",
+        "1½ tbsp kabsa spice mix (baharat)",
+        "1 tsp black pepper",
+        "Pinch of saffron",
+        "1.5 litres water",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "About 1 litre reserved lamb broth"
+      ]
+    },
+    {
+      "group": "For garnish",
+      "items": [
+        "3 tbsp fried almonds and pine nuts",
+        "2 tbsp raisins",
+        "Chopped parsley",
+        "Daqoos, to serve"
+      ]
+    }
+  ],
+  "method": [
+    "Brown the onions in oil, then add the garlic, ginger and lamb; sear the meat well.",
+    "Add the tomatoes, tomato paste, spices, dried limes and salt; cook until the oil separates.",
+    "Add the water, cover and simmer (or pressure-cook) until the lamb is very tender, about 1½ hours on the stove or 40 minutes under pressure. Remove the lamb; strain and measure about 1 litre of broth.",
+    "Broil the lamb briefly for colour if you like.",
+    "Cook the drained rice in the measured broth with the saffron: boil, then cover and cook low 15–18 minutes. Rest.",
+    "Plate the rice, top with the lamb and garnish with fried nuts, raisins and parsley. Serve with daqoos."
+  ],
+  "tips": [
+    "Pressure-cooking the lamb first saves an hour and guarantees tenderness.",
+    "Skim the broth before cooking the rice for a cleaner flavour."
+  ],
+  "toServe": "A feast centrepiece — serve with daqoos and fresh salad.",
+  "imageAlt": "Lamb kabsa with tender bone-in lamb over spiced basmati rice",
+  "image": "../../assets/recipes/lamb-kabsa.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Plov.jpg",
+  "standInImage": true,
+  "recommendedProduct": "farah"
+}

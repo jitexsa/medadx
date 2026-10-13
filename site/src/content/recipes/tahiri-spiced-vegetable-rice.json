@@ -1,0 +1,60 @@
+{
+  "num": 12,
+  "slug": "tahiri-spiced-vegetable-rice",
+  "region": "Indian & Pakistani",
+  "title": "Tahiri (Spiced Vegetable Rice)",
+  "tagline": "A humble, comforting one-pot of rice with potatoes and peas in gentle spices.",
+  "intro": "Tahiri (or tehri) is homely comfort food — a lightly spiced, often meat-free rice dish with potatoes and peas that's especially loved in Uttar Pradesh and across Pakistan. Simple, warming and economical, it's the kind of everyday meal that feels like home.",
+  "cuisine": "Indian & Pakistani",
+  "course": "Main course (vegetarian)",
+  "category": "Main course",
+  "servings": 4,
+  "prepTime": "15 minutes",
+  "cookTime": "30 minutes",
+  "totalTime": "45 minutes",
+  "prepISO": "PT15M",
+  "cookISO": "PT30M",
+  "totalISO": "PT45M",
+  "difficulty": "Easy",
+  "rice": "Long-grain basmati",
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        "400 g (2 cups) basmati rice, soaked 20 min",
+        "2 potatoes, peeled and cubed",
+        "150 g (1 cup) green peas",
+        "1 carrot, diced (optional)",
+        "2 onions, sliced",
+        "2 tomatoes, chopped",
+        "1 tbsp ginger–garlic paste",
+        "2 green chillies",
+        "4 tbsp oil",
+        "1 tsp cumin seeds",
+        "½ tsp turmeric, 1 tsp red chilli powder, 1 tsp coriander powder",
+        "1 tsp garam masala",
+        "Whole spices: cinnamon, cloves, cardamom, bay leaf",
+        "700 ml water",
+        "Salt to taste"
+      ]
+    }
+  ],
+  "method": [
+    "Heat oil, add cumin and whole spices, then onions; fry until golden.",
+    "Add ginger–garlic paste, chillies and tomatoes; cook until soft.",
+    "Add the ground spices, potatoes, peas and carrot; sauté for 3–4 minutes.",
+    "Add the drained rice and stir gently. Add water and salt.",
+    "Boil, then cover and cook on low until absorbed and the potatoes are tender, 15 minutes.",
+    "Rest 5 minutes and fluff."
+  ],
+  "tips": [
+    "Cut the potatoes small so they cook in the same time as the rice.",
+    "Finish with coriander for freshness."
+  ],
+  "toServe": "Lovely with plain yoghurt, pickle and papad.",
+  "imageAlt": "Tahiri spiced rice with potatoes and peas",
+  "image": "../../assets/recipes/tahiri-spiced-vegetable-rice.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Tehari.jpg",
+  "standInImage": false,
+  "recommendedProduct": "khayber"
+}

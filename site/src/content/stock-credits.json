@@ -1,0 +1,47 @@
+[
+  {
+    "id": "stock/horeca-hotels",
+    "sourceUrl": "https://unsplash.com/photos/1566073771259-6a8506099945",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/horeca-restaurants",
+    "sourceUrl": "https://unsplash.com/photos/1517248135467-4c7edcad34c4",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/horeca-catering",
+    "sourceUrl": "https://unsplash.com/photos/1555244162-803834f70033",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/horeca-distributors",
+    "sourceUrl": "https://unsplash.com/photos/1553413077-190dd305871c",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/horeca-home",
+    "sourceUrl": "https://unsplash.com/photos/1543353071-873f17a7a088",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/cta-pricing",
+    "sourceUrl": "https://unsplash.com/photos/1554224155-6726b3ff858f",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/cta-supply",
+    "sourceUrl": "https://unsplash.com/photos/1494412651409-8963ce7935a7",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/cta-manager",
+    "sourceUrl": "https://unsplash.com/photos/1560250097-0b93528c311a",
+    "license": "Unsplash License"
+  },
+  {
+    "id": "stock/cta-delivery",
+    "sourceUrl": "https://unsplash.com/photos/1601584115197-04ecc0da31d7",
+    "license": "Unsplash License"
+  }
+]

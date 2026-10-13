@@ -1,0 +1,492 @@
+---
+import { getImage, Image } from 'astro:assets';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CertSeals from '@/components/CertSeals.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts, getRecipes, productCopy, type Product } from '@/lib/catalog';
+import { breadcrumbs, product as productSchema } from '@/lib/schema';
+import { ogPath } from '@/lib/seo';
+
+export interface Props {
+  locale: Locale;
+  product: Product;
+}
+const { locale, product: p } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const c = productCopy(p, locale);
+const L = t.productsPage.labels;
+const ar = locale === 'ar';
+const path = `/products/${p.id}`;
+const href = (x: string) => localizedPath(x, locale);
+
+const specs = [
+  { k: L.type, v: c.type },
+  { k: L.grain, v: c.grain },
+  { k: L.aroma, v: c.aroma },
+  { k: L.origin, v: c.origin },
+  { k: L.use, v: c.use },
+];
+const enPacks = p.i18n.en.packs;
+const packImg = (i: number) => p.packImages[enPacks[i] ?? '']?.[0];
+const why = (t.ux.find.why as Record<string, string>)[p.id] ?? '';
+
+const recipes = (await getRecipes()).filter((r) => r.recommendedProduct.id === p.id).slice(0, 6);
+const others = (await getProducts()).filter((x) => x.id !== p.id);
+
+const brand = { farah: ar ? 'فرحة' : 'Farah', khayber: ar ? 'باب الخيبر' : 'Khayber Gate', dhoqan: ar ? 'ذوقان' : 'Dhoqan' }[p.id];
+const bagImg = await getImage({ src: p.journeyBag, width: 600, format: 'webp' });
+const title = ar ? `${c.name} بالجملة | ${u.brand}` : `${c.name} Rice — Wholesale | ${u.brand}`;
+const description = `${c.desc}. ${L.grain}: ${c.grain}. ${L.aroma}: ${c.aroma}. ${L.use}: ${c.use}. ${L.origin}: ${c.origin}.`;
+const crumbs = [{ name: u.breadcrumbHome, href: href('/') }, { name: u.productsNav, href: href('/products') }, { name: c.short }];
+const jsonLd = [
+  productSchema({
+    id: p.id,
+    name: c.name,
+    brand: brand ?? c.short,
+    description,
+    path: href(path),
+    images: [bagImg.src, ogPath(path, locale)],
+    locale,
+    specs: [...specs.map((s) => ({ name: s.k, value: s.v })), { name: L.sizes, value: c.packs.join(', ') }],
+  }),
+  breadcrumbs(crumbs.map((b) => ({ name: b.name, path: b.href ?? href(path) }))),
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path={path}
+  title={title}
+  description={description}
+  active="products"
+  ogType="product"
+  ogImageAlt={c.name}
+  jsonLd={jsonLd}
+>
+  <section class="pp-hero" data-product={p.id} data-pcard>
+    <div class="pp-hero__bg" aria-hidden="true"></div>
+    <div class="wrap pp-hero__grid">
+      <div class="pp-hero__copy">
+        <Breadcrumbs items={crumbs} />
+        <div class="pp-hero__type">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            {c.type} · {u.productPage.kicker}
+          </span>
+        </div>
+        <h1 class="pp-hero__h1">{c.name}</h1>
+        <p class="pp-hero__desc">{c.desc}.</p>
+        {why && <p class="pp-hero__why">{why}</p>}
+        <div class="pp-hero__packs">
+          <span class="label" id="pp-packs">
+            {u.productPage.packsTitle}
+          </span>
+          <div class="pill-row" role="group" aria-labelledby="pp-packs">
+            {c.packs.map((w, i) => (
+              <button type="button" class="chip chip--sm" dir="ltr" aria-pressed={i === 0 ? 'true' : 'false'} data-pack={i}>
+                {w}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div class="pp-hero__ctas">
+          <a href={href('/contact')} class="btn btn--primary btn--lg" data-quote-add={p.id} data-pack-idx="0">
+            {u.productPage.quote}
+          </a>
+          <a href={href('/trading-account')} class="btn btn--outline btn--lg">
+            {u.productPage.trading}
+          </a>
+        </div>
+      </div>
+      <div class="pp-hero__media">
+        <div class="pp-hero__halo" aria-hidden="true"></div>
+        <div data-pack-media="life" class="pp-hero__bagwrap">
+          <Image
+            src={p.journeyBag}
+            alt={`${c.name} — ${c.packs[0]}`}
+            format="webp"
+            widths={[300, 460, 600]}
+            sizes="(min-width: 1000px) 400px, 70vw"
+            loading="eager"
+            fetchpriority="high"
+            class="pp-hero__bag"
+          />
+        </div>
+        {c.packs.map((w, i) =>
+          packImg(i) ? (
+            <div data-pack-media={i} hidden class="pp-hero__bagwrap">
+              <Image src={packImg(i)!} alt={`${c.name} — ${w}`} format="webp" height={560} class="pp-hero__bag" />
+            </div>
+          ) : null,
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight pp-specs">
+    <div class="wrap pp-specs__grid">
+      <div data-reveal="0">
+        <div class="kicker">
+          <span class="dia" aria-hidden="true"></span>
+          <span class="kicker__text">{u.productPage.specsTitle}</span>
+        </div>
+        <h2 class="h2 h2--md">{c.name}</h2>
+        <dl class="pp-dl">
+          {[...specs, { k: L.sizes, v: c.packs.join(' · ') }].map((s) => (
+            <div>
+              <dt>{s.k}</dt>
+              <dd>{s.v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <figure class="pp-life" data-reveal="1">
+        <Image
+          src={p.image}
+          alt={u.productPage.lifeAlt.replace('{0}', c.name)}
+          format="webp"
+          widths={[480, 720, 1000]}
+          sizes="(min-width: 1240px) 580px, (min-width: 700px) 46vw, 92vw"
+          class="pp-life__img"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="pp-certs">
+    <div class="wrap">
+      <div class="kicker kicker--light">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{u.productPage.certs}</span>
+      </div>
+      <CertSeals locale={locale} compact />
+    </div>
+  </section>
+
+  {recipes.length > 0 && (
+    <section class="section--tight pp-recipes">
+      <div class="wrap">
+        <div class="kicker" data-reveal="0">
+          <span class="dia" aria-hidden="true" />
+          <span class="kicker__text">{t.ux.rec.label}</span>
+        </div>
+        <h2 class="h2 h2--md">{u.productPage.bestFor}</h2>
+        <p class="lede">{u.productPage.bestForSub}</p>
+        <ul class="pp-rec">
+          {recipes.map((r) => (
+            <li>
+              <a href={`/recipes/${r.slug}`} class="pp-rec__card" hreflang={ar ? 'en' : undefined}>
+                <Image
+                  src={r.image}
+                  alt={r.imageAlt}
+                  format="webp"
+                  widths={[320, 560]}
+                  sizes="(min-width: 1000px) 280px, 46vw"
+                  class="pp-rec__img"
+                />
+                <span class="pp-rec__region">{r.region}</span>
+                <span class="pp-rec__name" lang="en" dir="ltr">
+                  {r.title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section--tight pp-others">
+    <div class="wrap">
+      <h2 class="h2 h2--md">{u.productPage.others}</h2>
+      <ul class="pp-others__list">
+        {others.map((o) => {
+          const oc = productCopy(o, locale);
+          return (
+            <li data-product={o.id}>
+              <a href={href(`/products/${o.id}`)} class="pp-other">
+                <Image src={o.journeyBag} alt="" format="webp" height={180} class="pp-other__img" />
+                <span class="pp-other__copy">
+                  <span class="pp-other__type">
+                    <span class="dot" aria-hidden="true" />
+                    {oc.type}
+                  </span>
+                  <span class="pp-other__name">{oc.name}</span>
+                  <span class="link-mono">
+                    {u.productPage.viewProduct}{' '}
+                    <span class="flip-x" aria-hidden="true">
+                      →
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import '@/scripts/product-cards';
+</script>
+
+<style>
+  .pp-hero {
+    position: relative;
+    overflow: hidden;
+    padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--gutter) clamp(48px, 6vw, 84px);
+    background: var(--bg);
+  }
+  .pp-hero__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(800px 520px at 78% 30%, var(--accent-glow), transparent 65%),
+      radial-gradient(rgba(31, 61, 42, 0.055) 1px, transparent 1.3px);
+    background-size:
+      auto,
+      23px 23px;
+    pointer-events: none;
+  }
+  .pp-hero__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+  }
+  .pp-hero__type {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .pp-hero__h1 {
+    margin: 16px 0 0;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1.04;
+    font-weight: 750;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+    text-wrap: balance;
+  }
+  .pp-hero__desc {
+    margin: 22px 0 0;
+    font-size: clamp(16px, 1.5vw, 18.5px);
+    line-height: 1.65;
+    color: rgba(var(--ink), 0.75);
+  }
+  .pp-hero__why {
+    margin: 12px 0 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(var(--ink), 0.68);
+    max-width: 560px;
+  }
+  .pp-hero__packs {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pp-hero__ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .pp-hero__ctas .btn {
+    white-space: normal;
+  }
+  .pp-hero__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(360px, 42vw, 560px);
+  }
+  .pp-hero__halo {
+    position: absolute;
+    width: min(92%, 500px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 45%, var(--accent), var(--accent2) 120%);
+    opacity: 0.9;
+    box-shadow: 0 40px 80px var(--accent-glow);
+  }
+  .pp-hero__bagwrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .pp-hero__bag {
+    position: relative;
+    width: auto;
+    max-height: clamp(320px, 40vw, 540px);
+    filter: drop-shadow(0 34px 46px rgba(0, 0, 0, 0.35));
+    animation: mxRise 0.8s var(--ease) both;
+  }
+  .pp-specs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  .pp-dl {
+    margin: 28px 0 0;
+    border-top: 1px solid rgba(var(--ink), 0.12);
+  }
+  .pp-dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 2px;
+    border-bottom: 1px solid rgba(var(--ink), 0.12);
+  }
+  .pp-dl dt {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .pp-dl dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 650;
+    text-align: end;
+  }
+  .pp-life {
+    margin: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--ink), 0.14);
+    box-shadow: 0 30px 60px rgba(var(--ink), 0.14);
+  }
+  .pp-life__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .pp-certs {
+    background: #122619;
+    padding: clamp(48px, 6vw, 80px) var(--gutter);
+  }
+  .pp-rec {
+    list-style: none;
+    padding: 0;
+    margin: 36px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .pp-rec__card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    padding-bottom: 16px;
+    transition:
+      transform 0.35s var(--ease),
+      box-shadow 0.35s;
+  }
+  .pp-rec__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 40px rgba(var(--ink), 0.12);
+  }
+  .pp-rec__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .pp-rec__region {
+    padding: 4px 16px 0;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+  }
+  .pp-rec__name {
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 720;
+    line-height: 1.3;
+    text-align: start;
+  }
+  .pp-others {
+    background: var(--surface);
+    border-top: 1px solid rgba(var(--ink), 0.1);
+  }
+  .pp-others__list {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 16px;
+  }
+  .pp-other {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 24px;
+    background: var(--card);
+    border: 1px solid rgba(var(--ink), 0.12);
+    border-top: 4px solid var(--accent);
+    border-radius: 20px;
+    text-decoration: none;
+    transition:
+      transform 0.35s var(--ease),
+      box-shadow 0.35s;
+  }
+  .pp-other:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 40px rgba(var(--ink), 0.12);
+  }
+  .pp-other__img {
+    flex: none;
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 14px 18px rgba(var(--ink), 0.22));
+  }
+  .pp-other__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pp-other__type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .pp-other__name {
+    font-family: var(--f-head);
+    font-size: 19px;
+    font-weight: 750;
+    line-height: 1.25;
+  }
+</style>

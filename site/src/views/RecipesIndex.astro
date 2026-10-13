@@ -1,0 +1,331 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import LegacyHashRedirect from '@/components/LegacyHashRedirect.astro';
+import RecipeCard from '@/components/recipes/RecipeCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ui } from '@/i18n/ui';
+import { getRecipes } from '@/lib/catalog';
+import { breadcrumbs, webPage } from '@/lib/schema';
+import { absUrl } from '@/lib/seo';
+
+const u = ui('en');
+const m = u.meta.recipes;
+const recipes = await getRecipes();
+const n = (region: string) => recipes.filter((r) => r.region === region).length;
+const groups = [
+  { key: 'region', label: 'Region', values: ['Indian & Pakistani', 'Saudi'] },
+  { key: 'course', label: 'Course', values: ['Main course', 'Side', 'Dessert'] },
+  { key: 'diff', label: 'Difficulty', values: ['Easy', 'Intermediate', 'Advanced'] },
+];
+const jsonLd = [
+  {
+    ...webPage('CollectionPage', m.title, '/recipes', 'en'),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: recipes.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: absUrl(`/recipes/${r.slug}`), name: r.title })),
+    },
+  },
+  breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'Recipes', path: '/recipes' },
+  ]),
+];
+---
+
+<BaseLayout locale="en" path="/recipes" title={m.title} description={m.description} active="recipes" jsonLd={jsonLd}>
+  <LegacyHashRedirect slot="head" kind="recipes" />
+  <div class="rx">
+    <section class="rx-hero">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Recipes' }]} />
+      <div class="kicker rx-kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">Medad-X Kitchen</span>
+      </div>
+      <h1 class="rx-h1">The Rice Recipe Collection</h1>
+      <p class="rx-lede">
+        Thirty classic dishes for premium aged basmati — from festive biryani and fragrant pulao to the great rice platters of the Saudi
+        table. Every recipe, kitchen-tested and built to serve.
+      </p>
+      <dl class="rx-stats">
+        <div>
+          <dt>Recipes</dt>
+          <dd>{recipes.length}</dd>
+        </div>
+        <div>
+          <dt>Indian &amp; Pakistani</dt>
+          <dd>{n('Indian & Pakistani')}</dd>
+        </div>
+        <div>
+          <dt>Saudi</dt>
+          <dd>{n('Saudi')}</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="rx-bar" data-rx-bar>
+      <div class="rx-bar__in">
+        <label class="rx-search">
+          <span class="sr-only">Search recipes</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"></circle>
+            <path d="M16 16 L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+          <input type="search" placeholder={`Search ${recipes.length} recipes…`} data-rx-q class="rx-search__in" />
+        </label>
+        <button type="button" class="rx-filtbtn" aria-expanded="false" aria-controls="rx-filters" data-rx-toggle>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18 M6 12h12 M10 18h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
+          </svg>
+          Filters<span class="rx-filtdot" data-rx-dot hidden></span>
+        </button>
+        <span class="rx-count" role="status" data-rx-count data-total={recipes.length}>
+          {recipes.length} recipes
+        </span>
+      </div>
+      <div class="rx-filters" id="rx-filters" hidden data-rx-filters>
+        {groups.map((g) => (
+          <div class="rx-fgroup" role="group" aria-label={g.label}>
+            <span class="rx-flabel">{g.label}</span>
+            {g.values.map((v) => (
+              <button type="button" class="chip chip--xs rx-chip" aria-pressed="false" data-rx-filter={g.key} data-value={v}>
+                {v}
+              </button>
+            ))}
+          </div>
+        ))}
+        <button type="button" class="rx-clear" data-rx-clear hidden>
+          Clear all
+        </button>
+      </div>
+    </div>
+
+    <section class="rx-grid-wrap">
+      <ul class="rx-grid" data-rx-grid>
+        {recipes.map((r) => (
+          <RecipeCard recipe={r} />
+        ))}
+      </ul>
+      <div class="rx-empty" data-rx-empty hidden>
+        <div class="rx-empty__ic" aria-hidden="true">
+          ✳
+        </div>
+        <p class="rx-empty__t">No recipes match that</p>
+        <p>Try a different search or clear the filters.</p>
+        <button type="button" class="btn btn--outline btn--sm" data-rx-clear>
+          Reset filters
+        </button>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import '@/scripts/recipe-filter';
+</script>
+
+<style>
+  .rx {
+    background:
+      radial-gradient(1200px 760px at 12% -6%, rgba(255, 255, 255, 0.55), transparent 60%),
+      radial-gradient(1000px 720px at 100% 2%, rgba(201, 162, 75, 0.12), transparent 55%), linear-gradient(#f4ecd8, #eee2c7);
+    padding-bottom: 60px;
+  }
+  :global(:root[data-theme='dark']) .rx {
+    background: var(--bg);
+  }
+  .rx-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) var(--gutter) clamp(20px, 3vw, 34px);
+  }
+  .rx-kicker {
+    margin-top: 22px;
+  }
+  .rx-h1 {
+    margin: 20px 0 0;
+    font-family: var(--f-display);
+    font-size: clamp(38px, 7vw, 74px);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--brand-text);
+    text-wrap: balance;
+    max-width: 16ch;
+  }
+  .rx-lede {
+    margin: 24px 0 0;
+    max-width: 60ch;
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.55;
+    font-weight: 500;
+    color: rgba(var(--ink), 0.82);
+  }
+  .rx-stats {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin: 28px 0 0;
+    flex-wrap: wrap;
+  }
+  .rx-stats div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    gap: 9px;
+    padding-inline-end: 22px;
+    border-inline-end: 1px solid rgba(var(--ink), 0.16);
+  }
+  .rx-stats div:last-child {
+    border: 0;
+  }
+  .rx-stats dd {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--brand-text);
+  }
+  .rx-stats dt {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rx-bar {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 40;
+    background: rgba(var(--surf), 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-block: 1px solid rgba(var(--ink), 0.1);
+  }
+  .rx-bar__in {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .rx-search {
+    position: relative;
+    flex: 1 1 260px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rx-search svg {
+    position: absolute;
+    inset-inline-start: 14px;
+    pointer-events: none;
+  }
+  .rx-search__in {
+    width: 100%;
+    padding: 12px 16px;
+    padding-inline-start: 40px;
+    border: 1.5px solid rgba(var(--ink), 0.18);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink-solid);
+    font-size: 15px;
+    outline: none;
+  }
+  .rx-search__in:focus {
+    border-color: var(--gold-600);
+  }
+  .rx-filtbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 16px;
+    border: 1.5px solid rgba(var(--ink), 0.18);
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .rx-filtdot {
+    width: 7px;
+    height: 7px;
+    background: var(--gold-600);
+    border-radius: 50%;
+  }
+  .rx-count {
+    margin-inline-start: auto;
+    white-space: nowrap;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rx-filters {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2px var(--gutter) 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: mxFade 0.25s ease both;
+  }
+  .rx-fgroup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+  }
+  .rx-flabel {
+    min-width: 74px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rx-chip {
+    background: transparent;
+  }
+  .rx-clear {
+    align-self: start;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    color: var(--gold-text);
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .rx-grid-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(26px, 4vw, 42px) var(--gutter) 40px;
+  }
+  .rx-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: clamp(18px, 2.4vw, 30px);
+  }
+  .rx-empty {
+    text-align: center;
+    padding: 70px 20px;
+    color: rgba(var(--ink), 0.68);
+  }
+  .rx-empty__ic {
+    font-size: 34px;
+    color: var(--gold-text);
+  }
+  .rx-empty__t {
+    margin: 14px 0 0;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--brand-text);
+  }
+</style>

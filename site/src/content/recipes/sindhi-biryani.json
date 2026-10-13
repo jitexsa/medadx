@@ -1,0 +1,79 @@
+{
+  "num": 2,
+  "slug": "sindhi-biryani",
+  "region": "Indian & Pakistani",
+  "title": "Sindhi Biryani",
+  "tagline": "Spicier and tangier than most — with potatoes, prunes and a bright hit of chilli.",
+  "intro": "Sindhi biryani is the fiery, tangy pride of Sindh. What sets it apart is the balance of heat and sourness — plenty of green chilli and dried plum (aloo bukhara), potatoes tucked between the layers, and a generous scatter of mint. It is arguably Pakistan's most iconic street and home biryani.",
+  "cuisine": "Pakistani (Sindhi)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 6,
+  "prepTime": "35 minutes",
+  "cookTime": "1 hour 10 minutes",
+  "totalTime": "1 hour 45 minutes (plus 30 min marination)",
+  "prepISO": "PT35M",
+  "cookISO": "PT1H10M",
+  "totalISO": "PT1H45M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) aged basmati rice",
+        "2.5 litres water",
+        "2 tbsp salt",
+        "1 cinnamon stick, 4 cloves, 4 green cardamom, 1 bay leaf"
+      ]
+    },
+    {
+      "group": "For the masala",
+      "items": [
+        "1 kg chicken or mutton, cut into pieces",
+        "3 onions, thinly sliced",
+        "250 g (1 cup) plain yoghurt, whisked",
+        "3 tomatoes, chopped",
+        "2 tbsp ginger–garlic paste",
+        "6–8 green chillies",
+        "2 medium potatoes, peeled and halved",
+        "8–10 dried plums (aloo bukhara), pitted",
+        "150 ml (¾ cup) oil",
+        "2 tsp red chilli powder",
+        "1 tsp turmeric",
+        "2 tsp coriander powder",
+        "1 tbsp biryani masala",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For layering",
+      "items": [
+        "Large handful of mint and coriander, chopped",
+        "3 tbsp fried onions",
+        "½ tsp saffron or yellow colour in 3 tbsp milk",
+        "2 tbsp kewra water"
+      ]
+    }
+  ],
+  "method": [
+    "Rinse and soak the basmati for 30 minutes; drain.",
+    "Fry the onions in oil until golden. Add ginger–garlic paste and green chillies, then the meat, and sear.",
+    "Add the ground spices, biryani masala, tomatoes and salt. Cook until the oil separates.",
+    "Stir in yoghurt, add the potatoes, cover and cook until the meat and potatoes are tender. Add the dried plums in the last 5 minutes. The masala should be thick and tangy.",
+    "Boil the rice water with salt and whole spices; parboil the rice to 70% and drain.",
+    "Layer rice over the masala, scattering mint, coriander, fried onions, saffron milk and kewra water between two layers.",
+    "Seal and steam (dum) on the lowest heat for 20–25 minutes.",
+    "Rest 5 minutes and fold gently before serving."
+  ],
+  "tips": [
+    "The dried plums are essential — they give Sindhi biryani its signature tang.",
+    "Keep the chilli generous; this biryani is meant to be lively and hot."
+  ],
+  "toServe": "Best with cooling raita and sliced onions.",
+  "imageAlt": "Sindhi biryani with potatoes, dried plums and green chillies",
+  "image": "../../assets/recipes/sindhi-biryani.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Sindhi%20biryani.jpg",
+  "standInImage": false,
+  "recommendedProduct": "farah"
+}

@@ -1,0 +1,69 @@
+{
+  "num": 28,
+  "slug": "saleeg",
+  "region": "Saudi",
+  "title": "Saleeg (Saliq)",
+  "tagline": "Creamy Hejazi rice cooked in broth and milk until soft, topped with roasted chicken.",
+  "intro": "Saleeg is the comforting jewel of Hejazi and Taif cooking — a world away from the spiced kabsa family. Short-grain rice is simmered slowly in chicken broth and milk, stirred until it turns soft, creamy and almost risotto-like, then finished with a whisper of aromatic mastic and crowned with roasted chicken. Mild, soothing and elegant, it is winter and celebration food in the western Kingdom.",
+  "cuisine": "Saudi (Hejazi / Taif)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "15 minutes",
+  "cookTime": "1 hour",
+  "totalTime": "1 hour 15 minutes",
+  "prepISO": "PT15M",
+  "cookISO": "PT1H",
+  "totalISO": "PT1H15M",
+  "difficulty": "Easy",
+  "rice": "Short/medium-grain (starchy) rice",
+  "ingredients": [
+    {
+      "group": "For the broth & chicken",
+      "items": [
+        "1 whole chicken, quartered",
+        "1 onion, quartered",
+        "4 cardamom pods, 2 cloves, 1 cinnamon stick, 2 bay leaves",
+        "1 tsp black pepper",
+        "1.5 litres water",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "400 g (2 cups) short/medium-grain rice, rinsed",
+        "About 1.2 litres reserved chicken broth",
+        "250 ml (1 cup) full-fat milk",
+        "2 tbsp butter or ghee",
+        "2–3 pieces mastic (miski), crushed with a little sugar",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "To serve",
+      "items": [
+        "Daqoos (spicy tomato sauce)",
+        "A little extra butter"
+      ]
+    }
+  ],
+  "method": [
+    "Simmer the chicken with the onion, whole spices and salt until cooked and a good broth forms, about 40 minutes. Lift out the chicken; strain and reserve the broth.",
+    "Rinse the rice well. In a heavy pot, bring about 1.2 litres of the broth to a boil, add the rice and simmer, stirring often, until very soft and starting to break down, 25–30 minutes. Add more broth if it thickens too fast.",
+    "Stir in the milk, butter and crushed mastic, and keep stirring until creamy and porridge-like. Adjust salt.",
+    "Meanwhile roast or grill the chicken until golden.",
+    "Spread the creamy rice on a platter, top with the roasted chicken and a little melted butter. Serve with daqoos."
+  ],
+  "tips": [
+    "Use a starchy short/medium-grain rice, not basmati — the creaminess is the whole point.",
+    "Stir often, like a risotto, to release the starch and prevent sticking.",
+    "Mastic (miski) gives saleeg its distinctive gentle aroma — a little goes a long way."
+  ],
+  "toServe": "Serve piping hot with sharp, spicy daqoos to cut the richness.",
+  "imageAlt": "Saleeg creamy Hejazi rice topped with roasted chicken",
+  "image": "../../assets/recipes/saleeg.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Maqluba.jpg",
+  "standInImage": true,
+  "recommendedProduct": "khayber"
+}

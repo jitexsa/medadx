@@ -1,0 +1,37 @@
+---
+import AboutSnapshot from '@/components/home/AboutSnapshot.astro';
+import Faq from '@/components/home/Faq.astro';
+import FinalCta from '@/components/home/FinalCta.astro';
+import Hero from '@/components/home/Hero.astro';
+import Horeca from '@/components/home/Horeca.astro';
+import Markets from '@/components/home/Markets.astro';
+import ProductsSection from '@/components/home/ProductsSection.astro';
+import RecipesTeaser from '@/components/home/RecipesTeaser.astro';
+import WhyChoose from '@/components/home/WhyChoose.astro';
+import LegacyHashRedirect from '@/components/LegacyHashRedirect.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDict, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { faq, webPage } from '@/lib/schema';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const m = ui(locale).meta.home;
+const jsonLd = [webPage('WebPage', m.title, locale === 'ar' ? '/ar' : '/', locale), faq(t.ux.faq.items, locale)];
+---
+
+<BaseLayout locale={locale} path="/" title={m.title} description={m.description} active="home" jsonLd={jsonLd}>
+  <LegacyHashRedirect slot="head" kind="home" prefix={locale === 'ar' ? '/ar' : ''} />
+  <Hero locale={locale} />
+  <ProductsSection locale={locale} />
+  <AboutSnapshot locale={locale} />
+  <WhyChoose locale={locale} />
+  <Markets locale={locale} />
+  <Horeca locale={locale} />
+  <RecipesTeaser locale={locale} />
+  <Faq locale={locale} />
+  <FinalCta locale={locale} />
+</BaseLayout>

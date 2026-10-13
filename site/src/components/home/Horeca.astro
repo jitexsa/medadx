@@ -1,0 +1,301 @@
+---
+import { Image } from 'astro:assets';
+import restaurant from '@/assets/brand/horeca-restaurant.png';
+import catering from '@/assets/stock/horeca-catering.jpg';
+import distributors from '@/assets/stock/horeca-distributors.jpg';
+import home from '@/assets/stock/horeca-home.jpg';
+import hotels from '@/assets/stock/horeca-hotels.jpg';
+import restaurants from '@/assets/stock/horeca-restaurants.jpg';
+import { getDict, type Locale } from '@/i18n';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const ar = locale === 'ar';
+const tileImgs = [hotels, restaurants, catering, distributors, home];
+const tiles = t.horeca.tiles.map((label, i) => ({ n: `0${i + 1}`, label, img: tileImgs[i]! }));
+const dishes = ar ? ['المندي', 'الكبسة', 'البرياني'] : ['Mandi', 'Kabsa', 'Biryani'];
+const badge = ar ? { k: 'نخدم', v: 'الضيافة' } : { k: 'Serving', v: 'Hospitality' };
+---
+
+<section class="section hrc cv-auto">
+  <div class="wrap hrc__grid">
+    <div data-reveal="0" class="hrc__media">
+      <div class="hrc__frame">
+        <Image
+          src={restaurant}
+          alt="Plated basmati rice dishes served in a fine-dining restaurant"
+          format="webp"
+          widths={[480, 720, 1024]}
+          sizes="(min-width: 1240px) 580px, (min-width: 700px) 46vw, 92vw"
+          class="hrc__img"
+          loading="lazy"
+        />
+        <div class="hrc__shade" aria-hidden="true"></div>
+        <div class="hrc__tag">
+          <span class="dia dia--light" aria-hidden="true"></span>
+          {t.horeca.label}
+        </div>
+      </div>
+      <div class="hrc__badge">
+        <span class="hrc__badge-ic" aria-hidden="true">
+          <span class="dia dia--light"></span>
+        </span>
+        <span class="hrc__badge-tx">
+          <span class="hrc__badge-k">{badge.k}</span>
+          <span class="hrc__badge-v">{badge.v}</span>
+        </span>
+      </div>
+    </div>
+
+    <div data-reveal="1">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.horeca.label}</span>
+      </div>
+      <h2 class="h2 h2--lg">{t.horeca.title}</h2>
+      <p class="lede lede--lg">{t.horeca.body}</p>
+      <div class="hrc__dishes">
+        <span class="hrc__dl">{ar ? 'أطباق مميزة' : 'Signature dishes'}</span>
+        <ul class="hrc__dlist">
+          {dishes.map((d) => (
+            <li class="hrc__dish">
+              <span class="dia dia--sm" aria-hidden="true" />
+              {d}
+            </li>
+          ))}
+          <li>
+            <a href="/recipes" class="link-mono hrc__rec" hreflang={ar ? 'en' : undefined}>
+              {t.footer.recipes}{' '}
+              <span class="flip-x" aria-hidden="true">
+                →
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul class="hrc__tiles">
+        {tiles.map((s) => (
+          <li class="hrc__tile">
+            <div class="hrc__tile-media">
+              <Image src={s.img} alt="" format="webp" widths={[240, 400]} sizes="200px" class="hrc__tile-img" loading="lazy" />
+              <span class="hrc__tile-n">{s.n}</span>
+            </div>
+            <div class="hrc__tile-label">
+              <span>{s.label}</span>
+              <span class="dia dia--md" aria-hidden="true" />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hrc {
+    position: relative;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .hrc__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(40px, 6vw, 84px);
+    align-items: center;
+  }
+  .hrc__media {
+    position: relative;
+  }
+  .hrc__frame {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--ink), 0.14);
+    box-shadow: 0 36px 68px rgba(var(--ink), 0.2);
+  }
+  .hrc__img {
+    width: 100%;
+    aspect-ratio: 1 / 1.04;
+    object-fit: cover;
+  }
+  .hrc__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 23, 15, 0.05) 40%, rgba(11, 23, 15, 0.62));
+  }
+  .hrc__tag {
+    position: absolute;
+    inset-inline-start: 22px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .hrc__badge {
+    position: absolute;
+    inset-inline-end: clamp(-8px, -0.5vw, -4px);
+    bottom: -22px;
+    background: linear-gradient(150deg, #1f3d2a, #132719);
+    border-radius: 18px;
+    padding: 18px 26px;
+    box-shadow: 0 22px 44px rgba(19, 39, 25, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    animation: mxFloat 5.5s ease-in-out infinite;
+  }
+  .hrc__badge-ic {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(201, 162, 75, 0.5);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .hrc__badge-ic .dia {
+    width: 12px;
+    height: 12px;
+  }
+  .hrc__badge-tx {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .hrc__badge-k {
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(238, 230, 205, 0.6);
+  }
+  .hrc__badge-v {
+    font-size: 16px;
+    font-weight: 750;
+    font-stretch: 112%;
+    color: var(--cream);
+  }
+  .hrc__dishes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+  .hrc__dl {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.68);
+  }
+  .hrc__dlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hrc__dish {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid rgba(166, 127, 46, 0.45);
+    background: rgba(166, 127, 46, 0.07);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--gold-text);
+  }
+  .hrc__rec {
+    font-size: 11px;
+    color: var(--green-text);
+    padding: 7px 4px;
+  }
+  .hrc__tiles {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin: 30px 0 0;
+  }
+  .hrc__tile {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--ink), 0.13);
+    background: var(--surface);
+    box-shadow: 0 10px 26px rgba(var(--ink), 0.08);
+    transition:
+      transform 0.4s var(--ease),
+      border-color 0.4s,
+      box-shadow 0.4s;
+  }
+  .hrc__tile:hover {
+    transform: translateY(-6px);
+    border-color: rgba(31, 61, 42, 0.42);
+    box-shadow: 0 24px 46px rgba(var(--ink), 0.17);
+  }
+  .hrc__tile-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: rgba(var(--ink), 0.05);
+  }
+  .hrc__tile-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 23, 15, 0) 48%, rgba(11, 23, 15, 0.52));
+  }
+  .hrc__tile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hrc__tile-n {
+    position: absolute;
+    z-index: 1;
+    top: 11px;
+    inset-inline-start: 11px;
+    font-family: var(--f-display);
+    font-size: 14px;
+    font-weight: 800;
+    font-stretch: 78%;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+    background: rgba(31, 61, 42, 0.6);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(201, 162, 75, 0.5);
+    border-radius: 8px;
+    padding: 4px 9px;
+    line-height: 1;
+  }
+  .hrc__tile-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 15px;
+    font-size: 14.5px;
+    font-weight: 750;
+    line-height: 1.2;
+  }
+</style>

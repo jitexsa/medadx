@@ -1,0 +1,372 @@
+---
+import { Image } from 'astro:assets';
+import mapGcc from '@/assets/brand/map-gcc.png';
+import mapKsa from '@/assets/brand/map-ksa.png';
+import mapMe from '@/assets/brand/map-middle-east.png';
+import mapNa from '@/assets/brand/map-north-africa.png';
+import { SITE_DATA } from '@/data/site';
+import { getDict, type Locale } from '@/i18n';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const ar = locale === 'ar';
+const maps = [mapKsa, mapGcc, mapMe, mapNa];
+const wa = SITE_DATA.waHref;
+const regions = t.marketsSec.names.map((name, i) => ({
+  i,
+  n: `0${i + 1}`,
+  name,
+  d: t.marketsSec.regionDescs[i] ?? '',
+  map: maps[i]!,
+  places: t.ux.mkt.places[i] ?? [],
+  wa: `${wa}${wa.includes('?') ? '&' : '?'}text=${encodeURIComponent(t.ux.mkt.wa + name)}`,
+}));
+---
+
+<section class="section mkt cv-auto">
+  <div class="wrap mkt__grid">
+    <div data-reveal="0" class="mkt__intro">
+      <div class="kicker kicker--light">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{t.marketsSec.label}</span>
+      </div>
+      <h2 class="h2 h2--lg h2--light">{t.marketsSec.title}</h2>
+      <p class="mkt__lede">{t.marketsSec.intro}</p>
+      <div class="mkt__meta">
+        <div class="mkt__stat">
+          <span class="mkt__num">04</span>
+          <span class="mkt__statl">{ar ? 'أسواق إقليمية' : 'Regional markets'}</span>
+        </div>
+        <span class="mkt__vr" aria-hidden="true"></span>
+        <div class="mkt__origin">
+          <span class="dia dia--md dia--light" aria-hidden="true"></span>
+          {t.marketsSec.origin}
+        </div>
+        <div class="mkt__legend">
+          <span class="mkt__sq" aria-hidden="true"></span>
+          {t.marketsSec.mapLegendActive}
+        </div>
+      </div>
+    </div>
+
+    <div class="mkt__cards" data-markets>
+      {regions.map((r) => (
+        <button
+          type="button"
+          class="mkt-card"
+          data-reveal={Math.min(r.i, 4)}
+          data-region={r.i}
+          aria-pressed={r.i === 0 ? 'true' : 'false'}
+          aria-controls={`mkt-detail-${r.i}`}
+        >
+          <Image
+            src={r.map}
+            alt=""
+            format="webp"
+            widths={[360, 600]}
+            sizes="(min-width: 1240px) 290px, 45vw"
+            class="mkt-map"
+            loading="lazy"
+          />
+          <span class="mkt-card__shade" aria-hidden="true" />
+          <span class="mkt-card__top">
+            <span class="mkt-card__n">{r.n}</span>
+            <span class="mkt__sq" aria-hidden="true" />
+          </span>
+          <span class="mkt-card__name">{r.name}</span>
+          <span class="mkt-card__d">{r.d}</span>
+        </button>
+      ))}
+      {regions.map((r) => (
+        <div class="mkt__detail" id={`mkt-detail-${r.i}`} data-region-detail={r.i} hidden={r.i !== 0} role="region" aria-label={r.name}>
+          <div class="mkt__dtop">
+            <div class="mkt__dname">
+              <span class="mkt__sq" aria-hidden="true" />
+              {r.name}
+            </div>
+            <span class="label mkt__dl">{t.ux.mkt.countries}</span>
+          </div>
+          <ul class="mkt__places">
+            {r.places.map((pl) => (
+              <li>{pl}</li>
+            ))}
+          </ul>
+          <a href={r.wa} target="_blank" rel="noopener" class="link-mono mkt__talk" data-track="whatsapp_click">
+            {t.ux.mkt.talk}{' '}
+            <span class="flip-x" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-markets]').forEach((root) => {
+    const cards = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-region]'));
+    const details = Array.from(root.querySelectorAll<HTMLElement>('[data-region-detail]'));
+    cards.forEach((c) =>
+      c.addEventListener('click', () => {
+        cards.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+        details.forEach((d) => (d.hidden = d.dataset.regionDetail !== c.dataset.region));
+      }),
+    );
+  });
+</script>
+
+<style>
+  .mkt {
+    position: relative;
+    background: #0f2116;
+    overflow: hidden;
+  }
+  .mkt__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(36px, 5vw, 64px);
+    align-items: start;
+  }
+  .mkt__intro {
+    max-width: 680px;
+  }
+  .mkt__lede {
+    margin: 20px 0 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(238, 230, 205, 0.72);
+    max-width: 560px;
+  }
+  .mkt__meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .mkt__stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .mkt__num {
+    font-family: var(--f-display);
+    font-size: 40px;
+    font-weight: 800;
+    font-stretch: 75%;
+    line-height: 1;
+    color: var(--gold-400);
+  }
+  .mkt__statl {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(238, 230, 205, 0.62);
+    max-width: 110px;
+    line-height: 1.4;
+  }
+  .mkt__vr {
+    width: 1px;
+    height: 36px;
+    background: rgba(201, 162, 75, 0.35);
+  }
+  .mkt__origin {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(201, 162, 75, 0.45);
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--tr-mid);
+    text-transform: uppercase;
+    color: var(--sand);
+  }
+  .mkt__legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(238, 230, 205, 0.7);
+  }
+  .mkt__sq {
+    flex: none;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: #d6ab4f;
+    box-shadow: 0 0 9px rgba(214, 171, 79, 0.7);
+  }
+  .mkt__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-content: start;
+  }
+  .mkt-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(201, 162, 75, 0.32);
+    border-radius: 20px;
+    padding: clamp(18px, 2.6vw, 32px);
+    background: rgba(13, 28, 19, 0.62);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    aspect-ratio: 1;
+    text-align: start;
+    color: inherit;
+    transition:
+      transform 0.38s var(--ease),
+      border-color 0.38s,
+      background 0.38s,
+      box-shadow 0.35s ease;
+  }
+  .mkt-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-300);
+    background: rgba(19, 40, 27, 0.74);
+    box-shadow:
+      0 22px 48px rgba(9, 20, 13, 0.4),
+      0 0 26px rgba(201, 162, 75, 0.3);
+  }
+  .mkt-card[aria-pressed='true'] {
+    border-color: var(--gold-300);
+    box-shadow:
+      0 0 0 1px var(--gold-300),
+      0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  .mkt-map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0.62;
+    filter: grayscale(1);
+    mix-blend-mode: luminosity;
+    transform: scale(1.04);
+    transition:
+      opacity 0.45s ease,
+      transform 0.55s var(--ease);
+  }
+  .mkt-card:hover .mkt-map {
+    opacity: 0.85;
+    transform: scale(1.1);
+  }
+  .mkt-card__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(178deg, rgba(13, 28, 19, 0.18) 0%, rgba(13, 28, 19, 0.55) 46%, rgba(9, 20, 13, 0.92) 100%);
+    pointer-events: none;
+  }
+  .mkt-card__top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mkt-card__n {
+    font-family: var(--f-display);
+    font-size: 30px;
+    font-weight: 800;
+    font-stretch: 70%;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.2px rgba(201, 162, 75, 0.55);
+  }
+  .mkt-card__name {
+    position: relative;
+    margin: 0;
+    font-family: var(--f-head);
+    font-size: 18px;
+    font-weight: 730;
+    letter-spacing: var(--tr-tight);
+    color: var(--cream-2);
+  }
+  .mkt-card__d {
+    position: relative;
+    font-size: 13.5px;
+    line-height: 1.62;
+    color: rgba(238, 230, 205, 0.68);
+  }
+  .mkt__detail {
+    grid-column: 1 / -1;
+    border: 1px solid rgba(201, 162, 75, 0.42);
+    border-radius: 20px;
+    padding: clamp(20px, 2.4vw, 28px);
+    background: rgba(201, 162, 75, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .mkt__dtop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .mkt__dname {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 730;
+    color: var(--cream-2);
+  }
+  .mkt__dl {
+    color: rgba(238, 230, 205, 0.6);
+  }
+  .mkt__places {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .mkt__places li {
+    border: 1px solid rgba(238, 230, 205, 0.22);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--cream);
+    animation: mxFade 0.35s ease both;
+  }
+  .mkt__talk {
+    align-self: start;
+    color: var(--sand);
+  }
+  .mkt__talk:hover {
+    color: #fff;
+  }
+  @media (max-width: 520px) {
+    .mkt-card {
+      aspect-ratio: auto;
+      min-height: 210px;
+    }
+    .mkt-card__d {
+      display: none;
+    }
+  }
+</style>

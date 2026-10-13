@@ -1,0 +1,359 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE_DATA } from '@/data/site';
+import { getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { formProducts } from '@/lib/form-products';
+import { breadcrumbs, localBusiness, webPage } from '@/lib/schema';
+import QuoteForm from '@/islands/QuoteForm';
+
+export interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDict(locale);
+const u = ui(locale);
+const m = u.meta.contact;
+const C = t.contact;
+const href = (p: string) => localizedPath(p, locale);
+const hours = [C.hours1, C.hours2].map((s) => {
+  const i = s.indexOf(': ');
+  return i < 0 ? { d: s, t: '' } : { d: s.slice(0, i), t: s.slice(i + 2) };
+});
+const products = await formProducts(locale);
+const copy = {
+  ...C,
+  upload: t.trading.f.upload,
+  drop: t.trading.f.drop,
+  browse: t.trading.f.browse,
+  uploaded: t.trading.f.uploaded,
+  required: t.trading.err.required,
+  emailErr: t.trading.err.email,
+  phoneErr: t.trading.err.phone,
+  leadFailed: u.leadFailed,
+  formErrors: u.formErrors,
+  notSent: u.notSentBanner,
+  file_type: u.fileErr.type,
+  file_size: u.fileErr.size,
+  file_count: u.fileErr.count,
+};
+const jsonLd = [
+  webPage('ContactPage', m.title, href('/contact'), locale),
+  localBusiness(locale),
+  breadcrumbs([
+    { name: u.breadcrumbHome, path: href('/') },
+    { name: C.heroT, path: href('/contact') },
+  ]),
+];
+---
+
+<BaseLayout locale={locale} path="/contact" title={m.title} description={m.description} active="contact" jsonLd={jsonLd}>
+  <section class="ct">
+    <div class="wrap">
+      <div class="kicker">
+        <span class="dia" aria-hidden="true"></span>
+        <span class="kicker__text">{C.heroT}</span>
+      </div>
+      <h1 class="h1 ct__h1">{C.formT}</h1>
+      <p class="ct__lede">{C.heroSub}</p>
+    </div>
+    <div class="wrap ct__grid">
+      <div class="panel ct__info" data-reveal="0">
+        <h2 class="ct__h2">{C.label}</h2>
+        <div class="ct__rows">
+          <div class="ct__row">
+            <a href={SITE_DATA.phoneHref} dir="ltr" class="ct__link" data-track="tel_click">
+              <span class="ct__ic" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M6.5 4.5 L9 4 L10.5 7.5 L9 9 C9.6 10.7 11.3 12.4 13 13 L14.5 11.5 L18 13 L17.5 15.5 C17.3 16.7 16.3 17.6 15 17.4 C10 16.6 5.4 12 4.6 7 C4.4 5.7 5.3 4.7 6.5 4.5 Z"
+                    stroke="#EFE7CE"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+              <span class="ct__txt">
+                <span class="label">
+                  {C.phoneL} / {C.waL}
+                </span>
+                <span class="ct__val">{SITE_DATA.phone}</span>
+              </span>
+            </a>
+            <button type="button" class="ct__copy" data-copy={SITE_DATA.phone} data-copied={t.ux.copied}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="8" y="8" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.8"></rect>
+                <path
+                  d="M16 8 V6.5 A2.5 2.5 0 0 0 13.5 4 H6.5 A2.5 2.5 0 0 0 4 6.5 V13.5 A2.5 2.5 0 0 0 6.5 16 H8"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                ></path>
+              </svg>
+              <span data-copy-label>{t.ux.copy}</span>
+              <span class="sr-only"> {C.phoneL}</span>
+            </button>
+          </div>
+          <div class="ct__row">
+            <a href={SITE_DATA.emailHref} dir="ltr" class="ct__link">
+              <span class="ct__ic" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="#EFE7CE" stroke-width="1.7"></rect>
+                  <path
+                    d="M4.5 7 L12 12.5 L19.5 7"
+                    stroke="#EFE7CE"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+              <span class="ct__txt">
+                <span class="label">{C.emailL}</span>
+                <span class="ct__val ct__val--wrap">{SITE_DATA.email}</span>
+              </span>
+            </a>
+            <button type="button" class="ct__copy" data-copy={SITE_DATA.email} data-copied={t.ux.copied}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="8" y="8" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.8"></rect>
+                <path
+                  d="M16 8 V6.5 A2.5 2.5 0 0 0 13.5 4 H6.5 A2.5 2.5 0 0 0 4 6.5 V13.5 A2.5 2.5 0 0 0 6.5 16 H8"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                ></path>
+              </svg>
+              <span data-copy-label>{t.ux.copy}</span>
+              <span class="sr-only"> {C.emailL}</span>
+            </button>
+          </div>
+          <a href={SITE_DATA.mapsHref} target="_blank" rel="noopener" class="ct__link">
+            <span class="ct__ic" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"
+                  stroke="#EFE7CE"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                ></path>
+                <circle cx="12" cy="10" r="2.2" stroke="#EFE7CE" stroke-width="1.7"></circle>
+              </svg>
+            </span>
+            <span class="ct__txt">
+              <span class="label">{C.addrT}</span>
+              <address class="ct__addr">{C.addr}</address>
+            </span>
+          </a>
+        </div>
+        <a href={SITE_DATA.waHref} target="_blank" rel="noopener" class="ct__wa" data-track="whatsapp_click">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M12 4 C7.6 4 4 7.4 4 11.6 C4 13.3 4.6 14.9 5.6 16.2 L4.8 19.5 L8.3 18.7 C9.4 19.3 10.7 19.6 12 19.6 C16.4 19.6 20 16.2 20 12 C20 7.4 16.4 4 12 4 Z"
+              stroke="#FFFFFF"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M9.4 9.7 C9.4 9.7 9.9 9.2 10.3 9.6 L11.1 10.6 C11.4 10.9 11.2 11.3 10.9 11.6 C10.9 11.6 11 12.3 11.9 13.1 C12.8 13.9 13.4 14 13.4 14 C13.7 13.7 14.2 13.5 14.5 13.8 L15.4 14.7 C15.8 15.1 15.3 15.6 15.3 15.6 C14.6 16.3 13.3 16.4 11.5 14.9 C9.7 13.4 9 11.5 9.4 9.7 Z"
+              fill="#FFFFFF"
+            ></path>
+          </svg>
+          {C.waBtn}
+        </a>
+        <hr class="ct__hr" />
+        <div class="ct__hours">
+          <h3 class="label ct__hours-h">{C.hoursT}</h3>
+          <dl>
+            {hours.map((h) => (
+              <div>
+                <dt>{h.d}</dt>
+                <dd>{h.t}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+      <div class="panel ct__form" data-reveal="1">
+        <QuoteForm client:load locale={locale} products={products} copy={copy} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) =>
+    btn.addEventListener('click', async () => {
+      const label = btn.querySelector('[data-copy-label]');
+      const orig = label?.textContent ?? '';
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+      } catch {
+        /* clipboard blocked */
+      }
+      if (label) label.textContent = btn.dataset.copied ?? orig;
+      setTimeout(() => label && (label.textContent = orig), 1600);
+    }),
+  );
+</script>
+
+<style>
+  .ct {
+    background: var(--bg);
+    padding: calc(var(--header-h) + clamp(40px, 6vw, 76px)) var(--gutter) clamp(76px, 9vw, 116px);
+  }
+  .ct__h1 {
+    font-size: clamp(34px, 4.6vw, 56px);
+  }
+  .ct__lede {
+    margin: 14px 0 0;
+    font-size: clamp(16px, 1.5vw, 18px);
+    color: rgba(var(--ink), 0.68);
+  }
+  .ct__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(22px, 3vw, 40px);
+    align-items: flex-start;
+    margin-top: clamp(28px, 4vw, 44px);
+  }
+  .ct__info {
+    flex: 3 1 0;
+    min-width: min(100%, 300px);
+  }
+  .ct__form {
+    flex: 6 1 0;
+    min-width: min(100%, 340px);
+  }
+  .ct__h2 {
+    margin: 0;
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 750;
+    font-stretch: 112%;
+    letter-spacing: var(--tr-tight);
+  }
+  .ct__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 26px;
+  }
+  .ct__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ct__link {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+  }
+  .ct__ic {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--green-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ct__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    text-align: start;
+  }
+  .ct__val {
+    font-size: 16.5px;
+    font-weight: 700;
+  }
+  .ct__val--wrap {
+    overflow-wrap: anywhere;
+  }
+  .ct__addr {
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.5;
+  }
+  .ct__copy {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1.5px solid rgba(var(--ink), 0.18);
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .ct__copy:hover {
+    border-color: var(--green-900);
+  }
+  .ct__wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 26px;
+    background: #17703d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 16px 22px;
+    font-size: 15.5px;
+    font-weight: 700;
+    transition:
+      background 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .ct__wa:hover {
+    background: #125f33;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(31, 138, 76, 0.3);
+  }
+  .ct__hr {
+    border: 0;
+    height: 1px;
+    background: rgba(var(--ink), 0.12);
+    margin: 24px 0;
+  }
+  .ct__hours {
+    border-inline-start: 3px solid var(--gold-500);
+    background: rgba(31, 61, 42, 0.04);
+    border-start-end-radius: 12px;
+    border-end-end-radius: 12px;
+    padding: 18px 20px;
+  }
+  .ct__hours-h {
+    margin: 0;
+    color: var(--brand-text);
+  }
+  .ct__hours dl {
+    margin: 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .ct__hours dl div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .ct__hours dt {
+    color: rgba(var(--ink), 0.68);
+  }
+  .ct__hours dd {
+    margin: 0;
+    font-weight: 650;
+    text-align: end;
+  }
+</style>

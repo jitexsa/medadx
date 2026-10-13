@@ -1,0 +1,109 @@
+---
+/**
+ * Certification seals (HACCP, ISO 22000, Halal, SFDA) — static SVG port of the design's
+ * CERT_MARKS / sealFrame() React builders.
+ */
+import { getDict, type Locale } from '@/i18n';
+
+export interface Props {
+  locale: Locale;
+  compact?: boolean;
+}
+const { locale, compact = false } = Astro.props;
+const certs = getDict(locale).supplyPage.certs;
+
+function starPoints(cx: number, cy: number, rO: number, rI: number, n: number, rotDeg = -90) {
+  const rot = (rotDeg * Math.PI) / 180;
+  return Array.from({ length: n * 2 }, (_, i) => {
+    const r = i % 2 === 0 ? rO : rI;
+    const a = rot + (i * Math.PI) / n;
+    return `${(cx + r * Math.cos(a)).toFixed(2)},${(cy + r * Math.sin(a)).toFixed(2)}`;
+  }).join(' ');
+}
+const ticks = Array.from({ length: 16 }, (_, i) => {
+  const a = (i * 22.5 * Math.PI) / 180;
+  return {
+    x1: (32 + Math.cos(a) * 27).toFixed(2),
+    y1: (30 + Math.sin(a) * 27).toFixed(2),
+    x2: (32 + Math.cos(a) * 29.5).toFixed(2),
+    y2: (30 + Math.sin(a) * 29.5).toFixed(2),
+  };
+});
+const G = '#C9A24B';
+const centers = [
+  `<g transform="translate(20,18.5)"><path d="M12 3 L18.5 5.6 V11.1 C18.5 15.5 15.7 18.5 12 20.2 C8.3 18.5 5.5 15.5 5.5 11.1 V5.6 Z" stroke="${G}" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.7 11.4 L10.8 13.6 L15.2 9" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>`,
+  `<g transform="translate(20,18)"><circle cx="12" cy="12" r="8.2" stroke="${G}" stroke-width="1.6"/><ellipse cx="12" cy="12" rx="3.4" ry="8.2" stroke="${G}" stroke-width="1.4"/><path d="M3.8 12 H20.2" stroke="${G}" stroke-width="1.4"/><path d="M5.4 7.2 H18.6" stroke="${G}" stroke-width="1.1" opacity="0.75"/><path d="M5.4 16.8 H18.6" stroke="${G}" stroke-width="1.1" opacity="0.75"/></g>`,
+  `<g transform="translate(18,17)"><path d="M20.5 13.8A9 9 0 1 1 10.9 3.4 7 7 0 0 0 20.5 13.8z" fill="${G}"/><polygon points="${starPoints(23.5, 18.5, 3.6, 1.5, 5)}" fill="${G}"/></g>`,
+  `<polygon points="${starPoints(32, 30, 9.5, 4, 5)}" fill="${G}"/>`,
+];
+const frame =
+  ticks.map((t) => `<line x1="${t.x1}" y1="${t.y1}" x2="${t.x2}" y2="${t.y2}" stroke="${G}" stroke-width="1" opacity="0.5"/>`).join('') +
+  `<circle cx="32" cy="30" r="26" stroke="${G}" stroke-width="1.4"/><circle cx="32" cy="30" r="21" stroke="${G}" stroke-width="1" stroke-dasharray="1.4 3.6" opacity="0.7"/>`;
+const tails = `<path d="M23,54 L29,54 L27,79 L26,72 L25,79 Z" fill="#B8863A" opacity="0.92"/><path d="M41,54 L35,54 L37,79 L38,72 L39,79 Z" fill="#B8863A" opacity="0.92"/>`;
+const seal = (i: number) =>
+  `<svg width="96" height="126" viewBox="0 0 64 84" fill="none" aria-hidden="true">${frame}${centers[i % 4]}${tails}</svg>`;
+---
+
+<ul class:list={['seals', { 'seals--compact': compact }]}>
+  {certs.map((name, i) => (
+    <li class="seal" data-reveal={Math.min(i, 4)}>
+      <span class="seal__mark" set:html={seal(i)} />
+      <span class="seal__name">{name}</span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .seals {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 44px 0 0;
+  }
+  .seals--compact {
+    margin-top: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+  .seal {
+    border: 2px solid rgba(201, 162, 75, 0.55);
+    border-radius: 16px;
+    padding: 22px 22px 26px;
+    background: rgba(23, 51, 34, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    transition:
+      border-color 0.25s,
+      transform 0.25s,
+      box-shadow 0.3s;
+  }
+  .seal:hover {
+    border-color: var(--gold-400);
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 34px rgba(201, 162, 75, 0.28),
+      0 0 26px rgba(201, 162, 75, 0.3);
+  }
+  .seal__mark {
+    width: 96px;
+    height: 126px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+  }
+  .seals--compact .seal__mark {
+    transform: scale(0.8);
+    height: 104px;
+  }
+  .seal__name {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.35;
+  }
+</style>

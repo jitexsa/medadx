@@ -1,0 +1,38 @@
+---
+/**
+ * The old site used hash routes (`/#/about`, `/recipes.html#/<slug>`). Servers never see
+ * the hash, so this tiny inline script maps old shared links to the new real URLs.
+ */
+export interface Props {
+  kind: 'home' | 'recipes';
+  prefix?: '' | '/ar';
+}
+const { kind, prefix = '' } = Astro.props;
+---
+
+<script is:inline define:vars={{ kind, prefix }}>
+  (function () {
+    const h = location.hash;
+    if (!h || h.length < 2 || (h.charAt(1) !== '/' && h.indexOf('#mx-') !== 0)) return;
+    const r = decodeURIComponent(h.replace(/^#\/?/, '').split('?')[0]);
+    const map = {
+      home: '/',
+      about: '/about',
+      'supply-chain': '/supply-chain',
+      'trading-account': '/trading-account',
+      contact: '/contact',
+      inquiry: '/contact',
+      terms: '/terms',
+      privacy: '/privacy',
+      'rice-terms': '/rice-terms',
+      'mx-products': '/#products',
+      'mx-tools': '/#tools',
+      products: '/products',
+    };
+    let to = kind === 'recipes' ? (r ? '/recipes/' + r : null) : map[r];
+    if (!to) return;
+    if (kind !== 'recipes' && prefix) to = to === '/' ? prefix : prefix + to.replace(/^\/(#)/, '$1');
+    if (to.charAt(0) === '#') to = prefix + to;
+    if (to !== location.pathname + location.hash) location.replace(to);
+  })();
+</script>

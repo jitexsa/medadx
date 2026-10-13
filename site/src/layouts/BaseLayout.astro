@@ -1,0 +1,129 @@
+---
+import { getImage } from 'astro:assets';
+import '@/styles/fonts.css';
+import '@/styles/global.css';
+import BackToTop from '@/components/BackToTop.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import Seo from '@/components/Seo.astro';
+import QuoteDrawer from '@/islands/QuoteDrawer';
+import { alternates as altsFor, dir, EN_ONLY, getDict, localizedPath, type Locale } from '@/i18n';
+import { ui } from '@/i18n/ui';
+import { getProducts, productCopy } from '@/lib/catalog';
+import type { NavKey } from '@/lib/nav';
+import { organization, website } from '@/lib/schema';
+import { ogPath } from '@/lib/seo';
+import { SITE_DATA } from '@/data/site';
+
+export interface Props {
+  locale: Locale;
+  /** Unprefixed (English) path of this page, e.g. '/about'. */
+  path: string;
+  title: string;
+  description: string;
+  active?: NavKey;
+  ogImageAlt?: string;
+  ogType?: 'website' | 'article' | 'product';
+  jsonLd?: unknown[];
+  noindex?: boolean;
+}
+
+const { locale, path, title, description, active, ogImageAlt, ogType, jsonLd = [], noindex = false } = Astro.props;
+const u = ui(locale);
+const t = getDict(locale);
+const pagePath = localizedPath(path, locale);
+const alternates = altsFor(path);
+const other: Locale = locale === 'en' ? 'ar' : 'en';
+const enOnly = EN_ONLY(path);
+const langHref = enOnly ? localizedPath('/', other) : localizedPath(path, other);
+const graph = [organization('/icons/icon-512.png'), website(locale), ...jsonLd];
+
+// Quote drawer gets only the copy + product data it needs (keeps island payload small).
+const products = await Promise.all(
+  (await getProducts()).map(async (p) => {
+    const c = productCopy(p, locale);
+    const img = await getImage({ src: p.journeyBag, width: 96, format: 'webp' });
+    return { id: p.id, name: c.name, short: c.short, packs: c.packs, img: img.src };
+  }),
+);
+const drawerCopy = { ...t.ux.dr, contactHref: localizedPath('/contact', locale), waHref: SITE_DATA.waHref, leadFailed: u.leadFailed };
+---
+
+<!doctype html>
+<html lang={locale} dir={dir(locale)} data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Before first paint: stored theme (the design defaults to light) + `js` class for reveal styles.
+      (function () {
+        const d = document.documentElement;
+        let t = null;
+        try {
+          t = localStorage.getItem('mx-theme');
+        } catch {
+          /* storage blocked */
+        }
+        d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        d.classList.add('js');
+      })();
+    </script>
+    <Seo
+      locale={locale}
+      title={title}
+      description={description}
+      alternates={noindex ? {} : alternates}
+      canonicalPath={pagePath}
+      ogImage={ogPath(path, locale)}
+      ogImageAlt={ogImageAlt ?? title}
+      ogType={ogType}
+      jsonLd={graph}
+      noindex={noindex}
+    />
+    <meta name="theme-color" content="#1F3D2A" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <slot name="head" />
+  </head>
+  <body>
+    <a href="#main" class="skip">
+      {u.skip}
+    </a>
+    <Header locale={locale} active={active} langHref={langHref} langHomeOnly={enOnly && locale === 'en'} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <BackToTop locale={locale} />
+    <QuoteDrawer client:idle locale={locale} products={products} copy={drawerCopy} />
+    <script>
+      import '@/scripts/reveal';
+      import '@/scripts/quote-buttons';
+    </script>
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: fixed;
+    top: 10px;
+    inset-inline-start: 10px;
+    z-index: 200;
+    background: var(--green-900);
+    color: #f5f0e4;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 650;
+    text-decoration: none;
+    transform: translateY(-160%);
+    transition: transform 0.2s;
+  }
+  .skip:focus {
+    transform: none;
+  }
+  main:focus {
+    outline: none;
+  }
+</style>

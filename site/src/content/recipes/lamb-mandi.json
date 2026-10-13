@@ -1,0 +1,67 @@
+{
+  "num": 24,
+  "slug": "lamb-mandi",
+  "region": "Saudi",
+  "title": "Lamb Mandi",
+  "tagline": "The most prized mandi — meltingly tender lamb over smoky, saffron-scented rice.",
+  "intro": "Lamb mandi is the celebration version of this smoky classic, prized at weddings and large gatherings across the Kingdom. The lamb is spiced simply, slow-cooked until it falls from the bone, and the rice is infused with saffron and the signature charcoal smoke. Elegant and aromatic, it lets the quality of the meat and rice speak.",
+  "cuisine": "Saudi (Hadhrami origin)",
+  "course": "Main course",
+  "category": "Main course",
+  "servings": 5,
+  "prepTime": "25 minutes",
+  "cookTime": "2 hours",
+  "totalTime": "2 hours 25 minutes",
+  "prepISO": "PT25M",
+  "cookISO": "PT2H",
+  "totalISO": "PT2H25M",
+  "difficulty": "Intermediate",
+  "rice": "Aged long-grain basmati",
+  "ingredients": [
+    {
+      "group": "For the lamb",
+      "items": [
+        "1.2 kg lamb, on the bone",
+        "2 tbsp mandi spice mix",
+        "1 onion, quartered",
+        "3 tbsp oil",
+        "Salt to taste"
+      ]
+    },
+    {
+      "group": "For the rice",
+      "items": [
+        "500 g (2½ cups) basmati rice, soaked 30 min",
+        "About 1 litre lamb broth",
+        "Pinch of saffron in 3 tbsp warm water",
+        "1 cinnamon stick, 4 cardamom, 4 cloves, 1 bay leaf"
+      ]
+    },
+    {
+      "group": "For the smoke & garnish",
+      "items": [
+        "1 piece of natural lump charcoal",
+        "1 tbsp ghee",
+        "3 tbsp fried almonds and raisins"
+      ]
+    }
+  ],
+  "method": [
+    "Rub the lamb with the mandi spices and salt.",
+    "Simmer (or pressure-cook) the lamb with the onion in water until very tender, about 1½ hours on the stove or 40 minutes under pressure. Reserve about 1 litre of broth; keep the lamb.",
+    "Roast the lamb at high heat until browned.",
+    "Cook the drained rice in the measured broth with saffron and whole spices: boil, cover and cook low 15 minutes.",
+    "Sit the lamb over the rice, add the dukhan (red-hot charcoal drizzled with ghee in a small bowl), seal the pot tightly and leave 5–10 minutes.",
+    "Remove the charcoal, garnish and serve."
+  ],
+  "tips": [
+    "Reserve and skim the broth — cooking the rice in it is essential to real mandi flavour.",
+    "Rest the lamb before roasting so it browns rather than steams."
+  ],
+  "toServe": "Serve on a shared platter with sahawiq or daqoos.",
+  "imageAlt": "Lamb mandi with fall-off-the-bone lamb over smoky saffron rice",
+  "image": "../../assets/recipes/lamb-mandi.jpg",
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Iraqi%20Quzi.jpg",
+  "standInImage": true,
+  "recommendedProduct": "farah"
+}
