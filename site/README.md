@@ -48,7 +48,7 @@ Forms call `submitLead()` in `src/lib/lead/submit.ts`, which keeps the same cont
 ## Deploy (Vercel)
 
 1. Create a project with Root Directory `site`. Framework: Astro. Node 22.
-2. Add the domains `medadx.com` (primary) and `www.medadx.com`. `vercel.json` also 308-redirects `www` to the apex domain.
+2. Add the domains `medadx.com` (primary, no redirect) and `www.medadx.com` set in Vercel to 308-redirect to `medadx.com`. Never redirect the apex to `www`: canonical URLs use the apex.
 3. Preview deployments get `X-Robots-Tag: noindex`.
 
 Security headers live in `vercel.json`. Script and style CSP hashes are emitted by Astro (`security.csp`). Do not add inline `style=""` attributes; use classes or CSSOM, because the CSP blocks inline styles.

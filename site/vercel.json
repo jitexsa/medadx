@@ -6,12 +6,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "www.medadx.com" }],
-      "destination": "https://medadx.com/:path",
-      "permanent": true
-    },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/recipes.html", "destination": "/recipes", "permanent": true },
     { "source": "/history-of-rice.html", "destination": "/history-of-rice", "permanent": true },
