@@ -77,6 +77,25 @@ describe('buildLeadEmail', () => {
     expect(m.text).toContain('Products of interest: Farah, Dhoqan');
     expect(m.text).toContain('Consent to contact: Yes');
   });
+  it('adds reply/WhatsApp/call buttons, Riyadh time and the Arabic badge', () => {
+    const m = buildLeadEmail(quote({ payload: { ...quote().payload, lang: 'ar' } }), 'MX-9');
+    expect(m.html).toContain(`mailto:buyer@hotel.sa?subject=${encodeURIComponent('Re: Your Medad-X quote request (MX-9)')}`);
+    expect(m.html).toContain('tel:+966500000000');
+    expect(m.html).toContain('Sun, 8 Nov 2026 · 13:00 Riyadh time');
+    expect(m.html).toContain('Prefers Arabic');
+    expect(m.html).toContain('4,000 kg'); // per-line weight from the pack size
+  });
+  it('never turns crafted input into links', () => {
+    const m = buildLeadEmail(
+      quote({
+        meta: { type: 'quote', page: 'javascript:alert(1)' },
+        payload: { ...quote().payload, email: 'a@b.sa?bcc=x@y.sa' },
+      }),
+      'MX-10',
+    );
+    expect(m.html).not.toContain('href="mailto:');
+    expect(m.html).not.toContain('href="javascript:');
+  });
   it('has no reply-to for the quick inquiry (no email field)', () => {
     const m = buildLeadEmail(
       { meta: { type: 'quick-quote' }, payload: { name: 'A', phone: '0591278526', items: ['Farah · 5 kg × 10 bags'] }, files: [] },
