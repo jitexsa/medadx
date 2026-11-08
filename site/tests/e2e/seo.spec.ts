@@ -94,3 +94,17 @@ test('404 page is served for unknown URLs and is noindex', async ({ page }) => {
   expect(res?.status()).toBe(404);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 });
+
+test('Arabic pages preload the Arabic font files their stylesheet uses; English pages none', async ({ page, request }) => {
+  await page.goto('/ar');
+  const preloads = await page.locator('link[rel="preload"][as="font"]').evaluateAll((els) => els.map((e) => e.getAttribute('href')!));
+  expect(preloads).toHaveLength(4);
+  const css = await page.locator('style').allTextContents();
+  for (const href of preloads) {
+    expect(href).toMatch(/ibm-plex-sans-arabic-arabic-\d00-normal/);
+    expect(css.join('\n')).toContain(href); // same hashed file, so no double download
+    expect((await request.get(href)).status()).toBe(200);
+  }
+  await page.goto('/');
+  await expect(page.locator('link[rel="preload"][as="font"]')).toHaveCount(0);
+});
