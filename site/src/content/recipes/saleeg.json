@@ -61,9 +61,9 @@
     "Mastic (miski) gives saleeg its distinctive gentle aroma — a little goes a long way."
   ],
   "toServe": "Serve piping hot with sharp, spicy daqoos to cut the richness.",
-  "imageAlt": "Saleeg creamy Hejazi rice topped with roasted chicken",
+  "imageAlt": "Hijazi saleeg: creamy white rice topped with slow-cooked meat and raisins",
   "image": "../../assets/recipes/saleeg.jpg",
-  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Maqluba.jpg",
-  "standInImage": true,
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Hijazi%20Saleeg.jpg",
+  "standInImage": false,
   "recommendedProduct": "khayber"
 }

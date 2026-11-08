@@ -199,6 +199,7 @@ export function localBusiness(locale: Locale) {
     telephone: ORG.telephone,
     email: ORG.email,
     address: { '@type': 'PostalAddress', ...ORG.address },
+    geo: { '@type': 'GeoCoordinates', ...ORG.geo },
     areaServed: [...ORG.areaServed],
     openingHoursSpecification: [
       {

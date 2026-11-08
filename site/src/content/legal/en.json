@@ -116,6 +116,7 @@
   "privacy": {
     "navLabel": "Privacy Policy",
     "title": "Privacy Policy",
+    "updated": "8 November 2026",
     "intro": "Medad-X respects your privacy and is committed to protecting personal data in accordance with the Personal Data Protection Law (PDPL) of the Kingdom of Saudi Arabia and applicable data-protection regulations across the GCC.",
     "sections": [
       {
@@ -141,7 +142,7 @@
           "Identity & contact data — name, job title, company, email, phone and WhatsApp number;",
           "Commercial data — quotation requests, order history, delivery addresses, trade licence and VAT details;",
           "Correspondence — messages you send us and records of our communications;",
-          "Technical data — IP address, browser type and pages requested, recorded in our hosting provider's server logs for security and reliability;",
+          "Technical data — IP address, browser type and pages requested, recorded in our hosting provider's server logs for security and reliability, and, when you submit a form, the page you submitted it from and the page that referred you;",
           "Any additional information you choose to provide to us."
         ]
       },
@@ -183,13 +184,15 @@
           "Logistics, shipping, inspection and insurance providers to fulfil orders;",
           "Banks and payment processors;",
           "Government, customs and regulatory authorities where required by law;",
+          "Technology providers that host our website and deliver the emails generated when you submit a form (our website-hosting and transactional-email providers);",
           "Professional advisers under a duty of confidentiality. All processors are bound by appropriate contractual safeguards."
         ]
       },
       {
         "h": "8. Cross-border transfers",
         "paras": [
-          "As a regional trader, we may transfer personal data to other GCC states and to countries of origin (such as India and Pakistan) to arrange supply and shipping. Where data leaves the Kingdom, we apply the transfer conditions of the PDPL and its implementing regulations — including an adequacy assessment, appropriate safeguards, or your explicit consent — and transfer only the minimum data necessary."
+          "As a regional trader, we may transfer personal data to other GCC states and to countries of origin (such as India and Pakistan) to arrange supply and shipping. Where data leaves the Kingdom, we apply the transfer conditions of the PDPL and its implementing regulations — including an adequacy assessment, appropriate safeguards, or your explicit consent — and transfer only the minimum data necessary.",
+          "Information you submit through our website forms is processed by our website-hosting and email-delivery providers, whose servers may be located outside the Kingdom (for example, in the United States or Japan), so that your request reaches our trade team. The same transfer safeguards apply."
         ],
         "items": []
       },

@@ -59,9 +59,9 @@
     "Rest the lamb before roasting so it browns rather than steams."
   ],
   "toServe": "Serve on a shared platter with sahawiq or daqoos.",
-  "imageAlt": "Lamb mandi with fall-off-the-bone lamb over smoky saffron rice",
+  "imageAlt": "Lamb mandi: slow-cooked lamb shanks over smoky mandi rice, served with tomato and chilli sauces",
   "image": "../../assets/recipes/lamb-mandi.jpg",
-  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Iraqi%20Quzi.jpg",
-  "standInImage": true,
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mandi%20Lamb%20Shank%2C%20Lepak%20%40%20Sultan%2C%2062%20Bussorah%20St%2C%20Singapore%20%2802%29.jpg",
+  "standInImage": false,
   "recommendedProduct": "farah"
 }

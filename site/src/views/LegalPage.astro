@@ -13,6 +13,8 @@ export interface Props {
 const { locale, doc, path } = Astro.props;
 const lg = getLegal(locale);
 const d = lg[doc];
+/** A document may carry its own date (e.g. privacy changed alone); otherwise the shared one. */
+const updated = (d as { updated?: string }).updated ?? lg.updated;
 const u = ui(locale);
 const href = (p: string) => localizedPath(p, locale);
 const title = `${d.title} | ${u.brand}`;
@@ -38,7 +40,7 @@ const jsonLd = [
       <div class="lg-badges">
         <span class="lg-badge">
           <span class="lg-dot" aria-hidden="true"></span>
-          {lg.updatedLabel}: {lg.updated}
+          {lg.updatedLabel}: {updated}
         </span>
         <span class="lg-badge lg-badge--gold">
           <span class="dia dia--sm" aria-hidden="true"></span>
