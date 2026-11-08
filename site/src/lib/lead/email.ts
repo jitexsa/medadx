@@ -8,8 +8,8 @@
 import { fmtInt, packKg } from '../catalog-shared.js';
 import type { Lead, LeadKind, MailMessage } from './deliver.js';
 
-const LOGO = 'https://medadx.com/icons/icon-192.png';
-const C = {
+export const LOGO = 'https://medadx.com/icons/icon-192.png';
+export const C = {
   page: '#f5f0e4',
   card: '#ffffff',
   ink: '#1e2619',
@@ -28,7 +28,7 @@ const C = {
   sand: '#e9d9a8',
   ok: '#3e8e5a',
 };
-const F = {
+export const F = {
   body: "'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif",
   head: "'Cormorant Garamond',Georgia,'Times New Roman',serif",
   mono: "'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace",
@@ -66,20 +66,21 @@ interface Action {
 }
 
 // ---------- text helpers ----------
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+export const esc = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 /** One-line text: collapses whitespace (incl. newlines) and caps the length. */
-const line = (v: unknown, max = 300) =>
+export const line = (v: unknown, max = 300) =>
   (Array.isArray(v) ? v.join(', ') : v == null ? '' : String(v)).replace(/\s+/g, ' ').trim().slice(0, max);
 /** Multi-line text (the message box): keeps line breaks, caps the length. */
 const block = (v: unknown, max = 5000) => (v == null ? '' : String(v)).replace(/\r\n?/g, '\n').trim().slice(0, max);
-const arr = (v: unknown, max = 20) =>
+export const arr = (v: unknown, max = 20) =>
   Array.isArray(v)
     ? v
         .slice(0, max)
         .map((x) => line(x, 120))
         .filter(Boolean)
     : [];
-const tonnes = (kg: number) => (kg >= 1000 ? ` (${(kg / 1000).toLocaleString('en-US', { maximumFractionDigits: 2 })} t)` : '');
+export const tonnes = (kg: number) => (kg >= 1000 ? ` (${(kg / 1000).toLocaleString('en-US', { maximumFractionDigits: 2 })} t)` : '');
 
 export const attachmentName = ({ key, file }: { key: string; file: File }) => {
   const name = file.name.replace(/[^\w.\- ]+/g, '_').slice(-100) || 'attachment';
@@ -102,7 +103,7 @@ const telLink = (phone: string) => {
   return t.replace('+', '').length >= 6 ? `tel:${t}` : undefined;
 };
 /** Only plain addresses become mailto: links (no ?cc= tricks from a crafted email field). */
-const SAFE_EMAIL = /^[\w.+'-]+@[\w-]+(\.[\w-]+)+$/;
+export const SAFE_EMAIL = /^[\w.+'-]+@[\w-]+(\.[\w-]+)+$/;
 function riyadhTime(iso: unknown) {
   const d = new Date(typeof iso === 'string' ? iso : Date.now());
   const date = Number.isNaN(d.getTime()) ? new Date() : d;
@@ -246,7 +247,7 @@ function view(lead: Lead, ref: string) {
 type View = ReturnType<typeof view>;
 
 // ---------- HTML ----------
-const font = (weight: number, size: number, lh: number, family = F.body) =>
+export const font = (weight: number, size: number, lh: number, family = F.body) =>
   `font-family:${family};font-weight:${weight};font-size:${size}px;line-height:${lh};`;
 const a = (href: string, text: string, style = '') =>
   `<a href="${esc(href)}" style="color:${C.link};text-decoration:underline;${style}">${text}</a>`;

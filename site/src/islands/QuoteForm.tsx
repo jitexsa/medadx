@@ -4,6 +4,7 @@ import { fmtInt, packKg } from '@/lib/catalog-shared';
 import { fallbackRef, LEADS_SIMULATED, submitLead } from '@/lib/lead/submit';
 import { checkFiles, FILE_RULES, isEmail, isPhone } from '@/lib/lead/validate';
 import { $quoteItems, takePrefill } from '@/stores/quote';
+import ConfirmNote from './ConfirmNote';
 import './forms.css';
 
 export interface FormProduct {
@@ -35,7 +36,7 @@ export default function QuoteForm({
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [linesTouched, setLinesTouched] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [done, setDone] = useState<null | { ref: string; rows: (Line & { id: string })[]; qty: number; kg: number }>(null);
+  const [done, setDone] = useState<null | { ref: string; rows: (Line & { id: string })[]; qty: number; kg: number; mailTo?: string }>(null);
   const startedAt = useRef(Date.now());
   const summaryRef = useRef<HTMLDivElement>(null);
   const doneRef = useRef<HTMLHeadingElement>(null);
@@ -126,7 +127,13 @@ export default function QuoteForm({
         file ? { file } : null,
         { honeypot: q.hp, startedAt: startedAt.current },
       );
-      setDone({ ref: res.ref ?? fallbackRef(), rows: filled.map((l) => ({ ...l, id: l.product })), qty: totQty, kg: totKg });
+      setDone({
+        ref: res.ref ?? fallbackRef(),
+        rows: filled.map((l) => ({ ...l, id: l.product })),
+        qty: totQty,
+        kg: totKg,
+        mailTo: res.confirmationSent ? q.email.trim() : undefined,
+      });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => doneRef.current?.focus(), 50);
     } catch {
@@ -161,6 +168,7 @@ export default function QuoteForm({
           {C.qSuccessT}
         </h2>
         <p class="qf-done__b">{C.qSuccessB}</p>
+        {done.mailTo && <ConfirmNote text={C.confirmSent!} email={done.mailTo} />}
         <span class="qf-ref">
           <span class="label">{C.refL}</span>
           <span dir="ltr" class="mono">

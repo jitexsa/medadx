@@ -416,6 +416,19 @@
   line-height: 1.6;
   color: rgba(var(--ink), 0.7);
 }
+.qf-done__mail {
+  margin: 10px auto 0;
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(var(--ink), 0.7);
+}
+.qf-done__addr {
+  font-family: var(--f-mono);
+  color: var(--ink-solid);
+  unicode-bidi: isolate;
+  overflow-wrap: anywhere;
+}
 .qf-ref {
   display: inline-flex;
   align-items: center;
