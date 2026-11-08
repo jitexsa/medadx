@@ -14,6 +14,11 @@ import type { NavKey } from '@/lib/nav';
 import { organization, website } from '@/lib/schema';
 import { ogPath } from '@/lib/seo';
 import { SITE_DATA } from '@/data/site';
+// Same files fonts.css declares, so Vite emits one hashed URL for both.
+import arabic400 from '@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-400-normal.woff2?url';
+import arabic500 from '@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-500-normal.woff2?url';
+import arabic600 from '@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-600-normal.woff2?url';
+import arabic700 from '@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-700-normal.woff2?url';
 
 export interface Props {
   locale: Locale;
@@ -55,6 +60,16 @@ const drawerCopy = { ...t.ux.dr, contactHref: localizedPath('/contact', locale),
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {
+      /* Arabic pages: fetch the four Arabic weights with the HTML (~180 KB, all used above the fold).
+         Otherwise each is found only after layout, and its late swap re-flows the hero text and
+         shifts the carousel below it: CLS went from ~0.008 locally (0.051 on CI) to 0 with no
+         measurable LCP cost. English pages never load the Arabic font, so they get no preload. */
+      locale === 'ar' &&
+        [arabic400, arabic500, arabic600, arabic700].map((href) => (
+          <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
+        ))
+    }
     <script is:inline>
       // Before first paint: stored theme (the design defaults to light) + `js` class for reveal styles.
       (function () {
