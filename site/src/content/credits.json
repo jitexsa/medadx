@@ -301,27 +301,27 @@
   },
   {
     "id": "recipes/lamb-kabsa",
-    "file": "Plov.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plov.jpg",
-    "artist": "Utilisateur:Atilin",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "Kabsa (6486384335).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kabsa_(6486384335).jpg",
+    "artist": "Sammy Six",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "attributionRequired": true,
-    "width": 600,
-    "height": 450,
-    "fetchedAt": "2026-10-12"
+    "width": 4608,
+    "height": 3072,
+    "fetchedAt": "2026-11-08"
   },
   {
     "id": "recipes/lamb-mandi",
-    "file": "Iraqi Quzi.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iraqi_Quzi.jpg",
-    "artist": "Abdulsalam Al Dabbagh",
+    "file": "Mandi Lamb Shank, Lepak @ Sultan, 62 Bussorah St, Singapore (02).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mandi_Lamb_Shank,_Lepak_@_Sultan,_62_Bussorah_St,_Singapore_(02).jpg",
+    "artist": "Moheen Reeyad",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "attributionRequired": true,
-    "width": 1080,
-    "height": 594,
-    "fetchedAt": "2026-10-12"
+    "width": 4000,
+    "height": 2250,
+    "fetchedAt": "2026-11-08"
   },
   {
     "id": "recipes/lemon-rice",
@@ -445,15 +445,15 @@
   },
   {
     "id": "recipes/saleeg",
-    "file": "Maqluba.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maqluba.jpg",
-    "artist": "Bazel",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "The Hijazi Saleeg.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Hijazi_Saleeg.jpg",
+    "artist": "Sayom",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "attributionRequired": true,
-    "width": 1928,
-    "height": 1322,
-    "fetchedAt": "2026-10-12"
+    "width": 1920,
+    "height": 1080,
+    "fetchedAt": "2026-11-08"
   },
   {
     "id": "recipes/sindhi-biryani",
@@ -517,14 +517,14 @@
   },
   {
     "id": "recipes/zurbian",
-    "file": "Mutton Biryani.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutton_Biryani.jpg",
-    "artist": "Number55",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Zurbian Image.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zurbian_Image.jpg",
+    "artist": "AninnymouseEditor",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "attributionRequired": true,
-    "width": 3648,
-    "height": 2736,
-    "fetchedAt": "2026-10-12"
+    "width": 2279,
+    "height": 2198,
+    "fetchedAt": "2026-11-08"
   }
 ]

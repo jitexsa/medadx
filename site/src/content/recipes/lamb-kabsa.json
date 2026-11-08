@@ -67,9 +67,9 @@
     "Skim the broth before cooking the rice for a cleaner flavour."
   ],
   "toServe": "A feast centrepiece — serve with daqoos and fresh salad.",
-  "imageAlt": "Lamb kabsa with tender bone-in lamb over spiced basmati rice",
+  "imageAlt": "Lamb kabsa: tender lamb pieces in spiced basmati rice with a fresh salad garnish",
   "image": "../../assets/recipes/lamb-kabsa.jpg",
-  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Plov.jpg",
-  "standInImage": true,
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Kabsa%20%286486384335%29.jpg",
+  "standInImage": false,
   "recommendedProduct": "farah"
 }

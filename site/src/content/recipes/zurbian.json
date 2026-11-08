@@ -63,9 +63,9 @@
     "Parboil the rice to only 70% so it finishes perfectly during the steam."
   ],
   "toServe": "Serve with raita or daqoos and a green salad.",
-  "imageAlt": "Zurbian saffron rice with yoghurt-marinated meat and potatoes",
+  "imageAlt": "Zurbian: saffron rice under meat, potatoes and fried onions, garnished with parsley",
   "image": "../../assets/recipes/zurbian.jpg",
-  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20Biryani.jpg",
-  "standInImage": true,
+  "sourceImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Zurbian%20Image.jpg",
+  "standInImage": false,
   "recommendedProduct": "farah"
 }
