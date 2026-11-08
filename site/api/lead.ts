@@ -1,30 +1,25 @@
 /**
- * POST /api/lead — receives quote / quick-quote / trading-account leads.
+ * POST /api/lead — receives quote / quick-quote / trading-account leads and emails them to the
+ * trade team through Resend (see src/lib/lead/deliver.ts for the env settings).
  *
- * STATUS: delivery not configured yet. Until `deliver()` is wired to email/CRM the
- * endpoint answers 501, so the site shows an error instead of silently losing leads.
- * To activate: implement deliver(), set PUBLIC_LEAD_ENDPOINT=/api/lead in Vercel.
+ * Without RESEND_API_KEY the endpoint answers 501, so the site shows an error instead of
+ * silently losing leads. The forms only post here when PUBLIC_LEAD_ENDPOINT=/api/lead at build time.
  *
  * Contract (unchanged from the original lead-submit.js):
  *   application/json        { meta, payload }
  *   multipart/form-data     meta (JSON), payload (JSON), one part per file
  *   2xx → { ref: "MX-…" }   shown to the visitor as their reference number
  */
+import { deliverLead, mailConfig, type Lead } from '../src/lib/lead/deliver.js';
 import { checkFiles, isEmail, isPhone, looksLikeBot } from '../src/lib/lead/validate.js';
 
 const ALLOWED_ORIGINS = new Set(['https://medadx.com', 'https://www.medadx.com']);
-const MAX_BYTES = 4 * 1024 * 1024;
+/** Vercel Functions reject request bodies above 4.5 MB; uploads are capped at 4 MiB client-side. */
+const MAX_BYTES = 4_500_000;
 const TYPES = new Set(['trading-account', 'quote', 'quick-quote']);
-
-type Lead = { meta: Record<string, unknown>; payload: Record<string, unknown>; files: File[] };
 
 const json = (status: number, body: unknown) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
-
-/** TODO(owner): send the lead to email / CRM (e.g. Resend, SMTP, HubSpot webhook). Return true on success. */
-async function deliver(_lead: Lead, _ref: string): Promise<boolean> {
-  return false;
-}
 
 export async function POST(request: Request): Promise<Response> {
   const origin = request.headers.get('origin');
@@ -36,7 +31,9 @@ export async function POST(request: Request): Promise<Response> {
   try {
     if ((request.headers.get('content-type') ?? '').includes('multipart/form-data')) {
       const fd = await request.formData();
-      const files = [...fd.entries()].filter(([k, v]) => k !== 'meta' && k !== 'payload' && v instanceof File).map(([, v]) => v as File);
+      const files = [...fd.entries()]
+        .filter(([k, v]) => k !== 'meta' && k !== 'payload' && v instanceof File)
+        .map(([key, v]) => ({ key, file: v as File }));
       lead = { meta: JSON.parse(String(fd.get('meta'))), payload: JSON.parse(String(fd.get('payload'))), files };
     } else {
       const body = await request.json();
@@ -45,17 +42,26 @@ export async function POST(request: Request): Promise<Response> {
   } catch {
     return json(400, { ok: false, reason: 'bad-request' });
   }
+  if (!lead.meta || typeof lead.meta !== 'object') return json(400, { ok: false, reason: 'bad-request' });
 
-  const p = lead.payload ?? {};
-  if (!TYPES.has(String(lead.meta?.type))) return json(400, { ok: false, reason: 'type' });
-  if (looksLikeBot(String(p.company_website ?? ''), Date.now() - Number(lead.meta?.elapsedMs ?? 0))) return json(200, { ok: true });
+  const p = (lead.payload ??= {});
+  if (!TYPES.has(String(lead.meta.type))) return json(400, { ok: false, reason: 'type' });
+  if (looksLikeBot(String(p.company_website ?? ''), Date.now() - Number(lead.meta.elapsedMs ?? 0))) return json(200, { ok: true });
   if (!String(p.name ?? '').trim() || !isPhone(String(p.phone ?? ''))) return json(422, { ok: false, reason: 'fields' });
   if (p.email && !isEmail(String(p.email))) return json(422, { ok: false, reason: 'email' });
-  if (lead.files.length && !checkFiles(lead.files).ok) return json(422, { ok: false, reason: 'files' });
+  if (lead.files.length && !checkFiles(lead.files.map((f) => f.file)).ok) return json(422, { ok: false, reason: 'files' });
+
+  const cfg = mailConfig(process.env);
+  if (!cfg) return json(501, { ok: false, reason: 'not-configured' });
 
   const ref = 'MX-' + Date.now().toString(36).toUpperCase().slice(-5) + Math.floor(Math.random() * 90 + 10);
-  const delivered = await deliver(lead, ref);
-  if (!delivered) return json(501, { ok: false, reason: 'not-configured' });
+  const result = await deliverLead(lead, ref, cfg);
+  if (!result.ok) {
+    // No visitor data in logs: just enough to diagnose the mail setup.
+    console.error('[lead] delivery failed', { ref, type: lead.meta.type, status: result.status, error: result.error });
+    return json(502, { ok: false, reason: 'delivery' });
+  }
+  if (result.via === 'fallback') console.warn('[lead] sent via Resend test sender: verify the sending domain', { ref });
   return json(200, { ok: true, ref });
 }
 

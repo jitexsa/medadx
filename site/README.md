@@ -27,7 +27,7 @@ npm run lhci         # Lighthouse budgets
 | `src/content/`                              | Products, 30 recipes, legal, history article, image credits                   |
 | `src/og/render.ts`, `src/lib/og-entries.ts` | Share-image generator: one 1200×630 JPEG per URL, written to `/og/…`          |
 | `src/lib/schema.ts`                         | JSON-LD builders                                                              |
-| `api/lead.ts`                               | Lead endpoint stub (returns 501 until delivery is implemented)                |
+| `api/lead.ts`, `src/lib/lead/`              | Lead endpoint: validates form posts and emails them via Resend                |
 | `scripts/`                                  | One-time and maintenance scripts (content extraction, image downloads, icons) |
 | `docs/`                                     | `AUDIT.md`, `SEO-PLAN.md`                                                     |
 
@@ -41,9 +41,12 @@ npm run lhci         # Lighthouse budgets
 
 Forms call `submitLead()` in `src/lib/lead/submit.ts`, which keeps the same contract as the original `lead-submit.js`.
 
-- With `PUBLIC_LEAD_ENDPOINT` empty, submits are simulated: a "Preview build" notice shows and nothing is sent.
-- To go live, implement `deliver()` in `api/lead.ts` and set `PUBLIC_LEAD_ENDPOINT=/api/lead` in Vercel.
-- If you post to an external form service instead, add its origin to `connect-src` in `astro.config.mjs`.
+All three forms (contact-page quote form, trading-account application, quick-inquiry drawer) post to `/api/lead`, which validates the lead and emails it to the trade team through [Resend](https://resend.com) (`src/lib/lead/deliver.ts`). Attachments are included, and Reply-To is the customer's email.
+
+- With `PUBLIC_LEAD_ENDPOINT` empty, submits are simulated: a "Preview build" notice shows and nothing is sent. Production sets it to `/api/lead` (build-time: redeploy after changing it).
+- Vercel env vars (see `.env.example`): `RESEND_API_KEY` (required), `LEAD_TO` (default `info@medadx.com`), `LEAD_FROM` (default `Medad-X Website <leads@medadx.com>`), `LEAD_FALLBACK_TO`.
+- The sender's domain must be verified in Resend (Domains → add `medadx.com`, then add its DKIM/SPF records at SiteGround; they live on `resend._domainkey` and `send`, so they do not affect Zoho mail). Until then, if `LEAD_FALLBACK_TO` is set, leads are sent from `onboarding@resend.dev` to that address (it must be the Resend account owner's email) with a banner saying so. Once the domain verifies, delivery switches to `LEAD_FROM` → `LEAD_TO` automatically.
+- Failures return an error to the visitor (who is pointed to WhatsApp) and log `[lead] delivery failed` in the Vercel runtime logs, without visitor data.
 
 ## Deploy (Vercel)
 
