@@ -13,8 +13,8 @@ import { arr, attachmentName, C, esc, F, font, line, LOGO, SAFE_EMAIL } from './
 
 /** Mirrors src/data/site.json (a unit test keeps them in sync; JSON can't be imported here). */
 export const CONTACT = {
-  phone: '+966 920009050',
-  phoneHref: 'tel:+966920009050',
+  phone: '+966 55 842 2443',
+  phoneHref: 'tel:+966558422443',
   wa: '+966 59 127 8526',
   waHref: 'https://wa.me/966591278526',
   email: 'info@medadx.com',
