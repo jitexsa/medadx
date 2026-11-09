@@ -16,7 +16,7 @@ export const ORG = {
   name: 'Medad-X',
   legalName: 'Medad-X General Trading',
   parent: 'Arsan Global Group',
-  telephone: '+966920009050',
+  telephone: '+966558422443',
   email: data.email,
   address: {
     streetAddress: 'Port Gate Building, Khalidiya Junubiya',

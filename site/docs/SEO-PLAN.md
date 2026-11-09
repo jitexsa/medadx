@@ -19,7 +19,7 @@ The technical foundation is now in place: 60 crawlable URLs in English and Arabi
 - **Google Business Profile**:
   - Name: "Medad-X". Address: Port Gate Building, Khalidiya Junubiya, Dammam.
   - Categories: "Rice wholesaler" (primary) and "Food products supplier".
-  - Bilingual description, hours (Sun–Thu 8–5) and phone +966 920009050.
+  - Bilingual description, hours (Sun–Thu 8–5) and phone +966 55 842 2443.
   - Website: `https://medadx.com/?utm_source=gbp`.
   - Add product posts for Farah, Khayber Gate and Dhoqan, and real photos (warehouse, bags, team).
 - **Identical name, address and phone** everywhere: website, Business Profile, LinkedIn, Asharqia Chamber, Saudi directories (Daleel, SaudiYP), Arsan Global Group site, Bing Places, Apple Business Connect.
