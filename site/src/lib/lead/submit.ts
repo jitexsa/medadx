@@ -21,7 +21,7 @@ export async function submitLead(
   payload: Record<string, unknown>,
   files: Record<string, File> | null,
   guard: SpamGuard,
-): Promise<{ ref?: string }> {
+): Promise<{ ref?: string; confirmationSent?: boolean }> {
   // Silently "succeed" for bots so they get no signal.
   if (looksLikeBot(guard.honeypot, guard.startedAt)) return {};
 
@@ -56,7 +56,7 @@ export async function submitLead(
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const out = await res.json().catch(() => ({}));
   track(`${type.replace('-', '_')}_submit`);
-  return out as { ref?: string };
+  return out as { ref?: string; confirmationSent?: boolean };
 }
 
 /** Optional analytics hook (Vercel Web Analytics exposes window.va when enabled). */

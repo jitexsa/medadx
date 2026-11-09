@@ -38,7 +38,10 @@ describe('mailConfig', () => {
       to: ['info@medadx.com'],
       from: 'Medad-X Website <leads@medadx.com>',
       fallbackTo: [],
+      confirmFrom: 'Medad-X <leads@medadx.com>',
+      confirm: true,
     });
+    expect(mailConfig({ RESEND_API_KEY: 'k', LEAD_CONFIRM: 'OFF' })!.confirm).toBe(false);
     expect(mailConfig({ RESEND_API_KEY: 'k', LEAD_TO: 'a@x.sa, b@x.sa' })!.to).toEqual(['a@x.sa', 'b@x.sa']);
   });
 });
@@ -108,12 +111,12 @@ describe('buildLeadEmail', () => {
 });
 
 describe('deliverLead', () => {
-  it('sends once with attachments when the domain is verified', async () => {
+  it('sends the lead with attachments, then the customer confirmation', async () => {
     const { fn, calls } = mockFetch({ status: 200 });
     const file = new File([new Uint8Array([1, 2, 3])], 'licence scan.pdf', { type: 'application/pdf' });
     const res = await deliverLead(quote({ files: [{ key: 'vat', file }] }), 'MX-1', cfg, fn);
-    expect(res).toEqual({ ok: true, via: 'primary' });
-    expect(calls).toHaveLength(1);
+    expect(res).toEqual({ ok: true, via: 'primary', confirmed: true });
+    expect(calls).toHaveLength(2);
     expect(calls[0]!.headers.Authorization).toBe('Bearer re_test');
     expect(calls[0]!.headers['Idempotency-Key']).toBe('MX-1');
     expect(calls[0]!.body).toMatchObject({
@@ -126,7 +129,8 @@ describe('deliverLead', () => {
   it('falls back to the Resend test sender while the domain is unverified', async () => {
     const { fn, calls } = mockFetch({ status: 403, body: { message: 'The medadx.com domain is not verified.' } }, { status: 200 });
     const res = await deliverLead(quote(), 'MX-2', cfg, fn);
-    expect(res).toEqual({ ok: true, via: 'fallback' });
+    expect(res).toEqual({ ok: true, via: 'fallback', confirmed: false });
+    expect(calls).toHaveLength(2); // no confirmation: an unverified domain can't email customers
     expect(calls[1]!.body).toMatchObject({ from: 'Medad-X Website <onboarding@resend.dev>', to: ['owner@medadx.com'] });
     expect(calls[1]!.body.text).toContain('Intended for: info@medadx.com');
   });
@@ -137,8 +141,8 @@ describe('deliverLead', () => {
   });
   it('retries once on a Resend outage', async () => {
     const { fn, calls } = mockFetch({ status: 503 }, { status: 200 });
-    expect(await deliverLead(quote(), 'MX-4', cfg, fn)).toEqual({ ok: true, via: 'primary' });
-    expect(calls).toHaveLength(2);
+    expect(await deliverLead(quote(), 'MX-4', cfg, fn)).toEqual({ ok: true, via: 'primary', confirmed: true });
+    expect(calls).toHaveLength(3); // 503, retry, confirmation
   });
 });
 

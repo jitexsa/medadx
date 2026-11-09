@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { fallbackRef, LEADS_SIMULATED, submitLead } from '@/lib/lead/submit';
 import { checkFiles, FILE_RULES, isEmail, isPhone } from '@/lib/lead/validate';
+import ConfirmNote from './ConfirmNote';
 import type { FormProduct } from './QuoteForm';
 import './forms.css';
 
@@ -87,6 +88,7 @@ export default function TradingWizard({
   const [touched, setTouched] = useState<Partial<Record<keyof Form, boolean>>>({});
   const [busy, setBusy] = useState(false);
   const [refNo, setRefNo] = useState('');
+  const [mailTo, setMailTo] = useState('');
   const [countryOpen, setCountryOpen] = useState(false);
   const [activeOpt, setActiveOpt] = useState(-1);
   const startedAt = useRef(Date.now());
@@ -191,6 +193,7 @@ export default function TradingWizard({
         { honeypot: hp, startedAt: startedAt.current },
       );
       setRefNo(res.ref ?? fallbackRef());
+      setMailTo(res.confirmationSent ? f.email.trim() : '');
       try {
         sessionStorage.removeItem(DRAFT_KEY);
       } catch {
@@ -220,6 +223,7 @@ export default function TradingWizard({
           {T.successT}
         </h2>
         <p class="tw-done__b">{T.successB}</p>
+        {mailTo && <ConfirmNote text={U.confirmSent!} email={mailTo} />}
         <span class="qf-ref">
           <span class="label">{T.refL}</span>
           <span dir="ltr" class="mono">

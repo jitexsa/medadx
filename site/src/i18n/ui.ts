@@ -33,6 +33,8 @@ const en = {
   linkCopied: 'Link copied',
   notSentBanner: 'Preview build: forms are simulated and nothing is sent.',
   leadFailed: 'We couldn’t send your request. Please try again, or contact us on WhatsApp.',
+  /** {0} = the visitor's email address. */
+  confirmSent: 'We’ve emailed a confirmation to {0}. If you can’t find it, please check your spam folder.',
   fileErr: {
     type: 'Please upload a PDF, JPG or PNG file.',
     size: 'Attachments must be 4 MB or less in total.',
@@ -157,6 +159,7 @@ const ar: UI = {
   linkCopied: 'تم نسخ الرابط',
   notSentBanner: 'نسخة معاينة: النماذج تجريبية ولا يتم إرسال أي بيانات.',
   leadFailed: 'تعذّر إرسال طلبك. يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.',
+  confirmSent: 'أرسلنا رسالة تأكيد إلى {0}. إن لم تجدها، يرجى التحقق من مجلد الرسائل غير المرغوب فيها.',
   fileErr: {
     type: 'يرجى رفع ملف بصيغة PDF أو JPG أو PNG.',
     size: 'يجب ألا يتجاوز حجم المرفقات 4 ميغابايت إجمالاً.',

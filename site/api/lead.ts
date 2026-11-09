@@ -62,7 +62,9 @@ export async function POST(request: Request): Promise<Response> {
     return json(502, { ok: false, reason: 'delivery' });
   }
   if (result.via === 'fallback') console.warn('[lead] sent via Resend test sender: verify the sending domain', { ref });
-  return json(200, { ok: true, ref });
+  if (result.confirmError) console.warn('[lead] customer confirmation failed', { ref, error: result.confirmError });
+  // confirmationSent lets the form tell the visitor to check their inbox.
+  return json(200, { ok: true, ref, confirmationSent: result.confirmed });
 }
 
 export async function GET() {
