@@ -9,7 +9,7 @@
  */
 import { fmtInt, packKg } from '../catalog-shared.js';
 import type { Lead } from './deliver.js';
-import { arr, attachmentName, C, esc, F, font, line, LOGO, SAFE_EMAIL } from './email.js';
+import { arr, attachmentName, C, esc, F, font, line, logoImg, SAFE_EMAIL } from './email.js';
 
 /** Mirrors src/data/site.json (a unit test keeps them in sync; JSON can't be imported here). */
 export const CONTACT = {
@@ -237,7 +237,7 @@ ${v.total ? `<tr><td colspan="3" align="${start}" style="background:${C.green};p
 <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="width:100%;max-width:600px;" dir="${rtl ? 'rtl' : 'ltr'}">
 <tr><td class="px" style="background:${C.green};border-radius:14px 14px 0 0;padding:26px 32px 28px;" align="${start}">
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
-<td width="46" valign="middle"><table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="background:#fcfaf3;border-radius:11px;padding:4px;"><img src="${LOGO}" width="38" height="38" alt="Medad-X" style="display:block;border:0;outline:none;"></td></tr></table></td>
+<td width="46" valign="middle"><table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="background:#fcfaf3;border-radius:11px;padding:4px;">${logoImg()}</td></tr></table></td>
 <td valign="middle" align="${start}" style="padding-${start}:12px;${f(600, 12, 1.5)}letter-spacing:${rtl ? '0' : '.16em'};text-transform:uppercase;color:${C.goldLight};">${rtl ? 'ميداد-إكس' : 'Medad-X'}</td>
 </tr></table>
 <h1 class="h1" style="margin:22px 0 0;${f(600, 30, 1.2, head)}color:${C.cream};">${esc(t.title[v.kind])}</h1>
