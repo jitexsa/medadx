@@ -15,7 +15,7 @@
  */
 
 import { buildConfirmationEmail } from './confirm-email.js';
-import { attachmentName, buildLeadEmail } from './email.js';
+import { attachmentName, buildLeadEmail, LOGO_ATTACHMENT } from './email.js';
 
 export { buildLeadEmail };
 
@@ -106,7 +106,7 @@ export async function deliverLead(lead: Lead, ref: string, cfg: MailConfig, fetc
         html: msg.html,
         text: msg.text,
         ...(msg.replyTo ? { reply_to: msg.replyTo } : {}),
-        ...(attachments.length ? { attachments } : {}),
+        attachments: [...attachments, LOGO_ATTACHMENT],
         tags: [{ name: 'lead_type', value: String(lead.meta.type).replace(/[^\w-]/g, '_') }],
       },
       key,
@@ -140,6 +140,7 @@ async function confirmCustomer(lead: Lead, ref: string, cfg: MailConfig, fetchIm
       subject: msg.subject,
       html: msg.html,
       text: msg.text,
+      attachments: [LOGO_ATTACHMENT],
       tags: [
         { name: 'lead_type', value: String(lead.meta.type).replace(/[^\w-]/g, '_') },
         { name: 'email', value: 'customer_confirmation' },

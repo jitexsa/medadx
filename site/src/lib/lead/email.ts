@@ -7,8 +7,17 @@
  */
 import { fmtInt, packKg } from '../catalog-shared.js';
 import type { Lead, LeadKind, MailMessage } from './deliver.js';
+import { LOGO_PNG_BASE64 } from './logo.js';
 
-export const LOGO = 'https://medadx.com/icons/icon-192.png';
+/**
+ * The logo travels inside each email as an inline (cid:) image: mail apps block remote images by
+ * default (Zoho, Outlook, …) and showed a broken box. LOGO_ATTACHMENT must go in every send.
+ */
+const LOGO_CID = 'medadx-logo';
+export const LOGO_ATTACHMENT = { filename: 'medadx-logo.png', content: LOGO_PNG_BASE64, content_type: 'image/png', content_id: LOGO_CID };
+/** Logo tile for the email header; the styled alt text keeps it tidy if images are off entirely. */
+export const logoImg = () =>
+  `<img src="cid:${LOGO_CID}" width="38" height="38" alt="MX" style="display:block;border:0;outline:none;width:38px;height:38px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:38px;text-align:center;color:#1f3d2a;">`;
 export const C = {
   page: '#f5f0e4',
   card: '#ffffff',
@@ -364,7 +373,7 @@ function renderHtml(v: View, note?: string) {
 ${noteHtml}
 <tr><td class="px" style="background:${C.green};border-radius:14px 14px 0 0;padding:26px 32px 28px;">
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
-<td width="46" valign="middle"><table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="background:#fcfaf3;border-radius:11px;padding:4px;"><img src="${LOGO}" width="38" height="38" alt="Medad-X" style="display:block;border:0;outline:none;"></td></tr></table></td>
+<td width="46" valign="middle"><table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="background:#fcfaf3;border-radius:11px;padding:4px;">${logoImg()}</td></tr></table></td>
 <td valign="middle" style="padding-left:12px;${font(600, 11, 1.5)}letter-spacing:.16em;text-transform:uppercase;color:${C.goldLight};">Medad-X<br><span style="color:#c9cfbf;font-weight:500;letter-spacing:.12em;">Website lead</span></td>
 <td class="ref" align="right" valign="middle"><span style="display:inline-block;border:1px solid ${C.gold};border-radius:999px;padding:6px 13px;${font(500, 13, 1, F.mono)}color:${C.cream};" dir="ltr">${esc(v.ref)}</span></td>
 </tr></table>

@@ -2,7 +2,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { POST } from '../../api/lead';
 import site from '../../src/data/site.json';
 import { buildConfirmationEmail, CONTACT, safeEcho } from '../../src/lib/lead/confirm-email';
-import { deliverLead, mailConfig, type Lead } from '../../src/lib/lead/deliver';
+import { buildLeadEmail, deliverLead, mailConfig, type Lead } from '../../src/lib/lead/deliver';
+import { LOGO_ATTACHMENT } from '../../src/lib/lead/email';
 
 const cfg = mailConfig({ RESEND_API_KEY: 're_test' })!;
 const quote = (payload: Record<string, unknown> = {}, files: Lead['files'] = []): Lead => ({
@@ -107,6 +108,20 @@ describe('confirmation contents', () => {
   });
 });
 
+describe('inline logo', () => {
+  it('both emails show the embedded logo instead of loading it from the web', () => {
+    const team = buildLeadEmail(quote(), 'MX-L');
+    const customer = buildConfirmationEmail(quote(), 'MX-L')!;
+    for (const html of [team.html, customer.html]) {
+      expect(html).toContain('src="cid:medadx-logo"');
+      expect(html).not.toContain('icon-192.png');
+    }
+    const png = Buffer.from(LOGO_ATTACHMENT.content, 'base64');
+    expect(png.subarray(1, 4).toString()).toBe('PNG');
+    expect(png.length).toBeLessThan(8000);
+  });
+});
+
 describe('sending the confirmation', () => {
   it('goes to the customer from CONFIRM_FROM, replies to the team, no attachments', async () => {
     const { fn, calls } = mockFetch(200);
@@ -114,7 +129,7 @@ describe('sending the confirmation', () => {
     await deliverLead(quote({}, [{ key: 'file', file }]), 'MX-5', cfg, fn);
     expect(calls[1]!.headers['Idempotency-Key']).toBe('MX-5-confirm');
     expect(calls[1]!.body).toMatchObject({ from: 'Medad-X <leads@medadx.com>', to: ['k@alwaha.sa'], reply_to: ['info@medadx.com'] });
-    expect(calls[1]!.body.attachments).toBeUndefined();
+    expect(calls[1]!.body.attachments).toEqual([expect.objectContaining({ content_id: 'medadx-logo' })]); // only the inline logo
   });
   it('a failed confirmation never fails the lead', async () => {
     const { fn } = mockFetch(200, 422);

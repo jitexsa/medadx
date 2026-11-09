@@ -124,7 +124,10 @@ describe('deliverLead', () => {
       to: ['info@medadx.com'],
       reply_to: 'buyer@hotel.sa',
     });
-    expect(calls[0]!.body.attachments).toEqual([{ filename: 'vat-licence scan.pdf', content: 'AQID' }]);
+    expect(calls[0]!.body.attachments).toEqual([
+      { filename: 'vat-licence scan.pdf', content: 'AQID' },
+      expect.objectContaining({ content_id: 'medadx-logo', content_type: 'image/png' }), // inline logo
+    ]);
   });
   it('falls back to the Resend test sender while the domain is unverified', async () => {
     const { fn, calls } = mockFetch({ status: 403, body: { message: 'The medadx.com domain is not verified.' } }, { status: 200 });
